@@ -1,0 +1,193 @@
+{
+  "summary_512": [
+    {
+      "version": "v1_python",
+      "size": 512,
+      "avg_time_sec": 4.7499083056670015,
+      "median_time_sec": 4.783983625002293,
+      "checksum": -6740.486084331566,
+      "gflops": 0.056513818525662084,
+      "relative_speedup": 1.0,
+      "absolute_speedup": 1.0,
+      "label": "Python"
+    },
+    {
+      "version": "v2_cpp_baseline",
+      "size": 512,
+      "avg_time_sec": 0.42515025,
+      "median_time_sec": 0.426406,
+      "checksum": -6740.486084331,
+      "gflops": 0.6313896228451,
+      "relative_speedup": 11.172305098414034,
+      "absolute_speedup": 11.172305098414034,
+      "label": "C++基础版"
+    },
+    {
+      "version": "v3_cpp_loop_reorder",
+      "size": 512,
+      "avg_time_sec": 0.15327506966666668,
+      "median_time_sec": 0.152118833,
+      "checksum": -6740.486084331,
+      "gflops": 1.7513314890919778,
+      "relative_speedup": 2.7737730012101185,
+      "absolute_speedup": 30.989438243263002,
+      "label": "调整循环顺序"
+    },
+    {
+      "version": "v4_cpp_optimized",
+      "size": 512,
+      "avg_time_sec": 0.017762764,
+      "median_time_sec": 0.017806417,
+      "checksum": -6740.486084331,
+      "gflops": 15.112257078909565,
+      "relative_speedup": 8.62901008349076,
+      "absolute_speedup": 267.40817508283067,
+      "label": "编译优化(-O3)"
+    },
+    {
+      "version": "v5_cpp_unrolled",
+      "size": 512,
+      "avg_time_sec": 0.017665777666666667,
+      "median_time_sec": 0.017835416,
+      "checksum": -6740.486084331,
+      "gflops": 15.195224408745247,
+      "relative_speedup": 1.0054900687172315,
+      "absolute_speedup": 268.87626433958485,
+      "label": "循环展开"
+    },
+    {
+      "version": "v6_mkl",
+      "size": 512,
+      "avg_time_sec": 0.2656,
+      "median_time_sec": 0.2656,
+      "checksum": -6740.486084332,
+      "gflops": 1.0106756626506024,
+      "relative_speedup": 0.0665127171184739,
+      "absolute_speedup": 17.88369090989082,
+      "label": "Intel MKL（Docker/x86_64）"
+    }
+  ],
+  "scaling": [
+    {
+      "version": "v2_cpp_baseline",
+      "size": 512,
+      "avg_time_sec": 0.429082597,
+      "median_time_sec": 0.428885458,
+      "checksum": -6740.486084331,
+      "gflops": 0.6256032238939767,
+      "label": "C++基础版"
+    },
+    {
+      "version": "v3_cpp_loop_reorder",
+      "size": 512,
+      "avg_time_sec": 0.152245931,
+      "median_time_sec": 0.152158,
+      "checksum": -6740.486084331,
+      "gflops": 1.763169985804087,
+      "label": "调整循环顺序"
+    },
+    {
+      "version": "v4_cpp_optimized",
+      "size": 512,
+      "avg_time_sec": 0.017831625333333333,
+      "median_time_sec": 0.017834834,
+      "checksum": -6740.486084331,
+      "gflops": 15.053897274198748,
+      "label": "编译优化(-O3)"
+    },
+    {
+      "version": "v5_cpp_unrolled",
+      "size": 512,
+      "avg_time_sec": 0.017904431,
+      "median_time_sec": 0.017875584,
+      "checksum": -6740.486084331,
+      "gflops": 14.992682872748095,
+      "label": "循环展开"
+    },
+    {
+      "version": "v2_cpp_baseline",
+      "size": 768,
+      "avg_time_sec": 0.9075175833333333,
+      "median_time_sec": 0.906127292,
+      "checksum": 36258.144926123,
+      "gflops": 0.9982943368131252,
+      "label": "C++基础版"
+    },
+    {
+      "version": "v3_cpp_loop_reorder",
+      "size": 768,
+      "avg_time_sec": 0.513444736,
+      "median_time_sec": 0.513559416,
+      "checksum": 36258.144926123,
+      "gflops": 1.7644930417594156,
+      "label": "调整循环顺序"
+    },
+    {
+      "version": "v4_cpp_optimized",
+      "size": 768,
+      "avg_time_sec": 0.060519625,
+      "median_time_sec": 0.060570208,
+      "checksum": 36258.144926123,
+      "gflops": 14.969849267902767,
+      "label": "编译优化(-O3)"
+    },
+    {
+      "version": "v5_cpp_unrolled",
+      "size": 768,
+      "avg_time_sec": 0.060526749666666664,
+      "median_time_sec": 0.060497708,
+      "checksum": 36258.144926123,
+      "gflops": 14.968087151372945,
+      "label": "循环展开"
+    },
+    {
+      "version": "v2_cpp_baseline",
+      "size": 1024,
+      "avg_time_sec": 3.7137909723333333,
+      "median_time_sec": 3.70672875,
+      "checksum": 48910.950599938,
+      "gflops": 0.5782456966474772,
+      "label": "C++基础版"
+    },
+    {
+      "version": "v3_cpp_loop_reorder",
+      "size": 1024,
+      "avg_time_sec": 1.2130933053333333,
+      "median_time_sec": 1.212954292,
+      "checksum": 48910.950599938,
+      "gflops": 1.7702543065390304,
+      "label": "调整循环顺序"
+    },
+    {
+      "version": "v4_cpp_optimized",
+      "size": 1024,
+      "avg_time_sec": 0.14281784733333333,
+      "median_time_sec": 0.142968459,
+      "checksum": 48910.950599938,
+      "gflops": 15.036521611951104,
+      "label": "编译优化(-O3)"
+    },
+    {
+      "version": "v5_cpp_unrolled",
+      "size": 1024,
+      "avg_time_sec": 0.143301028,
+      "median_time_sec": 0.143343875,
+      "checksum": 48910.950599938,
+      "gflops": 14.98582165090958,
+      "label": "循环展开"
+    }
+  ],
+  "mkl": {
+    "version": "v6_mkl",
+    "label": "Intel MKL（Docker/x86_64）",
+    "available": true,
+    "size": 512,
+    "avg_time_sec": 0.2656,
+    "median_time_sec": 0.2656,
+    "checksum": -6740.486084332,
+    "gflops": 1.0106756626506024,
+    "relative_speedup": 0.0665127171184739,
+    "absolute_speedup": 17.88369090989082,
+    "note": "当前机器为 Apple Silicon（Apple M4 / macOS arm64）。版本 6 通过 Docker 的 linux/amd64 仿真环境运行 x86_64 Linux 版 oneMKL 得到，结果用于功能完成与接口验证，不与宿主机原生版本 1-5 做严格公平的性能比较。"
+  }
+}

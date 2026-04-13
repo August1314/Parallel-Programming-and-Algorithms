@@ -1,0 +1,446 @@
+\documentclass[UTF8,a4paper,12pt]{ctexart}
+
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{diagbox}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{fontspec}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{longtable}
+\usepackage{pgfplots}
+\usepackage{siunitx}
+\usepackage{tabularx}
+\usepackage{threeparttable}
+\usepackage{xcolor}
+
+\pgfplotsset{compat=1.18}
+\hypersetup{colorlinks=true,linkcolor=blue!60!black,urlcolor=blue!60!black}
+\defaultCJKfontfeatures{AutoFakeSlant=.2}
+\setmonofont{Menlo}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0.35em}
+
+\definecolor{AccentA}{HTML}{0B6E4F}
+\definecolor{AccentB}{HTML}{1D4E89}
+\definecolor{AccentC}{HTML}{F4A259}
+\definecolor{AccentD}{HTML}{C73E1D}
+\definecolor{AccentE}{HTML}{7A306C}
+\definecolor{CodeBg}{HTML}{F7F7F7}
+
+\lstset{
+  basicstyle=\ttfamily\small,
+  backgroundcolor=\color{CodeBg},
+  frame=single,
+  framerule=0pt,
+  xleftmargin=1em,
+  xrightmargin=1em,
+  breaklines=true,
+  columns=fullflexible,
+  keywordstyle=\color{AccentB}\bfseries,
+  commentstyle=\color{AccentA},
+  stringstyle=\color{AccentD},
+  showstringspaces=false
+}
+
+\title{\heiti 中山大学计算机院本科生实验报告}
+\author{}
+\date{}
+
+\begin{document}
+
+\begin{titlepage}
+  \centering
+  {\zihao{2}\bfseries 中山大学计算机院本科生实验报告\par}
+  \vspace{0.5em}
+  {\zihao{4}（2025学年春季学期）\par}
+  \vspace{2em}
+
+  \begin{tabularx}{0.9\textwidth}{>{\bfseries}p{4cm}X}
+    课程名称： & 并行程序设计与算法 \\
+    实验题目： & Lab1 基于MPI的并行矩阵乘法 \\
+    批改人： & \\
+    专业（方向）： & \\
+    学号： & 23336128 \\
+    姓名： & 梁力航 \\
+    Email： & \\
+    完成日期： & 2026年4月2日 \\
+  \end{tabularx}
+
+  \vfill
+  \begin{minipage}{0.88\textwidth}
+    \small
+    本报告围绕 MPI 点对点通信实现的并行矩阵乘法展开，通过实验分析不同进程数量、矩阵规模下的性能表现，并讨论大规模矩阵乘法和稀疏矩阵乘法的优化方向。
+  \end{minipage}
+\end{titlepage}
+
+\section{实验目的}
+
+本实验的目标是使用 MPI 点对点通信方式实现并行通用矩阵乘法，并通过实验分析不同进程数量、矩阵规模时该实现的性能。具体目标如下：
+
+\begin{enumerate}[leftmargin=2.2em]
+  \item 掌握 MPI 点对点通信（\texttt{MPI\_Send}/\texttt{MPI\_Recv}）的基本用法；
+  \item 实现基于行分块的并行矩阵乘法算法；
+  \item 测试并记录不同进程数量（1--16）及矩阵规模（128--2048）下的时间开销；
+  \item 分析并行效率与加速比，理解影响并行性能的关键因素；
+  \item 讨论大规模矩阵乘法和稀疏矩阵乘法的优化方向。
+\end{enumerate}
+
+\section{实验过程和核心代码}
+
+\subsection{实验平台与环境}
+
+本次实验在 \texttt{macOS arm64} 平台上完成，使用 \texttt{OpenMPI 5.0.7} 作为 MPI 实现，编译器为 \texttt{Apple clang 17.0.0}。实验采用 \texttt{--oversubscribe} 选项允许进程数超过物理核心数。
+
+\subsection{算法设计}
+
+本实验采用\textbf{行分块策略}实现并行矩阵乘法：
+
+\begin{enumerate}[leftmargin=2.2em]
+  \item \textbf{数据分布}：将矩阵 $A$（$m \times n$）按行分块，每个进程负责计算 $m/p$ 行（$p$ 为进程数）；
+  \item \textbf{矩阵 B 广播}：矩阵 $B$（$n \times k$）完整发送给所有进程；
+  \item \textbf{局部计算}：各进程独立计算自己负责的行块与矩阵 $B$ 的乘积；
+  \item \textbf{结果收集}：主进程收集各进程的计算结果，组装成完整的结果矩阵 $C$。
+\end{enumerate}
+
+\subsection{核心代码片段}
+
+\subsubsection{行分块计算}
+
+\begin{lstlisting}[language=C++]
+std::vector<int> row_counts(size);
+std::vector<int> row_displs(size);
+
+int local_m = config.m / size;
+int remainder = config.m % size;
+
+for (int p = 0; p < size; ++p) {
+    row_counts[p] = local_m + (p < remainder ? 1 : 0);
+    row_displs[p] = (p == 0) ? 0 : row_displs[p - 1] + row_counts[p - 1];
+}
+\end{lstlisting}
+
+该代码计算每个进程负责的行数，处理 $m$ 不能被进程数整除的情况。
+
+\subsubsection{矩阵 A 分发（点对点通信）}
+
+\begin{lstlisting}[language=C++]
+if (rank == 0) {
+    for (int p = 1; p < size; ++p) {
+        int p_rows = row_counts[p];
+        int p_start = row_displs[p];
+        
+        MPI_Send(&a[p_start * config.n],
+                 p_rows * config.n, MPI_DOUBLE,
+                 p, 0, MPI_COMM_WORLD);
+    }
+    std::copy(a.begin(), a.begin() + my_rows * config.n,
+              local_a.begin());
+} else {
+    MPI_Recv(local_a.data(), my_rows * config.n, MPI_DOUBLE,
+             0, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+}
+\end{lstlisting}
+
+主进程使用 \texttt{MPI\_Send} 将矩阵 $A$ 的行块发送给各从进程，从进程使用 \texttt{MPI\_Recv} 接收数据。
+
+\subsubsection{矩阵 B 广播}
+
+\begin{lstlisting}[language=C++]
+if (rank == 0) {
+    for (int p = 1; p < size; ++p) {
+        MPI_Send(b.data(), config.n * config.k, MPI_DOUBLE,
+                 p, 1, MPI_COMM_WORLD);
+    }
+} else {
+    MPI_Recv(b.data(), config.n * config.k, MPI_DOUBLE,
+             0, 1, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+}
+\end{lstlisting}
+
+矩阵 $B$ 完整发送给所有进程，每个进程都需要完整的 $B$ 矩阵进行计算。
+
+\subsubsection{局部矩阵乘法}
+
+\begin{lstlisting}[language=C++]
+void local_matmul(const double* a, const double* b, double* c, 
+                  int m, int n, int k) {
+    for (int i = 0; i < m; ++i) {
+        for (int j = 0; j < k; ++j) {
+            double sum = 0.0;
+            for (int p = 0; p < n; ++p) {
+                sum += a[i * n + p] * b[p * k + j];
+            }
+            c[i * k + j] = sum;
+        }
+    }
+}
+\end{lstlisting}
+
+各进程独立执行标准的 $i$-$j$-$p$ 三重循环矩阵乘法。
+
+\subsubsection{结果收集}
+
+\begin{lstlisting}[language=C++]
+if (rank == 0) {
+    std::copy(local_c.begin(), local_c.end(),
+              c.begin() + my_row_start * config.k);
+    
+    for (int p = 1; p < size; ++p) {
+        int p_rows = row_counts[p];
+        int p_start = row_displs[p];
+        
+        MPI_Recv(&c[p_start * config.k],
+                 p_rows * config.k, MPI_DOUBLE,
+                 p, 2, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+    }
+} else {
+    MPI_Send(local_c.data(), my_rows * config.k, MPI_DOUBLE,
+             0, 2, MPI_COMM_WORLD);
+}
+\end{lstlisting}
+
+主进程收集各进程计算的部分结果，组装成完整的矩阵 $C$。
+
+\subsection{正确性验证}
+
+本实验采用固定随机种子 \texttt{20250401} 生成输入矩阵。以 $128 \times 128 \times 128$ 规模为例，不同进程数下的校验值保持一致：
+
+\begin{center}
+\fbox{\parbox{0.82\textwidth}{\centering
+\texttt{checksum = -1713.139278331}
+}}
+\end{center}
+
+这验证了并行实现的正确性，不同进程数的计算结果数值一致。
+
+\section{实验结果}
+
+\subsection{性能测试表格}
+
+下表展示了不同进程数量和矩阵规模下的平均运行时间（秒），每组测试重复 3 次取平均值：
+
+\begin{table}[H]
+  \centering
+  \caption{不同进程数和矩阵规模下的运行时间（秒）}
+  \small
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabularx}{\textwidth}{
+    >{\centering\arraybackslash}m{1.8cm}
+    >{\centering\arraybackslash}X
+    >{\centering\arraybackslash}X
+    >{\centering\arraybackslash}X
+    >{\centering\arraybackslash}X
+    >{\centering\arraybackslash}X
+  }
+    \toprule
+    \diagbox{进程数}{规模} & 128 & 256 & 512 & 1024 & 2048 \\
+    \midrule
+    1  & 0.001157 & 0.011332 & 0.117360 & 0.972790 & 21.506175 \\
+    2  & 0.002913 & 0.007948 & 0.064350 & 0.670160 & 20.784326 \\
+    4  & 0.002235 & 0.006680 & 0.041369 & 0.488009 & 13.561145 \\
+    8  & 0.001808 & 0.010139 & 0.045992 & 0.520265 & 10.541986 \\
+    16 & 0.003755 & 0.009966 & 0.060795 & 0.661747 & 10.192804 \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\subsection{加速比分析}
+
+下表展示了相对于单进程的加速比：
+
+\begin{table}[H]
+  \centering
+  \caption{不同进程数和矩阵规模下的加速比}
+  \small
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabularx}{\textwidth}{
+    >{\centering\arraybackslash}m{1.8cm}
+    >{\centering\arraybackslash}X
+    >{\centering\arraybackslash}X
+    >{\centering\arraybackslash}X
+    >{\centering\arraybackslash}X
+    >{\centering\arraybackslash}X
+  }
+    \toprule
+    \diagbox{进程数}{规模} & 128 & 256 & 512 & 1024 & 2048 \\
+    \midrule
+    1  & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 \\
+    2  & 0.40 & 1.43 & 1.82 & 1.45 & 1.03 \\
+    4  & 0.52 & 1.70 & 2.84 & 1.99 & 1.59 \\
+    8  & 0.64 & 1.12 & 2.55 & 1.87 & 2.04 \\
+    16 & 0.31 & 1.14 & 1.93 & 1.47 & 2.11 \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\subsection{可视化结果}
+
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+      width=0.94\textwidth,
+      height=7.2cm,
+      xlabel={矩阵规模},
+      ylabel={运行时间（秒）},
+      xmode=log,
+      ymode=log,
+      log basis x=2,
+      log basis y=10,
+      xmin=100, xmax=2500,
+      ymin=0.0005, ymax=30,
+      xtick={128,256,512,1024,2048},
+      xticklabels={128,256,512,1024,2048},
+      legend style={at={(0.02,0.98)},anchor=north west,font=\small},
+      grid=both,
+      minor grid style={draw=gray!15},
+      major grid style={draw=gray!30},
+      line width=1pt,
+      mark size=2.8pt
+    ]
+      \addplot[color=AccentB,mark=*] coordinates {
+        (128,0.001157) (256,0.011332) (512,0.117360) (1024,0.972790) (2048,21.506175)
+      };
+      \addlegendentry{1 进程}
+      \addplot[color=AccentA,mark=square*] coordinates {
+        (128,0.002913) (256,0.007948) (512,0.064350) (1024,0.670160) (2048,20.784326)
+      };
+      \addlegendentry{2 进程}
+      \addplot[color=AccentC,mark=triangle*] coordinates {
+        (128,0.002235) (256,0.006680) (512,0.041369) (1024,0.488009) (2048,13.561145)
+      };
+      \addlegendentry{4 进程}
+      \addplot[color=AccentD,mark=diamond*] coordinates {
+        (128,0.001808) (256,0.010139) (512,0.045992) (1024,0.520265) (2048,10.541986)
+      };
+      \addlegendentry{8 进程}
+      \addplot[color=AccentE,mark=pentagon*] coordinates {
+        (128,0.003755) (256,0.009966) (512,0.060795) (1024,0.661747) (2048,10.192804)
+      };
+      \addlegendentry{16 进程}
+    \end{axis}
+  \end{tikzpicture}
+  \caption{不同进程数下运行时间随矩阵规模的变化（双对数坐标）}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+      width=0.94\textwidth,
+      height=7.2cm,
+      ybar,
+      bar width=8pt,
+      ylabel={加速比},
+      xlabel={进程数},
+      symbolic x coords={2,4,8,16},
+      xtick=data,
+      ymin=0, ymax=3.5,
+      legend style={at={(0.98,0.98)},anchor=north east,legend columns=2,draw=none,font=\small},
+      nodes near coords,
+      nodes near coords align={vertical},
+      every node near coord/.append style={font=\tiny},
+      enlarge x limits=0.15,
+      grid=major,
+      major grid style={draw=gray!30}
+    ]
+      \addplot[fill=AccentB!70, draw=AccentB] coordinates {(2,0.40) (4,0.52) (8,0.64) (16,0.31)};
+      \addlegendentry{128}
+      \addplot[fill=AccentA!70, draw=AccentA] coordinates {(2,1.43) (4,1.70) (8,1.12) (16,1.14)};
+      \addlegendentry{256}
+      \addplot[fill=AccentC!70, draw=AccentC] coordinates {(2,1.82) (4,2.84) (8,2.55) (16,1.93)};
+      \addlegendentry{512}
+      \addplot[fill=AccentD!70, draw=AccentD] coordinates {(2,1.45) (4,1.99) (8,1.87) (16,1.47)};
+      \addlegendentry{1024}
+      \addplot[fill=AccentE!70, draw=AccentE] coordinates {(2,1.03) (4,1.59) (8,2.04) (16,2.11)};
+      \addlegendentry{2048}
+    \end{axis}
+  \end{tikzpicture}
+  \caption{不同矩阵规模下的加速比对比}
+\end{figure}
+
+\subsection{结果分析}
+
+\begin{enumerate}[leftmargin=2.2em]
+  \item \textbf{小矩阵（128--256）通信开销占主导。} 对于小规模矩阵，计算量较小，而 MPI 通信的启动延迟和数据传输开销相对显著。因此，增加进程数反而可能导致性能下降，加速比小于 1。
+
+  \item \textbf{中等矩阵（512--1024）呈现一定加速效果。} 随着矩阵规模增大，计算量占比提高，并行收益开始显现。在 512 规模下，4 进程达到最佳加速比 2.84。
+
+  \item \textbf{大矩阵（2048）加速效果最佳。} 对于大规模矩阵，计算密集型特点突出，通信开销占比降低。16 进程下加速比达到 2.11，但仍远低于理论线性加速比 16。
+
+  \item \textbf{进程数增加后性能增益递减。} 从 4 进程到 8 进程再到 16 进程，加速比提升不明显甚至下降。原因包括：\begin{itemize}
+    \item 当前机器物理核心数有限（Apple M4），超线程/超订阅读写带来额外开销；
+    \item 点对点通信的串行化瓶颈：主进程逐个发送/接收数据；
+    \item 内存带宽竞争：多进程同时访问内存造成带宽瓶颈。
+  \end{itemize}
+
+  \item \textbf{最优配置取决于问题规模。} 对于小问题，单进程最优；对于中等问题，4 进程左右最佳；对于大问题，可使用更多进程但效率有限。
+\end{enumerate}
+
+\section{优化方向讨论}
+
+\subsection{问题一：内存有限情况下的大规模矩阵乘法}
+
+当矩阵规模超过可用内存时，可采用以下策略：
+
+\begin{enumerate}[leftmargin=2.2em]
+  \item \textbf{分块矩阵乘法。} 将大矩阵划分为若干小块，每次只加载参与当前计算的小块到内存中。例如，将 $A$ 和 $B$ 划分为 $b \times b$ 的块，按块进行乘法累加：
+  \[
+  C_{ij} = \sum_{k=1}^{n/b} A_{ik} \times B_{kj}
+  \]
+  这样可以控制内存使用量为 $O(b^2)$ 而非 $O(n^2)$。
+
+  \item \textbf{外存计算。} 使用内存映射文件或显式 I/O 将矩阵存储在磁盘上，按需加载。MPI-IO 提供了并行文件读写接口，可高效处理大规模数据。
+
+  \item \textbf{流水线通信与计算。} 在等待数据传输的同时进行计算，隐藏通信延迟。可以采用双缓冲技术：一个缓冲区用于计算，另一个用于接收下一块数据。
+
+  \item \textbf{分布式存储优化。} 在集群环境下，采用二维块循环分布（2D Block Cyclic Distribution），使数据均匀分布在各节点内存中，避免单节点内存瓶颈。
+\end{enumerate}
+
+\subsection{问题二：大规模稀疏矩阵乘法性能优化}
+
+稀疏矩阵中大部分元素为零，直接使用稠密矩阵乘法算法会造成大量无效计算和存储浪费。优化策略包括：
+
+\begin{enumerate}[leftmargin=2.2em]
+  \item \textbf{稀疏存储格式。} 采用压缩稀疏行（CSR）、压缩稀疏列（CSC）或坐标格式（COO）存储，只存储非零元素及其索引，大幅减少存储空间和计算量。
+
+  \item \textbf{稀疏矩阵乘法专用算法。} 针对 $C = A \times B$，只计算 $A$ 的非零行与 $B$ 的非零列的乘积。可使用以下优化：
+  \begin{itemize}
+    \item \textbf{符号计算}：预先确定结果矩阵 $C$ 的非零结构；
+    \item \textbf{行-行算法}：利用 $A$ 的行稀疏性，避免遍历全零行；
+    \item \textbf{哈希累加}：使用哈希表存储中间结果，避免预分配大数组。
+  \end{itemize}
+
+  \item \textbf{负载均衡。} 稀疏矩阵的非零元素分布通常不均匀，简单的行分块会导致负载不均衡。可采用：
+  \begin{itemize}
+    \item 非零元素计数分块：按非零元素数量而非行数分配任务；
+    \item 动态任务调度：使用 MPI 主从模式，主进程动态分配任务给空闲进程。
+  \end{itemize}
+
+  \item \textbf{通信优化。} 稀疏矩阵的通信模式不规则，可采用：
+  \begin{itemize}
+    \item 稀疏数据结构的直接通信；
+    \item 通信聚合：将多个小消息合并为大消息；
+    \item 非阻塞通信与计算重叠。
+  \end{itemize}
+
+  \item \textbf{利用专用库。} 使用高度优化的稀疏矩阵库，如 Intel MKL Sparse BLAS、PETSc、Trilinos 等，这些库针对不同稀疏模式提供了优化的实现。
+\end{enumerate}
+
+\section{实验感想}
+
+本次实验让我深入理解了 MPI 并行程序设计的核心概念和实践技巧。通过实现基于点对点通信的并行矩阵乘法，我体会到了以下要点：
+
+首先，\textbf{并行程序的性能取决于计算与通信的平衡}。对于小规模问题，通信开销占主导，增加进程数反而降低性能；对于大规模问题，计算密集型特点突出，并行收益才得以显现。这启示我们在设计并行算法时，必须充分考虑问题规模与通信开销的关系。
+
+其次，\textbf{点对点通信存在固有瓶颈}。当前实现中，主进程需要逐个发送和接收数据，这种串行化的通信模式限制了扩展性。在实际应用中，应考虑使用集合通信操作（如 \texttt{MPI\_Scatter}、\texttt{MPI\_Gather}、\texttt{MPI\_Bcast}）或更高级的通信模式来提升效率。
+
+第三，\textbf{并行效率受硬件资源限制}。在单机多进程环境下，进程数超过物理核心数后，上下文切换和资源竞争会带来额外开销。真正的并行计算应在多节点集群上进行，以获得更好的扩展性。
+
+最后，通过讨论大规模矩阵乘法和稀疏矩阵乘法的优化方向，我认识到并行算法设计需要针对具体问题特点进行优化。通用的解决方案往往不是最优的，需要根据数据的稀疏性、内存限制、硬件架构等因素选择合适的策略。
+
+\end{document}

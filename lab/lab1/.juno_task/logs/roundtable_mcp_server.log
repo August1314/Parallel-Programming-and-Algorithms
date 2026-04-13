@@ -1,0 +1,99 @@
+2026-04-09 16:23:30,842 - mcp.server.lowlevel.server - DEBUG - Initializing server 'roundtable-ai'
+2026-04-09 16:23:30,843 - mcp.server.lowlevel.server - DEBUG - Registering handler for ListToolsRequest
+2026-04-09 16:23:30,844 - mcp.server.lowlevel.server - DEBUG - Registering handler for CallToolRequest
+2026-04-09 16:23:30,844 - mcp.server.lowlevel.server - DEBUG - Registering handler for ListResourcesRequest
+2026-04-09 16:23:30,844 - mcp.server.lowlevel.server - DEBUG - Registering handler for ReadResourceRequest
+2026-04-09 16:23:30,844 - mcp.server.lowlevel.server - DEBUG - Registering handler for PromptListRequest
+2026-04-09 16:23:30,844 - mcp.server.lowlevel.server - DEBUG - Registering handler for GetPromptRequest
+2026-04-09 16:23:30,844 - mcp.server.lowlevel.server - DEBUG - Registering handler for ListResourceTemplatesRequest
+2026-04-09 16:23:30,859 - roundtable_mcp_server.server - INFO - Verbose: False
+2026-04-09 16:23:30,859 - roundtable_mcp_server.server - INFO - Using subagents from environment variable: ['claude', 'codex', 'gemini']
+2026-04-09 16:23:30,859 - roundtable_mcp_server.server - INFO - Initializing Roundtable AI MCP Server
+2026-04-09 16:23:30,860 - roundtable_mcp_server.server - INFO - Enabled subagents: gemini, claude, codex
+2026-04-09 16:23:30,860 - roundtable_mcp_server.server - INFO - Working directory: /Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab1
+2026-04-09 16:23:30,860 - roundtable_mcp_server.server - INFO - Verbose: False
+2026-04-09 16:23:30,860 - roundtable_mcp_server.server - INFO - ============================================================
+2026-04-09 16:23:30,860 - roundtable_mcp_server.server - INFO - Roundtable AI MCP Server vunknown starting at 2026-04-09 16:23:30.860430
+2026-04-09 16:23:30,860 - roundtable_mcp_server.server - INFO - ============================================================
+2026-04-09 16:23:30,860 - roundtable_mcp_server.server - INFO - Enabled subagents: gemini, claude, codex
+2026-04-09 16:23:30,864 - asyncio - DEBUG - Using selector: KqueueSelector
+2026-04-09 16:23:30,876 - mcp.server.lowlevel.server - DEBUG - Received message: root=InitializedNotification(method='notifications/initialized', params=None, jsonrpc='2.0')
+2026-04-09 16:23:30,878 - mcp.server.lowlevel.server - DEBUG - Received message: <mcp.shared.session.RequestResponder object at 0x10488da60>
+2026-04-09 16:23:30,878 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2026-04-09 16:23:30,878 - mcp.server.lowlevel.server - DEBUG - Dispatching request of type ListToolsRequest
+2026-04-09 16:23:30,879 - mcp.server.lowlevel.server - DEBUG - Response sent
+2026-04-09 16:23:30,880 - mcp.server.lowlevel.server - DEBUG - Received message: <mcp.shared.session.RequestResponder object at 0x105402480>
+2026-04-09 16:23:30,881 - mcp.server.lowlevel.server - INFO - Processing request of type ListPromptsRequest
+2026-04-09 16:23:30,881 - mcp.server.lowlevel.server - DEBUG - Dispatching request of type ListPromptsRequest
+2026-04-09 16:23:30,881 - mcp.server.lowlevel.server - DEBUG - Received message: <mcp.shared.session.RequestResponder object at 0x105f329f0>
+2026-04-09 16:23:30,882 - mcp.server.lowlevel.server - INFO - Processing request of type ListResourcesRequest
+2026-04-09 16:23:30,882 - mcp.server.lowlevel.server - DEBUG - Dispatching request of type ListResourcesRequest
+2026-04-09 16:23:30,882 - mcp.server.fastmcp.resources.resource_manager - DEBUG - Listing resources
+2026-04-09 16:23:30,882 - mcp.server.lowlevel.server - DEBUG - Response sent
+2026-04-09 16:23:30,883 - mcp.server.lowlevel.server - DEBUG - Response sent
+2026-04-09 16:23:31,195 - mcp.server.lowlevel.server - DEBUG - Initializing server 'roundtable-ai'
+2026-04-09 16:23:31,195 - mcp.server.lowlevel.server - DEBUG - Registering handler for ListToolsRequest
+2026-04-09 16:23:31,196 - mcp.server.lowlevel.server - DEBUG - Registering handler for CallToolRequest
+2026-04-09 16:23:31,196 - mcp.server.lowlevel.server - DEBUG - Registering handler for ListResourcesRequest
+2026-04-09 16:23:31,196 - mcp.server.lowlevel.server - DEBUG - Registering handler for ReadResourceRequest
+2026-04-09 16:23:31,196 - mcp.server.lowlevel.server - DEBUG - Registering handler for PromptListRequest
+2026-04-09 16:23:31,196 - mcp.server.lowlevel.server - DEBUG - Registering handler for GetPromptRequest
+2026-04-09 16:23:31,196 - mcp.server.lowlevel.server - DEBUG - Registering handler for ListResourceTemplatesRequest
+2026-04-09 16:23:31,204 - roundtable_mcp_server.server - INFO - Verbose: False
+2026-04-09 16:23:31,204 - roundtable_mcp_server.server - INFO - Using subagents from environment variable: ['claude', 'codex', 'gemini']
+2026-04-09 16:23:31,204 - roundtable_mcp_server.server - INFO - Initializing Roundtable AI MCP Server
+2026-04-09 16:23:31,204 - roundtable_mcp_server.server - INFO - Enabled subagents: codex, gemini, claude
+2026-04-09 16:23:31,204 - roundtable_mcp_server.server - INFO - Working directory: /Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab1
+2026-04-09 16:23:31,204 - roundtable_mcp_server.server - INFO - Verbose: False
+2026-04-09 16:23:31,204 - roundtable_mcp_server.server - INFO - ============================================================
+2026-04-09 16:23:31,204 - roundtable_mcp_server.server - INFO - Roundtable AI MCP Server vunknown starting at 2026-04-09 16:23:31.204585
+2026-04-09 16:23:31,204 - roundtable_mcp_server.server - INFO - ============================================================
+2026-04-09 16:23:31,204 - roundtable_mcp_server.server - INFO - Enabled subagents: codex, gemini, claude
+2026-04-09 16:23:31,206 - asyncio - DEBUG - Using selector: KqueueSelector
+2026-04-09 16:23:31,209 - mcp.server.lowlevel.server - DEBUG - Received message: root=InitializedNotification(method='notifications/initialized', params=None, jsonrpc='2.0')
+2026-04-09 16:23:31,210 - mcp.server.lowlevel.server - DEBUG - Received message: <mcp.shared.session.RequestResponder object at 0x12214eff0>
+2026-04-09 16:23:31,210 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2026-04-09 16:23:31,210 - mcp.server.lowlevel.server - DEBUG - Dispatching request of type ListToolsRequest
+2026-04-09 16:23:31,210 - mcp.server.lowlevel.server - DEBUG - Response sent
+2026-04-09 16:23:31,210 - mcp.server.lowlevel.server - DEBUG - Received message: <mcp.shared.session.RequestResponder object at 0x121de0f50>
+2026-04-09 16:23:31,210 - mcp.server.lowlevel.server - INFO - Processing request of type ListPromptsRequest
+2026-04-09 16:23:31,210 - mcp.server.lowlevel.server - DEBUG - Dispatching request of type ListPromptsRequest
+2026-04-09 16:23:31,211 - mcp.server.lowlevel.server - DEBUG - Received message: <mcp.shared.session.RequestResponder object at 0x122395460>
+2026-04-09 16:23:31,211 - mcp.server.lowlevel.server - INFO - Processing request of type ListResourcesRequest
+2026-04-09 16:23:31,211 - mcp.server.lowlevel.server - DEBUG - Dispatching request of type ListResourcesRequest
+2026-04-09 16:23:31,211 - mcp.server.fastmcp.resources.resource_manager - DEBUG - Listing resources
+2026-04-09 16:23:31,211 - mcp.server.lowlevel.server - DEBUG - Response sent
+2026-04-09 16:23:31,211 - mcp.server.lowlevel.server - DEBUG - Response sent
+2026-04-09 16:23:31,215 - mcp.server.lowlevel.server - DEBUG - Initializing server 'roundtable-ai'
+2026-04-09 16:23:31,215 - mcp.server.lowlevel.server - DEBUG - Registering handler for ListToolsRequest
+2026-04-09 16:23:31,215 - mcp.server.lowlevel.server - DEBUG - Registering handler for CallToolRequest
+2026-04-09 16:23:31,215 - mcp.server.lowlevel.server - DEBUG - Registering handler for ListResourcesRequest
+2026-04-09 16:23:31,215 - mcp.server.lowlevel.server - DEBUG - Registering handler for ReadResourceRequest
+2026-04-09 16:23:31,215 - mcp.server.lowlevel.server - DEBUG - Registering handler for PromptListRequest
+2026-04-09 16:23:31,215 - mcp.server.lowlevel.server - DEBUG - Registering handler for GetPromptRequest
+2026-04-09 16:23:31,215 - mcp.server.lowlevel.server - DEBUG - Registering handler for ListResourceTemplatesRequest
+2026-04-09 16:23:31,224 - roundtable_mcp_server.server - INFO - Verbose: False
+2026-04-09 16:23:31,225 - roundtable_mcp_server.server - INFO - Using subagents from environment variable: ['claude', 'codex', 'gemini']
+2026-04-09 16:23:31,225 - roundtable_mcp_server.server - INFO - Initializing Roundtable AI MCP Server
+2026-04-09 16:23:31,225 - roundtable_mcp_server.server - INFO - Enabled subagents: codex, claude, gemini
+2026-04-09 16:23:31,225 - roundtable_mcp_server.server - INFO - Working directory: /Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab1
+2026-04-09 16:23:31,225 - roundtable_mcp_server.server - INFO - Verbose: False
+2026-04-09 16:23:31,225 - roundtable_mcp_server.server - INFO - ============================================================
+2026-04-09 16:23:31,225 - roundtable_mcp_server.server - INFO - Roundtable AI MCP Server vunknown starting at 2026-04-09 16:23:31.225320
+2026-04-09 16:23:31,225 - roundtable_mcp_server.server - INFO - ============================================================
+2026-04-09 16:23:31,225 - roundtable_mcp_server.server - INFO - Enabled subagents: codex, claude, gemini
+2026-04-09 16:23:31,227 - asyncio - DEBUG - Using selector: KqueueSelector
+2026-04-09 16:23:31,232 - mcp.server.lowlevel.server - DEBUG - Received message: root=InitializedNotification(method='notifications/initialized', params=None, jsonrpc='2.0')
+2026-04-09 16:23:31,232 - mcp.server.lowlevel.server - DEBUG - Received message: <mcp.shared.session.RequestResponder object at 0x10989a030>
+2026-04-09 16:23:31,232 - mcp.server.lowlevel.server - INFO - Processing request of type ListToolsRequest
+2026-04-09 16:23:31,233 - mcp.server.lowlevel.server - DEBUG - Dispatching request of type ListToolsRequest
+2026-04-09 16:23:31,233 - mcp.server.lowlevel.server - DEBUG - Response sent
+2026-04-09 16:23:31,233 - mcp.server.lowlevel.server - DEBUG - Received message: <mcp.shared.session.RequestResponder object at 0x109f84bf0>
+2026-04-09 16:23:31,233 - mcp.server.lowlevel.server - INFO - Processing request of type ListPromptsRequest
+2026-04-09 16:23:31,233 - mcp.server.lowlevel.server - DEBUG - Dispatching request of type ListPromptsRequest
+2026-04-09 16:23:31,233 - mcp.server.lowlevel.server - DEBUG - Received message: <mcp.shared.session.RequestResponder object at 0x109dc2420>
+2026-04-09 16:23:31,233 - mcp.server.lowlevel.server - INFO - Processing request of type ListResourcesRequest
+2026-04-09 16:23:31,233 - mcp.server.lowlevel.server - DEBUG - Dispatching request of type ListResourcesRequest
+2026-04-09 16:23:31,234 - mcp.server.fastmcp.resources.resource_manager - DEBUG - Listing resources
+2026-04-09 16:23:31,234 - mcp.server.lowlevel.server - DEBUG - Response sent
+2026-04-09 16:23:31,234 - mcp.server.lowlevel.server - DEBUG - Response sent

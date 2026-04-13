@@ -1,0 +1,57 @@
+[
+  {
+    "size": "32x32x32",
+    "version": "v1_python",
+    "avg_time_sec": 0.0008067295,
+    "median_time_sec": 0.0008067295,
+    "checksum": 248.453016491,
+    "relative_speedup": 1.0,
+    "absolute_speedup": 1.0,
+    "gflops": 0.08123664747601271,
+    "peak_percent": 0.0
+  },
+  {
+    "size": "32x32x32",
+    "version": "v2_cpp_baseline",
+    "avg_time_sec": 4.5583e-05,
+    "median_time_sec": 4.5583e-05,
+    "checksum": 248.453016491,
+    "relative_speedup": 17.698034354913016,
+    "absolute_speedup": 17.698034354913016,
+    "gflops": 1.4377289779084308,
+    "peak_percent": 0.0
+  },
+  {
+    "size": "32x32x32",
+    "version": "v3_cpp_loop_reorder",
+    "avg_time_sec": 3.9875e-05,
+    "median_time_sec": 3.9875e-05,
+    "checksum": 248.453016491,
+    "relative_speedup": 1.1431473354231976,
+    "absolute_speedup": 20.231460815047022,
+    "gflops": 1.6435360501567398,
+    "peak_percent": 0.0
+  },
+  {
+    "size": "32x32x32",
+    "version": "v4_cpp_optimized",
+    "avg_time_sec": 5.5e-06,
+    "median_time_sec": 5.5e-06,
+    "checksum": 248.453016491,
+    "relative_speedup": 7.25,
+    "absolute_speedup": 146.6780909090909,
+    "gflops": 11.915636363636365,
+    "peak_percent": 0.0
+  },
+  {
+    "size": "32x32x32",
+    "version": "v5_cpp_unrolled",
+    "avg_time_sec": 4.875e-06,
+    "median_time_sec": 4.875e-06,
+    "checksum": 248.453016491,
+    "relative_speedup": 1.1282051282051282,
+    "absolute_speedup": 165.48297435897436,
+    "gflops": 13.44328205128205,
+    "peak_percent": 0.0
+  }
+]

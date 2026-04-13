@@ -1,0 +1,377 @@
+[
+  {
+    "processes": 1,
+    "matrix_size": 128,
+    "m": 128,
+    "n": 128,
+    "k": 128,
+    "avg_time_sec": 0.0011573333333333333,
+    "min_time_sec": 0.001123,
+    "max_time_sec": 0.001195,
+    "all_times": [
+      0.001195,
+      0.001123,
+      0.001154
+    ]
+  },
+  {
+    "processes": 1,
+    "matrix_size": 256,
+    "m": 256,
+    "n": 256,
+    "k": 256,
+    "avg_time_sec": 0.011331666666666665,
+    "min_time_sec": 0.011247,
+    "max_time_sec": 0.01143,
+    "all_times": [
+      0.01143,
+      0.011247,
+      0.011318
+    ]
+  },
+  {
+    "processes": 1,
+    "matrix_size": 512,
+    "m": 512,
+    "n": 512,
+    "k": 512,
+    "avg_time_sec": 0.11736033333333333,
+    "min_time_sec": 0.116601,
+    "max_time_sec": 0.117786,
+    "all_times": [
+      0.117694,
+      0.116601,
+      0.117786
+    ]
+  },
+  {
+    "processes": 1,
+    "matrix_size": 1024,
+    "m": 1024,
+    "n": 1024,
+    "k": 1024,
+    "avg_time_sec": 0.9727896666666668,
+    "min_time_sec": 0.968279,
+    "max_time_sec": 0.979381,
+    "all_times": [
+      0.970709,
+      0.968279,
+      0.979381
+    ]
+  },
+  {
+    "processes": 1,
+    "matrix_size": 2048,
+    "m": 2048,
+    "n": 2048,
+    "k": 2048,
+    "avg_time_sec": 21.506174666666666,
+    "min_time_sec": 21.401186,
+    "max_time_sec": 21.643756,
+    "all_times": [
+      21.643756,
+      21.473582,
+      21.401186
+    ]
+  },
+  {
+    "processes": 2,
+    "matrix_size": 128,
+    "m": 128,
+    "n": 128,
+    "k": 128,
+    "avg_time_sec": 0.0029133333333333333,
+    "min_time_sec": 0.002444,
+    "max_time_sec": 0.003244,
+    "all_times": [
+      0.003244,
+      0.002444,
+      0.003052
+    ]
+  },
+  {
+    "processes": 2,
+    "matrix_size": 256,
+    "m": 256,
+    "n": 256,
+    "k": 256,
+    "avg_time_sec": 0.007948,
+    "min_time_sec": 0.007825,
+    "max_time_sec": 0.008106,
+    "all_times": [
+      0.007825,
+      0.008106,
+      0.007913
+    ]
+  },
+  {
+    "processes": 2,
+    "matrix_size": 512,
+    "m": 512,
+    "n": 512,
+    "k": 512,
+    "avg_time_sec": 0.06434966666666667,
+    "min_time_sec": 0.06371,
+    "max_time_sec": 0.064708,
+    "all_times": [
+      0.064708,
+      0.064631,
+      0.06371
+    ]
+  },
+  {
+    "processes": 2,
+    "matrix_size": 1024,
+    "m": 1024,
+    "n": 1024,
+    "k": 1024,
+    "avg_time_sec": 0.67016,
+    "min_time_sec": 0.64877,
+    "max_time_sec": 0.683168,
+    "all_times": [
+      0.64877,
+      0.678542,
+      0.683168
+    ]
+  },
+  {
+    "processes": 2,
+    "matrix_size": 2048,
+    "m": 2048,
+    "n": 2048,
+    "k": 2048,
+    "avg_time_sec": 20.784325666666664,
+    "min_time_sec": 20.321803,
+    "max_time_sec": 21.610377,
+    "all_times": [
+      20.321803,
+      21.610377,
+      20.420797
+    ]
+  },
+  {
+    "processes": 4,
+    "matrix_size": 128,
+    "m": 128,
+    "n": 128,
+    "k": 128,
+    "avg_time_sec": 0.0022346666666666665,
+    "min_time_sec": 0.001796,
+    "max_time_sec": 0.00255,
+    "all_times": [
+      0.00255,
+      0.001796,
+      0.002358
+    ]
+  },
+  {
+    "processes": 4,
+    "matrix_size": 256,
+    "m": 256,
+    "n": 256,
+    "k": 256,
+    "avg_time_sec": 0.006679666666666667,
+    "min_time_sec": 0.005545,
+    "max_time_sec": 0.007317,
+    "all_times": [
+      0.005545,
+      0.007317,
+      0.007177
+    ]
+  },
+  {
+    "processes": 4,
+    "matrix_size": 512,
+    "m": 512,
+    "n": 512,
+    "k": 512,
+    "avg_time_sec": 0.041368999999999996,
+    "min_time_sec": 0.040269,
+    "max_time_sec": 0.042827,
+    "all_times": [
+      0.041011,
+      0.040269,
+      0.042827
+    ]
+  },
+  {
+    "processes": 4,
+    "matrix_size": 1024,
+    "m": 1024,
+    "n": 1024,
+    "k": 1024,
+    "avg_time_sec": 0.4880093333333333,
+    "min_time_sec": 0.481578,
+    "max_time_sec": 0.495515,
+    "all_times": [
+      0.481578,
+      0.495515,
+      0.486935
+    ]
+  },
+  {
+    "processes": 4,
+    "matrix_size": 2048,
+    "m": 2048,
+    "n": 2048,
+    "k": 2048,
+    "avg_time_sec": 13.561144666666666,
+    "min_time_sec": 13.528668,
+    "max_time_sec": 13.588461,
+    "all_times": [
+      13.528668,
+      13.566305,
+      13.588461
+    ]
+  },
+  {
+    "processes": 8,
+    "matrix_size": 128,
+    "m": 128,
+    "n": 128,
+    "k": 128,
+    "avg_time_sec": 0.001808,
+    "min_time_sec": 0.001653,
+    "max_time_sec": 0.002058,
+    "all_times": [
+      0.002058,
+      0.001653,
+      0.001713
+    ]
+  },
+  {
+    "processes": 8,
+    "matrix_size": 256,
+    "m": 256,
+    "n": 256,
+    "k": 256,
+    "avg_time_sec": 0.010139,
+    "min_time_sec": 0.008714,
+    "max_time_sec": 0.01114,
+    "all_times": [
+      0.008714,
+      0.01114,
+      0.010563
+    ]
+  },
+  {
+    "processes": 8,
+    "matrix_size": 512,
+    "m": 512,
+    "n": 512,
+    "k": 512,
+    "avg_time_sec": 0.045991666666666674,
+    "min_time_sec": 0.042135,
+    "max_time_sec": 0.053169,
+    "all_times": [
+      0.042671,
+      0.042135,
+      0.053169
+    ]
+  },
+  {
+    "processes": 8,
+    "matrix_size": 1024,
+    "m": 1024,
+    "n": 1024,
+    "k": 1024,
+    "avg_time_sec": 0.520265,
+    "min_time_sec": 0.489793,
+    "max_time_sec": 0.544415,
+    "all_times": [
+      0.489793,
+      0.526587,
+      0.544415
+    ]
+  },
+  {
+    "processes": 8,
+    "matrix_size": 2048,
+    "m": 2048,
+    "n": 2048,
+    "k": 2048,
+    "avg_time_sec": 10.541986333333334,
+    "min_time_sec": 10.369384,
+    "max_time_sec": 10.727852,
+    "all_times": [
+      10.369384,
+      10.528723,
+      10.727852
+    ]
+  },
+  {
+    "processes": 16,
+    "matrix_size": 128,
+    "m": 128,
+    "n": 128,
+    "k": 128,
+    "avg_time_sec": 0.003755,
+    "min_time_sec": 0.003514,
+    "max_time_sec": 0.003876,
+    "all_times": [
+      0.003876,
+      0.003875,
+      0.003514
+    ]
+  },
+  {
+    "processes": 16,
+    "matrix_size": 256,
+    "m": 256,
+    "n": 256,
+    "k": 256,
+    "avg_time_sec": 0.009966333333333334,
+    "min_time_sec": 0.008283,
+    "max_time_sec": 0.011656,
+    "all_times": [
+      0.011656,
+      0.00996,
+      0.008283
+    ]
+  },
+  {
+    "processes": 16,
+    "matrix_size": 512,
+    "m": 512,
+    "n": 512,
+    "k": 512,
+    "avg_time_sec": 0.060794666666666664,
+    "min_time_sec": 0.058598,
+    "max_time_sec": 0.062295,
+    "all_times": [
+      0.058598,
+      0.061491,
+      0.062295
+    ]
+  },
+  {
+    "processes": 16,
+    "matrix_size": 1024,
+    "m": 1024,
+    "n": 1024,
+    "k": 1024,
+    "avg_time_sec": 0.6617466666666667,
+    "min_time_sec": 0.634559,
+    "max_time_sec": 0.681314,
+    "all_times": [
+      0.634559,
+      0.681314,
+      0.669367
+    ]
+  },
+  {
+    "processes": 16,
+    "matrix_size": 2048,
+    "m": 2048,
+    "n": 2048,
+    "k": 2048,
+    "avg_time_sec": 10.192804,
+    "min_time_sec": 10.061561,
+    "max_time_sec": 10.297161,
+    "all_times": [
+      10.061561,
+      10.21969,
+      10.297161
+    ]
+  }
+]

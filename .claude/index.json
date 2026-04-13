@@ -1,0 +1,143 @@
+{
+  "timestamp": "2026-04-03T12:40:33",
+  "root": {
+    "path": ".",
+    "claude_md": "CLAUDE.md",
+    "summary": "Parallel Programming and Algorithms 课程仓库，当前重点包含 lab0 串行矩阵乘法优化实验与 lab1 MPI 并行矩阵乘法实验。"
+  },
+  "modules": [
+    {
+      "name": "lab0",
+      "path": "lab/lab0",
+      "claude_md": "lab/lab0/CLAUDE.md",
+      "language": ["Python", "C++17", "Shell", "Docker"],
+      "entrypoints": [
+        "lab/lab0/scripts/run_matrix_mul_unified",
+        "lab/lab0/scripts/build_lab1.sh",
+        "lab/lab0/src/v1_python.py",
+        "lab/lab0/src/v2_cpp_baseline.cpp",
+        "lab/lab0/src/v3_cpp_loop_reorder.cpp",
+        "lab/lab0/src/v4_cpp_optimized.cpp",
+        "lab/lab0/src/v5_cpp_unrolled.cpp",
+        "lab/lab0/src/v6_mkl.cpp"
+      ],
+      "interfaces": [
+        "run_matrix_mul_unified <version> <m> <n> <k> [seed] [--dump]",
+        "benchmark_lab1_unified.py --sizes ... --repeat ... [--include-mkl] [--v6-mode docker|local]"
+      ],
+      "tests": [
+        "lab/lab0/tests/test_submission_finalize.py"
+      ],
+      "important_paths": [
+        "lab/lab0/src/matmul_common.hpp",
+        "lab/lab0/scripts/run_matrix_mul",
+        "lab/lab0/scripts/benchmark_lab1.py",
+        "lab/lab0/scripts/run_v6_docker.sh",
+        "lab/lab0/docker/v6-mkl.Dockerfile",
+        "lab/lab0/results/report_benchmark.json"
+      ],
+      "coverage": {
+        "estimated_files": 24,
+        "scanned_files": 18,
+        "percent": 75.0
+      },
+      "gaps": [
+        "缺少细粒度数值单元测试",
+        "Docker/MKL 路径无独立自动测试",
+        "历史命名 lab1 与目录 lab0 不一致，容易误读"
+      ]
+    },
+    {
+      "name": "lab1",
+      "path": "lab/lab1",
+      "claude_md": "lab/lab1/CLAUDE.md",
+      "language": ["C++17", "MPI", "Python"],
+      "entrypoints": [
+        "lab/lab1/Makefile",
+        "lab/lab1/src/mpi_matmul_v1.cpp",
+        "lab/lab1/scripts/benchmark.py"
+      ],
+      "interfaces": [
+        "mpirun -np <procs> ./lab/lab1/bin/mpi_matmul_v1 <m> <n> <k> [seed] [--dump]"
+      ],
+      "tests": [],
+      "important_paths": [
+        "lab/lab1/src/matmul_mpi.hpp",
+        "lab/lab1/results/benchmark_results.json",
+        "lab/lab1/results/performance_table.csv",
+        "lab/lab1/report/lab1_report.tex"
+      ],
+      "coverage": {
+        "estimated_files": 8,
+        "scanned_files": 6,
+        "percent": 75.0
+      },
+      "gaps": [
+        "缺少独立 tests 目录",
+        "缺少非整除切分与异常输入回归测试",
+        "缺少 collective 通信版本对照实现"
+      ]
+    }
+  ],
+  "coverage_summary": {
+    "estimated_total_files": 32,
+    "scanned_files": 24,
+    "percent": 75.0
+  },
+  "ignored": {
+    "rules_source": "default-only",
+    "rules": [
+      "node_modules/**",
+      ".git/**",
+      ".github/**",
+      "dist/**",
+      "build/**",
+      ".next/**",
+      "__pycache__/**",
+      "*.lock",
+      "*.log",
+      "*.bin",
+      "*.pdf",
+      "*.png",
+      "*.jpg",
+      "*.jpeg",
+      "*.gif",
+      "*.mp4",
+      "*.zip",
+      "*.tar",
+      "*.gz"
+    ],
+    "top_skipped": [
+      {
+        "path": ".git",
+        "reason": "ignored by default rule"
+      },
+      {
+        "path": "lab/lab0/bin",
+        "reason": "binary build artifacts"
+      },
+      {
+        "path": "lab/lab1/bin",
+        "reason": "binary build artifacts"
+      },
+      {
+        "path": "lab/lab0/report/*.aux|*.out|*.fls|*.xdv|*.log|*.pdf|*.fdb_latexmk",
+        "reason": "generated report artifacts"
+      },
+      {
+        "path": "lab/lab1/report/*.aux|*.out|*.fls|*.xdv|*.log|*.pdf|*.fdb_latexmk",
+        "reason": "generated report artifacts"
+      },
+      {
+        "path": "*.pdf/*.pptx/*.docx",
+        "reason": "course materials and binary documents"
+      }
+    ]
+  },
+  "gaps_todo": [
+    "优先补扫 lab/lab0/src 其余版本源码中的实现差异说明",
+    "优先补扫 lab/lab1/report/lab1_report.tex 以补充实验结论摘要",
+    "如后续需要更严格文档，可补录课程资料与报告中的性能分析结论"
+  ],
+  "truncated": false
+}

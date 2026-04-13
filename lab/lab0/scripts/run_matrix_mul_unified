@@ -1,0 +1,39 @@
+#!/bin/zsh
+
+set -euo pipefail
+
+if [[ $# -lt 4 ]]; then
+    echo "usage: run_matrix_mul_unified <version> <m> <n> <k> [seed] [--dump]" >&2
+    exit 1
+fi
+
+ROOT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
+BIN_DIR="$ROOT_DIR/bin"
+SCRIPT_DIR="$ROOT_DIR/scripts"
+VERSION="$1"
+shift
+
+case "$VERSION" in
+    v1_python)
+        exec python3 "$SCRIPT_DIR/v1_python_embedded.py" "$@"
+        ;;
+    v2_cpp_baseline|v3_cpp_loop_reorder|v4_cpp_optimized|v5_cpp_unrolled)
+        if [[ ! -x "$BIN_DIR/$VERSION" ]]; then
+            "$ROOT_DIR/scripts/build_lab1.sh"
+        fi
+        exec "$BIN_DIR/$VERSION" "$@"
+        ;;
+    v6_mkl)
+        if [[ "${LAB1_V6_MODE:-docker}" == "local" ]]; then
+            if [[ ! -x "$BIN_DIR/$VERSION" ]]; then
+                "$ROOT_DIR/scripts/build_lab1.sh"
+            fi
+            exec "$BIN_DIR/$VERSION" "$@"
+        fi
+        exec "$ROOT_DIR/scripts/run_v6_docker.sh" "$@"
+        ;;
+    *)
+        echo "unsupported version: $VERSION" >&2
+        exit 1
+        ;;
+esac

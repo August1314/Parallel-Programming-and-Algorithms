@@ -1,0 +1,343 @@
+\documentclass[UTF8,a4paper,12pt]{ctexart}
+
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{fontspec}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{longtable}
+\usepackage{pgfplots}
+\usepackage{siunitx}
+\usepackage{tabularx}
+\usepackage{threeparttable}
+\usepackage{xcolor}
+
+\pgfplotsset{compat=1.18}
+\hypersetup{colorlinks=true,linkcolor=blue!60!black,urlcolor=blue!60!black}
+\defaultCJKfontfeatures{AutoFakeSlant=.2}
+\setmonofont{Menlo}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0.35em}
+
+\definecolor{AccentA}{HTML}{0B6E4F}
+\definecolor{AccentB}{HTML}{1D4E89}
+\definecolor{AccentC}{HTML}{F4A259}
+\definecolor{AccentD}{HTML}{C73E1D}
+\definecolor{AccentE}{HTML}{7A306C}
+\definecolor{CodeBg}{HTML}{F7F7F7}
+
+\lstset{
+  basicstyle=\ttfamily\small,
+  backgroundcolor=\color{CodeBg},
+  frame=single,
+  framerule=0pt,
+  xleftmargin=1em,
+  xrightmargin=1em,
+  breaklines=true,
+  columns=fullflexible,
+  keywordstyle=\color{AccentB}\bfseries,
+  commentstyle=\color{AccentA},
+  stringstyle=\color{AccentD},
+  showstringspaces=false
+}
+
+\title{\heiti 中山大学计算机院本科生实验报告}
+\author{}
+\date{}
+
+\begin{document}
+
+\begin{titlepage}
+  \centering
+  {\zihao{2}\bfseries 中山大学计算机院本科生实验报告\par}
+  \vspace{0.5em}
+  {\zihao{4}（2025学年春季学期）\par}
+  \vspace{2em}
+
+  \begin{tabularx}{0.9\textwidth}{>{\bfseries}p{4cm}X}
+    课程名称： & 并行程序设计与算法 \\
+    实验题目： & Lab0 环境设置与串行矩阵乘法 \\
+    批改人： & \\
+    专业（方向）： & \\
+    学号： & 23336128 \\
+    姓名： & 梁力航 \\
+    Email： & \\
+    完成日期： & 2026年4月1日 \\
+  \end{tabularx}
+
+  \vfill
+  \begin{minipage}{0.88\textwidth}
+    \small
+    本报告参考课程实验模板组织内容，围绕串行矩阵乘法的多版本实现、性能测试、结果可视化与优化分析展开。
+  \end{minipage}
+\end{titlepage}
+
+\section{实验目的}
+
+本实验的目标是实现一个可复现实验流程的串行矩阵乘法程序，并通过多版本对照分析不同实现策略对性能的影响。具体目标如下：
+
+\begin{enumerate}[leftmargin=2.2em]
+  \item 使用 \texttt{Python} 与 \texttt{C++} 分别实现基础串行矩阵乘法；
+  \item 比较循环顺序、编译优化和循环展开对缓存局部性及运行时间的影响；
+  \item 用统一随机种子、统一校验值和统一统计口径保证结果可比性；
+  \item 以表格和图表展示实验结果，并分析各版本的收益边界；
+  \item 补充 \texttt{Intel MKL} 版本在 Docker 异构环境中的运行路径，并说明该数据仅用于功能验证与接口完备性说明。
+\end{enumerate}
+
+\section{实验过程和核心代码}
+
+\subsection{实验平台与实现结构}
+
+本次实验在 \texttt{macOS arm64} 平台上完成，编译器为 \texttt{Apple clang 17.0.0}，解释器为 \texttt{Python 3.12.4}。为保证不同版本具备可比性，程序统一采用以下约束：
+
+\begin{itemize}[leftmargin=2.2em]
+  \item 统一输入协议：\texttt{m n k [seed]}；
+  \item 统一矩阵生成方式：基于相同随机种子生成双精度矩阵；
+  \item 统一结果校验：输出矩阵校验和 \texttt{checksum}；
+  \item 统一性能指标：运行时间、相对加速比、绝对加速比与 GFLOPS。
+\end{itemize}
+
+本实验共实现 6 个版本：
+
+\begin{enumerate}[leftmargin=2.2em]
+  \item \textbf{Python}：纯 Python 三重循环，作为绝对基线；
+  \item \textbf{C++基础版}：最直接的 \texttt{i-j-p} 三重循环；
+  \item \textbf{调整循环顺序}：采用 \texttt{i-p-j} 顺序，提升缓存友好性；
+  \item \textbf{编译优化}：在版本 3 基础上启用 \texttt{-O3}；
+  \item \textbf{循环展开}：在版本 4 基础上进行 4 路展开；
+  \item \textbf{Intel MKL}：使用 \texttt{cblas\_dgemm}，通过 Docker 的 \texttt{linux/amd64} oneMKL 环境获得实测结果。
+\end{enumerate}
+
+\subsection{核心代码片段}
+
+\subsubsection{基础版本：\texttt{i-j-p} 三重循环}
+
+\begin{lstlisting}[language=C++]
+for (int i = 0; i < m; ++i) {
+    for (int j = 0; j < k; ++j) {
+        double sum = 0.0;
+        for (int p = 0; p < n; ++p) {
+            sum += a[i * n + p] * b[p * k + j];
+        }
+        c[i * k + j] = sum;
+    }
+}
+\end{lstlisting}
+
+该版本逻辑最直观，但访问矩阵 \texttt{B} 时存在明显的跨行跳跃，缓存局部性较差。
+
+\subsubsection{循环重排：\texttt{i-p-j}}
+
+\begin{lstlisting}[language=C++]
+for (int i = 0; i < m; ++i) {
+    for (int p = 0; p < n; ++p) {
+        const double a_ip = a[i * n + p];
+        for (int j = 0; j < k; ++j) {
+            c[i * k + j] += a_ip * b[p * k + j];
+        }
+    }
+}
+\end{lstlisting}
+
+经过循环重排后，\texttt{B} 和 \texttt{C} 的访问模式更接近顺序扫描，因此缓存命中率显著提高。
+
+\subsubsection{循环展开}
+
+\begin{lstlisting}[language=C++]
+for (int j = 0; j + 3 < k; j += 4) {
+    c[c_row + j]     += a_ip * b[b_row + j];
+    c[c_row + j + 1] += a_ip * b[b_row + j + 1];
+    c[c_row + j + 2] += a_ip * b[b_row + j + 2];
+    c[c_row + j + 3] += a_ip * b[b_row + j + 3];
+}
+\end{lstlisting}
+
+循环展开可以减少分支判断与循环控制开销，但在现代编译器已做较强自动优化时，额外收益通常不会像 \texttt{-O3} 那样显著。
+
+\subsection{正确性验证方法}
+
+本实验采用固定随机种子 \texttt{20250401} 生成输入矩阵。不同版本在同一输入上的输出校验值应保持一致。以主实验规模 \texttt{512} $\times$ \texttt{512} $\times$ \texttt{512} 为例，宿主机原生版本 \texttt{v1-v5} 的校验值统一为：
+
+\begin{center}
+\fbox{\parbox{0.82\textwidth}{\centering
+\texttt{checksum = -6740.486084331}
+}}
+\end{center}
+
+这说明宿主机原生的版本 1 至版本 5 在数值上保持一致，性能对比具有有效性。版本 6 在 Docker 的 \texttt{linux/amd64} 异构环境下得到 \texttt{checksum = -6740.486084332}，与原生结果在当前输出精度和比较容差下保持一致，可用于确认实现正确，但不参与严格公平的原生性能比较。
+
+\section{实验结果}
+
+\subsection{主实验结果汇总}
+
+主实验采用矩阵规模 \texttt{512} $\times$ \texttt{512} $\times$ \texttt{512}，每个版本重复执行 3 次，取平均时间。由于当前设备峰值浮点性能未进行严格标定，表中的“峰值性能百分比”统一记为 \texttt{N/A}，避免伪精确。
+
+\begin{table}[H]
+  \centering
+  \caption{主实验结果汇总（512\,$\times$\,512\,$\times$\,512）}
+  \begin{threeparttable}
+    \small
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabularx}{\textwidth}{
+      >{\centering\arraybackslash}m{0.8cm}
+      >{\raggedright\arraybackslash}X
+      >{\centering\arraybackslash}m{1.55cm}
+      >{\centering\arraybackslash}m{1.65cm}
+      >{\centering\arraybackslash}m{1.65cm}
+      >{\centering\arraybackslash}m{1.4cm}
+      >{\centering\arraybackslash}m{1.1cm}
+    }
+      \toprule
+      版本 & 实现描述 & \shortstack{运行时间\\(s)} & \shortstack{相对\\加速比} & \shortstack{绝对\\加速比} & \shortstack{GF\\LOPS} & \shortstack{峰值\\\%} \\
+      \midrule
+      1 & Python & 4.7499 & 1.0000 & 1.0000 & 0.0565 & N/A \\
+      2 & C++基础版 & 0.4252 & 11.1723 & 11.1723 & 0.6314 & N/A \\
+      3 & 调整循环顺序 & 0.1533 & 2.7738 & 30.9894 & 1.7513 & N/A \\
+      4 & 编译优化（-O3） & 0.0178 & 8.6290 & 267.4082 & 15.1123 & N/A \\
+      5 & 循环展开 & 0.0177 & 1.0055 & 268.8763 & 15.1952 & N/A \\
+      6 & Intel MKL（Docker/x86\_64）\tnote{a} & 0.2656 & 0.0665 & 17.8829 & 1.0106 & N/A \\
+      \bottomrule
+    \end{tabularx}
+    \begin{tablenotes}[flushleft]
+      \footnotesize
+      \item[a] 当前机器为 Apple Silicon（Apple M4 / macOS arm64）。Intel 官方 macOS oneMKL 路线面向 Intel 64，且 oneAPI 2024.0 起不再支持 macOS。因此，版本 6 通过 Docker 的 \texttt{linux/amd64} 仿真环境运行 x86\_64 Linux 版 oneMKL 得到。该次实测在 \texttt{512}$\times$\texttt{512}$\times$\texttt{512} 下耗时 \num{0.2656} 秒，校验值为 \texttt{-6740.486084332}，仅用于功能完成与接口验证，不与本机原生版本 1--5 做严格公平的性能比较。
+    \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+\subsection{可视化结果}
+
+由于 \texttt{v6\_mkl} 来自 Docker 的 \texttt{linux/amd64} 异构环境，为避免混入口径不一致的数据，以下图表仅展示宿主机原生版本的可比结果。
+
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+      width=0.94\textwidth,
+      height=7.2cm,
+      ybar,
+      bar width=14pt,
+      ylabel={运行时间（秒，对数坐标）},
+      xlabel={版本},
+      ymode=log,
+      log basis y=10,
+      symbolic x coords={Python,C++基础版,调整循环顺序,编译优化,循环展开},
+      xtick=data,
+      x tick label style={rotate=15,anchor=east,font=\small},
+      ymin=0.01,
+      ymax=10,
+      nodes near coords,
+      nodes near coords align={vertical},
+      every node near coord/.append style={font=\scriptsize, rotate=90, anchor=west},
+      enlarge x limits=0.08,
+      grid=both,
+      minor grid style={draw=gray!15},
+      major grid style={draw=gray!30}
+    ]
+      \addplot[fill=AccentB!75, draw=AccentB!90] coordinates {
+        (Python,4.7499)
+        (C++基础版,0.4252)
+        (调整循环顺序,0.1533)
+        (编译优化,0.0178)
+        (循环展开,0.0177)
+      };
+    \end{axis}
+  \end{tikzpicture}
+  \caption{各版本运行时间对比（对数坐标）}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+      width=0.94\textwidth,
+      height=7.2cm,
+      ybar,
+      bar width=14pt,
+      ylabel={相对 Python 的绝对加速比（对数坐标）},
+      xlabel={版本},
+      ymode=log,
+      log basis y=10,
+      symbolic x coords={Python,C++基础版,调整循环顺序,编译优化,循环展开},
+      xtick=data,
+      x tick label style={rotate=15,anchor=east,font=\small},
+      ymin=1,
+      ymax=400,
+      nodes near coords,
+      nodes near coords align={vertical},
+      every node near coord/.append style={font=\scriptsize, rotate=90, anchor=west},
+      enlarge x limits=0.08,
+      grid=both,
+      minor grid style={draw=gray!15},
+      major grid style={draw=gray!30}
+    ]
+      \addplot[fill=AccentC!80, draw=AccentD!90] coordinates {
+        (Python,1.0000)
+        (C++基础版,11.1723)
+        (调整循环顺序,30.9894)
+        (编译优化,267.4082)
+        (循环展开,268.8763)
+      };
+    \end{axis}
+  \end{tikzpicture}
+  \caption{各版本相对 Python 的绝对加速比}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+      width=0.94\textwidth,
+      height=7.6cm,
+      xlabel={矩阵规模（方阵边长）},
+      ylabel={GFLOPS},
+      xmin=480, xmax=1056,
+      ymin=0, ymax=17,
+      xtick={512,768,1024},
+      legend style={at={(0.5,1.02)},anchor=south,legend columns=4,draw=none,font=\small},
+      grid=major,
+      line width=1pt,
+      mark size=2.8pt
+    ]
+      \addplot[color=AccentB,mark=*] coordinates {(512,0.6256) (768,0.9983) (1024,0.5782)};
+      \addlegendentry{C++基础版}
+      \addplot[color=AccentA,mark=square*] coordinates {(512,1.7632) (768,1.7645) (1024,1.7703)};
+      \addlegendentry{调整循环顺序}
+      \addplot[color=AccentD,mark=triangle*] coordinates {(512,15.0539) (768,14.9698) (1024,15.0365)};
+      \addlegendentry{编译优化}
+      \addplot[color=AccentE,mark=diamond*] coordinates {(512,14.9927) (768,14.9681) (1024,14.9858)};
+      \addlegendentry{循环展开}
+    \end{axis}
+  \end{tikzpicture}
+  \caption{C++ 各优化版本在不同规模下的 GFLOPS 变化}
+\end{figure}
+
+\subsection{结果分析}
+
+\begin{enumerate}[leftmargin=2.2em]
+  \item \textbf{Python 与 C++ 的差距极大。} 在 $512^3$ 规模下，Python 版本平均耗时约 \SI{4.75}{\second}，而最直接的 C++ 实现仅需 \SI{0.43}{\second}，绝对加速比达到约 \num{11.17}。这说明解释器开销对数值密集型三重循环影响非常明显。
+
+  \item \textbf{循环顺序优化带来了稳定而显著的收益。} 从版本 2 到版本 3，运行时间由 \SI{0.4252}{\second} 降至 \SI{0.1533}{\second}，相对加速比约为 \num{2.77}。其根本原因是 \texttt{i-p-j} 顺序使矩阵 \texttt{B} 和 \texttt{C} 的访问更连续，显著改善缓存局部性。
+
+  \item \textbf{编译优化是收益最大的单次改动。} 从版本 3 到版本 4，时间进一步降至 \SI{0.0178}{\second}，相对加速比达到 \num{8.63}，GFLOPS 从 \num{1.75} 提升到 \num{15.11}。这表明编译器在指令级优化、寄存器分配和循环层面优化方面的能力非常强。
+
+  \item \textbf{手工循环展开的边际收益有限。} 版本 5 相对版本 4 的加速比仅为 \num{1.0055}，说明在当前编译器和硬件环境下，\texttt{-O3} 已经完成了大部分关键优化，继续手工展开只能带来非常有限的收益。
+
+  \item \textbf{优化版本的 GFLOPS 随规模变化较稳定。} 从图 3 可见，版本 4 和版本 5 在 \texttt{512}、\texttt{768}、\texttt{1024} 三组规模下均维持在约 \num{15} GFLOPS，说明该实现已较充分利用当前平台的串行浮点能力；而未优化版本明显更受访存模式和指令效率制约。
+
+  \item \textbf{MKL 版本已在 Docker 异构环境中跑通，但不能按原生口径比较。} 当前机器为 \texttt{Apple M4 / macOS arm64}。Intel 官方 macOS oneMKL 路线面向 \texttt{Intel 64}，且从 \texttt{oneAPI 2024.0} 起已停止 macOS 支持。因此，版本 6 只能通过 Docker 的 \texttt{linux/amd64} 仿真容器运行 Linux 版 oneMKL。本实验已在该环境下得到正确结果，\texttt{checksum} 在当前输出精度和比较容差下与原生版本保持一致，但由于运行环境异构，表中的时间、GFLOPS 和加速比只表示“在仿真环境中能完成计算”，不应与宿主机原生版本 1--5 做严格公平的性能比较。
+\end{enumerate}
+
+\section{实验感想}
+
+本次实验最直接的体会是：矩阵乘法这类数值计算问题看似“算法固定”，但工程实现细节会带来数量级上的性能差异。仅仅把 Python 切换到 C++，性能就获得了十倍以上提升；而在 C++ 中进一步调整循环顺序，又能仅凭缓存友好性获得接近三倍收益。真正将性能推到一个更高水平的，是编译器优化与底层代码生成能力。
+
+另一个值得注意的结论是，手工优化并不总是越多越好。在本实验环境中，循环展开只比 \texttt{-O3} 略快，说明现代编译器已经能够自动完成大量低层优化。相比盲目堆叠技巧，更重要的是先定位瓶颈，再做有针对性的优化。
+
+最后，性能实验必须建立在正确性一致的基础上。本次实验通过统一随机种子与校验和比较，确保宿主机原生版本在数值上保持一致，并确认 \texttt{v6\_mkl} 在 Docker 异构环境下也通过了 \texttt{checksum} 校验。只有在正确结果的前提下，性能曲线和加速比才有分析价值。
+
+\end{document}

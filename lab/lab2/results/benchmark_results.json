@@ -1,0 +1,5852 @@
+[
+  {
+    "version": "mpi_v1_p2p",
+    "processes": 1,
+    "matrix_size": 128,
+    "m": 128,
+    "n": 128,
+    "k": 128,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.0011766666666666668,
+    "all_times": [
+      0.001122,
+      0.001196,
+      0.001212
+    ],
+    "checksums": [
+      -1713.139278331,
+      -1713.139278331,
+      -1713.139278331
+    ],
+    "baseline_checksum": -1713.139278331,
+    "baseline_checksum_match": true,
+    "runs": [
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "1",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "128",
+          "128",
+          "128",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=128 n=128 k=128\nseed=20250401\nprocesses=1\ntime_sec=0.001122000\nchecksum=-1713.139278331\nmax_abs=15.378743870\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "128",
+          "n": "128",
+          "k": "128",
+          "seed": "20250401",
+          "processes": "1",
+          "time_sec": "0.001122000",
+          "checksum": "-1713.139278331",
+          "max_abs": "15.378743870"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "1",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "128",
+          "128",
+          "128",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=128 n=128 k=128\nseed=20250401\nprocesses=1\ntime_sec=0.001196000\nchecksum=-1713.139278331\nmax_abs=15.378743870\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "128",
+          "n": "128",
+          "k": "128",
+          "seed": "20250401",
+          "processes": "1",
+          "time_sec": "0.001196000",
+          "checksum": "-1713.139278331",
+          "max_abs": "15.378743870"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "1",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "128",
+          "128",
+          "128",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=128 n=128 k=128\nseed=20250401\nprocesses=1\ntime_sec=0.001212000\nchecksum=-1713.139278331\nmax_abs=15.378743870\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "128",
+          "n": "128",
+          "k": "128",
+          "seed": "20250401",
+          "processes": "1",
+          "time_sec": "0.001212000",
+          "checksum": "-1713.139278331",
+          "max_abs": "15.378743870"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "version": "mpi_v1_p2p",
+    "processes": 1,
+    "matrix_size": 256,
+    "m": 256,
+    "n": 256,
+    "k": 256,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.011286666666666667,
+    "all_times": [
+      0.011394,
+      0.011378,
+      0.011088
+    ],
+    "checksums": [
+      -1676.250020577,
+      -1676.250020577,
+      -1676.250020577
+    ],
+    "baseline_checksum": -1676.250020577,
+    "baseline_checksum_match": true,
+    "runs": [
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "1",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "256",
+          "256",
+          "256",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=256 n=256 k=256\nseed=20250401\nprocesses=1\ntime_sec=0.011394000\nchecksum=-1676.250020577\nmax_abs=24.850755690\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "256",
+          "n": "256",
+          "k": "256",
+          "seed": "20250401",
+          "processes": "1",
+          "time_sec": "0.011394000",
+          "checksum": "-1676.250020577",
+          "max_abs": "24.850755690"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "1",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "256",
+          "256",
+          "256",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=256 n=256 k=256\nseed=20250401\nprocesses=1\ntime_sec=0.011378000\nchecksum=-1676.250020577\nmax_abs=24.850755690\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "256",
+          "n": "256",
+          "k": "256",
+          "seed": "20250401",
+          "processes": "1",
+          "time_sec": "0.011378000",
+          "checksum": "-1676.250020577",
+          "max_abs": "24.850755690"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "1",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "256",
+          "256",
+          "256",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=256 n=256 k=256\nseed=20250401\nprocesses=1\ntime_sec=0.011088000\nchecksum=-1676.250020577\nmax_abs=24.850755690\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "256",
+          "n": "256",
+          "k": "256",
+          "seed": "20250401",
+          "processes": "1",
+          "time_sec": "0.011088000",
+          "checksum": "-1676.250020577",
+          "max_abs": "24.850755690"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "version": "mpi_v1_p2p",
+    "processes": 1,
+    "matrix_size": 512,
+    "m": 512,
+    "n": 512,
+    "k": 512,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.12303333333333333,
+    "all_times": [
+      0.126482,
+      0.121839,
+      0.120779
+    ],
+    "checksums": [
+      -6740.486084331,
+      -6740.486084331,
+      -6740.486084331
+    ],
+    "baseline_checksum": -6740.486084331,
+    "baseline_checksum_match": true,
+    "runs": [
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "1",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "512",
+          "512",
+          "512",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=512 n=512 k=512\nseed=20250401\nprocesses=1\ntime_sec=0.126482000\nchecksum=-6740.486084331\nmax_abs=38.559067659\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "512",
+          "n": "512",
+          "k": "512",
+          "seed": "20250401",
+          "processes": "1",
+          "time_sec": "0.126482000",
+          "checksum": "-6740.486084331",
+          "max_abs": "38.559067659"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "1",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "512",
+          "512",
+          "512",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=512 n=512 k=512\nseed=20250401\nprocesses=1\ntime_sec=0.121839000\nchecksum=-6740.486084331\nmax_abs=38.559067659\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "512",
+          "n": "512",
+          "k": "512",
+          "seed": "20250401",
+          "processes": "1",
+          "time_sec": "0.121839000",
+          "checksum": "-6740.486084331",
+          "max_abs": "38.559067659"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "1",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "512",
+          "512",
+          "512",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=512 n=512 k=512\nseed=20250401\nprocesses=1\ntime_sec=0.120779000\nchecksum=-6740.486084331\nmax_abs=38.559067659\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "512",
+          "n": "512",
+          "k": "512",
+          "seed": "20250401",
+          "processes": "1",
+          "time_sec": "0.120779000",
+          "checksum": "-6740.486084331",
+          "max_abs": "38.559067659"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "version": "mpi_v1_p2p",
+    "processes": 1,
+    "matrix_size": 1024,
+    "m": 1024,
+    "n": 1024,
+    "k": 1024,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.9976980000000001,
+    "all_times": [
+      0.998459,
+      0.992683,
+      1.001952
+    ],
+    "checksums": [
+      48910.950599938,
+      48910.950599938,
+      48910.950599938
+    ],
+    "baseline_checksum": 48910.950599938,
+    "baseline_checksum_match": true,
+    "runs": [
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "1",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "1024",
+          "1024",
+          "1024",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=1024 n=1024 k=1024\nseed=20250401\nprocesses=1\ntime_sec=0.998459000\nchecksum=48910.950599938\nmax_abs=57.427011781\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "1024",
+          "n": "1024",
+          "k": "1024",
+          "seed": "20250401",
+          "processes": "1",
+          "time_sec": "0.998459000",
+          "checksum": "48910.950599938",
+          "max_abs": "57.427011781"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "1",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "1024",
+          "1024",
+          "1024",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=1024 n=1024 k=1024\nseed=20250401\nprocesses=1\ntime_sec=0.992683000\nchecksum=48910.950599938\nmax_abs=57.427011781\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "1024",
+          "n": "1024",
+          "k": "1024",
+          "seed": "20250401",
+          "processes": "1",
+          "time_sec": "0.992683000",
+          "checksum": "48910.950599938",
+          "max_abs": "57.427011781"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "1",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "1024",
+          "1024",
+          "1024",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=1024 n=1024 k=1024\nseed=20250401\nprocesses=1\ntime_sec=1.001952000\nchecksum=48910.950599938\nmax_abs=57.427011781\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "1024",
+          "n": "1024",
+          "k": "1024",
+          "seed": "20250401",
+          "processes": "1",
+          "time_sec": "1.001952000",
+          "checksum": "48910.950599938",
+          "max_abs": "57.427011781"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "version": "mpi_v1_p2p",
+    "processes": 1,
+    "matrix_size": 2048,
+    "m": 2048,
+    "n": 2048,
+    "k": 2048,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 23.44505266666667,
+    "all_times": [
+      25.132762,
+      23.997416,
+      21.20498
+    ],
+    "checksums": [
+      -143956.491218867,
+      -143956.491218867,
+      -143956.491218867
+    ],
+    "baseline_checksum": -143956.491218867,
+    "baseline_checksum_match": true,
+    "runs": [
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "1",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "2048",
+          "2048",
+          "2048",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=2048 n=2048 k=2048\nseed=20250401\nprocesses=1\ntime_sec=25.132762000\nchecksum=-143956.491218867\nmax_abs=80.727961268\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "2048",
+          "n": "2048",
+          "k": "2048",
+          "seed": "20250401",
+          "processes": "1",
+          "time_sec": "25.132762000",
+          "checksum": "-143956.491218867",
+          "max_abs": "80.727961268"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "1",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "2048",
+          "2048",
+          "2048",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=2048 n=2048 k=2048\nseed=20250401\nprocesses=1\ntime_sec=23.997416000\nchecksum=-143956.491218867\nmax_abs=80.727961268\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "2048",
+          "n": "2048",
+          "k": "2048",
+          "seed": "20250401",
+          "processes": "1",
+          "time_sec": "23.997416000",
+          "checksum": "-143956.491218867",
+          "max_abs": "80.727961268"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "1",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "2048",
+          "2048",
+          "2048",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=2048 n=2048 k=2048\nseed=20250401\nprocesses=1\ntime_sec=21.204980000\nchecksum=-143956.491218867\nmax_abs=80.727961268\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "2048",
+          "n": "2048",
+          "k": "2048",
+          "seed": "20250401",
+          "processes": "1",
+          "time_sec": "21.204980000",
+          "checksum": "-143956.491218867",
+          "max_abs": "80.727961268"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "version": "mpi_v1_p2p",
+    "processes": 2,
+    "matrix_size": 128,
+    "m": 128,
+    "n": 128,
+    "k": 128,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.0014983333333333333,
+    "all_times": [
+      0.000883,
+      0.002722,
+      0.00089
+    ],
+    "checksums": [
+      -1713.139278331,
+      -1713.139278331,
+      -1713.139278331
+    ],
+    "baseline_checksum": -1713.139278331,
+    "baseline_checksum_match": true,
+    "runs": [
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "2",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "128",
+          "128",
+          "128",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=128 n=128 k=128\nseed=20250401\nprocesses=2\ntime_sec=0.000883000\nchecksum=-1713.139278331\nmax_abs=15.378743870\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "128",
+          "n": "128",
+          "k": "128",
+          "seed": "20250401",
+          "processes": "2",
+          "time_sec": "0.000883000",
+          "checksum": "-1713.139278331",
+          "max_abs": "15.378743870"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "2",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "128",
+          "128",
+          "128",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=128 n=128 k=128\nseed=20250401\nprocesses=2\ntime_sec=0.002722000\nchecksum=-1713.139278331\nmax_abs=15.378743870\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "128",
+          "n": "128",
+          "k": "128",
+          "seed": "20250401",
+          "processes": "2",
+          "time_sec": "0.002722000",
+          "checksum": "-1713.139278331",
+          "max_abs": "15.378743870"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "2",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "128",
+          "128",
+          "128",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=128 n=128 k=128\nseed=20250401\nprocesses=2\ntime_sec=0.000890000\nchecksum=-1713.139278331\nmax_abs=15.378743870\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "128",
+          "n": "128",
+          "k": "128",
+          "seed": "20250401",
+          "processes": "2",
+          "time_sec": "0.000890000",
+          "checksum": "-1713.139278331",
+          "max_abs": "15.378743870"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "version": "mpi_v1_p2p",
+    "processes": 2,
+    "matrix_size": 256,
+    "m": 256,
+    "n": 256,
+    "k": 256,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.007631333333333333,
+    "all_times": [
+      0.006669,
+      0.008199,
+      0.008026
+    ],
+    "checksums": [
+      -1676.250020577,
+      -1676.250020577,
+      -1676.250020577
+    ],
+    "baseline_checksum": -1676.250020577,
+    "baseline_checksum_match": true,
+    "runs": [
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "2",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "256",
+          "256",
+          "256",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=256 n=256 k=256\nseed=20250401\nprocesses=2\ntime_sec=0.006669000\nchecksum=-1676.250020577\nmax_abs=24.850755690\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "256",
+          "n": "256",
+          "k": "256",
+          "seed": "20250401",
+          "processes": "2",
+          "time_sec": "0.006669000",
+          "checksum": "-1676.250020577",
+          "max_abs": "24.850755690"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "2",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "256",
+          "256",
+          "256",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=256 n=256 k=256\nseed=20250401\nprocesses=2\ntime_sec=0.008199000\nchecksum=-1676.250020577\nmax_abs=24.850755690\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "256",
+          "n": "256",
+          "k": "256",
+          "seed": "20250401",
+          "processes": "2",
+          "time_sec": "0.008199000",
+          "checksum": "-1676.250020577",
+          "max_abs": "24.850755690"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "2",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "256",
+          "256",
+          "256",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=256 n=256 k=256\nseed=20250401\nprocesses=2\ntime_sec=0.008026000\nchecksum=-1676.250020577\nmax_abs=24.850755690\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "256",
+          "n": "256",
+          "k": "256",
+          "seed": "20250401",
+          "processes": "2",
+          "time_sec": "0.008026000",
+          "checksum": "-1676.250020577",
+          "max_abs": "24.850755690"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "version": "mpi_v1_p2p",
+    "processes": 2,
+    "matrix_size": 512,
+    "m": 512,
+    "n": 512,
+    "k": 512,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.06296933333333334,
+    "all_times": [
+      0.063366,
+      0.062516,
+      0.063026
+    ],
+    "checksums": [
+      -6740.486084331,
+      -6740.486084331,
+      -6740.486084331
+    ],
+    "baseline_checksum": -6740.486084331,
+    "baseline_checksum_match": true,
+    "runs": [
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "2",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "512",
+          "512",
+          "512",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=512 n=512 k=512\nseed=20250401\nprocesses=2\ntime_sec=0.063366000\nchecksum=-6740.486084331\nmax_abs=38.559067659\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "512",
+          "n": "512",
+          "k": "512",
+          "seed": "20250401",
+          "processes": "2",
+          "time_sec": "0.063366000",
+          "checksum": "-6740.486084331",
+          "max_abs": "38.559067659"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "2",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "512",
+          "512",
+          "512",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=512 n=512 k=512\nseed=20250401\nprocesses=2\ntime_sec=0.062516000\nchecksum=-6740.486084331\nmax_abs=38.559067659\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "512",
+          "n": "512",
+          "k": "512",
+          "seed": "20250401",
+          "processes": "2",
+          "time_sec": "0.062516000",
+          "checksum": "-6740.486084331",
+          "max_abs": "38.559067659"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "2",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "512",
+          "512",
+          "512",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=512 n=512 k=512\nseed=20250401\nprocesses=2\ntime_sec=0.063026000\nchecksum=-6740.486084331\nmax_abs=38.559067659\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "512",
+          "n": "512",
+          "k": "512",
+          "seed": "20250401",
+          "processes": "2",
+          "time_sec": "0.063026000",
+          "checksum": "-6740.486084331",
+          "max_abs": "38.559067659"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "version": "mpi_v1_p2p",
+    "processes": 2,
+    "matrix_size": 1024,
+    "m": 1024,
+    "n": 1024,
+    "k": 1024,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.609451,
+    "all_times": [
+      0.585032,
+      0.6245,
+      0.618821
+    ],
+    "checksums": [
+      48910.950599938,
+      48910.950599938,
+      48910.950599938
+    ],
+    "baseline_checksum": 48910.950599938,
+    "baseline_checksum_match": true,
+    "runs": [
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "2",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "1024",
+          "1024",
+          "1024",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=1024 n=1024 k=1024\nseed=20250401\nprocesses=2\ntime_sec=0.585032000\nchecksum=48910.950599938\nmax_abs=57.427011781\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "1024",
+          "n": "1024",
+          "k": "1024",
+          "seed": "20250401",
+          "processes": "2",
+          "time_sec": "0.585032000",
+          "checksum": "48910.950599938",
+          "max_abs": "57.427011781"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "2",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "1024",
+          "1024",
+          "1024",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=1024 n=1024 k=1024\nseed=20250401\nprocesses=2\ntime_sec=0.624500000\nchecksum=48910.950599938\nmax_abs=57.427011781\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "1024",
+          "n": "1024",
+          "k": "1024",
+          "seed": "20250401",
+          "processes": "2",
+          "time_sec": "0.624500000",
+          "checksum": "48910.950599938",
+          "max_abs": "57.427011781"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "2",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "1024",
+          "1024",
+          "1024",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=1024 n=1024 k=1024\nseed=20250401\nprocesses=2\ntime_sec=0.618821000\nchecksum=48910.950599938\nmax_abs=57.427011781\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "1024",
+          "n": "1024",
+          "k": "1024",
+          "seed": "20250401",
+          "processes": "2",
+          "time_sec": "0.618821000",
+          "checksum": "48910.950599938",
+          "max_abs": "57.427011781"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "version": "mpi_v1_p2p",
+    "processes": 2,
+    "matrix_size": 2048,
+    "m": 2048,
+    "n": 2048,
+    "k": 2048,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 19.172559333333336,
+    "all_times": [
+      18.608845,
+      19.338667,
+      19.570166
+    ],
+    "checksums": [
+      -143956.491218867,
+      -143956.491218867,
+      -143956.491218867
+    ],
+    "baseline_checksum": -143956.491218867,
+    "baseline_checksum_match": true,
+    "runs": [
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "2",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "2048",
+          "2048",
+          "2048",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=2048 n=2048 k=2048\nseed=20250401\nprocesses=2\ntime_sec=18.608845000\nchecksum=-143956.491218867\nmax_abs=80.727961268\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "2048",
+          "n": "2048",
+          "k": "2048",
+          "seed": "20250401",
+          "processes": "2",
+          "time_sec": "18.608845000",
+          "checksum": "-143956.491218867",
+          "max_abs": "80.727961268"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "2",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "2048",
+          "2048",
+          "2048",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=2048 n=2048 k=2048\nseed=20250401\nprocesses=2\ntime_sec=19.338667000\nchecksum=-143956.491218867\nmax_abs=80.727961268\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "2048",
+          "n": "2048",
+          "k": "2048",
+          "seed": "20250401",
+          "processes": "2",
+          "time_sec": "19.338667000",
+          "checksum": "-143956.491218867",
+          "max_abs": "80.727961268"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "2",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "2048",
+          "2048",
+          "2048",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=2048 n=2048 k=2048\nseed=20250401\nprocesses=2\ntime_sec=19.570166000\nchecksum=-143956.491218867\nmax_abs=80.727961268\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "2048",
+          "n": "2048",
+          "k": "2048",
+          "seed": "20250401",
+          "processes": "2",
+          "time_sec": "19.570166000",
+          "checksum": "-143956.491218867",
+          "max_abs": "80.727961268"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "version": "mpi_v1_p2p",
+    "processes": 4,
+    "matrix_size": 128,
+    "m": 128,
+    "n": 128,
+    "k": 128,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.0024976666666666667,
+    "all_times": [
+      0.002425,
+      0.002549,
+      0.002519
+    ],
+    "checksums": [
+      -1713.139278331,
+      -1713.139278331,
+      -1713.139278331
+    ],
+    "baseline_checksum": -1713.139278331,
+    "baseline_checksum_match": true,
+    "runs": [
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "4",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "128",
+          "128",
+          "128",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=128 n=128 k=128\nseed=20250401\nprocesses=4\ntime_sec=0.002425000\nchecksum=-1713.139278331\nmax_abs=15.378743870\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "128",
+          "n": "128",
+          "k": "128",
+          "seed": "20250401",
+          "processes": "4",
+          "time_sec": "0.002425000",
+          "checksum": "-1713.139278331",
+          "max_abs": "15.378743870"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "4",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "128",
+          "128",
+          "128",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=128 n=128 k=128\nseed=20250401\nprocesses=4\ntime_sec=0.002549000\nchecksum=-1713.139278331\nmax_abs=15.378743870\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "128",
+          "n": "128",
+          "k": "128",
+          "seed": "20250401",
+          "processes": "4",
+          "time_sec": "0.002549000",
+          "checksum": "-1713.139278331",
+          "max_abs": "15.378743870"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "4",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "128",
+          "128",
+          "128",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=128 n=128 k=128\nseed=20250401\nprocesses=4\ntime_sec=0.002519000\nchecksum=-1713.139278331\nmax_abs=15.378743870\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "128",
+          "n": "128",
+          "k": "128",
+          "seed": "20250401",
+          "processes": "4",
+          "time_sec": "0.002519000",
+          "checksum": "-1713.139278331",
+          "max_abs": "15.378743870"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "version": "mpi_v1_p2p",
+    "processes": 4,
+    "matrix_size": 256,
+    "m": 256,
+    "n": 256,
+    "k": 256,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.005527333333333333,
+    "all_times": [
+      0.006072,
+      0.005874,
+      0.004636
+    ],
+    "checksums": [
+      -1676.250020577,
+      -1676.250020577,
+      -1676.250020577
+    ],
+    "baseline_checksum": -1676.250020577,
+    "baseline_checksum_match": true,
+    "runs": [
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "4",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "256",
+          "256",
+          "256",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=256 n=256 k=256\nseed=20250401\nprocesses=4\ntime_sec=0.006072000\nchecksum=-1676.250020577\nmax_abs=24.850755690\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "256",
+          "n": "256",
+          "k": "256",
+          "seed": "20250401",
+          "processes": "4",
+          "time_sec": "0.006072000",
+          "checksum": "-1676.250020577",
+          "max_abs": "24.850755690"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "4",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "256",
+          "256",
+          "256",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=256 n=256 k=256\nseed=20250401\nprocesses=4\ntime_sec=0.005874000\nchecksum=-1676.250020577\nmax_abs=24.850755690\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "256",
+          "n": "256",
+          "k": "256",
+          "seed": "20250401",
+          "processes": "4",
+          "time_sec": "0.005874000",
+          "checksum": "-1676.250020577",
+          "max_abs": "24.850755690"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "4",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "256",
+          "256",
+          "256",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=256 n=256 k=256\nseed=20250401\nprocesses=4\ntime_sec=0.004636000\nchecksum=-1676.250020577\nmax_abs=24.850755690\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "256",
+          "n": "256",
+          "k": "256",
+          "seed": "20250401",
+          "processes": "4",
+          "time_sec": "0.004636000",
+          "checksum": "-1676.250020577",
+          "max_abs": "24.850755690"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "version": "mpi_v1_p2p",
+    "processes": 4,
+    "matrix_size": 512,
+    "m": 512,
+    "n": 512,
+    "k": 512,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.048866999999999994,
+    "all_times": [
+      0.048398,
+      0.050227,
+      0.047976
+    ],
+    "checksums": [
+      -6740.486084331,
+      -6740.486084331,
+      -6740.486084331
+    ],
+    "baseline_checksum": -6740.486084331,
+    "baseline_checksum_match": true,
+    "runs": [
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "4",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "512",
+          "512",
+          "512",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=512 n=512 k=512\nseed=20250401\nprocesses=4\ntime_sec=0.048398000\nchecksum=-6740.486084331\nmax_abs=38.559067659\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "512",
+          "n": "512",
+          "k": "512",
+          "seed": "20250401",
+          "processes": "4",
+          "time_sec": "0.048398000",
+          "checksum": "-6740.486084331",
+          "max_abs": "38.559067659"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "4",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "512",
+          "512",
+          "512",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=512 n=512 k=512\nseed=20250401\nprocesses=4\ntime_sec=0.050227000\nchecksum=-6740.486084331\nmax_abs=38.559067659\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "512",
+          "n": "512",
+          "k": "512",
+          "seed": "20250401",
+          "processes": "4",
+          "time_sec": "0.050227000",
+          "checksum": "-6740.486084331",
+          "max_abs": "38.559067659"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "4",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "512",
+          "512",
+          "512",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=512 n=512 k=512\nseed=20250401\nprocesses=4\ntime_sec=0.047976000\nchecksum=-6740.486084331\nmax_abs=38.559067659\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "512",
+          "n": "512",
+          "k": "512",
+          "seed": "20250401",
+          "processes": "4",
+          "time_sec": "0.047976000",
+          "checksum": "-6740.486084331",
+          "max_abs": "38.559067659"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "version": "mpi_v1_p2p",
+    "processes": 4,
+    "matrix_size": 1024,
+    "m": 1024,
+    "n": 1024,
+    "k": 1024,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 1.1215893333333333,
+    "all_times": [
+      0.960673,
+      1.639583,
+      0.764512
+    ],
+    "checksums": [
+      48910.950599938,
+      48910.950599938,
+      48910.950599938
+    ],
+    "baseline_checksum": 48910.950599938,
+    "baseline_checksum_match": true,
+    "runs": [
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "4",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "1024",
+          "1024",
+          "1024",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=1024 n=1024 k=1024\nseed=20250401\nprocesses=4\ntime_sec=0.960673000\nchecksum=48910.950599938\nmax_abs=57.427011781\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "1024",
+          "n": "1024",
+          "k": "1024",
+          "seed": "20250401",
+          "processes": "4",
+          "time_sec": "0.960673000",
+          "checksum": "48910.950599938",
+          "max_abs": "57.427011781"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "4",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "1024",
+          "1024",
+          "1024",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=1024 n=1024 k=1024\nseed=20250401\nprocesses=4\ntime_sec=1.639583000\nchecksum=48910.950599938\nmax_abs=57.427011781\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "1024",
+          "n": "1024",
+          "k": "1024",
+          "seed": "20250401",
+          "processes": "4",
+          "time_sec": "1.639583000",
+          "checksum": "48910.950599938",
+          "max_abs": "57.427011781"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "4",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "1024",
+          "1024",
+          "1024",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=1024 n=1024 k=1024\nseed=20250401\nprocesses=4\ntime_sec=0.764512000\nchecksum=48910.950599938\nmax_abs=57.427011781\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "1024",
+          "n": "1024",
+          "k": "1024",
+          "seed": "20250401",
+          "processes": "4",
+          "time_sec": "0.764512000",
+          "checksum": "48910.950599938",
+          "max_abs": "57.427011781"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "version": "mpi_v1_p2p",
+    "processes": 4,
+    "matrix_size": 2048,
+    "m": 2048,
+    "n": 2048,
+    "k": 2048,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 15.619475999999999,
+    "all_times": [
+      15.237942,
+      14.664093,
+      16.956393
+    ],
+    "checksums": [
+      -143956.491218867,
+      -143956.491218867,
+      -143956.491218867
+    ],
+    "baseline_checksum": -143956.491218867,
+    "baseline_checksum_match": true,
+    "runs": [
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "4",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "2048",
+          "2048",
+          "2048",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=2048 n=2048 k=2048\nseed=20250401\nprocesses=4\ntime_sec=15.237942000\nchecksum=-143956.491218867\nmax_abs=80.727961268\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "2048",
+          "n": "2048",
+          "k": "2048",
+          "seed": "20250401",
+          "processes": "4",
+          "time_sec": "15.237942000",
+          "checksum": "-143956.491218867",
+          "max_abs": "80.727961268"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "4",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "2048",
+          "2048",
+          "2048",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=2048 n=2048 k=2048\nseed=20250401\nprocesses=4\ntime_sec=14.664093000\nchecksum=-143956.491218867\nmax_abs=80.727961268\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "2048",
+          "n": "2048",
+          "k": "2048",
+          "seed": "20250401",
+          "processes": "4",
+          "time_sec": "14.664093000",
+          "checksum": "-143956.491218867",
+          "max_abs": "80.727961268"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "4",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "2048",
+          "2048",
+          "2048",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=2048 n=2048 k=2048\nseed=20250401\nprocesses=4\ntime_sec=16.956393000\nchecksum=-143956.491218867\nmax_abs=80.727961268\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "2048",
+          "n": "2048",
+          "k": "2048",
+          "seed": "20250401",
+          "processes": "4",
+          "time_sec": "16.956393000",
+          "checksum": "-143956.491218867",
+          "max_abs": "80.727961268"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "version": "mpi_v1_p2p",
+    "processes": 8,
+    "matrix_size": 128,
+    "m": 128,
+    "n": 128,
+    "k": 128,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.0021216666666666667,
+    "all_times": [
+      0.002274,
+      0.001776,
+      0.002315
+    ],
+    "checksums": [
+      -1713.139278331,
+      -1713.139278331,
+      -1713.139278331
+    ],
+    "baseline_checksum": -1713.139278331,
+    "baseline_checksum_match": true,
+    "runs": [
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "8",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "128",
+          "128",
+          "128",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=128 n=128 k=128\nseed=20250401\nprocesses=8\ntime_sec=0.002274000\nchecksum=-1713.139278331\nmax_abs=15.378743870\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "128",
+          "n": "128",
+          "k": "128",
+          "seed": "20250401",
+          "processes": "8",
+          "time_sec": "0.002274000",
+          "checksum": "-1713.139278331",
+          "max_abs": "15.378743870"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "8",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "128",
+          "128",
+          "128",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=128 n=128 k=128\nseed=20250401\nprocesses=8\ntime_sec=0.001776000\nchecksum=-1713.139278331\nmax_abs=15.378743870\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "128",
+          "n": "128",
+          "k": "128",
+          "seed": "20250401",
+          "processes": "8",
+          "time_sec": "0.001776000",
+          "checksum": "-1713.139278331",
+          "max_abs": "15.378743870"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "8",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "128",
+          "128",
+          "128",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=128 n=128 k=128\nseed=20250401\nprocesses=8\ntime_sec=0.002315000\nchecksum=-1713.139278331\nmax_abs=15.378743870\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "128",
+          "n": "128",
+          "k": "128",
+          "seed": "20250401",
+          "processes": "8",
+          "time_sec": "0.002315000",
+          "checksum": "-1713.139278331",
+          "max_abs": "15.378743870"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "version": "mpi_v1_p2p",
+    "processes": 8,
+    "matrix_size": 256,
+    "m": 256,
+    "n": 256,
+    "k": 256,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.011580333333333333,
+    "all_times": [
+      0.010002,
+      0.01719,
+      0.007549
+    ],
+    "checksums": [
+      -1676.250020577,
+      -1676.250020577,
+      -1676.250020577
+    ],
+    "baseline_checksum": -1676.250020577,
+    "baseline_checksum_match": true,
+    "runs": [
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "8",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "256",
+          "256",
+          "256",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=256 n=256 k=256\nseed=20250401\nprocesses=8\ntime_sec=0.010002000\nchecksum=-1676.250020577\nmax_abs=24.850755690\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "256",
+          "n": "256",
+          "k": "256",
+          "seed": "20250401",
+          "processes": "8",
+          "time_sec": "0.010002000",
+          "checksum": "-1676.250020577",
+          "max_abs": "24.850755690"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "8",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "256",
+          "256",
+          "256",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=256 n=256 k=256\nseed=20250401\nprocesses=8\ntime_sec=0.017190000\nchecksum=-1676.250020577\nmax_abs=24.850755690\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "256",
+          "n": "256",
+          "k": "256",
+          "seed": "20250401",
+          "processes": "8",
+          "time_sec": "0.017190000",
+          "checksum": "-1676.250020577",
+          "max_abs": "24.850755690"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "8",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "256",
+          "256",
+          "256",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=256 n=256 k=256\nseed=20250401\nprocesses=8\ntime_sec=0.007549000\nchecksum=-1676.250020577\nmax_abs=24.850755690\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "256",
+          "n": "256",
+          "k": "256",
+          "seed": "20250401",
+          "processes": "8",
+          "time_sec": "0.007549000",
+          "checksum": "-1676.250020577",
+          "max_abs": "24.850755690"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "version": "mpi_v1_p2p",
+    "processes": 8,
+    "matrix_size": 512,
+    "m": 512,
+    "n": 512,
+    "k": 512,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.058667000000000004,
+    "all_times": [
+      0.056471,
+      0.062392,
+      0.057138
+    ],
+    "checksums": [
+      -6740.486084331,
+      -6740.486084331,
+      -6740.486084331
+    ],
+    "baseline_checksum": -6740.486084331,
+    "baseline_checksum_match": true,
+    "runs": [
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "8",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "512",
+          "512",
+          "512",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=512 n=512 k=512\nseed=20250401\nprocesses=8\ntime_sec=0.056471000\nchecksum=-6740.486084331\nmax_abs=38.559067659\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "512",
+          "n": "512",
+          "k": "512",
+          "seed": "20250401",
+          "processes": "8",
+          "time_sec": "0.056471000",
+          "checksum": "-6740.486084331",
+          "max_abs": "38.559067659"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "8",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "512",
+          "512",
+          "512",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=512 n=512 k=512\nseed=20250401\nprocesses=8\ntime_sec=0.062392000\nchecksum=-6740.486084331\nmax_abs=38.559067659\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "512",
+          "n": "512",
+          "k": "512",
+          "seed": "20250401",
+          "processes": "8",
+          "time_sec": "0.062392000",
+          "checksum": "-6740.486084331",
+          "max_abs": "38.559067659"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "8",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "512",
+          "512",
+          "512",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=512 n=512 k=512\nseed=20250401\nprocesses=8\ntime_sec=0.057138000\nchecksum=-6740.486084331\nmax_abs=38.559067659\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "512",
+          "n": "512",
+          "k": "512",
+          "seed": "20250401",
+          "processes": "8",
+          "time_sec": "0.057138000",
+          "checksum": "-6740.486084331",
+          "max_abs": "38.559067659"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "version": "mpi_v1_p2p",
+    "processes": 8,
+    "matrix_size": 1024,
+    "m": 1024,
+    "n": 1024,
+    "k": 1024,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.9235423333333334,
+    "all_times": [
+      0.856266,
+      0.957708,
+      0.956653
+    ],
+    "checksums": [
+      48910.950599938,
+      48910.950599938,
+      48910.950599938
+    ],
+    "baseline_checksum": 48910.950599938,
+    "baseline_checksum_match": true,
+    "runs": [
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "8",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "1024",
+          "1024",
+          "1024",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=1024 n=1024 k=1024\nseed=20250401\nprocesses=8\ntime_sec=0.856266000\nchecksum=48910.950599938\nmax_abs=57.427011781\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "1024",
+          "n": "1024",
+          "k": "1024",
+          "seed": "20250401",
+          "processes": "8",
+          "time_sec": "0.856266000",
+          "checksum": "48910.950599938",
+          "max_abs": "57.427011781"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "8",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "1024",
+          "1024",
+          "1024",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=1024 n=1024 k=1024\nseed=20250401\nprocesses=8\ntime_sec=0.957708000\nchecksum=48910.950599938\nmax_abs=57.427011781\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "1024",
+          "n": "1024",
+          "k": "1024",
+          "seed": "20250401",
+          "processes": "8",
+          "time_sec": "0.957708000",
+          "checksum": "48910.950599938",
+          "max_abs": "57.427011781"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "8",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "1024",
+          "1024",
+          "1024",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=1024 n=1024 k=1024\nseed=20250401\nprocesses=8\ntime_sec=0.956653000\nchecksum=48910.950599938\nmax_abs=57.427011781\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "1024",
+          "n": "1024",
+          "k": "1024",
+          "seed": "20250401",
+          "processes": "8",
+          "time_sec": "0.956653000",
+          "checksum": "48910.950599938",
+          "max_abs": "57.427011781"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "version": "mpi_v1_p2p",
+    "processes": 8,
+    "matrix_size": 2048,
+    "m": 2048,
+    "n": 2048,
+    "k": 2048,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 13.665170333333334,
+    "all_times": [
+      13.744247,
+      16.42521,
+      10.826054
+    ],
+    "checksums": [
+      -143956.491218867,
+      -143956.491218867,
+      -143956.491218867
+    ],
+    "baseline_checksum": -143956.491218867,
+    "baseline_checksum_match": true,
+    "runs": [
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "8",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "2048",
+          "2048",
+          "2048",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=2048 n=2048 k=2048\nseed=20250401\nprocesses=8\ntime_sec=13.744247000\nchecksum=-143956.491218867\nmax_abs=80.727961268\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "2048",
+          "n": "2048",
+          "k": "2048",
+          "seed": "20250401",
+          "processes": "8",
+          "time_sec": "13.744247000",
+          "checksum": "-143956.491218867",
+          "max_abs": "80.727961268"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "8",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "2048",
+          "2048",
+          "2048",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=2048 n=2048 k=2048\nseed=20250401\nprocesses=8\ntime_sec=16.425210000\nchecksum=-143956.491218867\nmax_abs=80.727961268\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "2048",
+          "n": "2048",
+          "k": "2048",
+          "seed": "20250401",
+          "processes": "8",
+          "time_sec": "16.425210000",
+          "checksum": "-143956.491218867",
+          "max_abs": "80.727961268"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "8",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "2048",
+          "2048",
+          "2048",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=2048 n=2048 k=2048\nseed=20250401\nprocesses=8\ntime_sec=10.826054000\nchecksum=-143956.491218867\nmax_abs=80.727961268\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "2048",
+          "n": "2048",
+          "k": "2048",
+          "seed": "20250401",
+          "processes": "8",
+          "time_sec": "10.826054000",
+          "checksum": "-143956.491218867",
+          "max_abs": "80.727961268"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "version": "mpi_v1_p2p",
+    "processes": 16,
+    "matrix_size": 128,
+    "m": 128,
+    "n": 128,
+    "k": 128,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.0033883333333333335,
+    "all_times": [
+      0.00372,
+      0.00314,
+      0.003305
+    ],
+    "checksums": [
+      -1713.139278331,
+      -1713.139278331,
+      -1713.139278331
+    ],
+    "baseline_checksum": -1713.139278331,
+    "baseline_checksum_match": true,
+    "runs": [
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "16",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "128",
+          "128",
+          "128",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=128 n=128 k=128\nseed=20250401\nprocesses=16\ntime_sec=0.003720000\nchecksum=-1713.139278331\nmax_abs=15.378743870\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "128",
+          "n": "128",
+          "k": "128",
+          "seed": "20250401",
+          "processes": "16",
+          "time_sec": "0.003720000",
+          "checksum": "-1713.139278331",
+          "max_abs": "15.378743870"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "16",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "128",
+          "128",
+          "128",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=128 n=128 k=128\nseed=20250401\nprocesses=16\ntime_sec=0.003140000\nchecksum=-1713.139278331\nmax_abs=15.378743870\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "128",
+          "n": "128",
+          "k": "128",
+          "seed": "20250401",
+          "processes": "16",
+          "time_sec": "0.003140000",
+          "checksum": "-1713.139278331",
+          "max_abs": "15.378743870"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "16",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "128",
+          "128",
+          "128",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=128 n=128 k=128\nseed=20250401\nprocesses=16\ntime_sec=0.003305000\nchecksum=-1713.139278331\nmax_abs=15.378743870\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "128",
+          "n": "128",
+          "k": "128",
+          "seed": "20250401",
+          "processes": "16",
+          "time_sec": "0.003305000",
+          "checksum": "-1713.139278331",
+          "max_abs": "15.378743870"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "version": "mpi_v1_p2p",
+    "processes": 16,
+    "matrix_size": 256,
+    "m": 256,
+    "n": 256,
+    "k": 256,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.008727,
+    "all_times": [
+      0.009079,
+      0.008851,
+      0.008251
+    ],
+    "checksums": [
+      -1676.250020577,
+      -1676.250020577,
+      -1676.250020577
+    ],
+    "baseline_checksum": -1676.250020577,
+    "baseline_checksum_match": true,
+    "runs": [
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "16",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "256",
+          "256",
+          "256",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=256 n=256 k=256\nseed=20250401\nprocesses=16\ntime_sec=0.009079000\nchecksum=-1676.250020577\nmax_abs=24.850755690\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "256",
+          "n": "256",
+          "k": "256",
+          "seed": "20250401",
+          "processes": "16",
+          "time_sec": "0.009079000",
+          "checksum": "-1676.250020577",
+          "max_abs": "24.850755690"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "16",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "256",
+          "256",
+          "256",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=256 n=256 k=256\nseed=20250401\nprocesses=16\ntime_sec=0.008851000\nchecksum=-1676.250020577\nmax_abs=24.850755690\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "256",
+          "n": "256",
+          "k": "256",
+          "seed": "20250401",
+          "processes": "16",
+          "time_sec": "0.008851000",
+          "checksum": "-1676.250020577",
+          "max_abs": "24.850755690"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "16",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "256",
+          "256",
+          "256",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=256 n=256 k=256\nseed=20250401\nprocesses=16\ntime_sec=0.008251000\nchecksum=-1676.250020577\nmax_abs=24.850755690\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "256",
+          "n": "256",
+          "k": "256",
+          "seed": "20250401",
+          "processes": "16",
+          "time_sec": "0.008251000",
+          "checksum": "-1676.250020577",
+          "max_abs": "24.850755690"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "version": "mpi_v1_p2p",
+    "processes": 16,
+    "matrix_size": 512,
+    "m": 512,
+    "n": 512,
+    "k": 512,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.057792333333333334,
+    "all_times": [
+      0.052945,
+      0.054361,
+      0.066071
+    ],
+    "checksums": [
+      -6740.486084331,
+      -6740.486084331,
+      -6740.486084331
+    ],
+    "baseline_checksum": -6740.486084331,
+    "baseline_checksum_match": true,
+    "runs": [
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "16",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "512",
+          "512",
+          "512",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=512 n=512 k=512\nseed=20250401\nprocesses=16\ntime_sec=0.052945000\nchecksum=-6740.486084331\nmax_abs=38.559067659\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "512",
+          "n": "512",
+          "k": "512",
+          "seed": "20250401",
+          "processes": "16",
+          "time_sec": "0.052945000",
+          "checksum": "-6740.486084331",
+          "max_abs": "38.559067659"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "16",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "512",
+          "512",
+          "512",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=512 n=512 k=512\nseed=20250401\nprocesses=16\ntime_sec=0.054361000\nchecksum=-6740.486084331\nmax_abs=38.559067659\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "512",
+          "n": "512",
+          "k": "512",
+          "seed": "20250401",
+          "processes": "16",
+          "time_sec": "0.054361000",
+          "checksum": "-6740.486084331",
+          "max_abs": "38.559067659"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "16",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "512",
+          "512",
+          "512",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=512 n=512 k=512\nseed=20250401\nprocesses=16\ntime_sec=0.066071000\nchecksum=-6740.486084331\nmax_abs=38.559067659\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "512",
+          "n": "512",
+          "k": "512",
+          "seed": "20250401",
+          "processes": "16",
+          "time_sec": "0.066071000",
+          "checksum": "-6740.486084331",
+          "max_abs": "38.559067659"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "version": "mpi_v1_p2p",
+    "processes": 16,
+    "matrix_size": 1024,
+    "m": 1024,
+    "n": 1024,
+    "k": 1024,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 1.1125453333333335,
+    "all_times": [
+      0.966009,
+      1.00611,
+      1.365517
+    ],
+    "checksums": [
+      48910.950599938,
+      48910.950599938,
+      48910.950599938
+    ],
+    "baseline_checksum": 48910.950599938,
+    "baseline_checksum_match": true,
+    "runs": [
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "16",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "1024",
+          "1024",
+          "1024",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=1024 n=1024 k=1024\nseed=20250401\nprocesses=16\ntime_sec=0.966009000\nchecksum=48910.950599938\nmax_abs=57.427011781\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "1024",
+          "n": "1024",
+          "k": "1024",
+          "seed": "20250401",
+          "processes": "16",
+          "time_sec": "0.966009000",
+          "checksum": "48910.950599938",
+          "max_abs": "57.427011781"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "16",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "1024",
+          "1024",
+          "1024",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=1024 n=1024 k=1024\nseed=20250401\nprocesses=16\ntime_sec=1.006110000\nchecksum=48910.950599938\nmax_abs=57.427011781\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "1024",
+          "n": "1024",
+          "k": "1024",
+          "seed": "20250401",
+          "processes": "16",
+          "time_sec": "1.006110000",
+          "checksum": "48910.950599938",
+          "max_abs": "57.427011781"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "16",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "1024",
+          "1024",
+          "1024",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=1024 n=1024 k=1024\nseed=20250401\nprocesses=16\ntime_sec=1.365517000\nchecksum=48910.950599938\nmax_abs=57.427011781\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "1024",
+          "n": "1024",
+          "k": "1024",
+          "seed": "20250401",
+          "processes": "16",
+          "time_sec": "1.365517000",
+          "checksum": "48910.950599938",
+          "max_abs": "57.427011781"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "version": "mpi_v1_p2p",
+    "processes": 16,
+    "matrix_size": 2048,
+    "m": 2048,
+    "n": 2048,
+    "k": 2048,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 12.829863000000001,
+    "all_times": [
+      14.142144,
+      14.213691,
+      10.133754
+    ],
+    "checksums": [
+      -143956.491218867,
+      -143956.491218867,
+      -143956.491218867
+    ],
+    "baseline_checksum": -143956.491218867,
+    "baseline_checksum_match": true,
+    "runs": [
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "16",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "2048",
+          "2048",
+          "2048",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=2048 n=2048 k=2048\nseed=20250401\nprocesses=16\ntime_sec=14.142144000\nchecksum=-143956.491218867\nmax_abs=80.727961268\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "2048",
+          "n": "2048",
+          "k": "2048",
+          "seed": "20250401",
+          "processes": "16",
+          "time_sec": "14.142144000",
+          "checksum": "-143956.491218867",
+          "max_abs": "80.727961268"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "16",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "2048",
+          "2048",
+          "2048",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=2048 n=2048 k=2048\nseed=20250401\nprocesses=16\ntime_sec=14.213691000\nchecksum=-143956.491218867\nmax_abs=80.727961268\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "2048",
+          "n": "2048",
+          "k": "2048",
+          "seed": "20250401",
+          "processes": "16",
+          "time_sec": "14.213691000",
+          "checksum": "-143956.491218867",
+          "max_abs": "80.727961268"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v1_p2p",
+        "command": [
+          "mpirun",
+          "-np",
+          "16",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v1",
+          "2048",
+          "2048",
+          "2048",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v1_p2p\nm=2048 n=2048 k=2048\nseed=20250401\nprocesses=16\ntime_sec=10.133754000\nchecksum=-143956.491218867\nmax_abs=80.727961268\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v1_p2p",
+          "m": "2048",
+          "n": "2048",
+          "k": "2048",
+          "seed": "20250401",
+          "processes": "16",
+          "time_sec": "10.133754000",
+          "checksum": "-143956.491218867",
+          "max_abs": "80.727961268"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "version": "mpi_v2_collective",
+    "processes": 1,
+    "matrix_size": 128,
+    "m": 128,
+    "n": 128,
+    "k": 128,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.001708,
+    "all_times": [
+      0.00188,
+      0.001692,
+      0.001552
+    ],
+    "checksums": [
+      -1713.139278331,
+      -1713.139278331,
+      -1713.139278331
+    ],
+    "baseline_checksum": -1713.139278331,
+    "baseline_checksum_match": true,
+    "runs": [
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "1",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "128",
+          "128",
+          "128",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=128 n=128 k=128\nseed=20250401\nprocesses=1\ntime_sec=0.001880000\nchecksum=-1713.139278331\nmax_abs=15.378743870\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "128",
+          "n": "128",
+          "k": "128",
+          "seed": "20250401",
+          "processes": "1",
+          "time_sec": "0.001880000",
+          "checksum": "-1713.139278331",
+          "max_abs": "15.378743870"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "1",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "128",
+          "128",
+          "128",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=128 n=128 k=128\nseed=20250401\nprocesses=1\ntime_sec=0.001692000\nchecksum=-1713.139278331\nmax_abs=15.378743870\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "128",
+          "n": "128",
+          "k": "128",
+          "seed": "20250401",
+          "processes": "1",
+          "time_sec": "0.001692000",
+          "checksum": "-1713.139278331",
+          "max_abs": "15.378743870"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "1",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "128",
+          "128",
+          "128",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=128 n=128 k=128\nseed=20250401\nprocesses=1\ntime_sec=0.001552000\nchecksum=-1713.139278331\nmax_abs=15.378743870\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "128",
+          "n": "128",
+          "k": "128",
+          "seed": "20250401",
+          "processes": "1",
+          "time_sec": "0.001552000",
+          "checksum": "-1713.139278331",
+          "max_abs": "15.378743870"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "version": "mpi_v2_collective",
+    "processes": 1,
+    "matrix_size": 256,
+    "m": 256,
+    "n": 256,
+    "k": 256,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.013417333333333331,
+    "all_times": [
+      0.013699,
+      0.013711,
+      0.012842
+    ],
+    "checksums": [
+      -1676.250020577,
+      -1676.250020577,
+      -1676.250020577
+    ],
+    "baseline_checksum": -1676.250020577,
+    "baseline_checksum_match": true,
+    "runs": [
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "1",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "256",
+          "256",
+          "256",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=256 n=256 k=256\nseed=20250401\nprocesses=1\ntime_sec=0.013699000\nchecksum=-1676.250020577\nmax_abs=24.850755690\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "256",
+          "n": "256",
+          "k": "256",
+          "seed": "20250401",
+          "processes": "1",
+          "time_sec": "0.013699000",
+          "checksum": "-1676.250020577",
+          "max_abs": "24.850755690"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "1",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "256",
+          "256",
+          "256",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=256 n=256 k=256\nseed=20250401\nprocesses=1\ntime_sec=0.013711000\nchecksum=-1676.250020577\nmax_abs=24.850755690\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "256",
+          "n": "256",
+          "k": "256",
+          "seed": "20250401",
+          "processes": "1",
+          "time_sec": "0.013711000",
+          "checksum": "-1676.250020577",
+          "max_abs": "24.850755690"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "1",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "256",
+          "256",
+          "256",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=256 n=256 k=256\nseed=20250401\nprocesses=1\ntime_sec=0.012842000\nchecksum=-1676.250020577\nmax_abs=24.850755690\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "256",
+          "n": "256",
+          "k": "256",
+          "seed": "20250401",
+          "processes": "1",
+          "time_sec": "0.012842000",
+          "checksum": "-1676.250020577",
+          "max_abs": "24.850755690"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "version": "mpi_v2_collective",
+    "processes": 1,
+    "matrix_size": 512,
+    "m": 512,
+    "n": 512,
+    "k": 512,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.12109066666666667,
+    "all_times": [
+      0.124513,
+      0.118778,
+      0.119981
+    ],
+    "checksums": [
+      -6740.486084331,
+      -6740.486084331,
+      -6740.486084331
+    ],
+    "baseline_checksum": -6740.486084331,
+    "baseline_checksum_match": true,
+    "runs": [
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "1",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "512",
+          "512",
+          "512",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=512 n=512 k=512\nseed=20250401\nprocesses=1\ntime_sec=0.124513000\nchecksum=-6740.486084331\nmax_abs=38.559067659\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "512",
+          "n": "512",
+          "k": "512",
+          "seed": "20250401",
+          "processes": "1",
+          "time_sec": "0.124513000",
+          "checksum": "-6740.486084331",
+          "max_abs": "38.559067659"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "1",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "512",
+          "512",
+          "512",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=512 n=512 k=512\nseed=20250401\nprocesses=1\ntime_sec=0.118778000\nchecksum=-6740.486084331\nmax_abs=38.559067659\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "512",
+          "n": "512",
+          "k": "512",
+          "seed": "20250401",
+          "processes": "1",
+          "time_sec": "0.118778000",
+          "checksum": "-6740.486084331",
+          "max_abs": "38.559067659"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "1",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "512",
+          "512",
+          "512",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=512 n=512 k=512\nseed=20250401\nprocesses=1\ntime_sec=0.119981000\nchecksum=-6740.486084331\nmax_abs=38.559067659\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "512",
+          "n": "512",
+          "k": "512",
+          "seed": "20250401",
+          "processes": "1",
+          "time_sec": "0.119981000",
+          "checksum": "-6740.486084331",
+          "max_abs": "38.559067659"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "version": "mpi_v2_collective",
+    "processes": 1,
+    "matrix_size": 1024,
+    "m": 1024,
+    "n": 1024,
+    "k": 1024,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.9536016666666667,
+    "all_times": [
+      0.939084,
+      0.963921,
+      0.9578
+    ],
+    "checksums": [
+      48910.950599938,
+      48910.950599938,
+      48910.950599938
+    ],
+    "baseline_checksum": 48910.950599938,
+    "baseline_checksum_match": true,
+    "runs": [
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "1",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "1024",
+          "1024",
+          "1024",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=1024 n=1024 k=1024\nseed=20250401\nprocesses=1\ntime_sec=0.939084000\nchecksum=48910.950599938\nmax_abs=57.427011781\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "1024",
+          "n": "1024",
+          "k": "1024",
+          "seed": "20250401",
+          "processes": "1",
+          "time_sec": "0.939084000",
+          "checksum": "48910.950599938",
+          "max_abs": "57.427011781"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "1",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "1024",
+          "1024",
+          "1024",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=1024 n=1024 k=1024\nseed=20250401\nprocesses=1\ntime_sec=0.963921000\nchecksum=48910.950599938\nmax_abs=57.427011781\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "1024",
+          "n": "1024",
+          "k": "1024",
+          "seed": "20250401",
+          "processes": "1",
+          "time_sec": "0.963921000",
+          "checksum": "48910.950599938",
+          "max_abs": "57.427011781"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "1",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "1024",
+          "1024",
+          "1024",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=1024 n=1024 k=1024\nseed=20250401\nprocesses=1\ntime_sec=0.957800000\nchecksum=48910.950599938\nmax_abs=57.427011781\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "1024",
+          "n": "1024",
+          "k": "1024",
+          "seed": "20250401",
+          "processes": "1",
+          "time_sec": "0.957800000",
+          "checksum": "48910.950599938",
+          "max_abs": "57.427011781"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "version": "mpi_v2_collective",
+    "processes": 1,
+    "matrix_size": 2048,
+    "m": 2048,
+    "n": 2048,
+    "k": 2048,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 21.418601666666664,
+    "all_times": [
+      20.907726,
+      23.628818,
+      19.719261
+    ],
+    "checksums": [
+      -143956.491218867,
+      -143956.491218867,
+      -143956.491218867
+    ],
+    "baseline_checksum": -143956.491218867,
+    "baseline_checksum_match": true,
+    "runs": [
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "1",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "2048",
+          "2048",
+          "2048",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=2048 n=2048 k=2048\nseed=20250401\nprocesses=1\ntime_sec=20.907726000\nchecksum=-143956.491218867\nmax_abs=80.727961268\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "2048",
+          "n": "2048",
+          "k": "2048",
+          "seed": "20250401",
+          "processes": "1",
+          "time_sec": "20.907726000",
+          "checksum": "-143956.491218867",
+          "max_abs": "80.727961268"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "1",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "2048",
+          "2048",
+          "2048",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=2048 n=2048 k=2048\nseed=20250401\nprocesses=1\ntime_sec=23.628818000\nchecksum=-143956.491218867\nmax_abs=80.727961268\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "2048",
+          "n": "2048",
+          "k": "2048",
+          "seed": "20250401",
+          "processes": "1",
+          "time_sec": "23.628818000",
+          "checksum": "-143956.491218867",
+          "max_abs": "80.727961268"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "1",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "2048",
+          "2048",
+          "2048",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=2048 n=2048 k=2048\nseed=20250401\nprocesses=1\ntime_sec=19.719261000\nchecksum=-143956.491218867\nmax_abs=80.727961268\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "2048",
+          "n": "2048",
+          "k": "2048",
+          "seed": "20250401",
+          "processes": "1",
+          "time_sec": "19.719261000",
+          "checksum": "-143956.491218867",
+          "max_abs": "80.727961268"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "version": "mpi_v2_collective",
+    "processes": 2,
+    "matrix_size": 128,
+    "m": 128,
+    "n": 128,
+    "k": 128,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.002042,
+    "all_times": [
+      0.002175,
+      0.002549,
+      0.001402
+    ],
+    "checksums": [
+      -1713.139278331,
+      -1713.139278331,
+      -1713.139278331
+    ],
+    "baseline_checksum": -1713.139278331,
+    "baseline_checksum_match": true,
+    "runs": [
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "2",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "128",
+          "128",
+          "128",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=128 n=128 k=128\nseed=20250401\nprocesses=2\ntime_sec=0.002175000\nchecksum=-1713.139278331\nmax_abs=15.378743870\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "128",
+          "n": "128",
+          "k": "128",
+          "seed": "20250401",
+          "processes": "2",
+          "time_sec": "0.002175000",
+          "checksum": "-1713.139278331",
+          "max_abs": "15.378743870"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "2",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "128",
+          "128",
+          "128",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=128 n=128 k=128\nseed=20250401\nprocesses=2\ntime_sec=0.002549000\nchecksum=-1713.139278331\nmax_abs=15.378743870\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "128",
+          "n": "128",
+          "k": "128",
+          "seed": "20250401",
+          "processes": "2",
+          "time_sec": "0.002549000",
+          "checksum": "-1713.139278331",
+          "max_abs": "15.378743870"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "2",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "128",
+          "128",
+          "128",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=128 n=128 k=128\nseed=20250401\nprocesses=2\ntime_sec=0.001402000\nchecksum=-1713.139278331\nmax_abs=15.378743870\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "128",
+          "n": "128",
+          "k": "128",
+          "seed": "20250401",
+          "processes": "2",
+          "time_sec": "0.001402000",
+          "checksum": "-1713.139278331",
+          "max_abs": "15.378743870"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "version": "mpi_v2_collective",
+    "processes": 2,
+    "matrix_size": 256,
+    "m": 256,
+    "n": 256,
+    "k": 256,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.006184666666666667,
+    "all_times": [
+      0.006176,
+      0.005693,
+      0.006685
+    ],
+    "checksums": [
+      -1676.250020577,
+      -1676.250020577,
+      -1676.250020577
+    ],
+    "baseline_checksum": -1676.250020577,
+    "baseline_checksum_match": true,
+    "runs": [
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "2",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "256",
+          "256",
+          "256",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=256 n=256 k=256\nseed=20250401\nprocesses=2\ntime_sec=0.006176000\nchecksum=-1676.250020577\nmax_abs=24.850755690\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "256",
+          "n": "256",
+          "k": "256",
+          "seed": "20250401",
+          "processes": "2",
+          "time_sec": "0.006176000",
+          "checksum": "-1676.250020577",
+          "max_abs": "24.850755690"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "2",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "256",
+          "256",
+          "256",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=256 n=256 k=256\nseed=20250401\nprocesses=2\ntime_sec=0.005693000\nchecksum=-1676.250020577\nmax_abs=24.850755690\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "256",
+          "n": "256",
+          "k": "256",
+          "seed": "20250401",
+          "processes": "2",
+          "time_sec": "0.005693000",
+          "checksum": "-1676.250020577",
+          "max_abs": "24.850755690"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "2",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "256",
+          "256",
+          "256",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=256 n=256 k=256\nseed=20250401\nprocesses=2\ntime_sec=0.006685000\nchecksum=-1676.250020577\nmax_abs=24.850755690\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "256",
+          "n": "256",
+          "k": "256",
+          "seed": "20250401",
+          "processes": "2",
+          "time_sec": "0.006685000",
+          "checksum": "-1676.250020577",
+          "max_abs": "24.850755690"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "version": "mpi_v2_collective",
+    "processes": 2,
+    "matrix_size": 512,
+    "m": 512,
+    "n": 512,
+    "k": 512,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.062853,
+    "all_times": [
+      0.063244,
+      0.06169,
+      0.063625
+    ],
+    "checksums": [
+      -6740.486084331,
+      -6740.486084331,
+      -6740.486084331
+    ],
+    "baseline_checksum": -6740.486084331,
+    "baseline_checksum_match": true,
+    "runs": [
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "2",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "512",
+          "512",
+          "512",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=512 n=512 k=512\nseed=20250401\nprocesses=2\ntime_sec=0.063244000\nchecksum=-6740.486084331\nmax_abs=38.559067659\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "512",
+          "n": "512",
+          "k": "512",
+          "seed": "20250401",
+          "processes": "2",
+          "time_sec": "0.063244000",
+          "checksum": "-6740.486084331",
+          "max_abs": "38.559067659"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "2",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "512",
+          "512",
+          "512",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=512 n=512 k=512\nseed=20250401\nprocesses=2\ntime_sec=0.061690000\nchecksum=-6740.486084331\nmax_abs=38.559067659\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "512",
+          "n": "512",
+          "k": "512",
+          "seed": "20250401",
+          "processes": "2",
+          "time_sec": "0.061690000",
+          "checksum": "-6740.486084331",
+          "max_abs": "38.559067659"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "2",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "512",
+          "512",
+          "512",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=512 n=512 k=512\nseed=20250401\nprocesses=2\ntime_sec=0.063625000\nchecksum=-6740.486084331\nmax_abs=38.559067659\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "512",
+          "n": "512",
+          "k": "512",
+          "seed": "20250401",
+          "processes": "2",
+          "time_sec": "0.063625000",
+          "checksum": "-6740.486084331",
+          "max_abs": "38.559067659"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "version": "mpi_v2_collective",
+    "processes": 2,
+    "matrix_size": 1024,
+    "m": 1024,
+    "n": 1024,
+    "k": 1024,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.6360733333333334,
+    "all_times": [
+      0.61267,
+      0.640015,
+      0.655535
+    ],
+    "checksums": [
+      48910.950599938,
+      48910.950599938,
+      48910.950599938
+    ],
+    "baseline_checksum": 48910.950599938,
+    "baseline_checksum_match": true,
+    "runs": [
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "2",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "1024",
+          "1024",
+          "1024",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=1024 n=1024 k=1024\nseed=20250401\nprocesses=2\ntime_sec=0.612670000\nchecksum=48910.950599938\nmax_abs=57.427011781\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "1024",
+          "n": "1024",
+          "k": "1024",
+          "seed": "20250401",
+          "processes": "2",
+          "time_sec": "0.612670000",
+          "checksum": "48910.950599938",
+          "max_abs": "57.427011781"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "2",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "1024",
+          "1024",
+          "1024",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=1024 n=1024 k=1024\nseed=20250401\nprocesses=2\ntime_sec=0.640015000\nchecksum=48910.950599938\nmax_abs=57.427011781\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "1024",
+          "n": "1024",
+          "k": "1024",
+          "seed": "20250401",
+          "processes": "2",
+          "time_sec": "0.640015000",
+          "checksum": "48910.950599938",
+          "max_abs": "57.427011781"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "2",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "1024",
+          "1024",
+          "1024",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=1024 n=1024 k=1024\nseed=20250401\nprocesses=2\ntime_sec=0.655535000\nchecksum=48910.950599938\nmax_abs=57.427011781\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "1024",
+          "n": "1024",
+          "k": "1024",
+          "seed": "20250401",
+          "processes": "2",
+          "time_sec": "0.655535000",
+          "checksum": "48910.950599938",
+          "max_abs": "57.427011781"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "version": "mpi_v2_collective",
+    "processes": 2,
+    "matrix_size": 2048,
+    "m": 2048,
+    "n": 2048,
+    "k": 2048,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 20.577133333333332,
+    "all_times": [
+      21.508649,
+      20.613603,
+      19.609148
+    ],
+    "checksums": [
+      -143956.491218867,
+      -143956.491218867,
+      -143956.491218867
+    ],
+    "baseline_checksum": -143956.491218867,
+    "baseline_checksum_match": true,
+    "runs": [
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "2",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "2048",
+          "2048",
+          "2048",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=2048 n=2048 k=2048\nseed=20250401\nprocesses=2\ntime_sec=21.508649000\nchecksum=-143956.491218867\nmax_abs=80.727961268\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "2048",
+          "n": "2048",
+          "k": "2048",
+          "seed": "20250401",
+          "processes": "2",
+          "time_sec": "21.508649000",
+          "checksum": "-143956.491218867",
+          "max_abs": "80.727961268"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "2",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "2048",
+          "2048",
+          "2048",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=2048 n=2048 k=2048\nseed=20250401\nprocesses=2\ntime_sec=20.613603000\nchecksum=-143956.491218867\nmax_abs=80.727961268\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "2048",
+          "n": "2048",
+          "k": "2048",
+          "seed": "20250401",
+          "processes": "2",
+          "time_sec": "20.613603000",
+          "checksum": "-143956.491218867",
+          "max_abs": "80.727961268"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "2",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "2048",
+          "2048",
+          "2048",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=2048 n=2048 k=2048\nseed=20250401\nprocesses=2\ntime_sec=19.609148000\nchecksum=-143956.491218867\nmax_abs=80.727961268\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "2048",
+          "n": "2048",
+          "k": "2048",
+          "seed": "20250401",
+          "processes": "2",
+          "time_sec": "19.609148000",
+          "checksum": "-143956.491218867",
+          "max_abs": "80.727961268"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "version": "mpi_v2_collective",
+    "processes": 4,
+    "matrix_size": 128,
+    "m": 128,
+    "n": 128,
+    "k": 128,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.004559,
+    "all_times": [
+      0.00515,
+      0.003723,
+      0.004804
+    ],
+    "checksums": [
+      -1713.139278331,
+      -1713.139278331,
+      -1713.139278331
+    ],
+    "baseline_checksum": -1713.139278331,
+    "baseline_checksum_match": true,
+    "runs": [
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "4",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "128",
+          "128",
+          "128",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=128 n=128 k=128\nseed=20250401\nprocesses=4\ntime_sec=0.005150000\nchecksum=-1713.139278331\nmax_abs=15.378743870\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "128",
+          "n": "128",
+          "k": "128",
+          "seed": "20250401",
+          "processes": "4",
+          "time_sec": "0.005150000",
+          "checksum": "-1713.139278331",
+          "max_abs": "15.378743870"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "4",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "128",
+          "128",
+          "128",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=128 n=128 k=128\nseed=20250401\nprocesses=4\ntime_sec=0.003723000\nchecksum=-1713.139278331\nmax_abs=15.378743870\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "128",
+          "n": "128",
+          "k": "128",
+          "seed": "20250401",
+          "processes": "4",
+          "time_sec": "0.003723000",
+          "checksum": "-1713.139278331",
+          "max_abs": "15.378743870"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "4",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "128",
+          "128",
+          "128",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=128 n=128 k=128\nseed=20250401\nprocesses=4\ntime_sec=0.004804000\nchecksum=-1713.139278331\nmax_abs=15.378743870\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "128",
+          "n": "128",
+          "k": "128",
+          "seed": "20250401",
+          "processes": "4",
+          "time_sec": "0.004804000",
+          "checksum": "-1713.139278331",
+          "max_abs": "15.378743870"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "version": "mpi_v2_collective",
+    "processes": 4,
+    "matrix_size": 256,
+    "m": 256,
+    "n": 256,
+    "k": 256,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.009002333333333333,
+    "all_times": [
+      0.007454,
+      0.011006,
+      0.008547
+    ],
+    "checksums": [
+      -1676.250020577,
+      -1676.250020577,
+      -1676.250020577
+    ],
+    "baseline_checksum": -1676.250020577,
+    "baseline_checksum_match": true,
+    "runs": [
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "4",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "256",
+          "256",
+          "256",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=256 n=256 k=256\nseed=20250401\nprocesses=4\ntime_sec=0.007454000\nchecksum=-1676.250020577\nmax_abs=24.850755690\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "256",
+          "n": "256",
+          "k": "256",
+          "seed": "20250401",
+          "processes": "4",
+          "time_sec": "0.007454000",
+          "checksum": "-1676.250020577",
+          "max_abs": "24.850755690"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "4",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "256",
+          "256",
+          "256",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=256 n=256 k=256\nseed=20250401\nprocesses=4\ntime_sec=0.011006000\nchecksum=-1676.250020577\nmax_abs=24.850755690\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "256",
+          "n": "256",
+          "k": "256",
+          "seed": "20250401",
+          "processes": "4",
+          "time_sec": "0.011006000",
+          "checksum": "-1676.250020577",
+          "max_abs": "24.850755690"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "4",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "256",
+          "256",
+          "256",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=256 n=256 k=256\nseed=20250401\nprocesses=4\ntime_sec=0.008547000\nchecksum=-1676.250020577\nmax_abs=24.850755690\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "256",
+          "n": "256",
+          "k": "256",
+          "seed": "20250401",
+          "processes": "4",
+          "time_sec": "0.008547000",
+          "checksum": "-1676.250020577",
+          "max_abs": "24.850755690"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "version": "mpi_v2_collective",
+    "processes": 4,
+    "matrix_size": 512,
+    "m": 512,
+    "n": 512,
+    "k": 512,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.05129366666666666,
+    "all_times": [
+      0.050875,
+      0.049344,
+      0.053662
+    ],
+    "checksums": [
+      -6740.486084331,
+      -6740.486084331,
+      -6740.486084331
+    ],
+    "baseline_checksum": -6740.486084331,
+    "baseline_checksum_match": true,
+    "runs": [
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "4",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "512",
+          "512",
+          "512",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=512 n=512 k=512\nseed=20250401\nprocesses=4\ntime_sec=0.050875000\nchecksum=-6740.486084331\nmax_abs=38.559067659\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "512",
+          "n": "512",
+          "k": "512",
+          "seed": "20250401",
+          "processes": "4",
+          "time_sec": "0.050875000",
+          "checksum": "-6740.486084331",
+          "max_abs": "38.559067659"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "4",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "512",
+          "512",
+          "512",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=512 n=512 k=512\nseed=20250401\nprocesses=4\ntime_sec=0.049344000\nchecksum=-6740.486084331\nmax_abs=38.559067659\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "512",
+          "n": "512",
+          "k": "512",
+          "seed": "20250401",
+          "processes": "4",
+          "time_sec": "0.049344000",
+          "checksum": "-6740.486084331",
+          "max_abs": "38.559067659"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "4",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "512",
+          "512",
+          "512",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=512 n=512 k=512\nseed=20250401\nprocesses=4\ntime_sec=0.053662000\nchecksum=-6740.486084331\nmax_abs=38.559067659\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "512",
+          "n": "512",
+          "k": "512",
+          "seed": "20250401",
+          "processes": "4",
+          "time_sec": "0.053662000",
+          "checksum": "-6740.486084331",
+          "max_abs": "38.559067659"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "version": "mpi_v2_collective",
+    "processes": 4,
+    "matrix_size": 1024,
+    "m": 1024,
+    "n": 1024,
+    "k": 1024,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.6941696666666667,
+    "all_times": [
+      0.691163,
+      0.715876,
+      0.67547
+    ],
+    "checksums": [
+      48910.950599938,
+      48910.950599938,
+      48910.950599938
+    ],
+    "baseline_checksum": 48910.950599938,
+    "baseline_checksum_match": true,
+    "runs": [
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "4",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "1024",
+          "1024",
+          "1024",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=1024 n=1024 k=1024\nseed=20250401\nprocesses=4\ntime_sec=0.691163000\nchecksum=48910.950599938\nmax_abs=57.427011781\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "1024",
+          "n": "1024",
+          "k": "1024",
+          "seed": "20250401",
+          "processes": "4",
+          "time_sec": "0.691163000",
+          "checksum": "48910.950599938",
+          "max_abs": "57.427011781"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "4",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "1024",
+          "1024",
+          "1024",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=1024 n=1024 k=1024\nseed=20250401\nprocesses=4\ntime_sec=0.715876000\nchecksum=48910.950599938\nmax_abs=57.427011781\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "1024",
+          "n": "1024",
+          "k": "1024",
+          "seed": "20250401",
+          "processes": "4",
+          "time_sec": "0.715876000",
+          "checksum": "48910.950599938",
+          "max_abs": "57.427011781"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "4",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "1024",
+          "1024",
+          "1024",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=1024 n=1024 k=1024\nseed=20250401\nprocesses=4\ntime_sec=0.675470000\nchecksum=48910.950599938\nmax_abs=57.427011781\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "1024",
+          "n": "1024",
+          "k": "1024",
+          "seed": "20250401",
+          "processes": "4",
+          "time_sec": "0.675470000",
+          "checksum": "48910.950599938",
+          "max_abs": "57.427011781"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "version": "mpi_v2_collective",
+    "processes": 4,
+    "matrix_size": 2048,
+    "m": 2048,
+    "n": 2048,
+    "k": 2048,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 15.334143,
+    "all_times": [
+      14.450445,
+      14.77927,
+      16.772714
+    ],
+    "checksums": [
+      -143956.491218867,
+      -143956.491218867,
+      -143956.491218867
+    ],
+    "baseline_checksum": -143956.491218867,
+    "baseline_checksum_match": true,
+    "runs": [
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "4",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "2048",
+          "2048",
+          "2048",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=2048 n=2048 k=2048\nseed=20250401\nprocesses=4\ntime_sec=14.450445000\nchecksum=-143956.491218867\nmax_abs=80.727961268\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "2048",
+          "n": "2048",
+          "k": "2048",
+          "seed": "20250401",
+          "processes": "4",
+          "time_sec": "14.450445000",
+          "checksum": "-143956.491218867",
+          "max_abs": "80.727961268"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "4",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "2048",
+          "2048",
+          "2048",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=2048 n=2048 k=2048\nseed=20250401\nprocesses=4\ntime_sec=14.779270000\nchecksum=-143956.491218867\nmax_abs=80.727961268\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "2048",
+          "n": "2048",
+          "k": "2048",
+          "seed": "20250401",
+          "processes": "4",
+          "time_sec": "14.779270000",
+          "checksum": "-143956.491218867",
+          "max_abs": "80.727961268"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "4",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "2048",
+          "2048",
+          "2048",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=2048 n=2048 k=2048\nseed=20250401\nprocesses=4\ntime_sec=16.772714000\nchecksum=-143956.491218867\nmax_abs=80.727961268\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "2048",
+          "n": "2048",
+          "k": "2048",
+          "seed": "20250401",
+          "processes": "4",
+          "time_sec": "16.772714000",
+          "checksum": "-143956.491218867",
+          "max_abs": "80.727961268"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "version": "mpi_v2_collective",
+    "processes": 8,
+    "matrix_size": 128,
+    "m": 128,
+    "n": 128,
+    "k": 128,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.0054853333333333325,
+    "all_times": [
+      0.00698,
+      0.006012,
+      0.003464
+    ],
+    "checksums": [
+      -1713.139278331,
+      -1713.139278331,
+      -1713.139278331
+    ],
+    "baseline_checksum": -1713.139278331,
+    "baseline_checksum_match": true,
+    "runs": [
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "8",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "128",
+          "128",
+          "128",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=128 n=128 k=128\nseed=20250401\nprocesses=8\ntime_sec=0.006980000\nchecksum=-1713.139278331\nmax_abs=15.378743870\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "128",
+          "n": "128",
+          "k": "128",
+          "seed": "20250401",
+          "processes": "8",
+          "time_sec": "0.006980000",
+          "checksum": "-1713.139278331",
+          "max_abs": "15.378743870"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "8",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "128",
+          "128",
+          "128",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=128 n=128 k=128\nseed=20250401\nprocesses=8\ntime_sec=0.006012000\nchecksum=-1713.139278331\nmax_abs=15.378743870\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "128",
+          "n": "128",
+          "k": "128",
+          "seed": "20250401",
+          "processes": "8",
+          "time_sec": "0.006012000",
+          "checksum": "-1713.139278331",
+          "max_abs": "15.378743870"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "8",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "128",
+          "128",
+          "128",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=128 n=128 k=128\nseed=20250401\nprocesses=8\ntime_sec=0.003464000\nchecksum=-1713.139278331\nmax_abs=15.378743870\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "128",
+          "n": "128",
+          "k": "128",
+          "seed": "20250401",
+          "processes": "8",
+          "time_sec": "0.003464000",
+          "checksum": "-1713.139278331",
+          "max_abs": "15.378743870"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "version": "mpi_v2_collective",
+    "processes": 8,
+    "matrix_size": 256,
+    "m": 256,
+    "n": 256,
+    "k": 256,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.009874666666666665,
+    "all_times": [
+      0.010136,
+      0.008853,
+      0.010635
+    ],
+    "checksums": [
+      -1676.250020577,
+      -1676.250020577,
+      -1676.250020577
+    ],
+    "baseline_checksum": -1676.250020577,
+    "baseline_checksum_match": true,
+    "runs": [
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "8",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "256",
+          "256",
+          "256",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=256 n=256 k=256\nseed=20250401\nprocesses=8\ntime_sec=0.010136000\nchecksum=-1676.250020577\nmax_abs=24.850755690\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "256",
+          "n": "256",
+          "k": "256",
+          "seed": "20250401",
+          "processes": "8",
+          "time_sec": "0.010136000",
+          "checksum": "-1676.250020577",
+          "max_abs": "24.850755690"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "8",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "256",
+          "256",
+          "256",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=256 n=256 k=256\nseed=20250401\nprocesses=8\ntime_sec=0.008853000\nchecksum=-1676.250020577\nmax_abs=24.850755690\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "256",
+          "n": "256",
+          "k": "256",
+          "seed": "20250401",
+          "processes": "8",
+          "time_sec": "0.008853000",
+          "checksum": "-1676.250020577",
+          "max_abs": "24.850755690"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "8",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "256",
+          "256",
+          "256",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=256 n=256 k=256\nseed=20250401\nprocesses=8\ntime_sec=0.010635000\nchecksum=-1676.250020577\nmax_abs=24.850755690\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "256",
+          "n": "256",
+          "k": "256",
+          "seed": "20250401",
+          "processes": "8",
+          "time_sec": "0.010635000",
+          "checksum": "-1676.250020577",
+          "max_abs": "24.850755690"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "version": "mpi_v2_collective",
+    "processes": 8,
+    "matrix_size": 512,
+    "m": 512,
+    "n": 512,
+    "k": 512,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.064415,
+    "all_times": [
+      0.057919,
+      0.059882,
+      0.075444
+    ],
+    "checksums": [
+      -6740.486084331,
+      -6740.486084331,
+      -6740.486084331
+    ],
+    "baseline_checksum": -6740.486084331,
+    "baseline_checksum_match": true,
+    "runs": [
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "8",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "512",
+          "512",
+          "512",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=512 n=512 k=512\nseed=20250401\nprocesses=8\ntime_sec=0.057919000\nchecksum=-6740.486084331\nmax_abs=38.559067659\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "512",
+          "n": "512",
+          "k": "512",
+          "seed": "20250401",
+          "processes": "8",
+          "time_sec": "0.057919000",
+          "checksum": "-6740.486084331",
+          "max_abs": "38.559067659"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "8",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "512",
+          "512",
+          "512",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=512 n=512 k=512\nseed=20250401\nprocesses=8\ntime_sec=0.059882000\nchecksum=-6740.486084331\nmax_abs=38.559067659\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "512",
+          "n": "512",
+          "k": "512",
+          "seed": "20250401",
+          "processes": "8",
+          "time_sec": "0.059882000",
+          "checksum": "-6740.486084331",
+          "max_abs": "38.559067659"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "8",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "512",
+          "512",
+          "512",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=512 n=512 k=512\nseed=20250401\nprocesses=8\ntime_sec=0.075444000\nchecksum=-6740.486084331\nmax_abs=38.559067659\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "512",
+          "n": "512",
+          "k": "512",
+          "seed": "20250401",
+          "processes": "8",
+          "time_sec": "0.075444000",
+          "checksum": "-6740.486084331",
+          "max_abs": "38.559067659"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "version": "mpi_v2_collective",
+    "processes": 8,
+    "matrix_size": 1024,
+    "m": 1024,
+    "n": 1024,
+    "k": 1024,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 1.165934,
+    "all_times": [
+      1.268332,
+      1.24766,
+      0.98181
+    ],
+    "checksums": [
+      48910.950599938,
+      48910.950599938,
+      48910.950599938
+    ],
+    "baseline_checksum": 48910.950599938,
+    "baseline_checksum_match": true,
+    "runs": [
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "8",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "1024",
+          "1024",
+          "1024",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=1024 n=1024 k=1024\nseed=20250401\nprocesses=8\ntime_sec=1.268332000\nchecksum=48910.950599938\nmax_abs=57.427011781\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "1024",
+          "n": "1024",
+          "k": "1024",
+          "seed": "20250401",
+          "processes": "8",
+          "time_sec": "1.268332000",
+          "checksum": "48910.950599938",
+          "max_abs": "57.427011781"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "8",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "1024",
+          "1024",
+          "1024",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=1024 n=1024 k=1024\nseed=20250401\nprocesses=8\ntime_sec=1.247660000\nchecksum=48910.950599938\nmax_abs=57.427011781\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "1024",
+          "n": "1024",
+          "k": "1024",
+          "seed": "20250401",
+          "processes": "8",
+          "time_sec": "1.247660000",
+          "checksum": "48910.950599938",
+          "max_abs": "57.427011781"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "8",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "1024",
+          "1024",
+          "1024",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=1024 n=1024 k=1024\nseed=20250401\nprocesses=8\ntime_sec=0.981810000\nchecksum=48910.950599938\nmax_abs=57.427011781\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "1024",
+          "n": "1024",
+          "k": "1024",
+          "seed": "20250401",
+          "processes": "8",
+          "time_sec": "0.981810000",
+          "checksum": "48910.950599938",
+          "max_abs": "57.427011781"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "version": "mpi_v2_collective",
+    "processes": 8,
+    "matrix_size": 2048,
+    "m": 2048,
+    "n": 2048,
+    "k": 2048,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 12.784245666666665,
+    "all_times": [
+      12.693165,
+      13.605362,
+      12.05421
+    ],
+    "checksums": [
+      -143956.491218867,
+      -143956.491218867,
+      -143956.491218867
+    ],
+    "baseline_checksum": -143956.491218867,
+    "baseline_checksum_match": true,
+    "runs": [
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "8",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "2048",
+          "2048",
+          "2048",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=2048 n=2048 k=2048\nseed=20250401\nprocesses=8\ntime_sec=12.693165000\nchecksum=-143956.491218867\nmax_abs=80.727961268\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "2048",
+          "n": "2048",
+          "k": "2048",
+          "seed": "20250401",
+          "processes": "8",
+          "time_sec": "12.693165000",
+          "checksum": "-143956.491218867",
+          "max_abs": "80.727961268"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "8",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "2048",
+          "2048",
+          "2048",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=2048 n=2048 k=2048\nseed=20250401\nprocesses=8\ntime_sec=13.605362000\nchecksum=-143956.491218867\nmax_abs=80.727961268\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "2048",
+          "n": "2048",
+          "k": "2048",
+          "seed": "20250401",
+          "processes": "8",
+          "time_sec": "13.605362000",
+          "checksum": "-143956.491218867",
+          "max_abs": "80.727961268"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "8",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "2048",
+          "2048",
+          "2048",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=2048 n=2048 k=2048\nseed=20250401\nprocesses=8\ntime_sec=12.054210000\nchecksum=-143956.491218867\nmax_abs=80.727961268\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "2048",
+          "n": "2048",
+          "k": "2048",
+          "seed": "20250401",
+          "processes": "8",
+          "time_sec": "12.054210000",
+          "checksum": "-143956.491218867",
+          "max_abs": "80.727961268"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "version": "mpi_v2_collective",
+    "processes": 16,
+    "matrix_size": 128,
+    "m": 128,
+    "n": 128,
+    "k": 128,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.015382666666666668,
+    "all_times": [
+      0.01691,
+      0.015587,
+      0.013651
+    ],
+    "checksums": [
+      -1713.139278331,
+      -1713.139278331,
+      -1713.139278331
+    ],
+    "baseline_checksum": -1713.139278331,
+    "baseline_checksum_match": true,
+    "runs": [
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "16",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "128",
+          "128",
+          "128",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=128 n=128 k=128\nseed=20250401\nprocesses=16\ntime_sec=0.016910000\nchecksum=-1713.139278331\nmax_abs=15.378743870\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "128",
+          "n": "128",
+          "k": "128",
+          "seed": "20250401",
+          "processes": "16",
+          "time_sec": "0.016910000",
+          "checksum": "-1713.139278331",
+          "max_abs": "15.378743870"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "16",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "128",
+          "128",
+          "128",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=128 n=128 k=128\nseed=20250401\nprocesses=16\ntime_sec=0.015587000\nchecksum=-1713.139278331\nmax_abs=15.378743870\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "128",
+          "n": "128",
+          "k": "128",
+          "seed": "20250401",
+          "processes": "16",
+          "time_sec": "0.015587000",
+          "checksum": "-1713.139278331",
+          "max_abs": "15.378743870"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "16",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "128",
+          "128",
+          "128",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=128 n=128 k=128\nseed=20250401\nprocesses=16\ntime_sec=0.013651000\nchecksum=-1713.139278331\nmax_abs=15.378743870\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "128",
+          "n": "128",
+          "k": "128",
+          "seed": "20250401",
+          "processes": "16",
+          "time_sec": "0.013651000",
+          "checksum": "-1713.139278331",
+          "max_abs": "15.378743870"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "version": "mpi_v2_collective",
+    "processes": 16,
+    "matrix_size": 256,
+    "m": 256,
+    "n": 256,
+    "k": 256,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.013878000000000001,
+    "all_times": [
+      0.0083,
+      0.018796,
+      0.014538
+    ],
+    "checksums": [
+      -1676.250020577,
+      -1676.250020577,
+      -1676.250020577
+    ],
+    "baseline_checksum": -1676.250020577,
+    "baseline_checksum_match": true,
+    "runs": [
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "16",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "256",
+          "256",
+          "256",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=256 n=256 k=256\nseed=20250401\nprocesses=16\ntime_sec=0.008300000\nchecksum=-1676.250020577\nmax_abs=24.850755690\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "256",
+          "n": "256",
+          "k": "256",
+          "seed": "20250401",
+          "processes": "16",
+          "time_sec": "0.008300000",
+          "checksum": "-1676.250020577",
+          "max_abs": "24.850755690"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "16",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "256",
+          "256",
+          "256",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=256 n=256 k=256\nseed=20250401\nprocesses=16\ntime_sec=0.018796000\nchecksum=-1676.250020577\nmax_abs=24.850755690\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "256",
+          "n": "256",
+          "k": "256",
+          "seed": "20250401",
+          "processes": "16",
+          "time_sec": "0.018796000",
+          "checksum": "-1676.250020577",
+          "max_abs": "24.850755690"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "16",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "256",
+          "256",
+          "256",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=256 n=256 k=256\nseed=20250401\nprocesses=16\ntime_sec=0.014538000\nchecksum=-1676.250020577\nmax_abs=24.850755690\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "256",
+          "n": "256",
+          "k": "256",
+          "seed": "20250401",
+          "processes": "16",
+          "time_sec": "0.014538000",
+          "checksum": "-1676.250020577",
+          "max_abs": "24.850755690"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "version": "mpi_v2_collective",
+    "processes": 16,
+    "matrix_size": 512,
+    "m": 512,
+    "n": 512,
+    "k": 512,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.08411066666666667,
+    "all_times": [
+      0.051436,
+      0.112768,
+      0.088128
+    ],
+    "checksums": [
+      -6740.486084331,
+      -6740.486084331,
+      -6740.486084331
+    ],
+    "baseline_checksum": -6740.486084331,
+    "baseline_checksum_match": true,
+    "runs": [
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "16",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "512",
+          "512",
+          "512",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=512 n=512 k=512\nseed=20250401\nprocesses=16\ntime_sec=0.051436000\nchecksum=-6740.486084331\nmax_abs=38.559067659\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "512",
+          "n": "512",
+          "k": "512",
+          "seed": "20250401",
+          "processes": "16",
+          "time_sec": "0.051436000",
+          "checksum": "-6740.486084331",
+          "max_abs": "38.559067659"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "16",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "512",
+          "512",
+          "512",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=512 n=512 k=512\nseed=20250401\nprocesses=16\ntime_sec=0.112768000\nchecksum=-6740.486084331\nmax_abs=38.559067659\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "512",
+          "n": "512",
+          "k": "512",
+          "seed": "20250401",
+          "processes": "16",
+          "time_sec": "0.112768000",
+          "checksum": "-6740.486084331",
+          "max_abs": "38.559067659"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "16",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "512",
+          "512",
+          "512",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=512 n=512 k=512\nseed=20250401\nprocesses=16\ntime_sec=0.088128000\nchecksum=-6740.486084331\nmax_abs=38.559067659\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "512",
+          "n": "512",
+          "k": "512",
+          "seed": "20250401",
+          "processes": "16",
+          "time_sec": "0.088128000",
+          "checksum": "-6740.486084331",
+          "max_abs": "38.559067659"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "version": "mpi_v2_collective",
+    "processes": 16,
+    "matrix_size": 1024,
+    "m": 1024,
+    "n": 1024,
+    "k": 1024,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.9687086666666667,
+    "all_times": [
+      0.976988,
+      1.173973,
+      0.755165
+    ],
+    "checksums": [
+      48910.950599938,
+      48910.950599938,
+      48910.950599938
+    ],
+    "baseline_checksum": 48910.950599938,
+    "baseline_checksum_match": true,
+    "runs": [
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "16",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "1024",
+          "1024",
+          "1024",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=1024 n=1024 k=1024\nseed=20250401\nprocesses=16\ntime_sec=0.976988000\nchecksum=48910.950599938\nmax_abs=57.427011781\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "1024",
+          "n": "1024",
+          "k": "1024",
+          "seed": "20250401",
+          "processes": "16",
+          "time_sec": "0.976988000",
+          "checksum": "48910.950599938",
+          "max_abs": "57.427011781"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "16",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "1024",
+          "1024",
+          "1024",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=1024 n=1024 k=1024\nseed=20250401\nprocesses=16\ntime_sec=1.173973000\nchecksum=48910.950599938\nmax_abs=57.427011781\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "1024",
+          "n": "1024",
+          "k": "1024",
+          "seed": "20250401",
+          "processes": "16",
+          "time_sec": "1.173973000",
+          "checksum": "48910.950599938",
+          "max_abs": "57.427011781"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "16",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "1024",
+          "1024",
+          "1024",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=1024 n=1024 k=1024\nseed=20250401\nprocesses=16\ntime_sec=0.755165000\nchecksum=48910.950599938\nmax_abs=57.427011781\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "1024",
+          "n": "1024",
+          "k": "1024",
+          "seed": "20250401",
+          "processes": "16",
+          "time_sec": "0.755165000",
+          "checksum": "48910.950599938",
+          "max_abs": "57.427011781"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "version": "mpi_v2_collective",
+    "processes": 16,
+    "matrix_size": 2048,
+    "m": 2048,
+    "n": 2048,
+    "k": 2048,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 10.901446,
+    "all_times": [
+      10.622461,
+      10.469967,
+      11.61191
+    ],
+    "checksums": [
+      -143956.491218867,
+      -143956.491218867,
+      -143956.491218867
+    ],
+    "baseline_checksum": -143956.491218867,
+    "baseline_checksum_match": true,
+    "runs": [
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "16",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "2048",
+          "2048",
+          "2048",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=2048 n=2048 k=2048\nseed=20250401\nprocesses=16\ntime_sec=10.622461000\nchecksum=-143956.491218867\nmax_abs=80.727961268\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "2048",
+          "n": "2048",
+          "k": "2048",
+          "seed": "20250401",
+          "processes": "16",
+          "time_sec": "10.622461000",
+          "checksum": "-143956.491218867",
+          "max_abs": "80.727961268"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "16",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "2048",
+          "2048",
+          "2048",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=2048 n=2048 k=2048\nseed=20250401\nprocesses=16\ntime_sec=10.469967000\nchecksum=-143956.491218867\nmax_abs=80.727961268\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "2048",
+          "n": "2048",
+          "k": "2048",
+          "seed": "20250401",
+          "processes": "16",
+          "time_sec": "10.469967000",
+          "checksum": "-143956.491218867",
+          "max_abs": "80.727961268"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "version": "mpi_v2_collective",
+        "command": [
+          "mpirun",
+          "-np",
+          "16",
+          "--oversubscribe",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab2/bin/mpi_matmul_v2_collective",
+          "2048",
+          "2048",
+          "2048",
+          "20250401"
+        ],
+        "returncode": 0,
+        "stdout": "version=mpi_v2_collective\nm=2048 n=2048 k=2048\nseed=20250401\nprocesses=16\ntime_sec=11.611910000\nchecksum=-143956.491218867\nmax_abs=80.727961268\n",
+        "stderr": "",
+        "parsed": {
+          "version": "mpi_v2_collective",
+          "m": "2048",
+          "n": "2048",
+          "k": "2048",
+          "seed": "20250401",
+          "processes": "16",
+          "time_sec": "11.611910000",
+          "checksum": "-143956.491218867",
+          "max_abs": "80.727961268"
+        },
+        "error": ""
+      }
+    ]
+  }
+]
