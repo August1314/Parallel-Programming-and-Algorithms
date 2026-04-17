@@ -1,0 +1,9 @@
+[project]
+name = "lab3-pthreads"
+version = "0.1.0"
+description = "Lab3 pthreads matrix multiplication and array sum"
+requires-python = ">=3.10"
+dependencies = [
+    "matplotlib>=3.10.0",
+    "pandas>=2.2.0",
+]
