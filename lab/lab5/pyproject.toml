@@ -1,0 +1,9 @@
+[project]
+name = "lab5-openmp-and-parallel-for"
+version = "0.1.0"
+description = "Lab5 benchmark and plotting workflow"
+requires-python = ">=3.10"
+dependencies = [
+  "matplotlib>=3.8",
+  "pandas>=2.2",
+]

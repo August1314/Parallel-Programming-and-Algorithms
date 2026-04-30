@@ -166,3 +166,12 @@ make -C ./lab/lab1 clean
 ## 变更记录 (Changelog)
 
 - 2026-04-03T12:40:33: 初始化仓库级 `AGENTS.md`，补充模块索引、Mermaid 结构图、常用命令、高层架构与 AI 协作说明。
+
+
+<claude-mem-context>
+# Memory Context
+
+# [Parallel-Programming-and-Algorithms] recent context, 2026-04-24 10:42am GMT+8
+
+No previous sessions found.
+</claude-mem-context>
