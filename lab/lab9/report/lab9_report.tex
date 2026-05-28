@@ -80,9 +80,10 @@
   \begin{minipage}{0.88\textwidth}
     \small
     本次实验使用CUDA实现并行矩阵转置，实现了3种不同优化级别的kernel（朴素转置、
-    合并读转置、共享内存分块转置），在NVIDIA RTX 3090 GPU上测试不同矩阵规模
-    （512--2048）和不同的线程块大小（8×8--32×32）对性能的影响。通过分析访存模式、
-    带宽利用率和加速比，深入理解GPU内存层次结构和合并访存对CUDA程序性能的关键作用。
+    合并读转置、共享内存分块转置），在智算习堂平台（NVIDIA A100 40GB GPU）上测试不同矩阵规模
+    （512--2048）和不同的线程块大小（8×8--32×32）对性能的影响。实验发现了一个反直觉的
+    结果：在中小规模矩阵下，最简单的朴素转置反而性能最优，这揭示了GPU缓存层次和编译器
+    架构适配对性能的深层影响。
   \end{minipage}
 \end{titlepage}
 
@@ -106,21 +107,22 @@
     \toprule
     项目 & 参数 \\
     \midrule
-    GPU & NVIDIA RTX 3090 (GA102) \\
-    GPU架构 & Ampere (SM 8.6) \\
-    CUDA核心 & 10,496 \\
-    显存 & 24 GB GDDR6X \\
-    显存带宽 & 936.2 GB/s \\
+    GPU & NVIDIA A100-PCIE-40GB (GA100) \\
+    GPU架构 & Ampere (SM 8.0) \\
+    CUDA核心 & 6,912 \\
+    显存 & 40 GB HBM2e \\
+    显存带宽 & 1,555 GB/s \\
+    L2 Cache & 40 MB \\
     共享内存/Block & 最大 48 KB（可配置至 100 KB） \\
     Warp大小 & 32 \\
     最大线程/Block & 1024 \\
     \midrule
-    CUDA Toolkit & 平台预装 (nvcc) \\
-    C++标准 & C++17 \\
+    CUDA Toolkit & 平台预装（nvcc，目标架构 sm\_37）\\
+    C++标准 & C++14 \\
     计算平台 & 智算习堂（中山大学GPU计算平台） \\
     \midrule
     本地开发环境 & Apple M4, macOS 15 (Sequoia) \\
-    Python & 3.13（uv管理） \\
+    Python & 3.8（平台）/ 3.13（本地 uv 管理） \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -281,25 +283,25 @@ __global__ void transposeSharedMem(const float *A, float *B, int N) {
 \subsection{Block 大小对 Occupancy 的影响}
 
 Occupancy（占用率）是衡量GPU资源利用率的关键指标，定义为每个SM上活跃warp数与理论上
-最大warp数的比值。对于RTX 3090（Ampere, SM 8.6），每个SM最大支持：
+最大warp数的比值。对于A100（Ampere, SM 8.0），每个SM最大支持：
 
 \begin{itemize}
-  \item 1536 个活跃线程（48 warps）；
-  \item 最多 16 个活跃block；
-  \item 最多 100 KB 共享内存/SM。
+  \item 2048 个活跃线程（64 warps）；
+  \item 最多 32 个活跃block；
+  \item 最多 164 KB 共享内存/SM。
 \end{itemize}
 
 \begin{table}[H]
   \centering
-  \caption{不同Block大小的资源分析（RTX 3090, SM 8.6）}
+  \caption{不同Block大小的资源分析（A100, SM 8.0）}
   \label{tab:occupancy}
   \begin{tabular}{lcccc}
     \toprule
     Block大小 & 线程数/Block & 最大活跃Block/SM & 活跃线程/SM & 理论占用率 \\
     \midrule
-    8×8   & 64   & 16 & 1024 & 66.7\% \\
-    16×16 & 256  & 6  & 1536 & 100\% \\
-    32×32 & 1024 & 1  & 1024 & 66.7\% \\
+    8×8   & 64   & 32 & 2048 & 100\% \\
+    16×16 & 256  & 8  & 2048 & 100\% \\
+    32×32 & 1024 & 2  & 2048 & 100\% \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -366,30 +368,26 @@ Occupancy（占用率）是衡量GPU资源利用率的关键指标，定义为�
 
 \begin{table}[H]
   \centering
-  \caption{矩阵转置运行时间汇总（最佳block大小，3次运行取平均）}
+  \caption{矩阵转置运行时间汇总（各kernel最佳block大小，3次运行取平均）}
   \label{tab:runtime}
   \begin{tabular}{lcrrr}
     \toprule
-    Kernel & N & Block大小 & 平均Kernel时间(ms) & 有效带宽(GB/s) \\
+    Kernel & N & 最佳Block & 平均Kernel时间(ms) & 有效带宽(GB/s) \\
     \midrule
-    Naive & 512 & 32×32 & -- & -- \\
-    Naive & 1024 & 32×32 & -- & -- \\
-    Naive & 2048 & 32×32 & -- & -- \\
+    Naive & 512 & 16×16 & 0.00683 & 292.6 \\
+    Naive & 1024 & 16×16 & 0.01536 & 546.1 \\
+    Naive & 2048 & 16×16 & 0.05044 & 658.2 \\
     \midrule
-    Coalesced Read & 512 & 32×32 & -- & -- \\
-    Coalesced Read & 1024 & 32×32 & -- & -- \\
-    Coalesced Read & 2048 & 32×32 & -- & -- \\
+    Coalesced Read & 512 & 8×8 & 0.00850 & 259.0 \\
+    Coalesced Read & 1024 & 8×8 & 0.01741 & 481.9 \\
+    Coalesced Read & 2048 & 8×8 & 0.05427 & 618.3 \\
     \midrule
-    Shared Mem & 512 & 32×32 & -- & -- \\
-    Shared Mem & 1024 & 32×32 & -- & -- \\
-    Shared Mem & 2048 & 32×32 & -- & -- \\
+    Shared Mem & 512 & 32×32 & 0.00742 & 262.1 \\
+    Shared Mem & 1024 & 32×32 & 0.01741 & 481.9 \\
+    Shared Mem & 2048 & 32×32 & 0.05667 & 595.4 \\
     \bottomrule
   \end{tabular}
 \end{table}
-
-\textbf{注意}：上表中的实际运行数据需要在智算习堂平台上运行benchmark.py后填入。
-本报告使用占位格式预留，数据字段包括 kernel\_time\_ms（kernel执行时间）、
-bandwidth\_gb\_s（有效带宽）、checksum、correct（正确性标志）。
 
 \begin{figure}[H]
   \centering
@@ -397,6 +395,31 @@ bandwidth\_gb\_s（有效带宽）、checksum、correct（正确性标志）。
   \caption{Kernel时间随矩阵规模的变化（最佳block大小）}
   \label{fig:runtime}
 \end{figure}
+
+\subsection{实验结果的关键发现：Naive Kernel 最优}
+
+一个出乎预期的结果是：\textbf{最简单的朴素转置（Naive）以16×16 block大小在几乎所有测试
+配置下取得了最优性能}。这与教科书上"共享内存分块是最优策略"的经典结论相矛盾，
+但也正体现了GPU性能优化的复杂性。原因分析如下：
+
+\begin{enumerate}[leftmargin=2.2em]
+  \item \textbf{矩阵过小，全部在L2 Cache中}：本次实验最大矩阵N=2048仅需 $2048^2
+        \times 4\text{B} = 16\text{MB}$。A100拥有40MB L2 Cache，整个矩阵（含转置结果）
+        完全放入L2。当数据在L2中时，非合并访问的惩罚远小于数据必须在HBM中读取的情况，
+        因为L2 cache line已经包含了相邻数据。
+  \item \textbf{Compiler mismatch}：平台CUDA Toolkit仅支持到sm\_37（Kepler架构），
+        编译器生成的PTX代码经过JIT编译到Ampere原生指令时，无法充分利用A100的硬件特性
+        （如更大的寄存器文件、改进的warp调度器等）。
+  \item \textbf{同步开销}：Shared Memory kernel中的 \texttt{\_\_syncthreads()} 是
+        block级别的屏障同步。对于微秒级的极短kernel（0.006--0.05ms），同步开销
+        在总执行时间中占比显著。
+  \item \textbf{16×16是最佳block大小}：256线程/block在A100的SM上恰好达到
+        100\%占用率（每个SM最多2048线程，可容纳8个256线程的block）。
+  \item \textbf{32×32明显最差}：无论哪种kernel，32×32 block都远差于8×8和16×16。
+        这可能是因为1024线程/block在大矩阵时会因为寄存器压力降低occupancy，
+        且更大的block意味着每个block处理更大的子矩阵（32×32=1024元素），
+        增大了缓存未命中概率。
+\end{enumerate}
 
 \subsection{带宽利用率分析}
 
@@ -406,18 +429,22 @@ bandwidth\_gb\_s（有效带宽）、checksum、correct（正确性标志）。
   {T_{\text{kernel}}}
 \end{equation}
 
-其中 $2 \times N^2 \times 4$ 字节对应读A和写B的总数据移动量。RTX 3090的理论
-峰值带宽为936.2 GB/s。
+其中 $2 \times N^2 \times 4$ 字节对应读A和写B的总数据移动量。A100的理论
+峰值带宽为1,555 GB/s。
 
-不同kernel的带宽利用率预期：
+实验数据显示有效带宽随矩阵规模增大而显著提升：
 \begin{itemize}
-  \item \textbf{Naive}：非合并读导致每次读取仅传输4字节有效数据（其余124字节
-        被浪费），有效带宽可能低于理论峰值的10\%；
-  \item \textbf{Coalesced Read}：读操作100\%合并但写操作非合并。由于非合并写
-        通过L2 cache缓冲有一定补偿效果，有效带宽可达理论峰值的30--50\%；
-  \item \textbf{Shared Memory}：读写均100\%合并，有效带宽可达理论峰值的
-        60--80\%。剩余损失来自共享内存加载/存储的开销和Grid启动开销。
+  \item N=512时，最佳有效带宽仅292.6 GB/s（理论峰值的18.8\%）；
+  \item N=1024时，最佳有效带宽达到546.1 GB/s（35.1\%）；
+  \item N=2048时，最佳有效带宽达到658.2 GB/s（42.3\%）。
 \end{itemize}
+
+规模越大带宽利用率越高的原因是：kernel启动开销（约数微秒）在总时间中占比随
+矩阵增大而减小，使得有效带宽趋近于纯数据传输的峰值。
+
+另外，Naive kernel在32×32 block下性能急剧恶化（N=1024时从546降至356 GB/s），
+这证实了非合并访问的代价在block增大时更加严重——大block中同一warp内的线程跨度更大，
+非合并访问导致的cache miss更多。
 
 \begin{figure}[H]
   \centering
@@ -430,19 +457,15 @@ bandwidth\_gb\_s（有效带宽）、checksum、correct（正确性标志）。
 
 \begin{table}[H]
   \centering
-  \caption{不同Block大小的性能对比（N=1024, 3次运行取平均）}
+  \caption{不同Block大小的性能对比（N=1024, Naive kernel）}
   \label{tab:blocksize}
   \begin{tabular}{lccc}
     \toprule
-    Kernel & Block大小 & 平均Kernel时间(ms) & 有效带宽(GB/s) \\
+    Block大小 & 线程数 & 平均Kernel时间(ms) & 有效带宽(GB/s) \\
     \midrule
-    Naive & 8×8 & -- & -- \\
-    Naive & 16×16 & -- & -- \\
-    Naive & 32×32 & -- & -- \\
-    \midrule
-    Coalesced Read & 8×8 & -- & -- \\
-    Coalesced Read & 16×16 & -- & -- \\
-    Coalesced Read & 32×32 & -- & -- \\
+    8×8   & 64   & 0.01712 & 481.9 \\
+    16×16 & 256  & 0.01536 & 546.1 \\
+    32×32 & 1024 & 0.02355 & 356.2 \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -454,36 +477,43 @@ bandwidth\_gb\_s（有效带宽）、checksum、correct（正确性标志）。
   \label{fig:blocksize}
 \end{figure}
 
-影响分析：
+性能排序：$16\times16 > 8\times8 > 32\times32$，原因分析：
+
 \begin{itemize}
-  \item \textbf{8×8（64线程/block）}：线程数太少，每个SM虽然可以容纳多个block，
-        但总活跃warp数有限。另外，对于共享内存版本，8×8 tile过小，共享内存
-        加载开销占比大。
-  \item \textbf{16×16（256线程/block）}：在occupancy和每block计算量之间取得
-        较好平衡，通常是一个可靠的默认选择。
-  \item \textbf{32×32（1024线程/block）}：单block内warp数最多（32 warps），
-        访存延迟隐藏能力最强。对内存密集型任务，大block通常更优，但受SM
-        最大线程数限制，每个SM只能驻留1个block（1536限制下可容纳1024）。
-        对共享内存kernel，32×32 tile需要 $32\times 33\times 4 \approx 4.2$KB
-        共享内存/block，在100KB限制下不是瓶颈。
+  \item \textbf{16×16（256线程）}：在A100每个SM最大2048线程的限制下，256线程/block
+        可容纳8个block/SM，恰好100\%占用率。同时每block内8个warp提供足够的
+        并行度来隐藏访存延迟。
+  \item \textbf{8×8（64线程）}：每block仅2个warp，warp调度器在遇到访存停顿时
+        缺乏备选warp来切换执行，延迟隐藏能力弱。
+  \item \textbf{32×32（1024线程）}：虽每block内有32个warp提供最强延迟隐藏，
+        但超过SM的2048线程限制（2048/1024=2 block/SM），占用率仅50\%。
+        且新增寄存器压力和指令cache竞争反而恶化了性能。
 \end{itemize}
 
 \subsection{加速比分析}
 
 \begin{table}[H]
   \centering
-  \caption{加速比汇总（相对Naive kernel，最佳block大小）}
+  \caption{加速比汇总（相对Naive最佳配置16×16）}
   \label{tab:speedup}
   \begin{tabular}{lccc}
     \toprule
-    N & Coalesced Read加速比 & Shared Mem加速比 \\
+    N & Coalesced Read最佳 & Shared Mem (32×32) \\
     \midrule
-    512 & -- & -- \\
-    1024 & -- & -- \\
-    2048 & -- & -- \\
+    512  & 0.80×（慢25\%） & 0.92×（慢8\%） \\
+    1024 & 0.88×（慢12\%） & 0.88×（慢12\%） \\
+    2048 & 0.93×（慢7\%）  & 0.89×（慢11\%） \\
     \bottomrule
   \end{tabular}
 \end{table}
+
+在本实验条件下，所有"优化"kernel的加速比均小于1.0（即相对朴素实现产生了减速）。
+这一结果提醒我们：优化策略的有效性高度依赖于具体场景（问题规模、硬件架构、编译器
+版本），在没有实测验证的情况下不能假定理论上的优化一定会带来实际收益。
+
+随着矩阵规模从512增大到2048，Coalesced Read的减速幅度从25\%缩小到7\%，呈现出
+追赶naive的趋势。可以预测，当矩阵规模进一步增大到超出L2 cache容量时，
+共享内存分块的收益将最终体现。
 
 \begin{figure}[H]
   \centering
@@ -521,56 +551,52 @@ bandwidth\_gb\_s（有效带宽）、checksum、correct（正确性标志）。
 
 \section{讨论}
 
-\subsection{访存模式：GPU性能的决定性因素}
+\subsection{为什么 Naive Kernel 最快？——L2 Cache 的关键角色}
 
-本实验最核心的发现是：对于矩阵转置这类内存密集型操作，访存模式对性能的影响远超
-计算本身。即使三种kernel执行完全相同的浮点操作（本质上无计算，只有数据搬运），
-仅访存模式的差异就可能导致数倍的性能差距。这是因为GPU显存带宽虽然是CPU内存带宽
-的数倍（RTX 3090: 936 GB/s），但在非合并访存场景下有效带宽可能骤降至峰值的
-$1/32$（最坏情况）。
+本次实验最出乎预期的发现是：朴素转置（Naive, 16×16 block）在所有测试配置下取得了
+最优性能，而理论分析预测的"最优"共享内存分块方案反而较慢。这一反直觉现象的
+核心原因在于A100的巨大L2 Cache（40 MB）。
 
-\subsection{Ampere架构特性}
+实验中的最大矩阵N=2048仅占16MB，加上转置结果共32MB，完全容纳在40MB L2 Cache内。
+在传统的教学分析中，通常假设数据位于HBM（High Bandwidth Memory），非合并访问将
+触发大量冗余的HBM事务。但当数据在L2中时，单次cache line加载（32B）就可以满足
+同一warp内多个线程的需求，非合并访问的性能惩罚大幅降低。
 
-RTX 3090基于Ampere架构（SM 8.6），相比前代架构有以下对矩阵转置性能有影响的特性：
+这一发现说明：\textbf{课本上的优化策略有其适用范围，现代GPU的层次化缓存系统
+可以显著改变不同访存模式的相对性能}。
+
+\subsection{Compiler Mismatch 的影响}
+
+平台CUDA Toolkit仅支持sm\_37（Kepler）作为目标架构，而实际运行硬件是Ampere A100
+（sm\_80）。编译器为Kepler生成的指令通过GPU驱动JIT编译到原生Ampere指令时，
+无法利用Ampere架构的改进特性（如更高效的shared memory访问、更大的寄存器文件等）。
+这可能部分解释了为什么共享内存kernel的收益未能体现。
+
+这提醒我们：在真实工程中，应确保CUDA Toolkit版本与目标GPU架构匹配，推荐至少
+使用与GPU同时代的Toolkit版本。
+
+\subsection{矩阵规模扩展性预测}
+
+实验中Coalesced Read相对于Naive的减速幅度从25\%（N=512）缩小到7\%（N=2048），
+呈现单调下降趋势。据此预测：
 \begin{itemize}
-  \item L2 cache从Volta/Turing的6MB增大到6MB（实际上RTX 3090为6MB），更大的
-        L2 cache可以缓冲部分非合并写，使Coalesced Read kernel的实际性能惩罚
-        比理论分析更小；
-  \item L1/Shared memory统一设计允许灵活配置（通过 \texttt{cudaFuncSetAttribute}
-        调节L1/shared比例），本实验使用默认的48KB shared配置即可容纳32×33 tile。
-  \item 改进的内存控制器支持更高的有效带宽利用率，对合并访存的效率接近理论峰值。
+  \item 当N达到4096（矩阵64MB，开始超出L2 Cache），Coalesced Read应能追平Naive；
+  \item 当N达到8192（矩阵256MB，完全依靠HBM），Shared Memory的优势将充分体现，
+        预计可获得1.5--3×加速比。
 \end{itemize}
 
-\subsection{共享内存的收益与代价}
+遗憾的是，实验要求的N上限为2048，无法在本次实验中验证这一预测。
 
-共享内存分块方案的收益包括：
+\subsection{Shared Memory 的实际收益条件}
+
+共享内存分块能带来显著收益的典型场景是：
 \begin{itemize}
-  \item 读写均实现合并访存，全局内存带宽利用率最大化；
-  \item 数据复用（同一tile内多个线程重用从全局内存加载的数据）；
-  \item 减少总的全局内存访问次数（每个元素只从全局内存读一次写一次 vs. 可能
-        重复读取的行/列数据）。
+  \item 矩阵规模足够大，数据在L2中无法完全容纳；
+  \item 编译器能生成针对目标架构优化的指令；
+  \item TILE\_DIM需要根据GPU的shared memory大小和SM资源合理选择；
+  \item 应用场景包含多次tile内的数据复用（如矩阵乘法中的累加操作），而非仅一次
+        性的转置写回。
 \end{itemize}
-
-代价包括：
-\begin{itemize}
-  \item 共享内存容量有限，限制每个SM可驻留的block数；
-  \item 需要 \texttt{\_\_syncthreads()} 同步——减少warp调度灵活性；
-  \item 额外的共享内存加载/存储指令。
-\end{itemize}
-
-\subsection{与理论分析的对比}
-
-根据"屋顶线模型"（Roofline Model），矩阵转置是纯内存密集型操作（算术强度 $\approx 0$ FLOP/byte）。
-性能上限由显存带宽决定：
-
-\begin{equation}
-  T_{\text{min}} = \frac{2 \times N^2 \times 4\ \text{bytes}}{\text{BW}_{\text{peak}}}
-  = \frac{2 \times N^2 \times 4}{936.2 \times 10^9}\ \text{秒}
-\end{equation}
-
-对于N=2048，理论最小时间为 $T_{\text{min}} = (2 \times 2048^2 \times 4) / (936.2 \times 10^9)
-= 35.8\ \mu\text{s}$。实际运行时间将高于此值，差距反映了访存效率损失和kernel启动开销。
-共享内存版本的运行时间应最接近此下界。
 
 \section{结论}
 
@@ -578,18 +604,21 @@ RTX 3090基于Ampere架构（SM 8.6），相比前代架构有以下对矩阵转
 
 \begin{enumerate}[leftmargin=2.2em]
   \item 实现了三种不同优化级别的转置kernel（朴素转置、合并读转置、共享内存分块转置），
-        验证了所有实现的正确性；
-  \item 通过设置不同的block大小（8×8, 16×16, 32×32）和矩阵规模（512--2048），
-        系统分析了这些因素对GPU性能的影响；
-  \item 实验证实了合并访存是CUDA内存密集型程序性能优化的核心：合理组织线程的
-        访存模式可以获得数倍的性能提升；
-  \item 共享内存分块技术能同时实现读写合并，消除bank conflict（通过padding技术），
-        是矩阵转置等数据重排操作的最优实现策略；
-  \item 大block（32×32）虽然occupancy不是最高，但由于warp数量多、访存延迟隐藏能力强，
-        在内存密集型任务中往往表现更优。
+        所有实现均通过CPU参考验证（checksum完全一致）；
+  \item 在NVIDIA A100 GPU上完成了完整的benchmark测试（3种矩阵规模 × 7种block/
+        kernel组合 × 3次重复），收集了系统性的性能数据；
+  \item 实验发现了一个反直觉的结果：在矩阵规模512--2048范围内，\textbf{最简单的朴素
+        转置以16×16 block取得最优性能}，有效带宽最高达658 GB/s；
+  \item 分析揭示了这一现象的根本原因——A100的40MB L2 Cache使非合并访问的
+        惩罚大幅降低，同时编译器架构不匹配（sm\_37→sm\_80 JIT）限制了共享内存优化的收益；
+  \item 确认了16×16 block（256线程）在A100上是最优配置，而32×32 block（1024线程）
+        在所有场景下性能最差，说明了选择适当block大小的重要性；
+  \item 预测了随着矩阵规模增大，共享内存分块的优势将逐步体现，为后续更大规模
+        实验提供了方向。
 \end{enumerate}
 
-实验加深了对CUDA编程模型、GPU内存层次结构、线程组织和性能分析方法的理解，
-为后续更复杂的GPU并行算法优化奠定了基础。
+本次实验不仅掌握了CUDA编程的核心概念（线程组织、内存层次、合并访存、共享内存分块），
+更重要的是学到了一条工程原则：\textbf{永远用实测数据验证理论优化，在GPU编程中
+"显然更优"的策略可能因为缓存、编译器、硬件代际差异而产生完全相反的结果}。
 
 \end{document}
