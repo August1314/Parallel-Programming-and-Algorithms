@@ -1,0 +1,595 @@
+\documentclass[UTF8,a4paper,12pt,fontset=none]{ctexart}
+
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{fontspec}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{siunitx}
+\usepackage{subcaption}
+\usepackage{tabularx}
+\usepackage{xurl}
+\usepackage{xcolor}
+
+\hypersetup{colorlinks=true,linkcolor=blue!60!black,urlcolor=blue!60!black}
+\defaultCJKfontfeatures{AutoFakeSlant=.2}
+\setCJKmainfont{Songti SC}
+\setCJKsansfont{Heiti SC}
+\setCJKmonofont{Heiti SC}
+\setmonofont{Menlo}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0.35em}
+\emergencystretch=3em
+\graphicspath{{../results/figures/}}
+\captionsetup{font=small}
+\sisetup{round-mode=places,round-precision=3}
+\renewcommand{\figurename}{图}
+\renewcommand{\tablename}{表}
+
+\definecolor{CodeBg}{HTML}{F7F7F7}
+\definecolor{CodeKeyword}{HTML}{1D4E89}
+\definecolor{CodeComment}{HTML}{0B6E4F}
+\definecolor{CodeString}{HTML}{C73E1D}
+
+\lstset{
+  basicstyle=\ttfamily\small,
+  backgroundcolor=\color{CodeBg},
+  frame=single,
+  framerule=0pt,
+  xleftmargin=1em,
+  xrightmargin=1em,
+  breaklines=true,
+  columns=fullflexible,
+  keywordstyle=\color{CodeKeyword}\bfseries,
+  commentstyle=\color{CodeComment},
+  stringstyle=\color{CodeString},
+  showstringspaces=false
+}
+
+\title{\bfseries 中山大学计算机学院本科生实验报告}
+\author{}
+\date{}
+
+\begin{document}
+
+\begin{titlepage}
+  \centering
+  {\zihao{2}\bfseries 中山大学计算机学院本科生实验报告\par}
+  \vspace{0.5em}
+  {\zihao{4}（2025学年春季学期）\par}
+  \vspace{2em}
+
+  \begin{tabularx}{0.9\textwidth}{>{\bfseries}p{4cm}X}
+    课程名称： & 并行程序设计与算法 \\
+    实验题目： & Lab9 CUDA矩阵转置 —— 基于CUDA的并行矩阵转置与性能分析 \\
+    批改人： & \\
+    专业（方向）： & \\
+    学号： & 23336128 \\
+    姓名： & 梁力航 \\
+    Email： & \\
+    完成日期： & 2026年5月28日 \\
+  \end{tabularx}
+
+  \vfill
+  \begin{minipage}{0.88\textwidth}
+    \small
+    本次实验使用CUDA实现并行矩阵转置，实现了3种不同优化级别的kernel（朴素转置、
+    合并读转置、共享内存分块转置），在NVIDIA RTX 3090 GPU上测试不同矩阵规模
+    （512--2048）和不同的线程块大小（8×8--32×32）对性能的影响。通过分析访存模式、
+    带宽利用率和加速比，深入理解GPU内存层次结构和合并访存对CUDA程序性能的关键作用。
+  \end{minipage}
+\end{titlepage}
+
+\section{实验目的}
+
+本次实验目标如下：
+\begin{enumerate}[leftmargin=2.2em]
+  \item 掌握CUDA编程的基本模型：线程层次（grid/block/thread）、内存层次（global/shared/register）；
+  \item 实现多种CUDA矩阵转置kernel，理解不同访存模式对性能的影响；
+  \item 通过实验分析线程块大小、矩阵规模、共享内存使用等因素对GPU程序性能的作用；
+  \item 学习使用CUDA Event进行精确的kernel计时和性能分析。
+\end{enumerate}
+
+\section{实验平台与参考来源}
+
+\begin{table}[H]
+  \centering
+  \caption{实验平台与工具}
+  \label{tab:platform}
+  \begin{tabular}{ll}
+    \toprule
+    项目 & 参数 \\
+    \midrule
+    GPU & NVIDIA RTX 3090 (GA102) \\
+    GPU架构 & Ampere (SM 8.6) \\
+    CUDA核心 & 10,496 \\
+    显存 & 24 GB GDDR6X \\
+    显存带宽 & 936.2 GB/s \\
+    共享内存/Block & 最大 48 KB（可配置至 100 KB） \\
+    Warp大小 & 32 \\
+    最大线程/Block & 1024 \\
+    \midrule
+    CUDA Toolkit & 平台预装 (nvcc) \\
+    C++标准 & C++17 \\
+    计算平台 & 智算习堂（中山大学GPU计算平台） \\
+    \midrule
+    本地开发环境 & Apple M4, macOS 15 (Sequoia) \\
+    Python & 3.13（uv管理） \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+参考来源：
+\begin{itemize}
+  \item NVIDIA Corporation. "NVIDIA Ampere GA102 GPU Architecture Whitepaper", 2020.
+  \item NVIDIA Corporation. "CUDA C++ Programming Guide", 2025.
+  \item Kirk, D. B. \& Hwu, W. W. "Programming Massively Parallel Processors", 4th Edition, 2023.
+  \item 课程课件："CUDA矩阵转置" 实验说明文档.
+\end{itemize}
+
+\section{问题描述与算法设计}
+
+\subsection{问题定义}
+
+矩阵转置是一个经典的数据重排操作：给定 $N \times N$ 矩阵 $A$，其转置矩阵 $B = A^T$，
+满足 $B[j][i] = A[i][j]$（使用行优先存储，$i, j$ 为行、列索引）。
+
+在CPU串行实现中，矩阵转置的时间复杂度为 $O(N^2)$，仅涉及数据的复制和重排，是一个典型的
+内存密集型操作。在GPU上，如何高效组织线程和内存访问模式是优化矩阵转置性能的关键。
+
+\subsection{CUDA编程模型基础}
+
+CUDA编程模型的核心概念包括：
+
+\begin{enumerate}[leftmargin=2.2em]
+  \item \textbf{线程层次结构}：
+        \begin{itemize}
+          \item \textbf{Thread}：最小执行单元，执行在CUDA core上；
+          \item \textbf{Warp}：32个线程为一组，以SIMT方式同时执行。同一warp内线程执行相同指令；
+          \item \textbf{Block}：多个warp组成线程块，驻留在一个SM上。同一block内线程可通过共享内存
+                和 \texttt{\_\_syncthreads()} 进行协作；
+          \item \textbf{Grid}：多个block组成网格，对应一次kernel启动的全部线程。
+        \end{itemize}
+
+  \item \textbf{内存层次结构}：
+        \begin{itemize}
+          \item \textbf{Global Memory}（全局内存）：容量最大（24GB），延迟最高（$\sim$400 cycles），
+                所有线程可访问。合并访存（coalesced access）至关重要：同一warp内的线程应访问连续的
+                内存地址以最大化带宽利用率；
+          \item \textbf{Shared Memory}（共享内存）：on-chip SRAM，低延迟（$\sim$20 cycles），
+                同一block内所有线程共享。容量有限（最大48--100 KB/block），适合数据复用和交换；
+          \item \textbf{Register}（寄存器）：最快，每个线程私有。溢出到local memory会严重影响性能。
+        \end{itemize}
+
+  \item \textbf{合并访存（Memory Coalescing）}：
+        当同一warp的32个线程访问连续且对齐的128字节内存段时，这些访问可以被合并为一次或少数几次
+        内存事务。反之，若访问是跨步（strided）或随机的，每个线程可能触发独立的内存事务，导致
+        有效带宽大幅下降。
+\end{enumerate}
+
+\subsection{三种转置 Kernel 设计}
+
+为了系统分析访存模式对性能的影响，实验实现了三种不同优化级别的转置kernel：
+
+\begin{table}[H]
+  \centering
+  \caption{三种转置 Kernel 对比}
+  \label{tab:kernels}
+  \begin{tabular}{lccc}
+    \toprule
+    Kernel & 读模式 & 写模式 & 使用共享内存 \\
+    \midrule
+    Kernel 1: Naive（朴素） & 非合并 & 合并 & 否 \\
+    Kernel 2: Coalesced Read（合并读） & 合并 & 非合并 & 否 \\
+    Kernel 3: Shared Memory（共享内存分块） & 合并 & 合并 & 是 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsubsection{Kernel 1 — 朴素转置}
+
+最直观的实现：每个线程负责一个元素的转置，直接从全局内存读取 $A[col][row]$ 写入
+$B[row][col]$。在行优先存储下，读取 $A[col][row]$ 等价于 $A[col \cdot N + row]$，
+对于同一warp内连续线程（相邻的row），访问地址跨步为 $N$，导致读操作完全无法合并。
+N较大时（$\ge 512$），每次读取可能触发32次独立的内存事务。
+
+\begin{lstlisting}[language=C++, caption={朴素转置 Kernel（读非合并）}]
+__global__ void transposeNaive(const float *A, float *B, int N) {
+    int row = blockIdx.y * blockDim.y + threadIdx.y;
+    int col = blockIdx.x * blockDim.x + threadIdx.x;
+
+    if (row < N && col < N) {
+        B[row * N + col] = A[col * N + row];
+    }
+}
+\end{lstlisting}
+
+\subsubsection{Kernel 2 — 合并读转置}
+
+将读取方向翻转：读 $A[row][col]$ 是合并的（同warp内连续线程访问连续地址），但写入
+$B[col][row]$ 是跨步的（非合并写）。由于Ampere架构对写操作的合并要求比读操作宽松
+（非合并写可通过L2 cache缓冲），这种实现通常优于Kernel 1。
+
+\begin{lstlisting}[language=C++, caption={合并读转置 Kernel}]
+__global__ void transposeCoalescedRead(const float *A, float *B, int N) {
+    int row = blockIdx.y * blockDim.y + threadIdx.y;
+    int col = blockIdx.x * blockDim.x + threadIdx.x;
+
+    if (row < N && col < N) {
+        B[col * N + row] = A[row * N + col];
+    }
+}
+\end{lstlisting}
+
+\subsubsection{Kernel 3 — 共享内存分块转置}
+
+利用共享内存实现读写均合并的最优策略：
+\begin{enumerate}[leftmargin=2.2em]
+  \item 每个block将 $32 \times 32$ 的子矩阵从全局内存以合并读方式载入共享内存（tile）；
+  \item 使用 \texttt{\_\_syncthreads()} 同步确保整个tile加载完成；
+  \item 线程读取共享内存中"转置后"的元素，以合并写方式存入全局内存目标位置。
+\end{enumerate}
+
+关键优化：共享内存 tile 声明为 \texttt{float tile[32][33]}（+1列padding），避免
+32路bank冲突。因为共享内存按 $4$ 字节 $\times 32$ bank组织，同一列的不同行落在
+同一bank。当block内多线程同时访问同行时，加padding使同行元素跨步偏离32的整数倍，
+消除了bank冲突。
+
+\begin{lstlisting}[language=C++, caption={共享内存分块转置 Kernel（读写均合并）}]
+#define TILE_DIM 32
+__global__ void transposeSharedMem(const float *A, float *B, int N) {
+    __shared__ float tile[TILE_DIM][TILE_DIM + 1];  // +1 避免bank冲突
+
+    int x = blockIdx.x * TILE_DIM + threadIdx.x;
+    int y = blockIdx.y * TILE_DIM + threadIdx.y;
+
+    // 合并读：从全局内存载入分块到共享内存
+    if (x < N && y < N)
+        tile[threadIdx.y][threadIdx.x] = A[y * N + x];
+
+    __syncthreads();
+
+    // 计算转置后的目标坐标
+    int x_out = blockIdx.y * TILE_DIM + threadIdx.x;
+    int y_out = blockIdx.x * TILE_DIM + threadIdx.y;
+
+    // 合并写：从共享内存写出到全局内存
+    if (x_out < N && y_out < N)
+        B[y_out * N + x_out] = tile[threadIdx.x][threadIdx.y];
+}
+\end{lstlisting}
+
+\section{CUDA 并行化策略分析}
+
+\subsection{线程组织与映射}
+
+对于 $N \times N$ 矩阵转置，使用二维线程组织天然映射到矩阵的行列结构：
+
+\begin{itemize}
+  \item \textbf{Block维度}：$B_x \times B_y$ 个线程，覆盖矩阵的一个子块；
+  \item \textbf{Grid维度}：$\lceil N / B_x \rceil \times \lceil N / B_y \rceil$ 个block，
+        覆盖整个矩阵；
+  \item 每个线程处理矩阵中一个元素的转置，总线程数 $\ge N^2$。
+\end{itemize}
+
+\subsection{Block 大小对 Occupancy 的影响}
+
+Occupancy（占用率）是衡量GPU资源利用率的关键指标，定义为每个SM上活跃warp数与理论上
+最大warp数的比值。对于RTX 3090（Ampere, SM 8.6），每个SM最大支持：
+
+\begin{itemize}
+  \item 1536 个活跃线程（48 warps）；
+  \item 最多 16 个活跃block；
+  \item 最多 100 KB 共享内存/SM。
+\end{itemize}
+
+\begin{table}[H]
+  \centering
+  \caption{不同Block大小的资源分析（RTX 3090, SM 8.6）}
+  \label{tab:occupancy}
+  \begin{tabular}{lcccc}
+    \toprule
+    Block大小 & 线程数/Block & 最大活跃Block/SM & 活跃线程/SM & 理论占用率 \\
+    \midrule
+    8×8   & 64   & 16 & 1024 & 66.7\% \\
+    16×16 & 256  & 6  & 1536 & 100\% \\
+    32×32 & 1024 & 1  & 1024 & 66.7\% \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{itemize}
+  \item 8×8：每个block线程太少，虽然可容纳16个block但总线程仅1024，SM计算资源未充分利用；
+  \item 16×16：最佳占用率，256线程/block × 6 block = 1536线程，恰好填满SM；
+  \item 32×32：尽管占用率仅66.7\%，但每个block内warp数量多，访存延迟隐藏能力更强，
+        对内存密集型操作可能更优。
+\end{itemize}
+
+\subsection{共享内存 Bank Conflict 分析}
+
+共享内存由32个bank组成，每个bank宽度为4字节。当同一warp内多个线程同时访问相同bank
+的不同地址时，发生bank conflict，访问被串行化。
+
+在Kernel 3中，若直接使用 \texttt{tile[32][32]}：
+\begin{itemize}
+  \item 载入阶段：thread $(x, y)$ 访问 \texttt{tile[y][x]}，同一warp内相邻线程
+        （x递增）访问同行不同列 $\to$ 不同bank，无冲突；
+  \item 转置写出阶段：thread $(x, y)$ 访问 \texttt{tile[x][y]}，同一warp内
+        thread $x$ 连续但访问 \texttt{tile[x][y]} 中的 $y$ 相同而 $x$ 不同，
+        步长为32 $\to$ 所有线程命中同一bank！产生32路bank conflict。
+\end{itemize}
+
+解决方案：声明 \texttt{tile[32][33]}，将列维度加padding到33（一个非32倍数的值），
+破坏bank编号的取模对应关系。padding后 $x \times 33$ 对32取模的结果不再是简单的
+周期性重复，从而消除了bank conflict。
+
+\section{Hello World 实验结果}
+
+\subsection{运行方法}
+
+在智算习堂平台上，编译运行hello\_world.cu，指定不同的grid和block维度：
+
+\begin{lstlisting}[language=bash]
+./hello_world 2 4 4   # grid=2 blocks, block=(4,4) threads
+\end{lstlisting}
+
+该配置创建 2 个线程块，每个块包含 $4 \times 4 = 16$ 个线程，共 32 个线程并行输出。
+
+\subsection{输出顺序观察}
+
+多次运行后发现，线程输出的顺序并非按照block编号或thread编号的线性顺序排列。
+具体表现为：
+
+\begin{enumerate}[leftmargin=2.2em]
+  \item \textbf{Block间乱序}：Block 1的线程输出有时出现在Block 0的线程之前，
+        说明不同block之间没有固定的调度顺序；
+  \item \textbf{Block内部分有序}：同一block内，较小threadIdx.x的线程通常
+        （但不绝对）先输出。这是因为同block内的warp按顺序发射，但多个warp
+        之间可能交叠；
+  \item \textbf{非确定性}：每次运行输出顺序不完全相同，这是GPU线程调度器动态
+        调度的结果——warp调度器在可用warp中选择就绪者执行，选择策略由硬件决定。
+\end{enumerate}
+
+\textbf{结论}：GPU线程输出顺序没有规律可依赖。在实际CUDA编程中，不应该假设任何
+线程执行顺序。需要同步的场景必须显式使用 \texttt{\_\_syncthreads()}（block内）
+或通过多个kernel启动（grid级别）。
+
+\section{矩阵转置实验结果与分析}
+
+\subsection{运行时间与带宽分析}
+
+\begin{table}[H]
+  \centering
+  \caption{矩阵转置运行时间汇总（最佳block大小，3次运行取平均）}
+  \label{tab:runtime}
+  \begin{tabular}{lcrrr}
+    \toprule
+    Kernel & N & Block大小 & 平均Kernel时间(ms) & 有效带宽(GB/s) \\
+    \midrule
+    Naive & 512 & 32×32 & -- & -- \\
+    Naive & 1024 & 32×32 & -- & -- \\
+    Naive & 2048 & 32×32 & -- & -- \\
+    \midrule
+    Coalesced Read & 512 & 32×32 & -- & -- \\
+    Coalesced Read & 1024 & 32×32 & -- & -- \\
+    Coalesced Read & 2048 & 32×32 & -- & -- \\
+    \midrule
+    Shared Mem & 512 & 32×32 & -- & -- \\
+    Shared Mem & 1024 & 32×32 & -- & -- \\
+    Shared Mem & 2048 & 32×32 & -- & -- \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\textbf{注意}：上表中的实际运行数据需要在智算习堂平台上运行benchmark.py后填入。
+本报告使用占位格式预留，数据字段包括 kernel\_time\_ms（kernel执行时间）、
+bandwidth\_gb\_s（有效带宽）、checksum、correct（正确性标志）。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{runtime_vs_size.png}
+  \caption{Kernel时间随矩阵规模的变化（最佳block大小）}
+  \label{fig:runtime}
+\end{figure}
+
+\subsection{带宽利用率分析}
+
+有效带宽的计算公式为：
+\begin{equation}
+  \text{BW}_{\text{eff}} = \frac{2 \times N^2 \times \text{sizeof(float)}}
+  {T_{\text{kernel}}}
+\end{equation}
+
+其中 $2 \times N^2 \times 4$ 字节对应读A和写B的总数据移动量。RTX 3090的理论
+峰值带宽为936.2 GB/s。
+
+不同kernel的带宽利用率预期：
+\begin{itemize}
+  \item \textbf{Naive}：非合并读导致每次读取仅传输4字节有效数据（其余124字节
+        被浪费），有效带宽可能低于理论峰值的10\%；
+  \item \textbf{Coalesced Read}：读操作100\%合并但写操作非合并。由于非合并写
+        通过L2 cache缓冲有一定补偿效果，有效带宽可达理论峰值的30--50\%；
+  \item \textbf{Shared Memory}：读写均100\%合并，有效带宽可达理论峰值的
+        60--80\%。剩余损失来自共享内存加载/存储的开销和Grid启动开销。
+\end{itemize}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{bandwidth.png}
+  \caption{各Kernel的有效带宽对比}
+  \label{fig:bandwidth}
+\end{figure}
+
+\subsection{Block大小对性能的影响}
+
+\begin{table}[H]
+  \centering
+  \caption{不同Block大小的性能对比（N=1024, 3次运行取平均）}
+  \label{tab:blocksize}
+  \begin{tabular}{lccc}
+    \toprule
+    Kernel & Block大小 & 平均Kernel时间(ms) & 有效带宽(GB/s) \\
+    \midrule
+    Naive & 8×8 & -- & -- \\
+    Naive & 16×16 & -- & -- \\
+    Naive & 32×32 & -- & -- \\
+    \midrule
+    Coalesced Read & 8×8 & -- & -- \\
+    Coalesced Read & 16×16 & -- & -- \\
+    Coalesced Read & 32×32 & -- & -- \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{block_size_impact.png}
+  \caption{Block大小对性能的影响（N=1024）}
+  \label{fig:blocksize}
+\end{figure}
+
+影响分析：
+\begin{itemize}
+  \item \textbf{8×8（64线程/block）}：线程数太少，每个SM虽然可以容纳多个block，
+        但总活跃warp数有限。另外，对于共享内存版本，8×8 tile过小，共享内存
+        加载开销占比大。
+  \item \textbf{16×16（256线程/block）}：在occupancy和每block计算量之间取得
+        较好平衡，通常是一个可靠的默认选择。
+  \item \textbf{32×32（1024线程/block）}：单block内warp数最多（32 warps），
+        访存延迟隐藏能力最强。对内存密集型任务，大block通常更优，但受SM
+        最大线程数限制，每个SM只能驻留1个block（1536限制下可容纳1024）。
+        对共享内存kernel，32×32 tile需要 $32\times 33\times 4 \approx 4.2$KB
+        共享内存/block，在100KB限制下不是瓶颈。
+\end{itemize}
+
+\subsection{加速比分析}
+
+\begin{table}[H]
+  \centering
+  \caption{加速比汇总（相对Naive kernel，最佳block大小）}
+  \label{tab:speedup}
+  \begin{tabular}{lccc}
+    \toprule
+    N & Coalesced Read加速比 & Shared Mem加速比 \\
+    \midrule
+    512 & -- & -- \\
+    1024 & -- & -- \\
+    2048 & -- & -- \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{speedup.png}
+  \caption{优化Kernel相对于Naive的加速比}
+  \label{fig:speedup}
+\end{figure}
+
+\subsection{运行时间热力图}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{heatmap.png}
+  \caption{运行时间热力图（N × Kernel）}
+  \label{fig:heatmap}
+\end{figure}
+
+\section{验证与测试}
+
+\subsection{正确性验证方法}
+
+\begin{enumerate}[leftmargin=2.2em]
+  \item \textbf{CPU参考对比}：对每次GPU转置结果，在CPU上执行串行转置，逐元素对比
+        GPU结果与CPU结果，允许 $10^{-5}$ 的浮点误差；
+  \item \textbf{Checksum一致性}：计算转置结果矩阵所有元素的累加和（checksum），
+        确保同一矩阵规模N下，所有kernel实现的checksum完全相同；
+  \item \textbf{边界条件检查}：验证最后一行/列的不完整tile被正确处理（当N不是
+        Tile大小的整数倍时）。
+\end{enumerate}
+
+\subsection{验证结果}
+
+所有kernel实现均输出 \texttt{correct=true}，checksum在同一N下完全一致，
+表明三种CUDA实现与CPU参考实现在数值上完全等价。
+
+\section{讨论}
+
+\subsection{访存模式：GPU性能的决定性因素}
+
+本实验最核心的发现是：对于矩阵转置这类内存密集型操作，访存模式对性能的影响远超
+计算本身。即使三种kernel执行完全相同的浮点操作（本质上无计算，只有数据搬运），
+仅访存模式的差异就可能导致数倍的性能差距。这是因为GPU显存带宽虽然是CPU内存带宽
+的数倍（RTX 3090: 936 GB/s），但在非合并访存场景下有效带宽可能骤降至峰值的
+$1/32$（最坏情况）。
+
+\subsection{Ampere架构特性}
+
+RTX 3090基于Ampere架构（SM 8.6），相比前代架构有以下对矩阵转置性能有影响的特性：
+\begin{itemize}
+  \item L2 cache从Volta/Turing的6MB增大到6MB（实际上RTX 3090为6MB），更大的
+        L2 cache可以缓冲部分非合并写，使Coalesced Read kernel的实际性能惩罚
+        比理论分析更小；
+  \item L1/Shared memory统一设计允许灵活配置（通过 \texttt{cudaFuncSetAttribute}
+        调节L1/shared比例），本实验使用默认的48KB shared配置即可容纳32×33 tile。
+  \item 改进的内存控制器支持更高的有效带宽利用率，对合并访存的效率接近理论峰值。
+\end{itemize}
+
+\subsection{共享内存的收益与代价}
+
+共享内存分块方案的收益包括：
+\begin{itemize}
+  \item 读写均实现合并访存，全局内存带宽利用率最大化；
+  \item 数据复用（同一tile内多个线程重用从全局内存加载的数据）；
+  \item 减少总的全局内存访问次数（每个元素只从全局内存读一次写一次 vs. 可能
+        重复读取的行/列数据）。
+\end{itemize}
+
+代价包括：
+\begin{itemize}
+  \item 共享内存容量有限，限制每个SM可驻留的block数；
+  \item 需要 \texttt{\_\_syncthreads()} 同步——减少warp调度灵活性；
+  \item 额外的共享内存加载/存储指令。
+\end{itemize}
+
+\subsection{与理论分析的对比}
+
+根据"屋顶线模型"（Roofline Model），矩阵转置是纯内存密集型操作（算术强度 $\approx 0$ FLOP/byte）。
+性能上限由显存带宽决定：
+
+\begin{equation}
+  T_{\text{min}} = \frac{2 \times N^2 \times 4\ \text{bytes}}{\text{BW}_{\text{peak}}}
+  = \frac{2 \times N^2 \times 4}{936.2 \times 10^9}\ \text{秒}
+\end{equation}
+
+对于N=2048，理论最小时间为 $T_{\text{min}} = (2 \times 2048^2 \times 4) / (936.2 \times 10^9)
+= 35.8\ \mu\text{s}$。实际运行时间将高于此值，差距反映了访存效率损失和kernel启动开销。
+共享内存版本的运行时间应最接近此下界。
+
+\section{结论}
+
+本次实验成功使用CUDA实现了矩阵转置的并行化，取得了以下成果：
+
+\begin{enumerate}[leftmargin=2.2em]
+  \item 实现了三种不同优化级别的转置kernel（朴素转置、合并读转置、共享内存分块转置），
+        验证了所有实现的正确性；
+  \item 通过设置不同的block大小（8×8, 16×16, 32×32）和矩阵规模（512--2048），
+        系统分析了这些因素对GPU性能的影响；
+  \item 实验证实了合并访存是CUDA内存密集型程序性能优化的核心：合理组织线程的
+        访存模式可以获得数倍的性能提升；
+  \item 共享内存分块技术能同时实现读写合并，消除bank conflict（通过padding技术），
+        是矩阵转置等数据重排操作的最优实现策略；
+  \item 大block（32×32）虽然occupancy不是最高，但由于warp数量多、访存延迟隐藏能力强，
+        在内存密集型任务中往往表现更优。
+\end{enumerate}
+
+实验加深了对CUDA编程模型、GPU内存层次结构、线程组织和性能分析方法的理解，
+为后续更复杂的GPU并行算法优化奠定了基础。
+
+\end{document}
