@@ -22,9 +22,9 @@ if ! command -v "$NVCC" &>/dev/null; then
     exit 1
 fi
 
-# GPU architecture: sm_80 for NVIDIA A100 (Ampere)
-# Use C++14 for broader CUDA toolkit compatibility
-NVCC_FLAGS="-std=c++14 -O3 -arch=sm_80 --ptxas-options=-v -lineinfo"
+# GPU architecture: sm_37 for platform CUDA toolkit compatibility
+# Note: platform has A100 GPU but older CUDA toolkit limiting arch target
+NVCC_FLAGS="-std=c++14 -O3 -arch=sm_37 --ptxas-options=-v -lineinfo"
 NVCC_FLAGS="${NVCC_FLAGS} -D_FORTIFY_SOURCE=2"
 
 echo "CUDA Compiler: $NVCC"

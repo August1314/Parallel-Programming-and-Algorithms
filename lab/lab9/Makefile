@@ -2,7 +2,7 @@
 # Target platform: 智算习堂 (NVIDIA RTX 3090, CUDA)
 
 NVCC ?= nvcc
-NVCC_FLAGS := -std=c++14 -O3 -arch=sm_80
+NVCC_FLAGS := -std=c++14 -O3 -arch=sm_37
 
 SRC_DIR := src
 BIN_DIR := bin
