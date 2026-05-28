@@ -1,0 +1,2216 @@
+[
+  {
+    "experiment": "heated_plate",
+    "backend": "openmp",
+    "version": "openmp_original",
+    "threads": 1,
+    "m": 64,
+    "n": 64,
+    "epsilon": 0.1,
+    "schedule": "openmp_default",
+    "chunk_size": "1",
+    "requested_runs": 1,
+    "successful_runs": 1,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.000991125001747,
+    "iterations": 179,
+    "diff": 0.0994892820175,
+    "checksums": [
+      306190.72088
+    ],
+    "max_abs_values": [
+      100.0
+    ],
+    "checksum": 306190.72088,
+    "max_abs": 100.0,
+    "thread1_checksum_match": true,
+    "openmp_reference_match": true,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "./scripts/run_openmp_heated_plate.sh",
+          "64",
+          "64",
+          "0.1",
+          "1"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=heated_plate\nbackend=openmp\nversion=openmp_original\nm=64\nn=64\nepsilon=0.1\nthreads=1\nschedule=openmp_default\nchunk_size=1\niterations=179\ntime_sec=0.000991125001747\ndiff=0.0994892820175\nchecksum=306190.72088\nmax_abs=100\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "heated_plate",
+          "backend": "openmp",
+          "version": "openmp_original",
+          "m": "64",
+          "n": "64",
+          "epsilon": "0.1",
+          "threads": "1",
+          "schedule": "openmp_default",
+          "chunk_size": "1",
+          "iterations": "179",
+          "time_sec": "0.000991125001747",
+          "diff": "0.0994892820175",
+          "checksum": "306190.72088",
+          "max_abs": "100"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "heated_plate",
+    "backend": "openmp",
+    "version": "openmp_original",
+    "threads": 1,
+    "m": 128,
+    "n": 128,
+    "epsilon": 0.1,
+    "schedule": "openmp_default",
+    "chunk_size": "1",
+    "requested_runs": 1,
+    "successful_runs": 1,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.0123077089993,
+    "iterations": 181,
+    "diff": 0.0997989222998,
+    "checksums": [
+      1226240.11987
+    ],
+    "max_abs_values": [
+      100.0
+    ],
+    "checksum": 1226240.11987,
+    "max_abs": 100.0,
+    "thread1_checksum_match": true,
+    "openmp_reference_match": true,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "./scripts/run_openmp_heated_plate.sh",
+          "128",
+          "128",
+          "0.1",
+          "1"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=heated_plate\nbackend=openmp\nversion=openmp_original\nm=128\nn=128\nepsilon=0.1\nthreads=1\nschedule=openmp_default\nchunk_size=1\niterations=181\ntime_sec=0.0123077089993\ndiff=0.0997989222998\nchecksum=1226240.11987\nmax_abs=100\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "heated_plate",
+          "backend": "openmp",
+          "version": "openmp_original",
+          "m": "128",
+          "n": "128",
+          "epsilon": "0.1",
+          "threads": "1",
+          "schedule": "openmp_default",
+          "chunk_size": "1",
+          "iterations": "181",
+          "time_sec": "0.0123077089993",
+          "diff": "0.0997989222998",
+          "checksum": "1226240.11987",
+          "max_abs": "100"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "heated_plate",
+    "backend": "openmp",
+    "version": "openmp_original",
+    "threads": 1,
+    "m": 256,
+    "n": 256,
+    "epsilon": 0.1,
+    "schedule": "openmp_default",
+    "chunk_size": "1",
+    "requested_runs": 1,
+    "successful_runs": 1,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.0195295830017,
+    "iterations": 181,
+    "diff": 0.0999307517142,
+    "checksums": [
+      4909462.95452
+    ],
+    "max_abs_values": [
+      100.0
+    ],
+    "checksum": 4909462.95452,
+    "max_abs": 100.0,
+    "thread1_checksum_match": true,
+    "openmp_reference_match": true,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "./scripts/run_openmp_heated_plate.sh",
+          "256",
+          "256",
+          "0.1",
+          "1"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=heated_plate\nbackend=openmp\nversion=openmp_original\nm=256\nn=256\nepsilon=0.1\nthreads=1\nschedule=openmp_default\nchunk_size=1\niterations=181\ntime_sec=0.0195295830017\ndiff=0.0999307517142\nchecksum=4909462.95452\nmax_abs=100\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "heated_plate",
+          "backend": "openmp",
+          "version": "openmp_original",
+          "m": "256",
+          "n": "256",
+          "epsilon": "0.1",
+          "threads": "1",
+          "schedule": "openmp_default",
+          "chunk_size": "1",
+          "iterations": "181",
+          "time_sec": "0.0195295830017",
+          "diff": "0.0999307517142",
+          "checksum": "4909462.95452",
+          "max_abs": "100"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "heated_plate",
+    "backend": "openmp",
+    "version": "openmp_original",
+    "threads": 2,
+    "m": 64,
+    "n": 64,
+    "epsilon": 0.1,
+    "schedule": "openmp_default",
+    "chunk_size": "1",
+    "requested_runs": 1,
+    "successful_runs": 1,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.000622540999757,
+    "iterations": 179,
+    "diff": 0.0994892820175,
+    "checksums": [
+      306190.72088
+    ],
+    "max_abs_values": [
+      100.0
+    ],
+    "checksum": 306190.72088,
+    "max_abs": 100.0,
+    "thread1_checksum_match": true,
+    "openmp_reference_match": true,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "./scripts/run_openmp_heated_plate.sh",
+          "64",
+          "64",
+          "0.1",
+          "2"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=heated_plate\nbackend=openmp\nversion=openmp_original\nm=64\nn=64\nepsilon=0.1\nthreads=2\nschedule=openmp_default\nchunk_size=1\niterations=179\ntime_sec=0.000622540999757\ndiff=0.0994892820175\nchecksum=306190.72088\nmax_abs=100\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "heated_plate",
+          "backend": "openmp",
+          "version": "openmp_original",
+          "m": "64",
+          "n": "64",
+          "epsilon": "0.1",
+          "threads": "2",
+          "schedule": "openmp_default",
+          "chunk_size": "1",
+          "iterations": "179",
+          "time_sec": "0.000622540999757",
+          "diff": "0.0994892820175",
+          "checksum": "306190.72088",
+          "max_abs": "100"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "heated_plate",
+    "backend": "openmp",
+    "version": "openmp_original",
+    "threads": 2,
+    "m": 128,
+    "n": 128,
+    "epsilon": 0.1,
+    "schedule": "openmp_default",
+    "chunk_size": "1",
+    "requested_runs": 1,
+    "successful_runs": 1,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.00190870799997,
+    "iterations": 181,
+    "diff": 0.0997989222998,
+    "checksums": [
+      1226240.11987
+    ],
+    "max_abs_values": [
+      100.0
+    ],
+    "checksum": 1226240.11987,
+    "max_abs": 100.0,
+    "thread1_checksum_match": true,
+    "openmp_reference_match": true,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "./scripts/run_openmp_heated_plate.sh",
+          "128",
+          "128",
+          "0.1",
+          "2"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=heated_plate\nbackend=openmp\nversion=openmp_original\nm=128\nn=128\nepsilon=0.1\nthreads=2\nschedule=openmp_default\nchunk_size=1\niterations=181\ntime_sec=0.00190870799997\ndiff=0.0997989222998\nchecksum=1226240.11987\nmax_abs=100\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "heated_plate",
+          "backend": "openmp",
+          "version": "openmp_original",
+          "m": "128",
+          "n": "128",
+          "epsilon": "0.1",
+          "threads": "2",
+          "schedule": "openmp_default",
+          "chunk_size": "1",
+          "iterations": "181",
+          "time_sec": "0.00190870799997",
+          "diff": "0.0997989222998",
+          "checksum": "1226240.11987",
+          "max_abs": "100"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "heated_plate",
+    "backend": "openmp",
+    "version": "openmp_original",
+    "threads": 2,
+    "m": 256,
+    "n": 256,
+    "epsilon": 0.1,
+    "schedule": "openmp_default",
+    "chunk_size": "1",
+    "requested_runs": 1,
+    "successful_runs": 1,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.00879583300048,
+    "iterations": 181,
+    "diff": 0.0999307517142,
+    "checksums": [
+      4909462.95452
+    ],
+    "max_abs_values": [
+      100.0
+    ],
+    "checksum": 4909462.95452,
+    "max_abs": 100.0,
+    "thread1_checksum_match": true,
+    "openmp_reference_match": true,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "./scripts/run_openmp_heated_plate.sh",
+          "256",
+          "256",
+          "0.1",
+          "2"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=heated_plate\nbackend=openmp\nversion=openmp_original\nm=256\nn=256\nepsilon=0.1\nthreads=2\nschedule=openmp_default\nchunk_size=1\niterations=181\ntime_sec=0.00879583300048\ndiff=0.0999307517142\nchecksum=4909462.95452\nmax_abs=100\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "heated_plate",
+          "backend": "openmp",
+          "version": "openmp_original",
+          "m": "256",
+          "n": "256",
+          "epsilon": "0.1",
+          "threads": "2",
+          "schedule": "openmp_default",
+          "chunk_size": "1",
+          "iterations": "181",
+          "time_sec": "0.00879583300048",
+          "diff": "0.0999307517142",
+          "checksum": "4909462.95452",
+          "max_abs": "100"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "heated_plate",
+    "backend": "openmp",
+    "version": "openmp_original",
+    "threads": 4,
+    "m": 64,
+    "n": 64,
+    "epsilon": 0.1,
+    "schedule": "openmp_default",
+    "chunk_size": "1",
+    "requested_runs": 1,
+    "successful_runs": 1,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.00125008299801,
+    "iterations": 179,
+    "diff": 0.0994892820175,
+    "checksums": [
+      306190.72088
+    ],
+    "max_abs_values": [
+      100.0
+    ],
+    "checksum": 306190.72088,
+    "max_abs": 100.0,
+    "thread1_checksum_match": true,
+    "openmp_reference_match": true,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "./scripts/run_openmp_heated_plate.sh",
+          "64",
+          "64",
+          "0.1",
+          "4"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=heated_plate\nbackend=openmp\nversion=openmp_original\nm=64\nn=64\nepsilon=0.1\nthreads=4\nschedule=openmp_default\nchunk_size=1\niterations=179\ntime_sec=0.00125008299801\ndiff=0.0994892820175\nchecksum=306190.72088\nmax_abs=100\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "heated_plate",
+          "backend": "openmp",
+          "version": "openmp_original",
+          "m": "64",
+          "n": "64",
+          "epsilon": "0.1",
+          "threads": "4",
+          "schedule": "openmp_default",
+          "chunk_size": "1",
+          "iterations": "179",
+          "time_sec": "0.00125008299801",
+          "diff": "0.0994892820175",
+          "checksum": "306190.72088",
+          "max_abs": "100"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "heated_plate",
+    "backend": "openmp",
+    "version": "openmp_original",
+    "threads": 4,
+    "m": 128,
+    "n": 128,
+    "epsilon": 0.1,
+    "schedule": "openmp_default",
+    "chunk_size": "1",
+    "requested_runs": 1,
+    "successful_runs": 1,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.00300037499983,
+    "iterations": 181,
+    "diff": 0.0997989222998,
+    "checksums": [
+      1226240.11987
+    ],
+    "max_abs_values": [
+      100.0
+    ],
+    "checksum": 1226240.11987,
+    "max_abs": 100.0,
+    "thread1_checksum_match": true,
+    "openmp_reference_match": true,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "./scripts/run_openmp_heated_plate.sh",
+          "128",
+          "128",
+          "0.1",
+          "4"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=heated_plate\nbackend=openmp\nversion=openmp_original\nm=128\nn=128\nepsilon=0.1\nthreads=4\nschedule=openmp_default\nchunk_size=1\niterations=181\ntime_sec=0.00300037499983\ndiff=0.0997989222998\nchecksum=1226240.11987\nmax_abs=100\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "heated_plate",
+          "backend": "openmp",
+          "version": "openmp_original",
+          "m": "128",
+          "n": "128",
+          "epsilon": "0.1",
+          "threads": "4",
+          "schedule": "openmp_default",
+          "chunk_size": "1",
+          "iterations": "181",
+          "time_sec": "0.00300037499983",
+          "diff": "0.0997989222998",
+          "checksum": "1226240.11987",
+          "max_abs": "100"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "heated_plate",
+    "backend": "openmp",
+    "version": "openmp_original",
+    "threads": 4,
+    "m": 256,
+    "n": 256,
+    "epsilon": 0.1,
+    "schedule": "openmp_default",
+    "chunk_size": "1",
+    "requested_runs": 1,
+    "successful_runs": 1,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.0213999999978,
+    "iterations": 181,
+    "diff": 0.0999307517142,
+    "checksums": [
+      4909462.95452
+    ],
+    "max_abs_values": [
+      100.0
+    ],
+    "checksum": 4909462.95452,
+    "max_abs": 100.0,
+    "thread1_checksum_match": true,
+    "openmp_reference_match": true,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "./scripts/run_openmp_heated_plate.sh",
+          "256",
+          "256",
+          "0.1",
+          "4"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=heated_plate\nbackend=openmp\nversion=openmp_original\nm=256\nn=256\nepsilon=0.1\nthreads=4\nschedule=openmp_default\nchunk_size=1\niterations=181\ntime_sec=0.0213999999978\ndiff=0.0999307517142\nchecksum=4909462.95452\nmax_abs=100\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "heated_plate",
+          "backend": "openmp",
+          "version": "openmp_original",
+          "m": "256",
+          "n": "256",
+          "epsilon": "0.1",
+          "threads": "4",
+          "schedule": "openmp_default",
+          "chunk_size": "1",
+          "iterations": "181",
+          "time_sec": "0.0213999999978",
+          "diff": "0.0999307517142",
+          "checksum": "4909462.95452",
+          "max_abs": "100"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "heated_plate",
+    "backend": "pthreads_parallel_for",
+    "version": "pthreads_parallel_for_block",
+    "threads": 1,
+    "m": 64,
+    "n": 64,
+    "epsilon": 0.1,
+    "schedule": "block",
+    "chunk_size": "8",
+    "requested_runs": 1,
+    "successful_runs": 1,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.021965834,
+    "iterations": 179,
+    "diff": 0.0994892820175,
+    "checksums": [
+      306190.72088
+    ],
+    "max_abs_values": [
+      100.0
+    ],
+    "checksum": 306190.72088,
+    "max_abs": 100.0,
+    "thread1_checksum_match": true,
+    "openmp_reference_match": true,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "./scripts/run_pthreads_heated_plate.sh",
+          "block",
+          "64",
+          "64",
+          "0.1",
+          "1",
+          "8"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=heated_plate\nbackend=pthreads_parallel_for\nversion=pthreads_parallel_for_block\nm=64\nn=64\nepsilon=0.1\nthreads=1\nschedule=block\nchunk_size=8\niterations=179\ntime_sec=0.021965834\ndiff=0.0994892820175\nchecksum=306190.72088\nmax_abs=100\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "heated_plate",
+          "backend": "pthreads_parallel_for",
+          "version": "pthreads_parallel_for_block",
+          "m": "64",
+          "n": "64",
+          "epsilon": "0.1",
+          "threads": "1",
+          "schedule": "block",
+          "chunk_size": "8",
+          "iterations": "179",
+          "time_sec": "0.021965834",
+          "diff": "0.0994892820175",
+          "checksum": "306190.72088",
+          "max_abs": "100"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "heated_plate",
+    "backend": "pthreads_parallel_for",
+    "version": "pthreads_parallel_for_block",
+    "threads": 1,
+    "m": 128,
+    "n": 128,
+    "epsilon": 0.1,
+    "schedule": "block",
+    "chunk_size": "8",
+    "requested_runs": 1,
+    "successful_runs": 1,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.028203708,
+    "iterations": 181,
+    "diff": 0.0997989222998,
+    "checksums": [
+      1226240.11987
+    ],
+    "max_abs_values": [
+      100.0
+    ],
+    "checksum": 1226240.11987,
+    "max_abs": 100.0,
+    "thread1_checksum_match": true,
+    "openmp_reference_match": true,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "./scripts/run_pthreads_heated_plate.sh",
+          "block",
+          "128",
+          "128",
+          "0.1",
+          "1",
+          "8"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=heated_plate\nbackend=pthreads_parallel_for\nversion=pthreads_parallel_for_block\nm=128\nn=128\nepsilon=0.1\nthreads=1\nschedule=block\nchunk_size=8\niterations=181\ntime_sec=0.028203708\ndiff=0.0997989222998\nchecksum=1226240.11987\nmax_abs=100\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "heated_plate",
+          "backend": "pthreads_parallel_for",
+          "version": "pthreads_parallel_for_block",
+          "m": "128",
+          "n": "128",
+          "epsilon": "0.1",
+          "threads": "1",
+          "schedule": "block",
+          "chunk_size": "8",
+          "iterations": "181",
+          "time_sec": "0.028203708",
+          "diff": "0.0997989222998",
+          "checksum": "1226240.11987",
+          "max_abs": "100"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "heated_plate",
+    "backend": "pthreads_parallel_for",
+    "version": "pthreads_parallel_for_block",
+    "threads": 1,
+    "m": 256,
+    "n": 256,
+    "epsilon": 0.1,
+    "schedule": "block",
+    "chunk_size": "8",
+    "requested_runs": 1,
+    "successful_runs": 1,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.04549675,
+    "iterations": 181,
+    "diff": 0.0999307517142,
+    "checksums": [
+      4909462.95452
+    ],
+    "max_abs_values": [
+      100.0
+    ],
+    "checksum": 4909462.95452,
+    "max_abs": 100.0,
+    "thread1_checksum_match": true,
+    "openmp_reference_match": true,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "./scripts/run_pthreads_heated_plate.sh",
+          "block",
+          "256",
+          "256",
+          "0.1",
+          "1",
+          "8"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=heated_plate\nbackend=pthreads_parallel_for\nversion=pthreads_parallel_for_block\nm=256\nn=256\nepsilon=0.1\nthreads=1\nschedule=block\nchunk_size=8\niterations=181\ntime_sec=0.04549675\ndiff=0.0999307517142\nchecksum=4909462.95452\nmax_abs=100\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "heated_plate",
+          "backend": "pthreads_parallel_for",
+          "version": "pthreads_parallel_for_block",
+          "m": "256",
+          "n": "256",
+          "epsilon": "0.1",
+          "threads": "1",
+          "schedule": "block",
+          "chunk_size": "8",
+          "iterations": "181",
+          "time_sec": "0.04549675",
+          "diff": "0.0999307517142",
+          "checksum": "4909462.95452",
+          "max_abs": "100"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "heated_plate",
+    "backend": "pthreads_parallel_for",
+    "version": "pthreads_parallel_for_block",
+    "threads": 2,
+    "m": 64,
+    "n": 64,
+    "epsilon": 0.1,
+    "schedule": "block",
+    "chunk_size": "8",
+    "requested_runs": 1,
+    "successful_runs": 1,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.034405875,
+    "iterations": 179,
+    "diff": 0.0994892820175,
+    "checksums": [
+      306190.72088
+    ],
+    "max_abs_values": [
+      100.0
+    ],
+    "checksum": 306190.72088,
+    "max_abs": 100.0,
+    "thread1_checksum_match": true,
+    "openmp_reference_match": true,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "./scripts/run_pthreads_heated_plate.sh",
+          "block",
+          "64",
+          "64",
+          "0.1",
+          "2",
+          "8"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=heated_plate\nbackend=pthreads_parallel_for\nversion=pthreads_parallel_for_block\nm=64\nn=64\nepsilon=0.1\nthreads=2\nschedule=block\nchunk_size=8\niterations=179\ntime_sec=0.034405875\ndiff=0.0994892820175\nchecksum=306190.72088\nmax_abs=100\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "heated_plate",
+          "backend": "pthreads_parallel_for",
+          "version": "pthreads_parallel_for_block",
+          "m": "64",
+          "n": "64",
+          "epsilon": "0.1",
+          "threads": "2",
+          "schedule": "block",
+          "chunk_size": "8",
+          "iterations": "179",
+          "time_sec": "0.034405875",
+          "diff": "0.0994892820175",
+          "checksum": "306190.72088",
+          "max_abs": "100"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "heated_plate",
+    "backend": "pthreads_parallel_for",
+    "version": "pthreads_parallel_for_block",
+    "threads": 2,
+    "m": 128,
+    "n": 128,
+    "epsilon": 0.1,
+    "schedule": "block",
+    "chunk_size": "8",
+    "requested_runs": 1,
+    "successful_runs": 1,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.024976125,
+    "iterations": 181,
+    "diff": 0.0997989222998,
+    "checksums": [
+      1226240.11987
+    ],
+    "max_abs_values": [
+      100.0
+    ],
+    "checksum": 1226240.11987,
+    "max_abs": 100.0,
+    "thread1_checksum_match": true,
+    "openmp_reference_match": true,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "./scripts/run_pthreads_heated_plate.sh",
+          "block",
+          "128",
+          "128",
+          "0.1",
+          "2",
+          "8"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=heated_plate\nbackend=pthreads_parallel_for\nversion=pthreads_parallel_for_block\nm=128\nn=128\nepsilon=0.1\nthreads=2\nschedule=block\nchunk_size=8\niterations=181\ntime_sec=0.024976125\ndiff=0.0997989222998\nchecksum=1226240.11987\nmax_abs=100\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "heated_plate",
+          "backend": "pthreads_parallel_for",
+          "version": "pthreads_parallel_for_block",
+          "m": "128",
+          "n": "128",
+          "epsilon": "0.1",
+          "threads": "2",
+          "schedule": "block",
+          "chunk_size": "8",
+          "iterations": "181",
+          "time_sec": "0.024976125",
+          "diff": "0.0997989222998",
+          "checksum": "1226240.11987",
+          "max_abs": "100"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "heated_plate",
+    "backend": "pthreads_parallel_for",
+    "version": "pthreads_parallel_for_block",
+    "threads": 2,
+    "m": 256,
+    "n": 256,
+    "epsilon": 0.1,
+    "schedule": "block",
+    "chunk_size": "8",
+    "requested_runs": 1,
+    "successful_runs": 1,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.029151375,
+    "iterations": 181,
+    "diff": 0.0999307517142,
+    "checksums": [
+      4909462.95452
+    ],
+    "max_abs_values": [
+      100.0
+    ],
+    "checksum": 4909462.95452,
+    "max_abs": 100.0,
+    "thread1_checksum_match": true,
+    "openmp_reference_match": true,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "./scripts/run_pthreads_heated_plate.sh",
+          "block",
+          "256",
+          "256",
+          "0.1",
+          "2",
+          "8"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=heated_plate\nbackend=pthreads_parallel_for\nversion=pthreads_parallel_for_block\nm=256\nn=256\nepsilon=0.1\nthreads=2\nschedule=block\nchunk_size=8\niterations=181\ntime_sec=0.029151375\ndiff=0.0999307517142\nchecksum=4909462.95452\nmax_abs=100\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "heated_plate",
+          "backend": "pthreads_parallel_for",
+          "version": "pthreads_parallel_for_block",
+          "m": "256",
+          "n": "256",
+          "epsilon": "0.1",
+          "threads": "2",
+          "schedule": "block",
+          "chunk_size": "8",
+          "iterations": "181",
+          "time_sec": "0.029151375",
+          "diff": "0.0999307517142",
+          "checksum": "4909462.95452",
+          "max_abs": "100"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "heated_plate",
+    "backend": "pthreads_parallel_for",
+    "version": "pthreads_parallel_for_block",
+    "threads": 4,
+    "m": 64,
+    "n": 64,
+    "epsilon": 0.1,
+    "schedule": "block",
+    "chunk_size": "8",
+    "requested_runs": 1,
+    "successful_runs": 1,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.049323167,
+    "iterations": 179,
+    "diff": 0.0994892820175,
+    "checksums": [
+      306190.72088
+    ],
+    "max_abs_values": [
+      100.0
+    ],
+    "checksum": 306190.72088,
+    "max_abs": 100.0,
+    "thread1_checksum_match": true,
+    "openmp_reference_match": true,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "./scripts/run_pthreads_heated_plate.sh",
+          "block",
+          "64",
+          "64",
+          "0.1",
+          "4",
+          "8"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=heated_plate\nbackend=pthreads_parallel_for\nversion=pthreads_parallel_for_block\nm=64\nn=64\nepsilon=0.1\nthreads=4\nschedule=block\nchunk_size=8\niterations=179\ntime_sec=0.049323167\ndiff=0.0994892820175\nchecksum=306190.72088\nmax_abs=100\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "heated_plate",
+          "backend": "pthreads_parallel_for",
+          "version": "pthreads_parallel_for_block",
+          "m": "64",
+          "n": "64",
+          "epsilon": "0.1",
+          "threads": "4",
+          "schedule": "block",
+          "chunk_size": "8",
+          "iterations": "179",
+          "time_sec": "0.049323167",
+          "diff": "0.0994892820175",
+          "checksum": "306190.72088",
+          "max_abs": "100"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "heated_plate",
+    "backend": "pthreads_parallel_for",
+    "version": "pthreads_parallel_for_block",
+    "threads": 4,
+    "m": 128,
+    "n": 128,
+    "epsilon": 0.1,
+    "schedule": "block",
+    "chunk_size": "8",
+    "requested_runs": 1,
+    "successful_runs": 1,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.062238792,
+    "iterations": 181,
+    "diff": 0.0997989222998,
+    "checksums": [
+      1226240.11987
+    ],
+    "max_abs_values": [
+      100.0
+    ],
+    "checksum": 1226240.11987,
+    "max_abs": 100.0,
+    "thread1_checksum_match": true,
+    "openmp_reference_match": true,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "./scripts/run_pthreads_heated_plate.sh",
+          "block",
+          "128",
+          "128",
+          "0.1",
+          "4",
+          "8"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=heated_plate\nbackend=pthreads_parallel_for\nversion=pthreads_parallel_for_block\nm=128\nn=128\nepsilon=0.1\nthreads=4\nschedule=block\nchunk_size=8\niterations=181\ntime_sec=0.062238792\ndiff=0.0997989222998\nchecksum=1226240.11987\nmax_abs=100\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "heated_plate",
+          "backend": "pthreads_parallel_for",
+          "version": "pthreads_parallel_for_block",
+          "m": "128",
+          "n": "128",
+          "epsilon": "0.1",
+          "threads": "4",
+          "schedule": "block",
+          "chunk_size": "8",
+          "iterations": "181",
+          "time_sec": "0.062238792",
+          "diff": "0.0997989222998",
+          "checksum": "1226240.11987",
+          "max_abs": "100"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "heated_plate",
+    "backend": "pthreads_parallel_for",
+    "version": "pthreads_parallel_for_block",
+    "threads": 4,
+    "m": 256,
+    "n": 256,
+    "epsilon": 0.1,
+    "schedule": "block",
+    "chunk_size": "8",
+    "requested_runs": 1,
+    "successful_runs": 1,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.070880917,
+    "iterations": 181,
+    "diff": 0.0999307517142,
+    "checksums": [
+      4909462.95452
+    ],
+    "max_abs_values": [
+      100.0
+    ],
+    "checksum": 4909462.95452,
+    "max_abs": 100.0,
+    "thread1_checksum_match": true,
+    "openmp_reference_match": true,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "./scripts/run_pthreads_heated_plate.sh",
+          "block",
+          "256",
+          "256",
+          "0.1",
+          "4",
+          "8"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=heated_plate\nbackend=pthreads_parallel_for\nversion=pthreads_parallel_for_block\nm=256\nn=256\nepsilon=0.1\nthreads=4\nschedule=block\nchunk_size=8\niterations=181\ntime_sec=0.070880917\ndiff=0.0999307517142\nchecksum=4909462.95452\nmax_abs=100\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "heated_plate",
+          "backend": "pthreads_parallel_for",
+          "version": "pthreads_parallel_for_block",
+          "m": "256",
+          "n": "256",
+          "epsilon": "0.1",
+          "threads": "4",
+          "schedule": "block",
+          "chunk_size": "8",
+          "iterations": "181",
+          "time_sec": "0.070880917",
+          "diff": "0.0999307517142",
+          "checksum": "4909462.95452",
+          "max_abs": "100"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "heated_plate",
+    "backend": "pthreads_parallel_for",
+    "version": "pthreads_parallel_for_cyclic",
+    "threads": 1,
+    "m": 64,
+    "n": 64,
+    "epsilon": 0.1,
+    "schedule": "cyclic",
+    "chunk_size": "8",
+    "requested_runs": 1,
+    "successful_runs": 1,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.020597833,
+    "iterations": 179,
+    "diff": 0.0994892820175,
+    "checksums": [
+      306190.72088
+    ],
+    "max_abs_values": [
+      100.0
+    ],
+    "checksum": 306190.72088,
+    "max_abs": 100.0,
+    "thread1_checksum_match": true,
+    "openmp_reference_match": true,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "./scripts/run_pthreads_heated_plate.sh",
+          "cyclic",
+          "64",
+          "64",
+          "0.1",
+          "1",
+          "8"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=heated_plate\nbackend=pthreads_parallel_for\nversion=pthreads_parallel_for_cyclic\nm=64\nn=64\nepsilon=0.1\nthreads=1\nschedule=cyclic\nchunk_size=8\niterations=179\ntime_sec=0.020597833\ndiff=0.0994892820175\nchecksum=306190.72088\nmax_abs=100\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "heated_plate",
+          "backend": "pthreads_parallel_for",
+          "version": "pthreads_parallel_for_cyclic",
+          "m": "64",
+          "n": "64",
+          "epsilon": "0.1",
+          "threads": "1",
+          "schedule": "cyclic",
+          "chunk_size": "8",
+          "iterations": "179",
+          "time_sec": "0.020597833",
+          "diff": "0.0994892820175",
+          "checksum": "306190.72088",
+          "max_abs": "100"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "heated_plate",
+    "backend": "pthreads_parallel_for",
+    "version": "pthreads_parallel_for_cyclic",
+    "threads": 1,
+    "m": 128,
+    "n": 128,
+    "epsilon": 0.1,
+    "schedule": "cyclic",
+    "chunk_size": "8",
+    "requested_runs": 1,
+    "successful_runs": 1,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.035282,
+    "iterations": 181,
+    "diff": 0.0997989222998,
+    "checksums": [
+      1226240.11987
+    ],
+    "max_abs_values": [
+      100.0
+    ],
+    "checksum": 1226240.11987,
+    "max_abs": 100.0,
+    "thread1_checksum_match": true,
+    "openmp_reference_match": true,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "./scripts/run_pthreads_heated_plate.sh",
+          "cyclic",
+          "128",
+          "128",
+          "0.1",
+          "1",
+          "8"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=heated_plate\nbackend=pthreads_parallel_for\nversion=pthreads_parallel_for_cyclic\nm=128\nn=128\nepsilon=0.1\nthreads=1\nschedule=cyclic\nchunk_size=8\niterations=181\ntime_sec=0.035282\ndiff=0.0997989222998\nchecksum=1226240.11987\nmax_abs=100\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "heated_plate",
+          "backend": "pthreads_parallel_for",
+          "version": "pthreads_parallel_for_cyclic",
+          "m": "128",
+          "n": "128",
+          "epsilon": "0.1",
+          "threads": "1",
+          "schedule": "cyclic",
+          "chunk_size": "8",
+          "iterations": "181",
+          "time_sec": "0.035282",
+          "diff": "0.0997989222998",
+          "checksum": "1226240.11987",
+          "max_abs": "100"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "heated_plate",
+    "backend": "pthreads_parallel_for",
+    "version": "pthreads_parallel_for_cyclic",
+    "threads": 1,
+    "m": 256,
+    "n": 256,
+    "epsilon": 0.1,
+    "schedule": "cyclic",
+    "chunk_size": "8",
+    "requested_runs": 1,
+    "successful_runs": 1,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.028282041,
+    "iterations": 181,
+    "diff": 0.0999307517142,
+    "checksums": [
+      4909462.95452
+    ],
+    "max_abs_values": [
+      100.0
+    ],
+    "checksum": 4909462.95452,
+    "max_abs": 100.0,
+    "thread1_checksum_match": true,
+    "openmp_reference_match": true,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "./scripts/run_pthreads_heated_plate.sh",
+          "cyclic",
+          "256",
+          "256",
+          "0.1",
+          "1",
+          "8"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=heated_plate\nbackend=pthreads_parallel_for\nversion=pthreads_parallel_for_cyclic\nm=256\nn=256\nepsilon=0.1\nthreads=1\nschedule=cyclic\nchunk_size=8\niterations=181\ntime_sec=0.028282041\ndiff=0.0999307517142\nchecksum=4909462.95452\nmax_abs=100\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "heated_plate",
+          "backend": "pthreads_parallel_for",
+          "version": "pthreads_parallel_for_cyclic",
+          "m": "256",
+          "n": "256",
+          "epsilon": "0.1",
+          "threads": "1",
+          "schedule": "cyclic",
+          "chunk_size": "8",
+          "iterations": "181",
+          "time_sec": "0.028282041",
+          "diff": "0.0999307517142",
+          "checksum": "4909462.95452",
+          "max_abs": "100"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "heated_plate",
+    "backend": "pthreads_parallel_for",
+    "version": "pthreads_parallel_for_cyclic",
+    "threads": 2,
+    "m": 64,
+    "n": 64,
+    "epsilon": 0.1,
+    "schedule": "cyclic",
+    "chunk_size": "8",
+    "requested_runs": 1,
+    "successful_runs": 1,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.02488075,
+    "iterations": 179,
+    "diff": 0.0994892820175,
+    "checksums": [
+      306190.72088
+    ],
+    "max_abs_values": [
+      100.0
+    ],
+    "checksum": 306190.72088,
+    "max_abs": 100.0,
+    "thread1_checksum_match": true,
+    "openmp_reference_match": true,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "./scripts/run_pthreads_heated_plate.sh",
+          "cyclic",
+          "64",
+          "64",
+          "0.1",
+          "2",
+          "8"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=heated_plate\nbackend=pthreads_parallel_for\nversion=pthreads_parallel_for_cyclic\nm=64\nn=64\nepsilon=0.1\nthreads=2\nschedule=cyclic\nchunk_size=8\niterations=179\ntime_sec=0.02488075\ndiff=0.0994892820175\nchecksum=306190.72088\nmax_abs=100\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "heated_plate",
+          "backend": "pthreads_parallel_for",
+          "version": "pthreads_parallel_for_cyclic",
+          "m": "64",
+          "n": "64",
+          "epsilon": "0.1",
+          "threads": "2",
+          "schedule": "cyclic",
+          "chunk_size": "8",
+          "iterations": "179",
+          "time_sec": "0.02488075",
+          "diff": "0.0994892820175",
+          "checksum": "306190.72088",
+          "max_abs": "100"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "heated_plate",
+    "backend": "pthreads_parallel_for",
+    "version": "pthreads_parallel_for_cyclic",
+    "threads": 2,
+    "m": 128,
+    "n": 128,
+    "epsilon": 0.1,
+    "schedule": "cyclic",
+    "chunk_size": "8",
+    "requested_runs": 1,
+    "successful_runs": 1,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.030628,
+    "iterations": 181,
+    "diff": 0.0997989222998,
+    "checksums": [
+      1226240.11987
+    ],
+    "max_abs_values": [
+      100.0
+    ],
+    "checksum": 1226240.11987,
+    "max_abs": 100.0,
+    "thread1_checksum_match": true,
+    "openmp_reference_match": true,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "./scripts/run_pthreads_heated_plate.sh",
+          "cyclic",
+          "128",
+          "128",
+          "0.1",
+          "2",
+          "8"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=heated_plate\nbackend=pthreads_parallel_for\nversion=pthreads_parallel_for_cyclic\nm=128\nn=128\nepsilon=0.1\nthreads=2\nschedule=cyclic\nchunk_size=8\niterations=181\ntime_sec=0.030628\ndiff=0.0997989222998\nchecksum=1226240.11987\nmax_abs=100\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "heated_plate",
+          "backend": "pthreads_parallel_for",
+          "version": "pthreads_parallel_for_cyclic",
+          "m": "128",
+          "n": "128",
+          "epsilon": "0.1",
+          "threads": "2",
+          "schedule": "cyclic",
+          "chunk_size": "8",
+          "iterations": "181",
+          "time_sec": "0.030628",
+          "diff": "0.0997989222998",
+          "checksum": "1226240.11987",
+          "max_abs": "100"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "heated_plate",
+    "backend": "pthreads_parallel_for",
+    "version": "pthreads_parallel_for_cyclic",
+    "threads": 2,
+    "m": 256,
+    "n": 256,
+    "epsilon": 0.1,
+    "schedule": "cyclic",
+    "chunk_size": "8",
+    "requested_runs": 1,
+    "successful_runs": 1,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.031942167,
+    "iterations": 181,
+    "diff": 0.0999307517142,
+    "checksums": [
+      4909462.95452
+    ],
+    "max_abs_values": [
+      100.0
+    ],
+    "checksum": 4909462.95452,
+    "max_abs": 100.0,
+    "thread1_checksum_match": true,
+    "openmp_reference_match": true,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "./scripts/run_pthreads_heated_plate.sh",
+          "cyclic",
+          "256",
+          "256",
+          "0.1",
+          "2",
+          "8"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=heated_plate\nbackend=pthreads_parallel_for\nversion=pthreads_parallel_for_cyclic\nm=256\nn=256\nepsilon=0.1\nthreads=2\nschedule=cyclic\nchunk_size=8\niterations=181\ntime_sec=0.031942167\ndiff=0.0999307517142\nchecksum=4909462.95452\nmax_abs=100\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "heated_plate",
+          "backend": "pthreads_parallel_for",
+          "version": "pthreads_parallel_for_cyclic",
+          "m": "256",
+          "n": "256",
+          "epsilon": "0.1",
+          "threads": "2",
+          "schedule": "cyclic",
+          "chunk_size": "8",
+          "iterations": "181",
+          "time_sec": "0.031942167",
+          "diff": "0.0999307517142",
+          "checksum": "4909462.95452",
+          "max_abs": "100"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "heated_plate",
+    "backend": "pthreads_parallel_for",
+    "version": "pthreads_parallel_for_cyclic",
+    "threads": 4,
+    "m": 64,
+    "n": 64,
+    "epsilon": 0.1,
+    "schedule": "cyclic",
+    "chunk_size": "8",
+    "requested_runs": 1,
+    "successful_runs": 1,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.05311875,
+    "iterations": 179,
+    "diff": 0.0994892820175,
+    "checksums": [
+      306190.72088
+    ],
+    "max_abs_values": [
+      100.0
+    ],
+    "checksum": 306190.72088,
+    "max_abs": 100.0,
+    "thread1_checksum_match": true,
+    "openmp_reference_match": true,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "./scripts/run_pthreads_heated_plate.sh",
+          "cyclic",
+          "64",
+          "64",
+          "0.1",
+          "4",
+          "8"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=heated_plate\nbackend=pthreads_parallel_for\nversion=pthreads_parallel_for_cyclic\nm=64\nn=64\nepsilon=0.1\nthreads=4\nschedule=cyclic\nchunk_size=8\niterations=179\ntime_sec=0.05311875\ndiff=0.0994892820175\nchecksum=306190.72088\nmax_abs=100\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "heated_plate",
+          "backend": "pthreads_parallel_for",
+          "version": "pthreads_parallel_for_cyclic",
+          "m": "64",
+          "n": "64",
+          "epsilon": "0.1",
+          "threads": "4",
+          "schedule": "cyclic",
+          "chunk_size": "8",
+          "iterations": "179",
+          "time_sec": "0.05311875",
+          "diff": "0.0994892820175",
+          "checksum": "306190.72088",
+          "max_abs": "100"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "heated_plate",
+    "backend": "pthreads_parallel_for",
+    "version": "pthreads_parallel_for_cyclic",
+    "threads": 4,
+    "m": 128,
+    "n": 128,
+    "epsilon": 0.1,
+    "schedule": "cyclic",
+    "chunk_size": "8",
+    "requested_runs": 1,
+    "successful_runs": 1,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.041440625,
+    "iterations": 181,
+    "diff": 0.0997989222998,
+    "checksums": [
+      1226240.11987
+    ],
+    "max_abs_values": [
+      100.0
+    ],
+    "checksum": 1226240.11987,
+    "max_abs": 100.0,
+    "thread1_checksum_match": true,
+    "openmp_reference_match": true,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "./scripts/run_pthreads_heated_plate.sh",
+          "cyclic",
+          "128",
+          "128",
+          "0.1",
+          "4",
+          "8"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=heated_plate\nbackend=pthreads_parallel_for\nversion=pthreads_parallel_for_cyclic\nm=128\nn=128\nepsilon=0.1\nthreads=4\nschedule=cyclic\nchunk_size=8\niterations=181\ntime_sec=0.041440625\ndiff=0.0997989222998\nchecksum=1226240.11987\nmax_abs=100\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "heated_plate",
+          "backend": "pthreads_parallel_for",
+          "version": "pthreads_parallel_for_cyclic",
+          "m": "128",
+          "n": "128",
+          "epsilon": "0.1",
+          "threads": "4",
+          "schedule": "cyclic",
+          "chunk_size": "8",
+          "iterations": "181",
+          "time_sec": "0.041440625",
+          "diff": "0.0997989222998",
+          "checksum": "1226240.11987",
+          "max_abs": "100"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "heated_plate",
+    "backend": "pthreads_parallel_for",
+    "version": "pthreads_parallel_for_cyclic",
+    "threads": 4,
+    "m": 256,
+    "n": 256,
+    "epsilon": 0.1,
+    "schedule": "cyclic",
+    "chunk_size": "8",
+    "requested_runs": 1,
+    "successful_runs": 1,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.050681167,
+    "iterations": 181,
+    "diff": 0.0999307517142,
+    "checksums": [
+      4909462.95452
+    ],
+    "max_abs_values": [
+      100.0
+    ],
+    "checksum": 4909462.95452,
+    "max_abs": 100.0,
+    "thread1_checksum_match": true,
+    "openmp_reference_match": true,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "./scripts/run_pthreads_heated_plate.sh",
+          "cyclic",
+          "256",
+          "256",
+          "0.1",
+          "4",
+          "8"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=heated_plate\nbackend=pthreads_parallel_for\nversion=pthreads_parallel_for_cyclic\nm=256\nn=256\nepsilon=0.1\nthreads=4\nschedule=cyclic\nchunk_size=8\niterations=181\ntime_sec=0.050681167\ndiff=0.0999307517142\nchecksum=4909462.95452\nmax_abs=100\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "heated_plate",
+          "backend": "pthreads_parallel_for",
+          "version": "pthreads_parallel_for_cyclic",
+          "m": "256",
+          "n": "256",
+          "epsilon": "0.1",
+          "threads": "4",
+          "schedule": "cyclic",
+          "chunk_size": "8",
+          "iterations": "181",
+          "time_sec": "0.050681167",
+          "diff": "0.0999307517142",
+          "checksum": "4909462.95452",
+          "max_abs": "100"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "heated_plate",
+    "backend": "pthreads_parallel_for",
+    "version": "pthreads_parallel_for_dynamic",
+    "threads": 1,
+    "m": 64,
+    "n": 64,
+    "epsilon": 0.1,
+    "schedule": "dynamic",
+    "chunk_size": "8",
+    "requested_runs": 1,
+    "successful_runs": 1,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.027286959,
+    "iterations": 179,
+    "diff": 0.0994892820175,
+    "checksums": [
+      306190.72088
+    ],
+    "max_abs_values": [
+      100.0
+    ],
+    "checksum": 306190.72088,
+    "max_abs": 100.0,
+    "thread1_checksum_match": true,
+    "openmp_reference_match": true,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "./scripts/run_pthreads_heated_plate.sh",
+          "dynamic",
+          "64",
+          "64",
+          "0.1",
+          "1",
+          "8"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=heated_plate\nbackend=pthreads_parallel_for\nversion=pthreads_parallel_for_dynamic\nm=64\nn=64\nepsilon=0.1\nthreads=1\nschedule=dynamic\nchunk_size=8\niterations=179\ntime_sec=0.027286959\ndiff=0.0994892820175\nchecksum=306190.72088\nmax_abs=100\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "heated_plate",
+          "backend": "pthreads_parallel_for",
+          "version": "pthreads_parallel_for_dynamic",
+          "m": "64",
+          "n": "64",
+          "epsilon": "0.1",
+          "threads": "1",
+          "schedule": "dynamic",
+          "chunk_size": "8",
+          "iterations": "179",
+          "time_sec": "0.027286959",
+          "diff": "0.0994892820175",
+          "checksum": "306190.72088",
+          "max_abs": "100"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "heated_plate",
+    "backend": "pthreads_parallel_for",
+    "version": "pthreads_parallel_for_dynamic",
+    "threads": 1,
+    "m": 128,
+    "n": 128,
+    "epsilon": 0.1,
+    "schedule": "dynamic",
+    "chunk_size": "8",
+    "requested_runs": 1,
+    "successful_runs": 1,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.041871,
+    "iterations": 181,
+    "diff": 0.0997989222998,
+    "checksums": [
+      1226240.11987
+    ],
+    "max_abs_values": [
+      100.0
+    ],
+    "checksum": 1226240.11987,
+    "max_abs": 100.0,
+    "thread1_checksum_match": true,
+    "openmp_reference_match": true,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "./scripts/run_pthreads_heated_plate.sh",
+          "dynamic",
+          "128",
+          "128",
+          "0.1",
+          "1",
+          "8"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=heated_plate\nbackend=pthreads_parallel_for\nversion=pthreads_parallel_for_dynamic\nm=128\nn=128\nepsilon=0.1\nthreads=1\nschedule=dynamic\nchunk_size=8\niterations=181\ntime_sec=0.041871\ndiff=0.0997989222998\nchecksum=1226240.11987\nmax_abs=100\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "heated_plate",
+          "backend": "pthreads_parallel_for",
+          "version": "pthreads_parallel_for_dynamic",
+          "m": "128",
+          "n": "128",
+          "epsilon": "0.1",
+          "threads": "1",
+          "schedule": "dynamic",
+          "chunk_size": "8",
+          "iterations": "181",
+          "time_sec": "0.041871",
+          "diff": "0.0997989222998",
+          "checksum": "1226240.11987",
+          "max_abs": "100"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "heated_plate",
+    "backend": "pthreads_parallel_for",
+    "version": "pthreads_parallel_for_dynamic",
+    "threads": 1,
+    "m": 256,
+    "n": 256,
+    "epsilon": 0.1,
+    "schedule": "dynamic",
+    "chunk_size": "8",
+    "requested_runs": 1,
+    "successful_runs": 1,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.045003708,
+    "iterations": 181,
+    "diff": 0.0999307517142,
+    "checksums": [
+      4909462.95452
+    ],
+    "max_abs_values": [
+      100.0
+    ],
+    "checksum": 4909462.95452,
+    "max_abs": 100.0,
+    "thread1_checksum_match": true,
+    "openmp_reference_match": true,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "./scripts/run_pthreads_heated_plate.sh",
+          "dynamic",
+          "256",
+          "256",
+          "0.1",
+          "1",
+          "8"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=heated_plate\nbackend=pthreads_parallel_for\nversion=pthreads_parallel_for_dynamic\nm=256\nn=256\nepsilon=0.1\nthreads=1\nschedule=dynamic\nchunk_size=8\niterations=181\ntime_sec=0.045003708\ndiff=0.0999307517142\nchecksum=4909462.95452\nmax_abs=100\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "heated_plate",
+          "backend": "pthreads_parallel_for",
+          "version": "pthreads_parallel_for_dynamic",
+          "m": "256",
+          "n": "256",
+          "epsilon": "0.1",
+          "threads": "1",
+          "schedule": "dynamic",
+          "chunk_size": "8",
+          "iterations": "181",
+          "time_sec": "0.045003708",
+          "diff": "0.0999307517142",
+          "checksum": "4909462.95452",
+          "max_abs": "100"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "heated_plate",
+    "backend": "pthreads_parallel_for",
+    "version": "pthreads_parallel_for_dynamic",
+    "threads": 2,
+    "m": 64,
+    "n": 64,
+    "epsilon": 0.1,
+    "schedule": "dynamic",
+    "chunk_size": "8",
+    "requested_runs": 1,
+    "successful_runs": 1,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.037780084,
+    "iterations": 179,
+    "diff": 0.0994892820175,
+    "checksums": [
+      306190.72088
+    ],
+    "max_abs_values": [
+      100.0
+    ],
+    "checksum": 306190.72088,
+    "max_abs": 100.0,
+    "thread1_checksum_match": true,
+    "openmp_reference_match": true,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "./scripts/run_pthreads_heated_plate.sh",
+          "dynamic",
+          "64",
+          "64",
+          "0.1",
+          "2",
+          "8"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=heated_plate\nbackend=pthreads_parallel_for\nversion=pthreads_parallel_for_dynamic\nm=64\nn=64\nepsilon=0.1\nthreads=2\nschedule=dynamic\nchunk_size=8\niterations=179\ntime_sec=0.037780084\ndiff=0.0994892820175\nchecksum=306190.72088\nmax_abs=100\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "heated_plate",
+          "backend": "pthreads_parallel_for",
+          "version": "pthreads_parallel_for_dynamic",
+          "m": "64",
+          "n": "64",
+          "epsilon": "0.1",
+          "threads": "2",
+          "schedule": "dynamic",
+          "chunk_size": "8",
+          "iterations": "179",
+          "time_sec": "0.037780084",
+          "diff": "0.0994892820175",
+          "checksum": "306190.72088",
+          "max_abs": "100"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "heated_plate",
+    "backend": "pthreads_parallel_for",
+    "version": "pthreads_parallel_for_dynamic",
+    "threads": 2,
+    "m": 128,
+    "n": 128,
+    "epsilon": 0.1,
+    "schedule": "dynamic",
+    "chunk_size": "8",
+    "requested_runs": 1,
+    "successful_runs": 1,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.033584417,
+    "iterations": 181,
+    "diff": 0.0997989222998,
+    "checksums": [
+      1226240.11987
+    ],
+    "max_abs_values": [
+      100.0
+    ],
+    "checksum": 1226240.11987,
+    "max_abs": 100.0,
+    "thread1_checksum_match": true,
+    "openmp_reference_match": true,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "./scripts/run_pthreads_heated_plate.sh",
+          "dynamic",
+          "128",
+          "128",
+          "0.1",
+          "2",
+          "8"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=heated_plate\nbackend=pthreads_parallel_for\nversion=pthreads_parallel_for_dynamic\nm=128\nn=128\nepsilon=0.1\nthreads=2\nschedule=dynamic\nchunk_size=8\niterations=181\ntime_sec=0.033584417\ndiff=0.0997989222998\nchecksum=1226240.11987\nmax_abs=100\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "heated_plate",
+          "backend": "pthreads_parallel_for",
+          "version": "pthreads_parallel_for_dynamic",
+          "m": "128",
+          "n": "128",
+          "epsilon": "0.1",
+          "threads": "2",
+          "schedule": "dynamic",
+          "chunk_size": "8",
+          "iterations": "181",
+          "time_sec": "0.033584417",
+          "diff": "0.0997989222998",
+          "checksum": "1226240.11987",
+          "max_abs": "100"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "heated_plate",
+    "backend": "pthreads_parallel_for",
+    "version": "pthreads_parallel_for_dynamic",
+    "threads": 2,
+    "m": 256,
+    "n": 256,
+    "epsilon": 0.1,
+    "schedule": "dynamic",
+    "chunk_size": "8",
+    "requested_runs": 1,
+    "successful_runs": 1,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.055894125,
+    "iterations": 181,
+    "diff": 0.0999307517142,
+    "checksums": [
+      4909462.95452
+    ],
+    "max_abs_values": [
+      100.0
+    ],
+    "checksum": 4909462.95452,
+    "max_abs": 100.0,
+    "thread1_checksum_match": true,
+    "openmp_reference_match": true,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "./scripts/run_pthreads_heated_plate.sh",
+          "dynamic",
+          "256",
+          "256",
+          "0.1",
+          "2",
+          "8"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=heated_plate\nbackend=pthreads_parallel_for\nversion=pthreads_parallel_for_dynamic\nm=256\nn=256\nepsilon=0.1\nthreads=2\nschedule=dynamic\nchunk_size=8\niterations=181\ntime_sec=0.055894125\ndiff=0.0999307517142\nchecksum=4909462.95452\nmax_abs=100\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "heated_plate",
+          "backend": "pthreads_parallel_for",
+          "version": "pthreads_parallel_for_dynamic",
+          "m": "256",
+          "n": "256",
+          "epsilon": "0.1",
+          "threads": "2",
+          "schedule": "dynamic",
+          "chunk_size": "8",
+          "iterations": "181",
+          "time_sec": "0.055894125",
+          "diff": "0.0999307517142",
+          "checksum": "4909462.95452",
+          "max_abs": "100"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "heated_plate",
+    "backend": "pthreads_parallel_for",
+    "version": "pthreads_parallel_for_dynamic",
+    "threads": 4,
+    "m": 64,
+    "n": 64,
+    "epsilon": 0.1,
+    "schedule": "dynamic",
+    "chunk_size": "8",
+    "requested_runs": 1,
+    "successful_runs": 1,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.068716416,
+    "iterations": 179,
+    "diff": 0.0994892820175,
+    "checksums": [
+      306190.72088
+    ],
+    "max_abs_values": [
+      100.0
+    ],
+    "checksum": 306190.72088,
+    "max_abs": 100.0,
+    "thread1_checksum_match": true,
+    "openmp_reference_match": true,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "./scripts/run_pthreads_heated_plate.sh",
+          "dynamic",
+          "64",
+          "64",
+          "0.1",
+          "4",
+          "8"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=heated_plate\nbackend=pthreads_parallel_for\nversion=pthreads_parallel_for_dynamic\nm=64\nn=64\nepsilon=0.1\nthreads=4\nschedule=dynamic\nchunk_size=8\niterations=179\ntime_sec=0.068716416\ndiff=0.0994892820175\nchecksum=306190.72088\nmax_abs=100\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "heated_plate",
+          "backend": "pthreads_parallel_for",
+          "version": "pthreads_parallel_for_dynamic",
+          "m": "64",
+          "n": "64",
+          "epsilon": "0.1",
+          "threads": "4",
+          "schedule": "dynamic",
+          "chunk_size": "8",
+          "iterations": "179",
+          "time_sec": "0.068716416",
+          "diff": "0.0994892820175",
+          "checksum": "306190.72088",
+          "max_abs": "100"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "heated_plate",
+    "backend": "pthreads_parallel_for",
+    "version": "pthreads_parallel_for_dynamic",
+    "threads": 4,
+    "m": 128,
+    "n": 128,
+    "epsilon": 0.1,
+    "schedule": "dynamic",
+    "chunk_size": "8",
+    "requested_runs": 1,
+    "successful_runs": 1,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.062816125,
+    "iterations": 181,
+    "diff": 0.0997989222998,
+    "checksums": [
+      1226240.11987
+    ],
+    "max_abs_values": [
+      100.0
+    ],
+    "checksum": 1226240.11987,
+    "max_abs": 100.0,
+    "thread1_checksum_match": true,
+    "openmp_reference_match": true,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "./scripts/run_pthreads_heated_plate.sh",
+          "dynamic",
+          "128",
+          "128",
+          "0.1",
+          "4",
+          "8"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=heated_plate\nbackend=pthreads_parallel_for\nversion=pthreads_parallel_for_dynamic\nm=128\nn=128\nepsilon=0.1\nthreads=4\nschedule=dynamic\nchunk_size=8\niterations=181\ntime_sec=0.062816125\ndiff=0.0997989222998\nchecksum=1226240.11987\nmax_abs=100\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "heated_plate",
+          "backend": "pthreads_parallel_for",
+          "version": "pthreads_parallel_for_dynamic",
+          "m": "128",
+          "n": "128",
+          "epsilon": "0.1",
+          "threads": "4",
+          "schedule": "dynamic",
+          "chunk_size": "8",
+          "iterations": "181",
+          "time_sec": "0.062816125",
+          "diff": "0.0997989222998",
+          "checksum": "1226240.11987",
+          "max_abs": "100"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "heated_plate",
+    "backend": "pthreads_parallel_for",
+    "version": "pthreads_parallel_for_dynamic",
+    "threads": 4,
+    "m": 256,
+    "n": 256,
+    "epsilon": 0.1,
+    "schedule": "dynamic",
+    "chunk_size": "8",
+    "requested_runs": 1,
+    "successful_runs": 1,
+    "failed_runs": 0,
+    "status": "ok",
+    "avg_time_sec": 0.042230583,
+    "iterations": 181,
+    "diff": 0.0999307517142,
+    "checksums": [
+      4909462.95452
+    ],
+    "max_abs_values": [
+      100.0
+    ],
+    "checksum": 4909462.95452,
+    "max_abs": 100.0,
+    "thread1_checksum_match": true,
+    "openmp_reference_match": true,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "./scripts/run_pthreads_heated_plate.sh",
+          "dynamic",
+          "256",
+          "256",
+          "0.1",
+          "4",
+          "8"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=heated_plate\nbackend=pthreads_parallel_for\nversion=pthreads_parallel_for_dynamic\nm=256\nn=256\nepsilon=0.1\nthreads=4\nschedule=dynamic\nchunk_size=8\niterations=181\ntime_sec=0.042230583\ndiff=0.0999307517142\nchecksum=4909462.95452\nmax_abs=100\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "heated_plate",
+          "backend": "pthreads_parallel_for",
+          "version": "pthreads_parallel_for_dynamic",
+          "m": "256",
+          "n": "256",
+          "epsilon": "0.1",
+          "threads": "4",
+          "schedule": "dynamic",
+          "chunk_size": "8",
+          "iterations": "181",
+          "time_sec": "0.042230583",
+          "diff": "0.0999307517142",
+          "checksum": "4909462.95452",
+          "max_abs": "100"
+        },
+        "error": ""
+      }
+    ]
+  }
+]

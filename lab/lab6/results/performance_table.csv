@@ -1,0 +1,13 @@
+backend,version,threads,64x64,128x128,256x256
+openmp,openmp_original,1,0.000991,0.012308,0.019530
+openmp,openmp_original,2,0.000623,0.001909,0.008796
+openmp,openmp_original,4,0.001250,0.003000,0.021400
+pthreads_parallel_for,pthreads_parallel_for_block,1,0.021966,0.028204,0.045497
+pthreads_parallel_for,pthreads_parallel_for_block,2,0.034406,0.024976,0.029151
+pthreads_parallel_for,pthreads_parallel_for_block,4,0.049323,0.062239,0.070881
+pthreads_parallel_for,pthreads_parallel_for_cyclic,1,0.020598,0.035282,0.028282
+pthreads_parallel_for,pthreads_parallel_for_cyclic,2,0.024881,0.030628,0.031942
+pthreads_parallel_for,pthreads_parallel_for_cyclic,4,0.053119,0.041441,0.050681
+pthreads_parallel_for,pthreads_parallel_for_dynamic,1,0.027287,0.041871,0.045004
+pthreads_parallel_for,pthreads_parallel_for_dynamic,2,0.037780,0.033584,0.055894
+pthreads_parallel_for,pthreads_parallel_for_dynamic,4,0.068716,0.062816,0.042231

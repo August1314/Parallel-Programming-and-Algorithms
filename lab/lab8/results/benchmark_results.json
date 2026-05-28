@@ -1,0 +1,1016 @@
+[
+  {
+    "dataset": "flower",
+    "backend": "serial",
+    "num_nodes": 930,
+    "num_edges": 13521,
+    "num_queries": 100,
+    "num_threads": 1,
+    "status": "ok",
+    "avg_time_sec": 0.021846533333333334,
+    "checksum": 6240280.0,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/bin/apsp_serial",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/updated_flower.csv",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/queries_updated_flower.txt"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=apsp\nbackend=serial\nnum_nodes=930\nnum_edges=13521\nnum_queries=100\nnum_threads=1\ntime_sec=0.0214365\nchecksum=6.24028e+06\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "apsp",
+          "backend": "serial",
+          "num_nodes": "930",
+          "num_edges": "13521",
+          "num_queries": "100",
+          "num_threads": "1",
+          "time_sec": "0.0214365",
+          "checksum": "6.24028e+06"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/bin/apsp_serial",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/updated_flower.csv",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/queries_updated_flower.txt"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=apsp\nbackend=serial\nnum_nodes=930\nnum_edges=13521\nnum_queries=100\nnum_threads=1\ntime_sec=0.0222004\nchecksum=6.24028e+06\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "apsp",
+          "backend": "serial",
+          "num_nodes": "930",
+          "num_edges": "13521",
+          "num_queries": "100",
+          "num_threads": "1",
+          "time_sec": "0.0222004",
+          "checksum": "6.24028e+06"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/bin/apsp_serial",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/updated_flower.csv",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/queries_updated_flower.txt"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=apsp\nbackend=serial\nnum_nodes=930\nnum_edges=13521\nnum_queries=100\nnum_threads=1\ntime_sec=0.0219027\nchecksum=6.24028e+06\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "apsp",
+          "backend": "serial",
+          "num_nodes": "930",
+          "num_edges": "13521",
+          "num_queries": "100",
+          "num_threads": "1",
+          "time_sec": "0.0219027",
+          "checksum": "6.24028e+06"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "dataset": "flower",
+    "backend": "openmp",
+    "num_nodes": 930,
+    "num_edges": 13521,
+    "num_queries": 100,
+    "num_threads": 1,
+    "status": "ok",
+    "avg_time_sec": 0.023223333333333332,
+    "checksum": 6240280.0,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/bin/apsp_openmp",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/updated_flower.csv",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/queries_updated_flower.txt",
+          "1"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=apsp\nbackend=openmp\nnum_nodes=930\nnum_edges=13521\nnum_queries=100\nnum_threads=1\ntime_sec=0.023262\nchecksum=6.24028e+06\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "apsp",
+          "backend": "openmp",
+          "num_nodes": "930",
+          "num_edges": "13521",
+          "num_queries": "100",
+          "num_threads": "1",
+          "time_sec": "0.023262",
+          "checksum": "6.24028e+06"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/bin/apsp_openmp",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/updated_flower.csv",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/queries_updated_flower.txt",
+          "1"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=apsp\nbackend=openmp\nnum_nodes=930\nnum_edges=13521\nnum_queries=100\nnum_threads=1\ntime_sec=0.023045\nchecksum=6.24028e+06\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "apsp",
+          "backend": "openmp",
+          "num_nodes": "930",
+          "num_edges": "13521",
+          "num_queries": "100",
+          "num_threads": "1",
+          "time_sec": "0.023045",
+          "checksum": "6.24028e+06"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/bin/apsp_openmp",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/updated_flower.csv",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/queries_updated_flower.txt",
+          "1"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=apsp\nbackend=openmp\nnum_nodes=930\nnum_edges=13521\nnum_queries=100\nnum_threads=1\ntime_sec=0.023363\nchecksum=6.24028e+06\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "apsp",
+          "backend": "openmp",
+          "num_nodes": "930",
+          "num_edges": "13521",
+          "num_queries": "100",
+          "num_threads": "1",
+          "time_sec": "0.023363",
+          "checksum": "6.24028e+06"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "dataset": "flower",
+    "backend": "openmp",
+    "num_nodes": 930,
+    "num_edges": 13521,
+    "num_queries": 100,
+    "num_threads": 2,
+    "status": "ok",
+    "avg_time_sec": 0.012068,
+    "checksum": 6240280.0,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/bin/apsp_openmp",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/updated_flower.csv",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/queries_updated_flower.txt",
+          "2"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=apsp\nbackend=openmp\nnum_nodes=930\nnum_edges=13521\nnum_queries=100\nnum_threads=2\ntime_sec=0.012098\nchecksum=6.24028e+06\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "apsp",
+          "backend": "openmp",
+          "num_nodes": "930",
+          "num_edges": "13521",
+          "num_queries": "100",
+          "num_threads": "2",
+          "time_sec": "0.012098",
+          "checksum": "6.24028e+06"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/bin/apsp_openmp",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/updated_flower.csv",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/queries_updated_flower.txt",
+          "2"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=apsp\nbackend=openmp\nnum_nodes=930\nnum_edges=13521\nnum_queries=100\nnum_threads=2\ntime_sec=0.012017\nchecksum=6.24028e+06\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "apsp",
+          "backend": "openmp",
+          "num_nodes": "930",
+          "num_edges": "13521",
+          "num_queries": "100",
+          "num_threads": "2",
+          "time_sec": "0.012017",
+          "checksum": "6.24028e+06"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/bin/apsp_openmp",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/updated_flower.csv",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/queries_updated_flower.txt",
+          "2"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=apsp\nbackend=openmp\nnum_nodes=930\nnum_edges=13521\nnum_queries=100\nnum_threads=2\ntime_sec=0.012089\nchecksum=6.24028e+06\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "apsp",
+          "backend": "openmp",
+          "num_nodes": "930",
+          "num_edges": "13521",
+          "num_queries": "100",
+          "num_threads": "2",
+          "time_sec": "0.012089",
+          "checksum": "6.24028e+06"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "dataset": "flower",
+    "backend": "openmp",
+    "num_nodes": 930,
+    "num_edges": 13521,
+    "num_queries": 100,
+    "num_threads": 4,
+    "status": "ok",
+    "avg_time_sec": 0.007132333333333333,
+    "checksum": 6240280.0,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/bin/apsp_openmp",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/updated_flower.csv",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/queries_updated_flower.txt",
+          "4"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=apsp\nbackend=openmp\nnum_nodes=930\nnum_edges=13521\nnum_queries=100\nnum_threads=4\ntime_sec=0.007186\nchecksum=6.24028e+06\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "apsp",
+          "backend": "openmp",
+          "num_nodes": "930",
+          "num_edges": "13521",
+          "num_queries": "100",
+          "num_threads": "4",
+          "time_sec": "0.007186",
+          "checksum": "6.24028e+06"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/bin/apsp_openmp",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/updated_flower.csv",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/queries_updated_flower.txt",
+          "4"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=apsp\nbackend=openmp\nnum_nodes=930\nnum_edges=13521\nnum_queries=100\nnum_threads=4\ntime_sec=0.007014\nchecksum=6.24028e+06\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "apsp",
+          "backend": "openmp",
+          "num_nodes": "930",
+          "num_edges": "13521",
+          "num_queries": "100",
+          "num_threads": "4",
+          "time_sec": "0.007014",
+          "checksum": "6.24028e+06"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/bin/apsp_openmp",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/updated_flower.csv",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/queries_updated_flower.txt",
+          "4"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=apsp\nbackend=openmp\nnum_nodes=930\nnum_edges=13521\nnum_queries=100\nnum_threads=4\ntime_sec=0.007197\nchecksum=6.24028e+06\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "apsp",
+          "backend": "openmp",
+          "num_nodes": "930",
+          "num_edges": "13521",
+          "num_queries": "100",
+          "num_threads": "4",
+          "time_sec": "0.007197",
+          "checksum": "6.24028e+06"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "dataset": "flower",
+    "backend": "openmp",
+    "num_nodes": 930,
+    "num_edges": 13521,
+    "num_queries": 100,
+    "num_threads": 8,
+    "status": "ok",
+    "avg_time_sec": 0.004912333333333334,
+    "checksum": 6240280.0,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/bin/apsp_openmp",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/updated_flower.csv",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/queries_updated_flower.txt",
+          "8"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=apsp\nbackend=openmp\nnum_nodes=930\nnum_edges=13521\nnum_queries=100\nnum_threads=8\ntime_sec=0.004906\nchecksum=6.24028e+06\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "apsp",
+          "backend": "openmp",
+          "num_nodes": "930",
+          "num_edges": "13521",
+          "num_queries": "100",
+          "num_threads": "8",
+          "time_sec": "0.004906",
+          "checksum": "6.24028e+06"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/bin/apsp_openmp",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/updated_flower.csv",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/queries_updated_flower.txt",
+          "8"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=apsp\nbackend=openmp\nnum_nodes=930\nnum_edges=13521\nnum_queries=100\nnum_threads=8\ntime_sec=0.00505\nchecksum=6.24028e+06\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "apsp",
+          "backend": "openmp",
+          "num_nodes": "930",
+          "num_edges": "13521",
+          "num_queries": "100",
+          "num_threads": "8",
+          "time_sec": "0.00505",
+          "checksum": "6.24028e+06"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/bin/apsp_openmp",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/updated_flower.csv",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/queries_updated_flower.txt",
+          "8"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=apsp\nbackend=openmp\nnum_nodes=930\nnum_edges=13521\nnum_queries=100\nnum_threads=8\ntime_sec=0.004781\nchecksum=6.24028e+06\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "apsp",
+          "backend": "openmp",
+          "num_nodes": "930",
+          "num_edges": "13521",
+          "num_queries": "100",
+          "num_threads": "8",
+          "time_sec": "0.004781",
+          "checksum": "6.24028e+06"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "dataset": "flower",
+    "backend": "openmp",
+    "num_nodes": 930,
+    "num_edges": 13521,
+    "num_queries": 100,
+    "num_threads": 16,
+    "status": "ok",
+    "avg_time_sec": 0.004439333333333333,
+    "checksum": 6240280.0,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/bin/apsp_openmp",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/updated_flower.csv",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/queries_updated_flower.txt",
+          "16"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=apsp\nbackend=openmp\nnum_nodes=930\nnum_edges=13521\nnum_queries=100\nnum_threads=16\ntime_sec=0.004553\nchecksum=6.24028e+06\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "apsp",
+          "backend": "openmp",
+          "num_nodes": "930",
+          "num_edges": "13521",
+          "num_queries": "100",
+          "num_threads": "16",
+          "time_sec": "0.004553",
+          "checksum": "6.24028e+06"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/bin/apsp_openmp",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/updated_flower.csv",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/queries_updated_flower.txt",
+          "16"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=apsp\nbackend=openmp\nnum_nodes=930\nnum_edges=13521\nnum_queries=100\nnum_threads=16\ntime_sec=0.004366\nchecksum=6.24028e+06\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "apsp",
+          "backend": "openmp",
+          "num_nodes": "930",
+          "num_edges": "13521",
+          "num_queries": "100",
+          "num_threads": "16",
+          "time_sec": "0.004366",
+          "checksum": "6.24028e+06"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/bin/apsp_openmp",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/updated_flower.csv",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/queries_updated_flower.txt",
+          "16"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=apsp\nbackend=openmp\nnum_nodes=930\nnum_edges=13521\nnum_queries=100\nnum_threads=16\ntime_sec=0.004399\nchecksum=6.24028e+06\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "apsp",
+          "backend": "openmp",
+          "num_nodes": "930",
+          "num_edges": "13521",
+          "num_queries": "100",
+          "num_threads": "16",
+          "time_sec": "0.004399",
+          "checksum": "6.24028e+06"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "dataset": "mouse",
+    "backend": "serial",
+    "num_nodes": 525,
+    "num_edges": 14691,
+    "num_queries": 100,
+    "num_threads": 1,
+    "status": "ok",
+    "avg_time_sec": 0.0249365,
+    "checksum": 1416420.0,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/bin/apsp_serial",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/updated_mouse.csv",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/queries_updated_mouse.txt"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=apsp\nbackend=serial\nnum_nodes=525\nnum_edges=14691\nnum_queries=100\nnum_threads=1\ntime_sec=0.0247782\nchecksum=1.41642e+06\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "apsp",
+          "backend": "serial",
+          "num_nodes": "525",
+          "num_edges": "14691",
+          "num_queries": "100",
+          "num_threads": "1",
+          "time_sec": "0.0247782",
+          "checksum": "1.41642e+06"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/bin/apsp_serial",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/updated_mouse.csv",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/queries_updated_mouse.txt"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=apsp\nbackend=serial\nnum_nodes=525\nnum_edges=14691\nnum_queries=100\nnum_threads=1\ntime_sec=0.0251645\nchecksum=1.41642e+06\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "apsp",
+          "backend": "serial",
+          "num_nodes": "525",
+          "num_edges": "14691",
+          "num_queries": "100",
+          "num_threads": "1",
+          "time_sec": "0.0251645",
+          "checksum": "1.41642e+06"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/bin/apsp_serial",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/updated_mouse.csv",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/queries_updated_mouse.txt"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=apsp\nbackend=serial\nnum_nodes=525\nnum_edges=14691\nnum_queries=100\nnum_threads=1\ntime_sec=0.0248668\nchecksum=1.41642e+06\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "apsp",
+          "backend": "serial",
+          "num_nodes": "525",
+          "num_edges": "14691",
+          "num_queries": "100",
+          "num_threads": "1",
+          "time_sec": "0.0248668",
+          "checksum": "1.41642e+06"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "dataset": "mouse",
+    "backend": "openmp",
+    "num_nodes": 525,
+    "num_edges": 14691,
+    "num_queries": 100,
+    "num_threads": 1,
+    "status": "ok",
+    "avg_time_sec": 0.02654933333333333,
+    "checksum": 1416420.0,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/bin/apsp_openmp",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/updated_mouse.csv",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/queries_updated_mouse.txt",
+          "1"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=apsp\nbackend=openmp\nnum_nodes=525\nnum_edges=14691\nnum_queries=100\nnum_threads=1\ntime_sec=0.026572\nchecksum=1.41642e+06\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "apsp",
+          "backend": "openmp",
+          "num_nodes": "525",
+          "num_edges": "14691",
+          "num_queries": "100",
+          "num_threads": "1",
+          "time_sec": "0.026572",
+          "checksum": "1.41642e+06"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/bin/apsp_openmp",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/updated_mouse.csv",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/queries_updated_mouse.txt",
+          "1"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=apsp\nbackend=openmp\nnum_nodes=525\nnum_edges=14691\nnum_queries=100\nnum_threads=1\ntime_sec=0.026214\nchecksum=1.41642e+06\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "apsp",
+          "backend": "openmp",
+          "num_nodes": "525",
+          "num_edges": "14691",
+          "num_queries": "100",
+          "num_threads": "1",
+          "time_sec": "0.026214",
+          "checksum": "1.41642e+06"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/bin/apsp_openmp",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/updated_mouse.csv",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/queries_updated_mouse.txt",
+          "1"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=apsp\nbackend=openmp\nnum_nodes=525\nnum_edges=14691\nnum_queries=100\nnum_threads=1\ntime_sec=0.026862\nchecksum=1.41642e+06\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "apsp",
+          "backend": "openmp",
+          "num_nodes": "525",
+          "num_edges": "14691",
+          "num_queries": "100",
+          "num_threads": "1",
+          "time_sec": "0.026862",
+          "checksum": "1.41642e+06"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "dataset": "mouse",
+    "backend": "openmp",
+    "num_nodes": 525,
+    "num_edges": 14691,
+    "num_queries": 100,
+    "num_threads": 2,
+    "status": "ok",
+    "avg_time_sec": 0.013602666666666666,
+    "checksum": 1416420.0,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/bin/apsp_openmp",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/updated_mouse.csv",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/queries_updated_mouse.txt",
+          "2"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=apsp\nbackend=openmp\nnum_nodes=525\nnum_edges=14691\nnum_queries=100\nnum_threads=2\ntime_sec=0.013492\nchecksum=1.41642e+06\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "apsp",
+          "backend": "openmp",
+          "num_nodes": "525",
+          "num_edges": "14691",
+          "num_queries": "100",
+          "num_threads": "2",
+          "time_sec": "0.013492",
+          "checksum": "1.41642e+06"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/bin/apsp_openmp",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/updated_mouse.csv",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/queries_updated_mouse.txt",
+          "2"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=apsp\nbackend=openmp\nnum_nodes=525\nnum_edges=14691\nnum_queries=100\nnum_threads=2\ntime_sec=0.013668\nchecksum=1.41642e+06\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "apsp",
+          "backend": "openmp",
+          "num_nodes": "525",
+          "num_edges": "14691",
+          "num_queries": "100",
+          "num_threads": "2",
+          "time_sec": "0.013668",
+          "checksum": "1.41642e+06"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/bin/apsp_openmp",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/updated_mouse.csv",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/queries_updated_mouse.txt",
+          "2"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=apsp\nbackend=openmp\nnum_nodes=525\nnum_edges=14691\nnum_queries=100\nnum_threads=2\ntime_sec=0.013648\nchecksum=1.41642e+06\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "apsp",
+          "backend": "openmp",
+          "num_nodes": "525",
+          "num_edges": "14691",
+          "num_queries": "100",
+          "num_threads": "2",
+          "time_sec": "0.013648",
+          "checksum": "1.41642e+06"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "dataset": "mouse",
+    "backend": "openmp",
+    "num_nodes": 525,
+    "num_edges": 14691,
+    "num_queries": 100,
+    "num_threads": 4,
+    "status": "ok",
+    "avg_time_sec": 0.007017333333333334,
+    "checksum": 1416420.0,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/bin/apsp_openmp",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/updated_mouse.csv",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/queries_updated_mouse.txt",
+          "4"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=apsp\nbackend=openmp\nnum_nodes=525\nnum_edges=14691\nnum_queries=100\nnum_threads=4\ntime_sec=0.006948\nchecksum=1.41642e+06\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "apsp",
+          "backend": "openmp",
+          "num_nodes": "525",
+          "num_edges": "14691",
+          "num_queries": "100",
+          "num_threads": "4",
+          "time_sec": "0.006948",
+          "checksum": "1.41642e+06"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/bin/apsp_openmp",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/updated_mouse.csv",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/queries_updated_mouse.txt",
+          "4"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=apsp\nbackend=openmp\nnum_nodes=525\nnum_edges=14691\nnum_queries=100\nnum_threads=4\ntime_sec=0.007107\nchecksum=1.41642e+06\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "apsp",
+          "backend": "openmp",
+          "num_nodes": "525",
+          "num_edges": "14691",
+          "num_queries": "100",
+          "num_threads": "4",
+          "time_sec": "0.007107",
+          "checksum": "1.41642e+06"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/bin/apsp_openmp",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/updated_mouse.csv",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/queries_updated_mouse.txt",
+          "4"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=apsp\nbackend=openmp\nnum_nodes=525\nnum_edges=14691\nnum_queries=100\nnum_threads=4\ntime_sec=0.006997\nchecksum=1.41642e+06\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "apsp",
+          "backend": "openmp",
+          "num_nodes": "525",
+          "num_edges": "14691",
+          "num_queries": "100",
+          "num_threads": "4",
+          "time_sec": "0.006997",
+          "checksum": "1.41642e+06"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "dataset": "mouse",
+    "backend": "openmp",
+    "num_nodes": 525,
+    "num_edges": 14691,
+    "num_queries": 100,
+    "num_threads": 8,
+    "status": "ok",
+    "avg_time_sec": 0.004609666666666667,
+    "checksum": 1416420.0,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/bin/apsp_openmp",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/updated_mouse.csv",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/queries_updated_mouse.txt",
+          "8"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=apsp\nbackend=openmp\nnum_nodes=525\nnum_edges=14691\nnum_queries=100\nnum_threads=8\ntime_sec=0.004607\nchecksum=1.41642e+06\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "apsp",
+          "backend": "openmp",
+          "num_nodes": "525",
+          "num_edges": "14691",
+          "num_queries": "100",
+          "num_threads": "8",
+          "time_sec": "0.004607",
+          "checksum": "1.41642e+06"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/bin/apsp_openmp",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/updated_mouse.csv",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/queries_updated_mouse.txt",
+          "8"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=apsp\nbackend=openmp\nnum_nodes=525\nnum_edges=14691\nnum_queries=100\nnum_threads=8\ntime_sec=0.004525\nchecksum=1.41642e+06\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "apsp",
+          "backend": "openmp",
+          "num_nodes": "525",
+          "num_edges": "14691",
+          "num_queries": "100",
+          "num_threads": "8",
+          "time_sec": "0.004525",
+          "checksum": "1.41642e+06"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/bin/apsp_openmp",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/updated_mouse.csv",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/queries_updated_mouse.txt",
+          "8"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=apsp\nbackend=openmp\nnum_nodes=525\nnum_edges=14691\nnum_queries=100\nnum_threads=8\ntime_sec=0.004697\nchecksum=1.41642e+06\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "apsp",
+          "backend": "openmp",
+          "num_nodes": "525",
+          "num_edges": "14691",
+          "num_queries": "100",
+          "num_threads": "8",
+          "time_sec": "0.004697",
+          "checksum": "1.41642e+06"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "dataset": "mouse",
+    "backend": "openmp",
+    "num_nodes": 525,
+    "num_edges": 14691,
+    "num_queries": 100,
+    "num_threads": 16,
+    "status": "ok",
+    "avg_time_sec": 0.0037126666666666666,
+    "checksum": 1416420.0,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/bin/apsp_openmp",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/updated_mouse.csv",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/queries_updated_mouse.txt",
+          "16"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=apsp\nbackend=openmp\nnum_nodes=525\nnum_edges=14691\nnum_queries=100\nnum_threads=16\ntime_sec=0.003782\nchecksum=1.41642e+06\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "apsp",
+          "backend": "openmp",
+          "num_nodes": "525",
+          "num_edges": "14691",
+          "num_queries": "100",
+          "num_threads": "16",
+          "time_sec": "0.003782",
+          "checksum": "1.41642e+06"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/bin/apsp_openmp",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/updated_mouse.csv",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/queries_updated_mouse.txt",
+          "16"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=apsp\nbackend=openmp\nnum_nodes=525\nnum_edges=14691\nnum_queries=100\nnum_threads=16\ntime_sec=0.003711\nchecksum=1.41642e+06\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "apsp",
+          "backend": "openmp",
+          "num_nodes": "525",
+          "num_edges": "14691",
+          "num_queries": "100",
+          "num_threads": "16",
+          "time_sec": "0.003711",
+          "checksum": "1.41642e+06"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/bin/apsp_openmp",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/updated_mouse.csv",
+          "/Users/lianglihang/Downloads/Parallel-Programming-and-Algorithms/lab/lab8/data/queries_updated_mouse.txt",
+          "16"
+        ],
+        "returncode": 0,
+        "stdout": "experiment=apsp\nbackend=openmp\nnum_nodes=525\nnum_edges=14691\nnum_queries=100\nnum_threads=16\ntime_sec=0.003645\nchecksum=1.41642e+06\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "apsp",
+          "backend": "openmp",
+          "num_nodes": "525",
+          "num_edges": "14691",
+          "num_queries": "100",
+          "num_threads": "16",
+          "time_sec": "0.003645",
+          "checksum": "1.41642e+06"
+        },
+        "error": ""
+      }
+    ]
+  }
+]

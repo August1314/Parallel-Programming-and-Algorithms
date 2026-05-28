@@ -1,0 +1,353 @@
+--------------------------------------------------------------------------------
+Command:            ./bin/heated_plate_openmp 256 256 0.1 2
+Massif arguments:   --stacks=yes --massif-out-file=/tmp/massif_omp_256x256_t2.out
+ms_print arguments: /tmp/results/valgrind/massif_omp_256x256_t2.out
+--------------------------------------------------------------------------------
+
+
+    MB
+1.082^                                                                       #
+     |@:::::@@@::::::::@@@@@@::::@::@::::::@:::::::::::::@::::@@::::@::::::::#
+     |@  :: @@ :: : :::@ @@ @::: @: @: ::: @:::: :: : :: @: ::@ ::: @: :: :::#
+     |@  :: @@ :: : :::@ @@ @::: @: @: ::: @:::: :: : :: @: ::@ ::: @: :: :::#
+     |@  :: @@ :: : :::@ @@ @::: @: @: ::: @:::: :: : :: @: ::@ ::: @: :: :::#
+     |@  :: @@ :: : :::@ @@ @::: @: @: ::: @:::: :: : :: @: ::@ ::: @: :: :::#
+     |@  :: @@ :: : :::@ @@ @::: @: @: ::: @:::: :: : :: @: ::@ ::: @: :: :::#
+     |@  :: @@ :: : :::@ @@ @::: @: @: ::: @:::: :: : :: @: ::@ ::: @: :: :::#
+     |@  :: @@ :: : :::@ @@ @::: @: @: ::: @:::: :: : :: @: ::@ ::: @: :: :::#
+     |@  :: @@ :: : :::@ @@ @::: @: @: ::: @:::: :: : :: @: ::@ ::: @: :: :::#
+     |@  :: @@ :: : :::@ @@ @::: @: @: ::: @:::: :: : :: @: ::@ ::: @: :: :::#
+     |@  :: @@ :: : :::@ @@ @::: @: @: ::: @:::: :: : :: @: ::@ ::: @: :: :::#
+     |@  :: @@ :: : :::@ @@ @::: @: @: ::: @:::: :: : :: @: ::@ ::: @: :: :::#
+     |@  :: @@ :: : :::@ @@ @::: @: @: ::: @:::: :: : :: @: ::@ ::: @: :: :::#
+     |@  :: @@ :: : :::@ @@ @::: @: @: ::: @:::: :: : :: @: ::@ ::: @: :: :::#
+     |@  :: @@ :: : :::@ @@ @::: @: @: ::: @:::: :: : :: @: ::@ ::: @: :: :::#
+     |@  :: @@ :: : :::@ @@ @::: @: @: ::: @:::: :: : :: @: ::@ ::: @: :: :::#
+     |@  :: @@ :: : :::@ @@ @::: @: @: ::: @:::: :: : :: @: ::@ ::: @: :: :::#
+     |@  :: @@ :: : :::@ @@ @::: @: @: ::: @:::: :: : :: @: ::@ ::: @: :: :::#
+     |@  :: @@ :: : :::@ @@ @::: @: @: ::: @:::: :: : :: @: ::@ ::: @: :: :::#
+   0 +----------------------------------------------------------------------->Gi
+     0                                                                   2.008
+
+Number of snapshots: 55
+ Detailed snapshots: [1, 5, 6, 13, 14, 15, 16, 20, 22, 27, 37, 41, 45, 54 (peak)]
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+  0              0                0                0             0            0
+  1      1,752,696        1,123,304        1,122,408            48          848
+99.92% (1,122,408B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->93.35% (1,048,576B) 0x10AE7B: std::vector<double, std::allocator<double> >::vector(unsigned long, double const&, std::allocator<double> const&) (in /workspace/lab/lab6/bin/heated_plate_openmp)
+| ->46.67% (524,288B) 0x10978F: main (in /workspace/lab/lab6/bin/heated_plate_openmp)
+| | 
+| ->46.67% (524,288B) 0x1097B3: main (in /workspace/lab/lab6/bin/heated_plate_openmp)
+|   
+->06.56% (73,728B) 0x4955863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+| ->06.56% (73,728B) 0x4004B13: call_init (dl-init.c:74)
+|   ->06.56% (73,728B) 0x4004B13: call_init (dl-init.c:26)
+|     ->06.56% (73,728B) 0x4004C23: _dl_init (dl-init.c:121)
+|       ->06.56% (73,728B) 0x401AA77: (below main) (dl-start.S:46)
+|         
+->00.01% (104B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+  2     29,114,269        1,128,576        1,126,800           128        1,648
+  3     90,706,368        1,128,560        1,126,800           128        1,632
+  4    138,179,792        1,128,560        1,126,800           128        1,632
+  5    185,738,894        1,128,560        1,126,800           128        1,632
+99.84% (1,126,800B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->93.09% (1,050,624B) 0x10AE7B: std::vector<double, std::allocator<double> >::vector(unsigned long, double const&, std::allocator<double> const&) (in /workspace/lab/lab6/bin/heated_plate_openmp)
+| ->46.46% (524,288B) 0x10978F: main (in /workspace/lab/lab6/bin/heated_plate_openmp)
+| | 
+| ->46.46% (524,288B) 0x1097B3: main (in /workspace/lab/lab6/bin/heated_plate_openmp)
+| | 
+| ->00.18% (2,048B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->06.53% (73,728B) 0x4955863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+| ->06.53% (73,728B) 0x4004B13: call_init (dl-init.c:74)
+|   ->06.53% (73,728B) 0x4004B13: call_init (dl-init.c:26)
+|     ->06.53% (73,728B) 0x4004C23: _dl_init (dl-init.c:121)
+|       ->06.53% (73,728B) 0x401AA77: (below main) (dl-start.S:46)
+|         
+->00.22% (2,448B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+  6    233,298,790        1,128,560        1,126,800           128        1,632
+99.84% (1,126,800B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->93.09% (1,050,624B) 0x10AE7B: std::vector<double, std::allocator<double> >::vector(unsigned long, double const&, std::allocator<double> const&) (in /workspace/lab/lab6/bin/heated_plate_openmp)
+| ->46.46% (524,288B) 0x10978F: main (in /workspace/lab/lab6/bin/heated_plate_openmp)
+| | 
+| ->46.46% (524,288B) 0x1097B3: main (in /workspace/lab/lab6/bin/heated_plate_openmp)
+| | 
+| ->00.18% (2,048B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->06.53% (73,728B) 0x4955863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+| ->06.53% (73,728B) 0x4004B13: call_init (dl-init.c:74)
+|   ->06.53% (73,728B) 0x4004B13: call_init (dl-init.c:26)
+|     ->06.53% (73,728B) 0x4004C23: _dl_init (dl-init.c:121)
+|       ->06.53% (73,728B) 0x401AA77: (below main) (dl-start.S:46)
+|         
+->00.22% (2,448B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+  7    284,628,451        1,128,560        1,126,800           128        1,632
+  8    324,558,140        1,128,560        1,126,800           128        1,632
+  9    384,011,906        1,128,560        1,126,800           128        1,632
+ 10    431,575,124        1,128,560        1,126,800           128        1,632
+ 11    455,357,064        1,128,560        1,126,800           128        1,632
+ 12    498,663,779        1,128,560        1,126,800           128        1,632
+ 13    526,704,628        1,128,560        1,126,800           128        1,632
+99.84% (1,126,800B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->93.09% (1,050,624B) 0x10AE7B: std::vector<double, std::allocator<double> >::vector(unsigned long, double const&, std::allocator<double> const&) (in /workspace/lab/lab6/bin/heated_plate_openmp)
+| ->46.46% (524,288B) 0x10978F: main (in /workspace/lab/lab6/bin/heated_plate_openmp)
+| | 
+| ->46.46% (524,288B) 0x1097B3: main (in /workspace/lab/lab6/bin/heated_plate_openmp)
+| | 
+| ->00.18% (2,048B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->06.53% (73,728B) 0x4955863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+| ->06.53% (73,728B) 0x4004B13: call_init (dl-init.c:74)
+|   ->06.53% (73,728B) 0x4004B13: call_init (dl-init.c:26)
+|     ->06.53% (73,728B) 0x4004C23: _dl_init (dl-init.c:121)
+|       ->06.53% (73,728B) 0x401AA77: (below main) (dl-start.S:46)
+|         
+->00.22% (2,448B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 14    574,270,626        1,128,560        1,126,800           128        1,632
+99.84% (1,126,800B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->93.09% (1,050,624B) 0x10AE7B: std::vector<double, std::allocator<double> >::vector(unsigned long, double const&, std::allocator<double> const&) (in /workspace/lab/lab6/bin/heated_plate_openmp)
+| ->46.46% (524,288B) 0x10978F: main (in /workspace/lab/lab6/bin/heated_plate_openmp)
+| | 
+| ->46.46% (524,288B) 0x1097B3: main (in /workspace/lab/lab6/bin/heated_plate_openmp)
+| | 
+| ->00.18% (2,048B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->06.53% (73,728B) 0x4955863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+| ->06.53% (73,728B) 0x4004B13: call_init (dl-init.c:74)
+|   ->06.53% (73,728B) 0x4004B13: call_init (dl-init.c:26)
+|     ->06.53% (73,728B) 0x4004C23: _dl_init (dl-init.c:121)
+|       ->06.53% (73,728B) 0x401AA77: (below main) (dl-start.S:46)
+|         
+->00.22% (2,448B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 15    621,837,086        1,128,560        1,126,800           128        1,632
+99.84% (1,126,800B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->93.09% (1,050,624B) 0x10AE7B: std::vector<double, std::allocator<double> >::vector(unsigned long, double const&, std::allocator<double> const&) (in /workspace/lab/lab6/bin/heated_plate_openmp)
+| ->46.46% (524,288B) 0x10978F: main (in /workspace/lab/lab6/bin/heated_plate_openmp)
+| | 
+| ->46.46% (524,288B) 0x1097B3: main (in /workspace/lab/lab6/bin/heated_plate_openmp)
+| | 
+| ->00.18% (2,048B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->06.53% (73,728B) 0x4955863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+| ->06.53% (73,728B) 0x4004B13: call_init (dl-init.c:74)
+|   ->06.53% (73,728B) 0x4004B13: call_init (dl-init.c:26)
+|     ->06.53% (73,728B) 0x4004C23: _dl_init (dl-init.c:121)
+|       ->06.53% (73,728B) 0x401AA77: (below main) (dl-start.S:46)
+|         
+->00.22% (2,448B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 16    669,403,754        1,128,560        1,126,800           128        1,632
+99.84% (1,126,800B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->93.09% (1,050,624B) 0x10AE7B: std::vector<double, std::allocator<double> >::vector(unsigned long, double const&, std::allocator<double> const&) (in /workspace/lab/lab6/bin/heated_plate_openmp)
+| ->46.46% (524,288B) 0x10978F: main (in /workspace/lab/lab6/bin/heated_plate_openmp)
+| | 
+| ->46.46% (524,288B) 0x1097B3: main (in /workspace/lab/lab6/bin/heated_plate_openmp)
+| | 
+| ->00.18% (2,048B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->06.53% (73,728B) 0x4955863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+| ->06.53% (73,728B) 0x4004B13: call_init (dl-init.c:74)
+|   ->06.53% (73,728B) 0x4004B13: call_init (dl-init.c:26)
+|     ->06.53% (73,728B) 0x4004C23: _dl_init (dl-init.c:121)
+|       ->06.53% (73,728B) 0x401AA77: (below main) (dl-start.S:46)
+|         
+->00.22% (2,448B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 17    693,187,224        1,128,560        1,126,800           128        1,632
+ 18    742,818,038        1,128,240        1,126,800           128        1,312
+ 19    772,422,560        1,128,256        1,126,800           128        1,328
+ 20    811,848,014        1,128,592        1,126,800           128        1,664
+99.84% (1,126,800B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->93.09% (1,050,624B) 0x10AE7B: std::vector<double, std::allocator<double> >::vector(unsigned long, double const&, std::allocator<double> const&) (in /workspace/lab/lab6/bin/heated_plate_openmp)
+| ->46.46% (524,288B) 0x10978F: main (in /workspace/lab/lab6/bin/heated_plate_openmp)
+| | 
+| ->46.46% (524,288B) 0x1097B3: main (in /workspace/lab/lab6/bin/heated_plate_openmp)
+| | 
+| ->00.18% (2,048B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->06.53% (73,728B) 0x4955863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+| ->06.53% (73,728B) 0x4004B13: call_init (dl-init.c:74)
+|   ->06.53% (73,728B) 0x4004B13: call_init (dl-init.c:26)
+|     ->06.53% (73,728B) 0x4004C23: _dl_init (dl-init.c:121)
+|       ->06.53% (73,728B) 0x401AA77: (below main) (dl-start.S:46)
+|         
+->00.22% (2,448B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 21    851,649,773        1,128,256        1,126,800           128        1,328
+ 22    911,112,437        1,128,256        1,126,800           128        1,328
+99.87% (1,126,800B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->93.12% (1,050,624B) 0x10AE7B: std::vector<double, std::allocator<double> >::vector(unsigned long, double const&, std::allocator<double> const&) (in /workspace/lab/lab6/bin/heated_plate_openmp)
+| ->46.47% (524,288B) 0x10978F: main (in /workspace/lab/lab6/bin/heated_plate_openmp)
+| | 
+| ->46.47% (524,288B) 0x1097B3: main (in /workspace/lab/lab6/bin/heated_plate_openmp)
+| | 
+| ->00.18% (2,048B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->06.53% (73,728B) 0x4955863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+| ->06.53% (73,728B) 0x4004B13: call_init (dl-init.c:74)
+|   ->06.53% (73,728B) 0x4004B13: call_init (dl-init.c:26)
+|     ->06.53% (73,728B) 0x4004C23: _dl_init (dl-init.c:121)
+|       ->06.53% (73,728B) 0x401AA77: (below main) (dl-start.S:46)
+|         
+->00.22% (2,448B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 23    950,561,580        1,128,256        1,126,800           128        1,328
+ 24    990,236,970        1,128,592        1,126,800           128        1,664
+ 25  1,040,476,550        1,128,256        1,126,800           128        1,328
+ 26  1,071,268,021        1,128,224        1,126,800           128        1,296
+ 27  1,111,075,592        1,128,560        1,126,800           128        1,632
+99.84% (1,126,800B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->93.09% (1,050,624B) 0x10AE7B: std::vector<double, std::allocator<double> >::vector(unsigned long, double const&, std::allocator<double> const&) (in /workspace/lab/lab6/bin/heated_plate_openmp)
+| ->46.46% (524,288B) 0x10978F: main (in /workspace/lab/lab6/bin/heated_plate_openmp)
+| | 
+| ->46.46% (524,288B) 0x1097B3: main (in /workspace/lab/lab6/bin/heated_plate_openmp)
+| | 
+| ->00.18% (2,048B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->06.53% (73,728B) 0x4955863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+| ->06.53% (73,728B) 0x4004B13: call_init (dl-init.c:74)
+|   ->06.53% (73,728B) 0x4004B13: call_init (dl-init.c:26)
+|     ->06.53% (73,728B) 0x4004C23: _dl_init (dl-init.c:121)
+|       ->06.53% (73,728B) 0x401AA77: (below main) (dl-start.S:46)
+|         
+->00.22% (2,448B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 28  1,140,827,858        1,128,240        1,126,800           128        1,312
+ 29  1,180,634,502        1,128,240        1,126,800           128        1,312
+ 30  1,220,086,271        1,128,240        1,126,800           128        1,312
+ 31  1,253,798,166        1,128,560        1,126,800           128        1,632
+ 32  1,305,142,361        1,128,560        1,126,800           128        1,632
+ 33  1,338,938,669        1,128,576        1,126,800           128        1,648
+ 34  1,404,553,386        1,128,560        1,126,800           128        1,632
+ 35  1,454,194,796        1,128,240        1,126,800           128        1,312
+ 36  1,487,814,178        1,128,560        1,126,800           128        1,632
+ 37  1,537,456,082        1,128,240        1,126,800           128        1,312
+99.87% (1,126,800B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->93.12% (1,050,624B) 0x10AE7B: std::vector<double, std::allocator<double> >::vector(unsigned long, double const&, std::allocator<double> const&) (in /workspace/lab/lab6/bin/heated_plate_openmp)
+| ->46.47% (524,288B) 0x10978F: main (in /workspace/lab/lab6/bin/heated_plate_openmp)
+| | 
+| ->46.47% (524,288B) 0x1097B3: main (in /workspace/lab/lab6/bin/heated_plate_openmp)
+| | 
+| ->00.18% (2,048B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->06.53% (73,728B) 0x4955863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+| ->06.53% (73,728B) 0x4004B13: call_init (dl-init.c:74)
+|   ->06.53% (73,728B) 0x4004B13: call_init (dl-init.c:26)
+|     ->06.53% (73,728B) 0x4004C23: _dl_init (dl-init.c:121)
+|       ->06.53% (73,728B) 0x401AA77: (below main) (dl-start.S:46)
+|         
+->00.22% (2,448B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 38  1,571,075,450        1,128,560        1,126,800           128        1,632
+ 39  1,620,718,094        1,128,240        1,126,800           128        1,312
+ 40  1,654,337,884        1,128,560        1,126,800           128        1,632
+ 41  1,703,981,228        1,128,240        1,126,800           128        1,312
+99.87% (1,126,800B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->93.12% (1,050,624B) 0x10AE7B: std::vector<double, std::allocator<double> >::vector(unsigned long, double const&, std::allocator<double> const&) (in /workspace/lab/lab6/bin/heated_plate_openmp)
+| ->46.47% (524,288B) 0x10978F: main (in /workspace/lab/lab6/bin/heated_plate_openmp)
+| | 
+| ->46.47% (524,288B) 0x1097B3: main (in /workspace/lab/lab6/bin/heated_plate_openmp)
+| | 
+| ->00.18% (2,048B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->06.53% (73,728B) 0x4955863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+| ->06.53% (73,728B) 0x4004B13: call_init (dl-init.c:74)
+|   ->06.53% (73,728B) 0x4004B13: call_init (dl-init.c:26)
+|     ->06.53% (73,728B) 0x4004C23: _dl_init (dl-init.c:121)
+|       ->06.53% (73,728B) 0x401AA77: (below main) (dl-start.S:46)
+|         
+->00.22% (2,448B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 42  1,737,602,340        1,128,560        1,126,800           128        1,632
+ 43  1,787,248,406        1,128,240        1,126,800           128        1,312
+ 44  1,820,869,990        1,128,560        1,126,800           128        1,632
+ 45  1,870,516,648        1,128,240        1,126,800           128        1,312
+99.87% (1,126,800B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->93.12% (1,050,624B) 0x10AE7B: std::vector<double, std::allocator<double> >::vector(unsigned long, double const&, std::allocator<double> const&) (in /workspace/lab/lab6/bin/heated_plate_openmp)
+| ->46.47% (524,288B) 0x10978F: main (in /workspace/lab/lab6/bin/heated_plate_openmp)
+| | 
+| ->46.47% (524,288B) 0x1097B3: main (in /workspace/lab/lab6/bin/heated_plate_openmp)
+| | 
+| ->00.18% (2,048B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->06.53% (73,728B) 0x4955863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+| ->06.53% (73,728B) 0x4004B13: call_init (dl-init.c:74)
+|   ->06.53% (73,728B) 0x4004B13: call_init (dl-init.c:26)
+|     ->06.53% (73,728B) 0x4004C23: _dl_init (dl-init.c:121)
+|       ->06.53% (73,728B) 0x401AA77: (below main) (dl-start.S:46)
+|         
+->00.22% (2,448B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 46  1,904,138,204        1,128,560        1,126,800           128        1,632
+ 47  1,953,785,308        1,128,240        1,126,800           128        1,312
+ 48  2,005,054,805        1,128,576        1,126,800           128        1,648
+ 49  2,054,522,659        1,128,560        1,126,800           128        1,632
+ 50  2,078,314,177        1,128,560        1,126,800           128        1,632
+ 51  2,102,105,937        1,128,560        1,126,800           128        1,632
+ 52  2,125,897,735        1,128,560        1,126,800           128        1,632
+ 53  2,149,689,879        1,128,560        1,126,800           128        1,632
+ 54  2,156,028,848        1,134,872        1,130,896           136        3,840
+99.65% (1,130,896B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->92.58% (1,050,624B) 0x10AE7B: std::vector<double, std::allocator<double> >::vector(unsigned long, double const&, std::allocator<double> const&) (in /workspace/lab/lab6/bin/heated_plate_openmp)
+| ->46.20% (524,288B) 0x10978F: main (in /workspace/lab/lab6/bin/heated_plate_openmp)
+| | 
+| ->46.20% (524,288B) 0x1097B3: main (in /workspace/lab/lab6/bin/heated_plate_openmp)
+| | 
+| ->00.18% (2,048B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->06.50% (73,728B) 0x4955863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+| ->06.50% (73,728B) 0x4004B13: call_init (dl-init.c:74)
+|   ->06.50% (73,728B) 0x4004B13: call_init (dl-init.c:26)
+|     ->06.50% (73,728B) 0x4004C23: _dl_init (dl-init.c:121)
+|       ->06.50% (73,728B) 0x401AA77: (below main) (dl-start.S:46)
+|         
+->00.58% (6,544B) in 1+ places, all below ms_print's threshold (01.00%)
+

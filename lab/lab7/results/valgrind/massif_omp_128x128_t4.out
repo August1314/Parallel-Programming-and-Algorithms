@@ -1,0 +1,492 @@
+desc: --stacks=yes --massif-out-file=/tmp/massif_omp_128x128_t4.out
+cmd: ./bin/heated_plate_openmp 128 128 0.1 4
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=3524185
+mem_heap_B=340464
+mem_heap_extra_B=144
+mem_stacks_B=3968
+heap_tree=detailed
+n3: 340464 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 263168 0x10AE7B: std::vector<double, std::allocator<double> >::vector(unsigned long, double const&, std::allocator<double> const&) (in /workspace/lab/lab6/bin/heated_plate_openmp)
+  n0: 131072 0x10978F: main (in /workspace/lab/lab6/bin/heated_plate_openmp)
+  n0: 131072 0x1097B3: main (in /workspace/lab/lab6/bin/heated_plate_openmp)
+  n0: 1024 in 1 place, below massif's threshold (1.00%)
+ n1: 73728 0x4955863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x4004B13: call_init (dl-init.c:74)
+   n1: 73728 0x4004B13: call_init (dl-init.c:26)
+    n1: 73728 0x4004C23: _dl_init (dl-init.c:121)
+     n0: 73728 0x401AA77: (below main) (dl-start.S:46)
+ n0: 3568 in 5 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=2
+#-----------
+time=94153685
+mem_heap_B=340464
+mem_heap_extra_B=144
+mem_stacks_B=2688
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=272108318
+mem_heap_B=340464
+mem_heap_extra_B=144
+mem_stacks_B=2720
+heap_tree=detailed
+n3: 340464 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 263168 0x10AE7B: std::vector<double, std::allocator<double> >::vector(unsigned long, double const&, std::allocator<double> const&) (in /workspace/lab/lab6/bin/heated_plate_openmp)
+  n0: 131072 0x10978F: main (in /workspace/lab/lab6/bin/heated_plate_openmp)
+  n0: 131072 0x1097B3: main (in /workspace/lab/lab6/bin/heated_plate_openmp)
+  n0: 1024 in 1 place, below massif's threshold (1.00%)
+ n1: 73728 0x4955863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x4004B13: call_init (dl-init.c:74)
+   n1: 73728 0x4004B13: call_init (dl-init.c:26)
+    n1: 73728 0x4004C23: _dl_init (dl-init.c:121)
+     n0: 73728 0x401AA77: (below main) (dl-start.S:46)
+ n0: 3568 in 5 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=4
+#-----------
+time=384653113
+mem_heap_B=340464
+mem_heap_extra_B=144
+mem_stacks_B=2720
+heap_tree=empty
+#-----------
+snapshot=5
+#-----------
+time=500900694
+mem_heap_B=340464
+mem_heap_extra_B=144
+mem_stacks_B=2432
+heap_tree=empty
+#-----------
+snapshot=6
+#-----------
+time=573518246
+mem_heap_B=340464
+mem_heap_extra_B=144
+mem_stacks_B=2720
+heap_tree=empty
+#-----------
+snapshot=7
+#-----------
+time=691508843
+mem_heap_B=340464
+mem_heap_extra_B=144
+mem_stacks_B=2704
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=756865363
+mem_heap_B=340464
+mem_heap_extra_B=144
+mem_stacks_B=2704
+heap_tree=empty
+#-----------
+snapshot=9
+#-----------
+time=880320859
+mem_heap_B=340464
+mem_heap_extra_B=144
+mem_stacks_B=2432
+heap_tree=empty
+#-----------
+snapshot=10
+#-----------
+time=1049228327
+mem_heap_B=340464
+mem_heap_extra_B=144
+mem_stacks_B=2704
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=1219687793
+mem_heap_B=340464
+mem_heap_extra_B=144
+mem_stacks_B=2400
+heap_tree=empty
+#-----------
+snapshot=12
+#-----------
+time=1319526593
+mem_heap_B=340464
+mem_heap_extra_B=144
+mem_stacks_B=2688
+heap_tree=detailed
+n3: 340464 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 263168 0x10AE7B: std::vector<double, std::allocator<double> >::vector(unsigned long, double const&, std::allocator<double> const&) (in /workspace/lab/lab6/bin/heated_plate_openmp)
+  n0: 131072 0x10978F: main (in /workspace/lab/lab6/bin/heated_plate_openmp)
+  n0: 131072 0x1097B3: main (in /workspace/lab/lab6/bin/heated_plate_openmp)
+  n0: 1024 in 1 place, below massif's threshold (1.00%)
+ n1: 73728 0x4955863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x4004B13: call_init (dl-init.c:74)
+   n1: 73728 0x4004B13: call_init (dl-init.c:26)
+    n1: 73728 0x4004C23: _dl_init (dl-init.c:121)
+     n0: 73728 0x401AA77: (below main) (dl-start.S:46)
+ n0: 3568 in 5 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=13
+#-----------
+time=1401204572
+mem_heap_B=340464
+mem_heap_extra_B=144
+mem_stacks_B=2432
+heap_tree=empty
+#-----------
+snapshot=14
+#-----------
+time=1515601433
+mem_heap_B=340464
+mem_heap_extra_B=144
+mem_stacks_B=2688
+heap_tree=empty
+#-----------
+snapshot=15
+#-----------
+time=1613639055
+mem_heap_B=340464
+mem_heap_extra_B=144
+mem_stacks_B=2688
+heap_tree=empty
+#-----------
+snapshot=16
+#-----------
+time=1760675866
+mem_heap_B=340464
+mem_heap_extra_B=144
+mem_stacks_B=2432
+heap_tree=empty
+#-----------
+snapshot=17
+#-----------
+time=1875073701
+mem_heap_B=340464
+mem_heap_extra_B=144
+mem_stacks_B=2688
+heap_tree=empty
+#-----------
+snapshot=18
+#-----------
+time=2005828545
+mem_heap_B=340464
+mem_heap_extra_B=144
+mem_stacks_B=2704
+heap_tree=empty
+#-----------
+snapshot=19
+#-----------
+time=2141980941
+mem_heap_B=340464
+mem_heap_extra_B=144
+mem_stacks_B=2720
+heap_tree=empty
+#-----------
+snapshot=20
+#-----------
+time=2281776089
+mem_heap_B=340464
+mem_heap_extra_B=144
+mem_stacks_B=2432
+heap_tree=empty
+#-----------
+snapshot=21
+#-----------
+time=2390741279
+mem_heap_B=340464
+mem_heap_extra_B=144
+mem_stacks_B=2432
+heap_tree=empty
+#-----------
+snapshot=22
+#-----------
+time=2528741786
+mem_heap_B=340464
+mem_heap_extra_B=144
+mem_stacks_B=2416
+heap_tree=empty
+#-----------
+snapshot=23
+#-----------
+time=2639479489
+mem_heap_B=340464
+mem_heap_extra_B=144
+mem_stacks_B=2736
+heap_tree=empty
+#-----------
+snapshot=24
+#-----------
+time=2804705777
+mem_heap_B=340464
+mem_heap_extra_B=144
+mem_stacks_B=2416
+heap_tree=empty
+#-----------
+snapshot=25
+#-----------
+time=2971708689
+mem_heap_B=340464
+mem_heap_extra_B=144
+mem_stacks_B=2688
+heap_tree=empty
+#-----------
+snapshot=26
+#-----------
+time=3137044101
+mem_heap_B=340464
+mem_heap_extra_B=144
+mem_stacks_B=2416
+heap_tree=empty
+#-----------
+snapshot=27
+#-----------
+time=3247786238
+mem_heap_B=340464
+mem_heap_extra_B=144
+mem_stacks_B=2432
+heap_tree=empty
+#-----------
+snapshot=28
+#-----------
+time=3331349556
+mem_heap_B=340464
+mem_heap_extra_B=144
+mem_stacks_B=2720
+heap_tree=empty
+#-----------
+snapshot=29
+#-----------
+time=3469341282
+mem_heap_B=340464
+mem_heap_extra_B=144
+mem_stacks_B=2688
+heap_tree=empty
+#-----------
+snapshot=30
+#-----------
+time=3560179786
+mem_heap_B=340464
+mem_heap_extra_B=144
+mem_stacks_B=2432
+heap_tree=empty
+#-----------
+snapshot=31
+#-----------
+time=3650920834
+mem_heap_B=340464
+mem_heap_extra_B=144
+mem_stacks_B=2400
+heap_tree=empty
+#-----------
+snapshot=32
+#-----------
+time=3787114500
+mem_heap_B=340464
+mem_heap_extra_B=144
+mem_stacks_B=2416
+heap_tree=empty
+#-----------
+snapshot=33
+#-----------
+time=3877888318
+mem_heap_B=340464
+mem_heap_extra_B=144
+mem_stacks_B=2416
+heap_tree=empty
+#-----------
+snapshot=34
+#-----------
+time=4012368604
+mem_heap_B=340464
+mem_heap_extra_B=144
+mem_stacks_B=2720
+heap_tree=empty
+#-----------
+snapshot=35
+#-----------
+time=4103146764
+mem_heap_B=340464
+mem_heap_extra_B=144
+mem_stacks_B=2416
+heap_tree=empty
+#-----------
+snapshot=36
+#-----------
+time=4239308387
+mem_heap_B=340464
+mem_heap_extra_B=144
+mem_stacks_B=2400
+heap_tree=empty
+#-----------
+snapshot=37
+#-----------
+time=4330090530
+mem_heap_B=340464
+mem_heap_extra_B=144
+mem_stacks_B=2432
+heap_tree=empty
+#-----------
+snapshot=38
+#-----------
+time=4464468975
+mem_heap_B=340464
+mem_heap_extra_B=144
+mem_stacks_B=2688
+heap_tree=empty
+#-----------
+snapshot=39
+#-----------
+time=4555261483
+mem_heap_B=340464
+mem_heap_extra_B=144
+mem_stacks_B=2720
+heap_tree=empty
+#-----------
+snapshot=40
+#-----------
+time=4691439061
+mem_heap_B=340464
+mem_heap_extra_B=144
+mem_stacks_B=2704
+heap_tree=empty
+#-----------
+snapshot=41
+#-----------
+time=4827631594
+mem_heap_B=340464
+mem_heap_extra_B=144
+mem_stacks_B=2720
+heap_tree=empty
+#-----------
+snapshot=42
+#-----------
+time=4918410571
+mem_heap_B=340464
+mem_heap_extra_B=144
+mem_stacks_B=2720
+heap_tree=empty
+#-----------
+snapshot=43
+#-----------
+time=5054570261
+mem_heap_B=340464
+mem_heap_extra_B=144
+mem_stacks_B=2704
+heap_tree=empty
+#-----------
+snapshot=44
+#-----------
+time=5145357413
+mem_heap_B=340464
+mem_heap_extra_B=144
+mem_stacks_B=2432
+heap_tree=empty
+#-----------
+snapshot=45
+#-----------
+time=5279709345
+mem_heap_B=340464
+mem_heap_extra_B=144
+mem_stacks_B=2400
+heap_tree=empty
+#-----------
+snapshot=46
+#-----------
+time=5415905752
+mem_heap_B=340464
+mem_heap_extra_B=144
+mem_stacks_B=2416
+heap_tree=detailed
+n3: 340464 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 263168 0x10AE7B: std::vector<double, std::allocator<double> >::vector(unsigned long, double const&, std::allocator<double> const&) (in /workspace/lab/lab6/bin/heated_plate_openmp)
+  n0: 131072 0x10978F: main (in /workspace/lab/lab6/bin/heated_plate_openmp)
+  n0: 131072 0x1097B3: main (in /workspace/lab/lab6/bin/heated_plate_openmp)
+  n0: 1024 in 1 place, below massif's threshold (1.00%)
+ n1: 73728 0x4955863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x4004B13: call_init (dl-init.c:74)
+   n1: 73728 0x4004B13: call_init (dl-init.c:26)
+    n1: 73728 0x4004C23: _dl_init (dl-init.c:121)
+     n0: 73728 0x401AA77: (below main) (dl-start.S:46)
+ n0: 3568 in 5 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=47
+#-----------
+time=5506682285
+mem_heap_B=340464
+mem_heap_extra_B=144
+mem_stacks_B=2416
+heap_tree=empty
+#-----------
+snapshot=48
+#-----------
+time=5642846552
+mem_heap_B=340464
+mem_heap_extra_B=144
+mem_stacks_B=2400
+heap_tree=empty
+#-----------
+snapshot=49
+#-----------
+time=5733630899
+mem_heap_B=340464
+mem_heap_extra_B=144
+mem_stacks_B=2432
+heap_tree=empty
+#-----------
+snapshot=50
+#-----------
+time=5798994819
+mem_heap_B=340464
+mem_heap_extra_B=144
+mem_stacks_B=2432
+heap_tree=empty
+#-----------
+snapshot=51
+#-----------
+time=5864358855
+mem_heap_B=340464
+mem_heap_extra_B=144
+mem_stacks_B=2432
+heap_tree=empty
+#-----------
+snapshot=52
+#-----------
+time=5913406520
+mem_heap_B=344560
+mem_heap_extra_B=152
+mem_stacks_B=3344
+heap_tree=peak
+n4: 344560 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 263168 0x10AE7B: std::vector<double, std::allocator<double> >::vector(unsigned long, double const&, std::allocator<double> const&) (in /workspace/lab/lab6/bin/heated_plate_openmp)
+  n0: 131072 0x10978F: main (in /workspace/lab/lab6/bin/heated_plate_openmp)
+  n0: 131072 0x1097B3: main (in /workspace/lab/lab6/bin/heated_plate_openmp)
+  n0: 1024 in 1 place, below massif's threshold (1.00%)
+ n1: 73728 0x4955863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x4004B13: call_init (dl-init.c:74)
+   n1: 73728 0x4004B13: call_init (dl-init.c:26)
+    n1: 73728 0x4004C23: _dl_init (dl-init.c:121)
+     n0: 73728 0x401AA77: (below main) (dl-start.S:46)
+ n1: 4096 0x4C6F05F: _IO_file_doallocate (filedoalloc.c:101)
+  n1: 4096 0x4C7ECA3: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x4C7ECA3: _IO_doallocbuf (genops.c:342)
+    n1: 4096 0x4C7CF7B: _IO_file_overflow@@GLIBC_2.17 (fileops.c:745)
+     n1: 4096 0x4C7D9DB: _IO_new_file_xsputn (fileops.c:1244)
+      n1: 4096 0x4C7D9DB: _IO_file_xsputn@@GLIBC_2.17 (fileops.c:1197)
+       n1: 4096 0x4C70957: fwrite (iofwrite.c:39)
+        n1: 4096 0x4A02763: std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long) (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+         n1: 4096 0x10A81B: print_common_output(char const*, char const*, HeatedPlateConfig const&, char const*, int, double, double, std::vector<double, std::allocator<double> > const&) (in /workspace/lab/lab6/bin/heated_plate_openmp)
+          n0: 4096 0x109853: main (in /workspace/lab/lab6/bin/heated_plate_openmp)
+ n0: 3568 in 5 places, all below massif's threshold (1.00%)

@@ -1,0 +1,837 @@
+desc: --stacks=yes --massif-out-file=/tmp/massif_pthreads_128x128_t2.out
+cmd: ./bin/heated_plate_pthreads 128 128 0.1 2 block 8
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=727537
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=2016
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=1963756
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=3504
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=2695095
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=8656
+heap_tree=detailed
+n3: 337568 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 263168 0x10B05B: std::vector<double, std::allocator<double> >::vector(unsigned long, double const&, std::allocator<double> const&) (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 131072 0x1099F3: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 131072 0x109A0F: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 1024 in 1 place, below massif's threshold (1.00%)
+ n1: 73728 0x4985863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x4004B13: call_init (dl-init.c:74)
+   n1: 73728 0x4004B13: call_init (dl-init.c:26)
+    n1: 73728 0x4004C23: _dl_init (dl-init.c:121)
+     n0: 73728 0x401AA77: (below main) (dl-start.S:46)
+ n0: 672 in 3 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=4
+#-----------
+time=3521182
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=14912
+heap_tree=empty
+#-----------
+snapshot=5
+#-----------
+time=4413806
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=21536
+heap_tree=empty
+#-----------
+snapshot=6
+#-----------
+time=5075641
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=26320
+heap_tree=empty
+#-----------
+snapshot=7
+#-----------
+time=5902720
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=32576
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=6498434
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=36992
+heap_tree=empty
+#-----------
+snapshot=9
+#-----------
+time=7326296
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=45664
+heap_tree=detailed
+n3: 337568 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 263168 0x10B05B: std::vector<double, std::allocator<double> >::vector(unsigned long, double const&, std::allocator<double> const&) (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 131072 0x1099F3: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 131072 0x109A0F: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 1024 in 1 place, below massif's threshold (1.00%)
+ n1: 73728 0x4985863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x4004B13: call_init (dl-init.c:74)
+   n1: 73728 0x4004B13: call_init (dl-init.c:26)
+    n1: 73728 0x4004C23: _dl_init (dl-init.c:121)
+     n0: 73728 0x401AA77: (below main) (dl-start.S:46)
+ n0: 672 in 3 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=10
+#-----------
+time=8215938
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=49872
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=9552451
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=61856
+heap_tree=detailed
+n3: 337568 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 263168 0x10B05B: std::vector<double, std::allocator<double> >::vector(unsigned long, double const&, std::allocator<double> const&) (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 131072 0x1099F3: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 131072 0x109A0F: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 1024 in 1 place, below massif's threshold (1.00%)
+ n1: 73728 0x4985863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x4004B13: call_init (dl-init.c:74)
+   n1: 73728 0x4004B13: call_init (dl-init.c:26)
+    n1: 73728 0x4004C23: _dl_init (dl-init.c:121)
+     n0: 73728 0x401AA77: (below main) (dl-start.S:46)
+ n0: 672 in 3 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=12
+#-----------
+time=10741179
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=68272
+heap_tree=empty
+#-----------
+snapshot=13
+#-----------
+time=11570181
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=74528
+heap_tree=empty
+#-----------
+snapshot=14
+#-----------
+time=12167333
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=79280
+heap_tree=empty
+#-----------
+snapshot=15
+#-----------
+time=13064162
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=87984
+heap_tree=detailed
+n3: 337568 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 263168 0x10B05B: std::vector<double, std::allocator<double> >::vector(unsigned long, double const&, std::allocator<double> const&) (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 131072 0x1099F3: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 131072 0x109A0F: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 1024 in 1 place, below massif's threshold (1.00%)
+ n1: 73728 0x4985863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x4004B13: call_init (dl-init.c:74)
+   n1: 73728 0x4004B13: call_init (dl-init.c:26)
+    n1: 73728 0x4004C23: _dl_init (dl-init.c:121)
+     n0: 73728 0x401AA77: (below main) (dl-start.S:46)
+ n0: 672 in 3 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=16
+#-----------
+time=14026904
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=92560
+heap_tree=empty
+#-----------
+snapshot=17
+#-----------
+time=14625002
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=96976
+heap_tree=empty
+#-----------
+snapshot=18
+#-----------
+time=15455111
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=105648
+heap_tree=detailed
+n3: 337568 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 263168 0x10B05B: std::vector<double, std::allocator<double> >::vector(unsigned long, double const&, std::allocator<double> const&) (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 131072 0x1099F3: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 131072 0x109A0F: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 1024 in 1 place, below massif's threshold (1.00%)
+ n1: 73728 0x4985863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x4004B13: call_init (dl-init.c:74)
+   n1: 73728 0x4004B13: call_init (dl-init.c:26)
+    n1: 73728 0x4004C23: _dl_init (dl-init.c:121)
+     n0: 73728 0x401AA77: (below main) (dl-start.S:46)
+ n0: 672 in 3 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=19
+#-----------
+time=16422960
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=110432
+heap_tree=empty
+#-----------
+snapshot=20
+#-----------
+time=16950778
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=114272
+heap_tree=empty
+#-----------
+snapshot=21
+#-----------
+time=17915337
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=121264
+heap_tree=empty
+#-----------
+snapshot=22
+#-----------
+time=18517304
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=126016
+heap_tree=empty
+#-----------
+snapshot=23
+#-----------
+time=19345522
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=134352
+heap_tree=detailed
+n3: 337568 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 263168 0x10B05B: std::vector<double, std::allocator<double> >::vector(unsigned long, double const&, std::allocator<double> const&) (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 131072 0x1099F3: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 131072 0x109A0F: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 1024 in 1 place, below massif's threshold (1.00%)
+ n1: 73728 0x4985863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x4004B13: call_init (dl-init.c:74)
+   n1: 73728 0x4004B13: call_init (dl-init.c:26)
+    n1: 73728 0x4004C23: _dl_init (dl-init.c:121)
+     n0: 73728 0x401AA77: (below main) (dl-start.S:46)
+ n0: 672 in 3 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=24
+#-----------
+time=20310851
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=138928
+heap_tree=empty
+#-----------
+snapshot=25
+#-----------
+time=21561165
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=148496
+heap_tree=empty
+#-----------
+snapshot=26
+#-----------
+time=22341249
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=154016
+heap_tree=empty
+#-----------
+snapshot=27
+#-----------
+time=23659502
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=163952
+heap_tree=empty
+#-----------
+snapshot=28
+#-----------
+time=24439858
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=169472
+heap_tree=empty
+#-----------
+snapshot=29
+#-----------
+time=25106861
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=174256
+heap_tree=empty
+#-----------
+snapshot=30
+#-----------
+time=26006814
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=180880
+heap_tree=empty
+#-----------
+snapshot=31
+#-----------
+time=26606764
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=185296
+heap_tree=empty
+#-----------
+snapshot=32
+#-----------
+time=27559237
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=192656
+heap_tree=empty
+#-----------
+snapshot=33
+#-----------
+time=28107977
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=196336
+heap_tree=empty
+#-----------
+snapshot=34
+#-----------
+time=29060974
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=203696
+heap_tree=empty
+#-----------
+snapshot=35
+#-----------
+time=30075310
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=213472
+heap_tree=detailed
+n3: 337568 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 263168 0x10B05B: std::vector<double, std::allocator<double> >::vector(unsigned long, double const&, std::allocator<double> const&) (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 131072 0x1099F3: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 131072 0x109A0F: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 1024 in 1 place, below massif's threshold (1.00%)
+ n1: 73728 0x4985863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x4004B13: call_init (dl-init.c:74)
+   n1: 73728 0x4004B13: call_init (dl-init.c:26)
+    n1: 73728 0x4004C23: _dl_init (dl-init.c:121)
+     n0: 73728 0x401AA77: (below main) (dl-start.S:46)
+ n0: 672 in 3 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=36
+#-----------
+time=30744306
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=215840
+heap_tree=empty
+#-----------
+snapshot=37
+#-----------
+time=31644358
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=222464
+heap_tree=empty
+#-----------
+snapshot=38
+#-----------
+time=32422971
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=230768
+heap_tree=detailed
+n3: 337568 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 263168 0x10B05B: std::vector<double, std::allocator<double> >::vector(unsigned long, double const&, std::allocator<double> const&) (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 131072 0x1099F3: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 131072 0x109A0F: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 1024 in 1 place, below massif's threshold (1.00%)
+ n1: 73728 0x4985863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x4004B13: call_init (dl-init.c:74)
+   n1: 73728 0x4004B13: call_init (dl-init.c:26)
+    n1: 73728 0x4004C23: _dl_init (dl-init.c:121)
+     n0: 73728 0x401AA77: (below main) (dl-start.S:46)
+ n0: 672 in 3 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=39
+#-----------
+time=33624802
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=237184
+heap_tree=empty
+#-----------
+snapshot=40
+#-----------
+time=34828107
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=248432
+heap_tree=detailed
+n3: 337568 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 263168 0x10B05B: std::vector<double, std::allocator<double> >::vector(unsigned long, double const&, std::allocator<double> const&) (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 131072 0x1099F3: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 131072 0x109A0F: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 1024 in 1 place, below massif's threshold (1.00%)
+ n1: 73728 0x4985863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x4004B13: call_init (dl-init.c:74)
+   n1: 73728 0x4004B13: call_init (dl-init.c:26)
+    n1: 73728 0x4004C23: _dl_init (dl-init.c:121)
+     n0: 73728 0x401AA77: (below main) (dl-start.S:46)
+ n0: 672 in 3 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=41
+#-----------
+time=36031376
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=254848
+heap_tree=empty
+#-----------
+snapshot=42
+#-----------
+time=36934336
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=261472
+heap_tree=empty
+#-----------
+snapshot=43
+#-----------
+time=38138603
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=270304
+heap_tree=empty
+#-----------
+snapshot=44
+#-----------
+time=39468928
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=279872
+heap_tree=empty
+#-----------
+snapshot=45
+#-----------
+time=40299158
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=286128
+heap_tree=empty
+#-----------
+snapshot=46
+#-----------
+time=41577422
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=295328
+heap_tree=empty
+#-----------
+snapshot=47
+#-----------
+time=42481366
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=301952
+heap_tree=empty
+#-----------
+snapshot=48
+#-----------
+time=43385368
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=308576
+heap_tree=empty
+#-----------
+snapshot=49
+#-----------
+time=44385708
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=318352
+heap_tree=detailed
+n3: 337568 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 263168 0x10B05B: std::vector<double, std::allocator<double> >::vector(unsigned long, double const&, std::allocator<double> const&) (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 131072 0x1099F3: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 131072 0x109A0F: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 1024 in 1 place, below massif's threshold (1.00%)
+ n1: 73728 0x4985863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x4004B13: call_init (dl-init.c:74)
+   n1: 73728 0x4004B13: call_init (dl-init.c:26)
+    n1: 73728 0x4004C23: _dl_init (dl-init.c:121)
+     n0: 73728 0x401AA77: (below main) (dl-start.S:46)
+ n0: 672 in 3 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=50
+#-----------
+time=44959605
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=319984
+heap_tree=empty
+#-----------
+snapshot=51
+#-----------
+time=45290008
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=324976
+heap_tree=detailed
+n3: 337568 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 263168 0x10B05B: std::vector<double, std::allocator<double> >::vector(unsigned long, double const&, std::allocator<double> const&) (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 131072 0x1099F3: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 131072 0x109A0F: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 1024 in 1 place, below massif's threshold (1.00%)
+ n1: 73728 0x4985863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x4004B13: call_init (dl-init.c:74)
+   n1: 73728 0x4004B13: call_init (dl-init.c:26)
+    n1: 73728 0x4004C23: _dl_init (dl-init.c:121)
+     n0: 73728 0x401AA77: (below main) (dl-start.S:46)
+ n0: 672 in 3 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=52
+#-----------
+time=45864133
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=326608
+heap_tree=empty
+#-----------
+snapshot=53
+#-----------
+time=46194362
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=331936
+heap_tree=detailed
+n3: 337568 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 263168 0x10B05B: std::vector<double, std::allocator<double> >::vector(unsigned long, double const&, std::allocator<double> const&) (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 131072 0x1099F3: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 131072 0x109A0F: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 1024 in 1 place, below massif's threshold (1.00%)
+ n1: 73728 0x4985863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x4004B13: call_init (dl-init.c:74)
+   n1: 73728 0x4004B13: call_init (dl-init.c:26)
+    n1: 73728 0x4004C23: _dl_init (dl-init.c:121)
+     n0: 73728 0x401AA77: (below main) (dl-start.S:46)
+ n0: 672 in 3 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=54
+#-----------
+time=46768844
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=333232
+heap_tree=empty
+#-----------
+snapshot=55
+#-----------
+time=47179156
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=338960
+heap_tree=detailed
+n3: 337568 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 263168 0x10B05B: std::vector<double, std::allocator<double> >::vector(unsigned long, double const&, std::allocator<double> const&) (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 131072 0x1099F3: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 131072 0x109A0F: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 1024 in 1 place, below massif's threshold (1.00%)
+ n1: 73728 0x4985863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x4004B13: call_init (dl-init.c:74)
+   n1: 73728 0x4004B13: call_init (dl-init.c:26)
+    n1: 73728 0x4004C23: _dl_init (dl-init.c:121)
+     n0: 73728 0x401AA77: (below main) (dl-start.S:46)
+ n0: 672 in 3 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=56
+#-----------
+time=47725679
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=340592
+heap_tree=empty
+#-----------
+snapshot=57
+#-----------
+time=48140311
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=345952
+heap_tree=detailed
+n3: 337568 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 263168 0x10B05B: std::vector<double, std::allocator<double> >::vector(unsigned long, double const&, std::allocator<double> const&) (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 131072 0x1099F3: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 131072 0x109A0F: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 1024 in 1 place, below massif's threshold (1.00%)
+ n1: 73728 0x4985863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x4004B13: call_init (dl-init.c:74)
+   n1: 73728 0x4004B13: call_init (dl-init.c:26)
+    n1: 73728 0x4004C23: _dl_init (dl-init.c:121)
+     n0: 73728 0x401AA77: (below main) (dl-start.S:46)
+ n0: 672 in 3 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=58
+#-----------
+time=48686874
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=347584
+heap_tree=empty
+#-----------
+snapshot=59
+#-----------
+time=49114991
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=352944
+heap_tree=detailed
+n3: 337568 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 263168 0x10B05B: std::vector<double, std::allocator<double> >::vector(unsigned long, double const&, std::allocator<double> const&) (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 131072 0x1099F3: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 131072 0x109A0F: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 1024 in 1 place, below massif's threshold (1.00%)
+ n1: 73728 0x4985863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x4004B13: call_init (dl-init.c:74)
+   n1: 73728 0x4004B13: call_init (dl-init.c:26)
+    n1: 73728 0x4004C23: _dl_init (dl-init.c:121)
+     n0: 73728 0x401AA77: (below main) (dl-start.S:46)
+ n0: 672 in 3 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=60
+#-----------
+time=49644088
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=354576
+heap_tree=empty
+#-----------
+snapshot=61
+#-----------
+time=50092285
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=359936
+heap_tree=detailed
+n3: 337568 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 263168 0x10B05B: std::vector<double, std::allocator<double> >::vector(unsigned long, double const&, std::allocator<double> const&) (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 131072 0x1099F3: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 131072 0x109A0F: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 1024 in 1 place, below massif's threshold (1.00%)
+ n1: 73728 0x4985863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x4004B13: call_init (dl-init.c:74)
+   n1: 73728 0x4004B13: call_init (dl-init.c:26)
+    n1: 73728 0x4004C23: _dl_init (dl-init.c:121)
+     n0: 73728 0x401AA77: (below main) (dl-start.S:46)
+ n0: 672 in 3 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=62
+#-----------
+time=50622912
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=361568
+heap_tree=empty
+#-----------
+snapshot=63
+#-----------
+time=51021130
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=366928
+heap_tree=detailed
+n3: 337568 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 263168 0x10B05B: std::vector<double, std::allocator<double> >::vector(unsigned long, double const&, std::allocator<double> const&) (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 131072 0x1099F3: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 131072 0x109A0F: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 1024 in 1 place, below massif's threshold (1.00%)
+ n1: 73728 0x4985863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x4004B13: call_init (dl-init.c:74)
+   n1: 73728 0x4004B13: call_init (dl-init.c:26)
+    n1: 73728 0x4004C23: _dl_init (dl-init.c:121)
+     n0: 73728 0x401AA77: (below main) (dl-start.S:46)
+ n0: 672 in 3 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=64
+#-----------
+time=51595874
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=368560
+heap_tree=empty
+#-----------
+snapshot=65
+#-----------
+time=52006394
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=374288
+heap_tree=detailed
+n3: 337568 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 263168 0x10B05B: std::vector<double, std::allocator<double> >::vector(unsigned long, double const&, std::allocator<double> const&) (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 131072 0x1099F3: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 131072 0x109A0F: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 1024 in 1 place, below massif's threshold (1.00%)
+ n1: 73728 0x4985863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x4004B13: call_init (dl-init.c:74)
+   n1: 73728 0x4004B13: call_init (dl-init.c:26)
+    n1: 73728 0x4004C23: _dl_init (dl-init.c:121)
+     n0: 73728 0x401AA77: (below main) (dl-start.S:46)
+ n0: 672 in 3 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=66
+#-----------
+time=52553267
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=375920
+heap_tree=empty
+#-----------
+snapshot=67
+#-----------
+time=53037842
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=381648
+heap_tree=detailed
+n3: 337568 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 263168 0x10B05B: std::vector<double, std::allocator<double> >::vector(unsigned long, double const&, std::allocator<double> const&) (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 131072 0x1099F3: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 131072 0x109A0F: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 1024 in 1 place, below massif's threshold (1.00%)
+ n1: 73728 0x4985863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x4004B13: call_init (dl-init.c:74)
+   n1: 73728 0x4004B13: call_init (dl-init.c:26)
+    n1: 73728 0x4004C23: _dl_init (dl-init.c:121)
+     n0: 73728 0x401AA77: (below main) (dl-start.S:46)
+ n0: 672 in 3 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=68
+#-----------
+time=53567177
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=383280
+heap_tree=empty
+#-----------
+snapshot=69
+#-----------
+time=54039295
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=389008
+heap_tree=detailed
+n3: 337568 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 263168 0x10B05B: std::vector<double, std::allocator<double> >::vector(unsigned long, double const&, std::allocator<double> const&) (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 131072 0x1099F3: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 131072 0x109A0F: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 1024 in 1 place, below massif's threshold (1.00%)
+ n1: 73728 0x4985863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x4004B13: call_init (dl-init.c:74)
+   n1: 73728 0x4004B13: call_init (dl-init.c:26)
+    n1: 73728 0x4004C23: _dl_init (dl-init.c:121)
+     n0: 73728 0x401AA77: (below main) (dl-start.S:46)
+ n0: 672 in 3 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=70
+#-----------
+time=54614088
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=390640
+heap_tree=empty
+#-----------
+snapshot=71
+#-----------
+time=55024845
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=396368
+heap_tree=detailed
+n3: 337568 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 263168 0x10B05B: std::vector<double, std::allocator<double> >::vector(unsigned long, double const&, std::allocator<double> const&) (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 131072 0x1099F3: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 131072 0x109A0F: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 1024 in 1 place, below massif's threshold (1.00%)
+ n1: 73728 0x4985863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x4004B13: call_init (dl-init.c:74)
+   n1: 73728 0x4004B13: call_init (dl-init.c:26)
+    n1: 73728 0x4004C23: _dl_init (dl-init.c:121)
+     n0: 73728 0x401AA77: (below main) (dl-start.S:46)
+ n0: 672 in 3 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=72
+#-----------
+time=55571986
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=398000
+heap_tree=empty
+#-----------
+snapshot=73
+#-----------
+time=56056879
+mem_heap_B=337568
+mem_heap_extra_B=64
+mem_stacks_B=403728
+heap_tree=peak
+n3: 337568 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 263168 0x10B05B: std::vector<double, std::allocator<double> >::vector(unsigned long, double const&, std::allocator<double> const&) (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 131072 0x1099F3: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 131072 0x109A0F: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+  n0: 1024 in 1 place, below massif's threshold (1.00%)
+ n1: 73728 0x4985863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x4004B13: call_init (dl-init.c:74)
+   n1: 73728 0x4004B13: call_init (dl-init.c:26)
+    n1: 73728 0x4004C23: _dl_init (dl-init.c:121)
+     n0: 73728 0x401AA77: (below main) (dl-start.S:46)
+ n0: 672 in 3 places, all below massif's threshold (1.00%)

@@ -1,0 +1,13 @@
+backend,version,threads,128x128,256x256,64x64
+openmp,openmp_original,1,1.0,1.0,1.0
+openmp,openmp_original,2,3.224094256428956,1.11016108423159,0.7960319079385936
+openmp,openmp_original,4,1.0255142273882432,0.22814933411214955,0.19821183873390807
+pthreads_parallel_for,pthreads_parallel_for_block,1,1.0,1.0,1.0
+pthreads_parallel_for,pthreads_parallel_for_block,2,0.564613365764305,0.7803534138612673,0.31921632570018926
+pthreads_parallel_for,pthreads_parallel_for_block,4,0.11328830096830929,0.16046896656260812,0.11133629152402157
+pthreads_parallel_for,pthreads_parallel_for_cyclic,1,1.0,1.0,1.0
+pthreads_parallel_for,pthreads_parallel_for_cyclic,2,0.5759762308998303,0.44270698666123687,0.4139311114013846
+pthreads_parallel_for,pthreads_parallel_for_cyclic,4,0.21284669331121334,0.13950961804016865,0.09694238380985998
+pthreads_parallel_for,pthreads_parallel_for_dynamic,1,1.0,1.0,1.0
+pthreads_parallel_for,pthreads_parallel_for_dynamic,2,0.6233694632841178,0.40257994914492357,0.36112888208506894
+pthreads_parallel_for,pthreads_parallel_for_dynamic,4,0.1666411291686649,0.2664165682960143,0.09927380016443232

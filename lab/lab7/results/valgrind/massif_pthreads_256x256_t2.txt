@@ -1,0 +1,358 @@
+--------------------------------------------------------------------------------
+Command:            ./bin/heated_plate_pthreads 256 256 0.1 2 block 8
+Massif arguments:   --stacks=yes --massif-out-file=/tmp/massif_pthreads_256x256_t2.out
+ms_print arguments: /tmp/results/valgrind/massif_pthreads_256x256_t2.out
+--------------------------------------------------------------------------------
+
+
+    MB
+1.455^                                                                       :
+     |                                                          :@::@::@:@::#:
+     |                                            ::::::::::@::@:@::@::@:@::#:
+     |                               ::::::@::::::: ::::::::@::@:@::@::@:@::#:
+     |                 ::::::@:::::::::::::@::::: : ::::::::@::@:@::@::@:@::#:
+     |   @@::::@::::::@:: :::@:: ::: ::::::@::::: : ::::::::@::@:@::@::@:@::#:
+     | @:@ ::::@:: :::@:: :::@:: ::: ::::::@::::: : ::::::::@::@:@::@::@:@::#:
+     | @:@ ::::@:: :::@:: :::@:: ::: ::::::@::::: : ::::::::@::@:@::@::@:@::#:
+     | @:@ ::::@:: :::@:: :::@:: ::: ::::::@::::: : ::::::::@::@:@::@::@:@::#:
+     | @:@ ::::@:: :::@:: :::@:: ::: ::::::@::::: : ::::::::@::@:@::@::@:@::#:
+     | @:@ ::::@:: :::@:: :::@:: ::: ::::::@::::: : ::::::::@::@:@::@::@:@::#:
+     | @:@ ::::@:: :::@:: :::@:: ::: ::::::@::::: : ::::::::@::@:@::@::@:@::#:
+     | @:@ ::::@:: :::@:: :::@:: ::: ::::::@::::: : ::::::::@::@:@::@::@:@::#:
+     | @:@ ::::@:: :::@:: :::@:: ::: ::::::@::::: : ::::::::@::@:@::@::@:@::#:
+     | @:@ ::::@:: :::@:: :::@:: ::: ::::::@::::: : ::::::::@::@:@::@::@:@::#:
+     | @:@ ::::@:: :::@:: :::@:: ::: ::::::@::::: : ::::::::@::@:@::@::@:@::#:
+     | @:@ ::::@:: :::@:: :::@:: ::: ::::::@::::: : ::::::::@::@:@::@::@:@::#:
+     | @:@ ::::@:: :::@:: :::@:: ::: ::::::@::::: : ::::::::@::@:@::@::@:@::#:
+     | @:@ ::::@:: :::@:: :::@:: ::: ::::::@::::: : ::::::::@::@:@::@::@:@::#:
+     | @:@ ::::@:: :::@:: :::@:: ::: ::::::@::::: : ::::::::@::@:@::@::@:@::#:
+   0 +----------------------------------------------------------------------->Mi
+     0                                                                   195.1
+
+Number of snapshots: 74
+ Detailed snapshots: [1, 3, 8, 14, 20, 32, 48, 51, 55, 59, 63, 67, 71 (peak)]
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+  0              0                0                0             0            0
+  1      3,173,186        1,129,328        1,125,024            64        4,240
+99.62% (1,125,024B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->93.03% (1,050,624B) 0x10B05B: std::vector<double, std::allocator<double> >::vector(unsigned long, double const&, std::allocator<double> const&) (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+| ->46.42% (524,288B) 0x1099F3: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+| | 
+| ->46.42% (524,288B) 0x109A0F: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+| | 
+| ->00.18% (2,048B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->06.53% (73,728B) 0x4985863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+| ->06.53% (73,728B) 0x4004B13: call_init (dl-init.c:74)
+|   ->06.53% (73,728B) 0x4004B13: call_init (dl-init.c:26)
+|     ->06.53% (73,728B) 0x4004C23: _dl_init (dl-init.c:121)
+|       ->06.53% (73,728B) 0x401AA77: (below main) (dl-start.S:46)
+|         
+->00.06% (672B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+  2      7,379,649        1,137,792        1,125,024            64       12,704
+  3     10,264,542        1,146,096        1,125,024            64       21,008
+98.16% (1,125,024B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->91.67% (1,050,624B) 0x10B05B: std::vector<double, std::allocator<double> >::vector(unsigned long, double const&, std::allocator<double> const&) (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+| ->45.75% (524,288B) 0x1099F3: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+| | 
+| ->45.75% (524,288B) 0x109A0F: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+| | 
+| ->00.18% (2,048B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->06.43% (73,728B) 0x4985863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+| ->06.43% (73,728B) 0x4004B13: call_init (dl-init.c:74)
+|   ->06.43% (73,728B) 0x4004B13: call_init (dl-init.c:26)
+|     ->06.43% (73,728B) 0x4004C23: _dl_init (dl-init.c:121)
+|       ->06.43% (73,728B) 0x401AA77: (below main) (dl-start.S:46)
+|         
+->00.06% (672B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+  4     14,736,014        1,152,512        1,125,024            64       27,424
+  5     17,441,780        1,157,664        1,125,024            64       32,576
+  6     21,446,336        1,165,760        1,125,024            64       40,672
+  7     24,802,110        1,172,384        1,125,024            64       47,296
+  8     28,158,643        1,181,424        1,125,024            64       56,336
+95.23% (1,125,024B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->88.93% (1,050,624B) 0x10B05B: std::vector<double, std::allocator<double> >::vector(unsigned long, double const&, std::allocator<double> const&) (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+| ->44.38% (524,288B) 0x1099F3: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+| | 
+| ->44.38% (524,288B) 0x109A0F: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+| | 
+| ->00.17% (2,048B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->06.24% (73,728B) 0x4985863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+| ->06.24% (73,728B) 0x4004B13: call_init (dl-init.c:74)
+|   ->06.24% (73,728B) 0x4004B13: call_init (dl-init.c:26)
+|     ->06.24% (73,728B) 0x4004C23: _dl_init (dl-init.c:121)
+|       ->06.24% (73,728B) 0x401AA77: (below main) (dl-start.S:46)
+|         
+->00.06% (672B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+  9     30,396,466        1,183,424        1,125,024            64       58,336
+ 10     33,754,759        1,190,048        1,125,024            64       64,960
+ 11     37,582,854        1,197,408        1,125,024            64       72,320
+ 12     40,940,848        1,204,032        1,125,024            64       78,944
+ 13     43,179,454        1,208,448        1,125,024            64       83,360
+ 14     46,068,640        1,214,336        1,125,024            64       89,248
+92.65% (1,125,024B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->86.52% (1,050,624B) 0x10B05B: std::vector<double, std::allocator<double> >::vector(unsigned long, double const&, std::allocator<double> const&) (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+| ->43.17% (524,288B) 0x1099F3: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+| | 
+| ->43.17% (524,288B) 0x109A0F: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+| | 
+| ->00.17% (2,048B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->06.07% (73,728B) 0x4985863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+| ->06.07% (73,728B) 0x4004B13: call_init (dl-init.c:74)
+|   ->06.07% (73,728B) 0x4004B13: call_init (dl-init.c:26)
+|     ->06.07% (73,728B) 0x4004C23: _dl_init (dl-init.c:121)
+|       ->06.07% (73,728B) 0x401AA77: (below main) (dl-start.S:46)
+|         
+->00.06% (672B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 15     50,162,721        1,222,064        1,125,024            64       96,976
+ 16     53,522,959        1,228,688        1,125,024            64      103,600
+ 17     58,003,615        1,237,520        1,125,024            64      112,432
+ 18     61,100,344        1,243,776        1,125,024            64      118,688
+ 19     63,990,557        1,249,664        1,125,024            64      124,576
+ 20     65,851,741        1,255,392        1,125,024            64      130,304
+89.62% (1,125,024B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->83.69% (1,050,624B) 0x10B05B: std::vector<double, std::allocator<double> >::vector(unsigned long, double const&, std::allocator<double> const&) (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+| ->41.76% (524,288B) 0x1099F3: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+| | 
+| ->41.76% (524,288B) 0x109A0F: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+| | 
+| ->00.16% (2,048B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->05.87% (73,728B) 0x4985863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+| ->05.87% (73,728B) 0x4004B13: call_init (dl-init.c:74)
+|   ->05.87% (73,728B) 0x4004B13: call_init (dl-init.c:26)
+|     ->05.87% (73,728B) 0x4004C23: _dl_init (dl-init.c:121)
+|       ->05.87% (73,728B) 0x401AA77: (below main) (dl-start.S:46)
+|         
+->00.05% (672B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 21     68,677,835        1,259,136        1,125,024            64      134,048
+ 22     73,161,667        1,267,856        1,125,024            64      142,768
+ 23     77,643,925        1,276,688        1,125,024            64      151,600
+ 24     81,538,055        1,283,888        1,125,024            64      158,800
+ 25     85,081,160        1,291,248        1,125,024            64      166,160
+ 26     88,856,074        1,298,768        1,125,024            64      173,680
+ 27     91,629,123        1,303,760        1,125,024            64      178,672
+ 28     93,871,661        1,308,176        1,125,024            64      183,088
+ 29     97,416,525        1,315,536        1,125,024            64      190,448
+ 30     99,660,296        1,319,952        1,125,024            64      194,864
+ 31    102,313,458        1,325,264        1,125,024            64      200,176
+ 32    105,475,906        1,333,776        1,125,024            64      208,688
+84.35% (1,125,024B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->78.77% (1,050,624B) 0x10B05B: std::vector<double, std::allocator<double> >::vector(unsigned long, double const&, std::allocator<double> const&) (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+| ->39.31% (524,288B) 0x1099F3: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+| | 
+| ->39.31% (524,288B) 0x109A0F: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+| | 
+| ->00.15% (2,048B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->05.53% (73,728B) 0x4985863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+| ->05.53% (73,728B) 0x4004B13: call_init (dl-init.c:74)
+|   ->05.53% (73,728B) 0x4004B13: call_init (dl-init.c:26)
+|     ->05.53% (73,728B) 0x4004C23: _dl_init (dl-init.c:121)
+|       ->05.53% (73,728B) 0x401AA77: (below main) (dl-start.S:46)
+|         
+->00.05% (672B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 33    109,578,114        1,339,088        1,125,024            64      214,000
+ 34    111,822,214        1,343,504        1,125,024            64      218,416
+ 35    115,776,171        1,351,600        1,125,024            64      226,512
+ 36    118,020,411        1,356,016        1,125,024            64      230,928
+ 37    120,802,568        1,361,408        1,125,024            64      236,320
+ 38    125,288,605        1,370,000        1,125,024            64      244,912
+ 39    127,625,995        1,374,784        1,125,024            64      249,696
+ 40    132,117,123        1,383,616        1,125,024            64      258,528
+ 41    134,655,821        1,388,768        1,125,024            64      263,680
+ 42    138,024,834        1,395,392        1,125,024            64      270,304
+ 43    141,866,741        1,402,752        1,125,024            64      277,664
+ 44    144,112,783        1,407,168        1,125,024            64      282,080
+ 45    146,358,897        1,411,584        1,125,024            64      286,496
+ 46    149,050,380        1,417,040        1,125,024            64      291,952
+ 47    151,295,939        1,421,520        1,125,024            64      296,432
+ 48    155,344,782        1,431,664        1,125,024            64      306,576
+78.58% (1,125,024B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->73.38% (1,050,624B) 0x10B05B: std::vector<double, std::allocator<double> >::vector(unsigned long, double const&, std::allocator<double> const&) (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+| ->36.62% (524,288B) 0x1099F3: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+| | 
+| ->36.62% (524,288B) 0x109A0F: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+| | 
+| ->00.14% (2,048B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->05.15% (73,728B) 0x4985863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+| ->05.15% (73,728B) 0x4004B13: call_init (dl-init.c:74)
+|   ->05.15% (73,728B) 0x4004B13: call_init (dl-init.c:26)
+|     ->05.15% (73,728B) 0x4004C23: _dl_init (dl-init.c:121)
+|       ->05.15% (73,728B) 0x401AA77: (below main) (dl-start.S:46)
+|         
+->00.05% (672B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 49    158,714,137        1,435,872        1,125,024            64      310,784
+ 50    160,689,757        1,439,920        1,125,024            64      314,832
+ 51    162,533,483        1,446,016        1,125,024            64      320,928
+77.80% (1,125,024B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->72.66% (1,050,624B) 0x10B05B: std::vector<double, std::allocator<double> >::vector(unsigned long, double const&, std::allocator<double> const&) (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+| ->36.26% (524,288B) 0x1099F3: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+| | 
+| ->36.26% (524,288B) 0x109A0F: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+| | 
+| ->00.14% (2,048B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->05.10% (73,728B) 0x4985863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+| ->05.10% (73,728B) 0x4004B13: call_init (dl-init.c:74)
+|   ->05.10% (73,728B) 0x4004B13: call_init (dl-init.c:26)
+|     ->05.10% (73,728B) 0x4004C23: _dl_init (dl-init.c:121)
+|       ->05.10% (73,728B) 0x401AA77: (below main) (dl-start.S:46)
+|         
+->00.05% (672B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 52    164,596,837        1,447,280        1,125,024            64      322,192
+ 53    166,579,434        1,451,328        1,125,024            64      326,240
+ 54    168,555,806        1,455,376        1,125,024            64      330,288
+ 55    170,222,592        1,460,736        1,125,024            64      335,648
+77.02% (1,125,024B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->71.92% (1,050,624B) 0x10B05B: std::vector<double, std::allocator<double> >::vector(unsigned long, double const&, std::allocator<double> const&) (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+| ->35.89% (524,288B) 0x1099F3: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+| | 
+| ->35.89% (524,288B) 0x109A0F: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+| | 
+| ->00.14% (2,048B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->05.05% (73,728B) 0x4985863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+| ->05.05% (73,728B) 0x4004B13: call_init (dl-init.c:74)
+|   ->05.05% (73,728B) 0x4004B13: call_init (dl-init.c:26)
+|     ->05.05% (73,728B) 0x4004C23: _dl_init (dl-init.c:121)
+|       ->05.05% (73,728B) 0x401AA77: (below main) (dl-start.S:46)
+|         
+->00.05% (672B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 56    172,199,511        1,462,368        1,125,024            64      337,280
+ 57    174,176,077        1,466,416        1,125,024            64      341,328
+ 58    176,222,477        1,470,464        1,125,024            64      345,376
+ 59    177,552,935        1,475,456        1,125,024            64      350,368
+76.25% (1,125,024B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->71.21% (1,050,624B) 0x10B05B: std::vector<double, std::allocator<double> >::vector(unsigned long, double const&, std::allocator<double> const&) (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+| ->35.53% (524,288B) 0x1099F3: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+| | 
+| ->35.53% (524,288B) 0x109A0F: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+| | 
+| ->00.14% (2,048B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->05.00% (73,728B) 0x4985863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+| ->05.00% (73,728B) 0x4004B13: call_init (dl-init.c:74)
+|   ->05.00% (73,728B) 0x4004B13: call_init (dl-init.c:26)
+|     ->05.00% (73,728B) 0x4004C23: _dl_init (dl-init.c:121)
+|       ->05.00% (73,728B) 0x401AA77: (below main) (dl-start.S:46)
+|         
+->00.05% (672B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 60    179,594,539        1,477,088        1,125,024            64      352,000
+ 61    181,457,034        1,480,400        1,125,024            64      355,312
+ 62    183,440,185        1,484,448        1,125,024            64      359,360
+ 63    185,215,608        1,490,544        1,125,024            64      365,456
+75.48% (1,125,024B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->70.49% (1,050,624B) 0x10B05B: std::vector<double, std::allocator<double> >::vector(unsigned long, double const&, std::allocator<double> const&) (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+| ->35.17% (524,288B) 0x1099F3: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+| | 
+| ->35.17% (524,288B) 0x109A0F: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+| | 
+| ->00.14% (2,048B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->04.95% (73,728B) 0x4985863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+| ->04.95% (73,728B) 0x4004B13: call_init (dl-init.c:74)
+|   ->04.95% (73,728B) 0x4004B13: call_init (dl-init.c:26)
+|     ->04.95% (73,728B) 0x4004C23: _dl_init (dl-init.c:121)
+|       ->04.95% (73,728B) 0x401AA77: (below main) (dl-start.S:46)
+|         
+->00.05% (672B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 64    187,077,886        1,491,440        1,125,024            64      366,352
+ 65    189,061,453        1,495,488        1,125,024            64      370,400
+ 66    191,038,423        1,499,536        1,125,024            64      374,448
+ 67    192,883,994        1,505,632        1,125,024            64      380,544
+74.72% (1,125,024B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->69.78% (1,050,624B) 0x10B05B: std::vector<double, std::allocator<double> >::vector(unsigned long, double const&, std::allocator<double> const&) (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+| ->34.82% (524,288B) 0x1099F3: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+| | 
+| ->34.82% (524,288B) 0x109A0F: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+| | 
+| ->00.14% (2,048B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->04.90% (73,728B) 0x4985863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+| ->04.90% (73,728B) 0x4004B13: call_init (dl-init.c:74)
+|   ->04.90% (73,728B) 0x4004B13: call_init (dl-init.c:26)
+|     ->04.90% (73,728B) 0x4004C23: _dl_init (dl-init.c:121)
+|       ->04.90% (73,728B) 0x401AA77: (below main) (dl-start.S:46)
+|         
+->00.04% (672B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 68    194,948,364        1,506,896        1,125,024            64      381,808
+ 69    196,929,401        1,510,944        1,125,024            64      385,856
+ 70    198,909,185        1,514,992        1,125,024            64      389,904
+ 71    200,663,988        1,520,720        1,125,024            64      395,632
+73.98% (1,125,024B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->69.09% (1,050,624B) 0x10B05B: std::vector<double, std::allocator<double> >::vector(unsigned long, double const&, std::allocator<double> const&) (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+| ->34.48% (524,288B) 0x1099F3: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+| | 
+| ->34.48% (524,288B) 0x109A0F: main (in /workspace/lab/lab6/bin/heated_plate_pthreads)
+| | 
+| ->00.13% (2,048B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->04.85% (73,728B) 0x4985863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+| ->04.85% (73,728B) 0x4004B13: call_init (dl-init.c:74)
+|   ->04.85% (73,728B) 0x4004B13: call_init (dl-init.c:26)
+|     ->04.85% (73,728B) 0x4004C23: _dl_init (dl-init.c:121)
+|       ->04.85% (73,728B) 0x401AA77: (below main) (dl-start.S:46)
+|         
+->00.04% (672B) in 1+ places, all below ms_print's threshold (01.00%)
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 72    202,554,790        1,521,984        1,125,024            64      396,896
+ 73    204,532,128        1,526,032        1,125,024            64      400,944

@@ -1,0 +1,3010 @@
+[
+  {
+    "experiment": "fft",
+    "backend": "serial",
+    "n": 64,
+    "num_procs": 1,
+    "status": "ok",
+    "avg_time_sec": 0.00034333333333333335,
+    "avg_error": 1.36265063535e-16,
+    "avg_mflops": 11187.596899233335,
+    "checksum": 4092.26370945,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "./bin/fft_serial",
+          "64",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=serial\nn=64\nnits=1000\nerror=1.36265063535e-16\ntime_sec=0.00035\nmflops=10971.4285714\nchecksum=4092.26370945\nnum_procs=1\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "serial",
+          "n": "64",
+          "nits": "1000",
+          "error": "1.36265063535e-16",
+          "time_sec": "0.00035",
+          "mflops": "10971.4285714",
+          "checksum": "4092.26370945",
+          "num_procs": "1"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "./bin/fft_serial",
+          "64",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=serial\nn=64\nnits=1000\nerror=1.36265063535e-16\ntime_sec=0.000344\nmflops=11162.7906977\nchecksum=4092.26370945\nnum_procs=1\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "serial",
+          "n": "64",
+          "nits": "1000",
+          "error": "1.36265063535e-16",
+          "time_sec": "0.000344",
+          "mflops": "11162.7906977",
+          "checksum": "4092.26370945",
+          "num_procs": "1"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "./bin/fft_serial",
+          "64",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=serial\nn=64\nnits=1000\nerror=1.36265063535e-16\ntime_sec=0.000336\nmflops=11428.5714286\nchecksum=4092.26370945\nnum_procs=1\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "serial",
+          "n": "64",
+          "nits": "1000",
+          "error": "1.36265063535e-16",
+          "time_sec": "0.000336",
+          "mflops": "11428.5714286",
+          "checksum": "4092.26370945",
+          "num_procs": "1"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "fft",
+    "backend": "serial",
+    "n": 128,
+    "num_procs": 1,
+    "status": "ok",
+    "avg_time_sec": 0.0007036666666666667,
+    "avg_error": 1.9964997917200004e-16,
+    "avg_mflops": 12734.432044533334,
+    "checksum": 16760.4743222,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "./bin/fft_serial",
+          "128",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=serial\nn=128\nnits=1000\nerror=1.99649979172e-16\ntime_sec=0.000698\nmflops=12836.6762178\nchecksum=16760.4743222\nnum_procs=1\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "serial",
+          "n": "128",
+          "nits": "1000",
+          "error": "1.99649979172e-16",
+          "time_sec": "0.000698",
+          "mflops": "12836.6762178",
+          "checksum": "16760.4743222",
+          "num_procs": "1"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "./bin/fft_serial",
+          "128",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=serial\nn=128\nnits=1000\nerror=1.99649979172e-16\ntime_sec=0.0007\nmflops=12800\nchecksum=16760.4743222\nnum_procs=1\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "serial",
+          "n": "128",
+          "nits": "1000",
+          "error": "1.99649979172e-16",
+          "time_sec": "0.0007",
+          "mflops": "12800",
+          "checksum": "16760.4743222",
+          "num_procs": "1"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "./bin/fft_serial",
+          "128",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=serial\nn=128\nnits=1000\nerror=1.99649979172e-16\ntime_sec=0.000713\nmflops=12566.6199158\nchecksum=16760.4743222\nnum_procs=1\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "serial",
+          "n": "128",
+          "nits": "1000",
+          "error": "1.99649979172e-16",
+          "time_sec": "0.000713",
+          "mflops": "12566.6199158",
+          "checksum": "16760.4743222",
+          "num_procs": "1"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "fft",
+    "backend": "serial",
+    "n": 256,
+    "num_procs": 1,
+    "status": "ok",
+    "avg_time_sec": 0.000168,
+    "avg_error": 1.7131815780599999e-16,
+    "avg_mflops": 12192.476879533335,
+    "checksum": 63836.4966278,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "./bin/fft_serial",
+          "256",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=serial\nn=256\nnits=100\nerror=1.71318157806e-16\ntime_sec=0.000167\nmflops=12263.4730539\nchecksum=63836.4966278\nnum_procs=1\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "serial",
+          "n": "256",
+          "nits": "100",
+          "error": "1.71318157806e-16",
+          "time_sec": "0.000167",
+          "mflops": "12263.4730539",
+          "checksum": "63836.4966278",
+          "num_procs": "1"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "./bin/fft_serial",
+          "256",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=serial\nn=256\nnits=100\nerror=1.71318157806e-16\ntime_sec=0.000166\nmflops=12337.3493976\nchecksum=63836.4966278\nnum_procs=1\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "serial",
+          "n": "256",
+          "nits": "100",
+          "error": "1.71318157806e-16",
+          "time_sec": "0.000166",
+          "mflops": "12337.3493976",
+          "checksum": "63836.4966278",
+          "num_procs": "1"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "./bin/fft_serial",
+          "256",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=serial\nn=256\nnits=100\nerror=1.71318157806e-16\ntime_sec=0.000171\nmflops=11976.6081871\nchecksum=63836.4966278\nnum_procs=1\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "serial",
+          "n": "256",
+          "nits": "100",
+          "error": "1.71318157806e-16",
+          "time_sec": "0.000171",
+          "mflops": "11976.6081871",
+          "checksum": "63836.4966278",
+          "num_procs": "1"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "fft",
+    "backend": "serial",
+    "n": 512,
+    "num_procs": 1,
+    "status": "ok",
+    "avg_time_sec": 0.000346,
+    "avg_error": 2.0751428221999997e-16,
+    "avg_mflops": 13320.6369685,
+    "checksum": 262229.538686,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "./bin/fft_serial",
+          "512",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=serial\nn=512\nnits=100\nerror=2.0751428222e-16\ntime_sec=0.000353\nmflops=13053.8243626\nchecksum=262229.538686\nnum_procs=1\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "serial",
+          "n": "512",
+          "nits": "100",
+          "error": "2.0751428222e-16",
+          "time_sec": "0.000353",
+          "mflops": "13053.8243626",
+          "checksum": "262229.538686",
+          "num_procs": "1"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "./bin/fft_serial",
+          "512",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=serial\nn=512\nnits=100\nerror=2.0751428222e-16\ntime_sec=0.000342\nmflops=13473.6842105\nchecksum=262229.538686\nnum_procs=1\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "serial",
+          "n": "512",
+          "nits": "100",
+          "error": "2.0751428222e-16",
+          "time_sec": "0.000342",
+          "mflops": "13473.6842105",
+          "checksum": "262229.538686",
+          "num_procs": "1"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "./bin/fft_serial",
+          "512",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=serial\nn=512\nnits=100\nerror=2.0751428222e-16\ntime_sec=0.000343\nmflops=13434.4023324\nchecksum=262229.538686\nnum_procs=1\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "serial",
+          "n": "512",
+          "nits": "100",
+          "error": "2.0751428222e-16",
+          "time_sec": "0.000343",
+          "mflops": "13434.4023324",
+          "checksum": "262229.538686",
+          "num_procs": "1"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "fft",
+    "backend": "serial",
+    "n": 1024,
+    "num_procs": 1,
+    "status": "ok",
+    "avg_time_sec": 0.0007973333333333334,
+    "avg_error": 2.31362443169e-16,
+    "avg_mflops": 12843.8983201,
+    "checksum": 1047275.769,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "./bin/fft_serial",
+          "1024",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=serial\nn=1024\nnits=100\nerror=2.31362443169e-16\ntime_sec=0.000802\nmflops=12768.0798005\nchecksum=1047275.769\nnum_procs=1\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "serial",
+          "n": "1024",
+          "nits": "100",
+          "error": "2.31362443169e-16",
+          "time_sec": "0.000802",
+          "mflops": "12768.0798005",
+          "checksum": "1047275.769",
+          "num_procs": "1"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "./bin/fft_serial",
+          "1024",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=serial\nn=1024\nnits=100\nerror=2.31362443169e-16\ntime_sec=0.000787\nmflops=13011.4358323\nchecksum=1047275.769\nnum_procs=1\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "serial",
+          "n": "1024",
+          "nits": "100",
+          "error": "2.31362443169e-16",
+          "time_sec": "0.000787",
+          "mflops": "13011.4358323",
+          "checksum": "1047275.769",
+          "num_procs": "1"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "./bin/fft_serial",
+          "1024",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=serial\nn=1024\nnits=100\nerror=2.31362443169e-16\ntime_sec=0.000803\nmflops=12752.1793275\nchecksum=1047275.769\nnum_procs=1\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "serial",
+          "n": "1024",
+          "nits": "100",
+          "error": "2.31362443169e-16",
+          "time_sec": "0.000803",
+          "mflops": "12752.1793275",
+          "checksum": "1047275.769",
+          "num_procs": "1"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "fft",
+    "backend": "serial",
+    "n": 2048,
+    "num_procs": 1,
+    "status": "ok",
+    "avg_time_sec": 0.0016363333333333334,
+    "avg_error": 2.4309539486e-16,
+    "avg_mflops": 13768.967755066667,
+    "checksum": 4223727.27312,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "./bin/fft_serial",
+          "2048",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=serial\nn=2048\nnits=100\nerror=2.4309539486e-16\ntime_sec=0.001653\nmflops=13628.554144\nchecksum=4223727.27312\nnum_procs=1\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "serial",
+          "n": "2048",
+          "nits": "100",
+          "error": "2.4309539486e-16",
+          "time_sec": "0.001653",
+          "mflops": "13628.554144",
+          "checksum": "4223727.27312",
+          "num_procs": "1"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "./bin/fft_serial",
+          "2048",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=serial\nn=2048\nnits=100\nerror=2.4309539486e-16\ntime_sec=0.001612\nmflops=13975.1861042\nchecksum=4223727.27312\nnum_procs=1\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "serial",
+          "n": "2048",
+          "nits": "100",
+          "error": "2.4309539486e-16",
+          "time_sec": "0.001612",
+          "mflops": "13975.1861042",
+          "checksum": "4223727.27312",
+          "num_procs": "1"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "./bin/fft_serial",
+          "2048",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=serial\nn=2048\nnits=100\nerror=2.4309539486e-16\ntime_sec=0.001644\nmflops=13703.163017\nchecksum=4223727.27312\nnum_procs=1\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "serial",
+          "n": "2048",
+          "nits": "100",
+          "error": "2.4309539486e-16",
+          "time_sec": "0.001644",
+          "mflops": "13703.163017",
+          "checksum": "4223727.27312",
+          "num_procs": "1"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "fft",
+    "backend": "serial",
+    "n": 4096,
+    "num_procs": 1,
+    "status": "ok",
+    "avg_time_sec": 0.00046333333333333334,
+    "avg_error": 2.58253689437e-16,
+    "avg_mflops": 10617.763993300001,
+    "checksum": 16929186.2773,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "./bin/fft_serial",
+          "4096",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=serial\nn=4096\nnits=10\nerror=2.58253689437e-16\ntime_sec=0.000445\nmflops=11045.3932584\nchecksum=16929186.2773\nnum_procs=1\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "serial",
+          "n": "4096",
+          "nits": "10",
+          "error": "2.58253689437e-16",
+          "time_sec": "0.000445",
+          "mflops": "11045.3932584",
+          "checksum": "16929186.2773",
+          "num_procs": "1"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "./bin/fft_serial",
+          "4096",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=serial\nn=4096\nnits=10\nerror=2.58253689437e-16\ntime_sec=0.000478\nmflops=10282.8451883\nchecksum=16929186.2773\nnum_procs=1\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "serial",
+          "n": "4096",
+          "nits": "10",
+          "error": "2.58253689437e-16",
+          "time_sec": "0.000478",
+          "mflops": "10282.8451883",
+          "checksum": "16929186.2773",
+          "num_procs": "1"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "./bin/fft_serial",
+          "4096",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=serial\nn=4096\nnits=10\nerror=2.58253689437e-16\ntime_sec=0.000467\nmflops=10525.0535332\nchecksum=16929186.2773\nnum_procs=1\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "serial",
+          "n": "4096",
+          "nits": "10",
+          "error": "2.58253689437e-16",
+          "time_sec": "0.000467",
+          "mflops": "10525.0535332",
+          "checksum": "16929186.2773",
+          "num_procs": "1"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "fft",
+    "backend": "serial",
+    "n": 8192,
+    "num_procs": 1,
+    "status": "ok",
+    "avg_time_sec": 0.0011576666666666667,
+    "avg_error": 2.87142300783e-16,
+    "avg_mflops": 9199.432424753333,
+    "checksum": 67578548.5601,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "./bin/fft_serial",
+          "8192",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=serial\nn=8192\nnits=10\nerror=2.87142300783e-16\ntime_sec=0.001166\nmflops=9133.44768439\nchecksum=67578548.5601\nnum_procs=1\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "serial",
+          "n": "8192",
+          "nits": "10",
+          "error": "2.87142300783e-16",
+          "time_sec": "0.001166",
+          "mflops": "9133.44768439",
+          "checksum": "67578548.5601",
+          "num_procs": "1"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "./bin/fft_serial",
+          "8192",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=serial\nn=8192\nnits=10\nerror=2.87142300783e-16\ntime_sec=0.001154\nmflops=9228.42287695\nchecksum=67578548.5601\nnum_procs=1\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "serial",
+          "n": "8192",
+          "nits": "10",
+          "error": "2.87142300783e-16",
+          "time_sec": "0.001154",
+          "mflops": "9228.42287695",
+          "checksum": "67578548.5601",
+          "num_procs": "1"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "./bin/fft_serial",
+          "8192",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=serial\nn=8192\nnits=10\nerror=2.87142300783e-16\ntime_sec=0.001153\nmflops=9236.42671292\nchecksum=67578548.5601\nnum_procs=1\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "serial",
+          "n": "8192",
+          "nits": "10",
+          "error": "2.87142300783e-16",
+          "time_sec": "0.001153",
+          "mflops": "9236.42671292",
+          "checksum": "67578548.5601",
+          "num_procs": "1"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "fft",
+    "backend": "mpi",
+    "n": 64,
+    "num_procs": 2,
+    "status": "ok",
+    "avg_time_sec": 0.005088,
+    "avg_error": 1.36265063535e-16,
+    "avg_mflops": 754.7609290606666,
+    "checksum": 4092.26370945,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "2",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "64",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=64\nnits=1000\nerror=1.36265063535e-16\ntime_sec=0.005085\nmflops=755.162241888\nchecksum=4092.26370945\nnum_procs=2\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "64",
+          "nits": "1000",
+          "error": "1.36265063535e-16",
+          "time_sec": "0.005085",
+          "mflops": "755.162241888",
+          "checksum": "4092.26370945",
+          "num_procs": "2"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "2",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "64",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=64\nnits=1000\nerror=1.36265063535e-16\ntime_sec=0.005042\nmflops=761.602538675\nchecksum=4092.26370945\nnum_procs=2\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "64",
+          "nits": "1000",
+          "error": "1.36265063535e-16",
+          "time_sec": "0.005042",
+          "mflops": "761.602538675",
+          "checksum": "4092.26370945",
+          "num_procs": "2"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "2",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "64",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=64\nnits=1000\nerror=1.36265063535e-16\ntime_sec=0.005137\nmflops=747.518006619\nchecksum=4092.26370945\nnum_procs=2\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "64",
+          "nits": "1000",
+          "error": "1.36265063535e-16",
+          "time_sec": "0.005137",
+          "mflops": "747.518006619",
+          "checksum": "4092.26370945",
+          "num_procs": "2"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "fft",
+    "backend": "mpi",
+    "n": 64,
+    "num_procs": 4,
+    "status": "ok",
+    "avg_time_sec": 0.012752333333333333,
+    "avg_error": 1.36265063535e-16,
+    "avg_mflops": 301.19796039,
+    "checksum": 4092.26370945,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "4",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "64",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=64\nnits=1000\nerror=1.36265063535e-16\ntime_sec=0.013033\nmflops=294.636691475\nchecksum=4092.26370945\nnum_procs=4\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "64",
+          "nits": "1000",
+          "error": "1.36265063535e-16",
+          "time_sec": "0.013033",
+          "mflops": "294.636691475",
+          "checksum": "4092.26370945",
+          "num_procs": "4"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "4",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "64",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=64\nnits=1000\nerror=1.36265063535e-16\ntime_sec=0.012671\nmflops=303.054218294\nchecksum=4092.26370945\nnum_procs=4\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "64",
+          "nits": "1000",
+          "error": "1.36265063535e-16",
+          "time_sec": "0.012671",
+          "mflops": "303.054218294",
+          "checksum": "4092.26370945",
+          "num_procs": "4"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "4",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "64",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=64\nnits=1000\nerror=1.36265063535e-16\ntime_sec=0.012553\nmflops=305.902971401\nchecksum=4092.26370945\nnum_procs=4\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "64",
+          "nits": "1000",
+          "error": "1.36265063535e-16",
+          "time_sec": "0.012553",
+          "mflops": "305.902971401",
+          "checksum": "4092.26370945",
+          "num_procs": "4"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "fft",
+    "backend": "mpi",
+    "n": 64,
+    "num_procs": 8,
+    "status": "ok",
+    "avg_time_sec": 0.043756333333333335,
+    "avg_error": 1.36265063535e-16,
+    "avg_mflops": 87.76192764989999,
+    "checksum": 4092.26370945,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "8",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "64",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=64\nnits=1000\nerror=1.36265063535e-16\ntime_sec=0.043603\nmflops=88.0673348164\nchecksum=4092.26370945\nnum_procs=8\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "64",
+          "nits": "1000",
+          "error": "1.36265063535e-16",
+          "time_sec": "0.043603",
+          "mflops": "88.0673348164",
+          "checksum": "4092.26370945",
+          "num_procs": "8"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "8",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "64",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=64\nnits=1000\nerror=1.36265063535e-16\ntime_sec=0.043537\nmflops=88.2008406643\nchecksum=4092.26370945\nnum_procs=8\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "64",
+          "nits": "1000",
+          "error": "1.36265063535e-16",
+          "time_sec": "0.043537",
+          "mflops": "88.2008406643",
+          "checksum": "4092.26370945",
+          "num_procs": "8"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "8",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "64",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=64\nnits=1000\nerror=1.36265063535e-16\ntime_sec=0.044129\nmflops=87.017607469\nchecksum=4092.26370945\nnum_procs=8\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "64",
+          "nits": "1000",
+          "error": "1.36265063535e-16",
+          "time_sec": "0.044129",
+          "mflops": "87.017607469",
+          "checksum": "4092.26370945",
+          "num_procs": "8"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "fft",
+    "backend": "mpi",
+    "n": 128,
+    "num_procs": 2,
+    "status": "ok",
+    "avg_time_sec": 0.007680333333333333,
+    "avg_error": 1.9964997917200004e-16,
+    "avg_mflops": 1170.4501219133333,
+    "checksum": 16760.4743222,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "2",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "128",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=128\nnits=1000\nerror=1.99649979172e-16\ntime_sec=0.00734\nmflops=1220.70844687\nchecksum=16760.4743222\nnum_procs=2\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "128",
+          "nits": "1000",
+          "error": "1.99649979172e-16",
+          "time_sec": "0.00734",
+          "mflops": "1220.70844687",
+          "checksum": "16760.4743222",
+          "num_procs": "2"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "2",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "128",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=128\nnits=1000\nerror=1.99649979172e-16\ntime_sec=0.008314\nmflops=1077.70026461\nchecksum=16760.4743222\nnum_procs=2\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "128",
+          "nits": "1000",
+          "error": "1.99649979172e-16",
+          "time_sec": "0.008314",
+          "mflops": "1077.70026461",
+          "checksum": "16760.4743222",
+          "num_procs": "2"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "2",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "128",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=128\nnits=1000\nerror=1.99649979172e-16\ntime_sec=0.007387\nmflops=1212.94165426\nchecksum=16760.4743222\nnum_procs=2\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "128",
+          "nits": "1000",
+          "error": "1.99649979172e-16",
+          "time_sec": "0.007387",
+          "mflops": "1212.94165426",
+          "checksum": "16760.4743222",
+          "num_procs": "2"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "fft",
+    "backend": "mpi",
+    "n": 128,
+    "num_procs": 4,
+    "status": "ok",
+    "avg_time_sec": 0.017665333333333335,
+    "avg_error": 1.9964997917200004e-16,
+    "avg_mflops": 508.3996506926667,
+    "checksum": 16760.4743222,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "4",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "128",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=128\nnits=1000\nerror=1.99649979172e-16\ntime_sec=0.01656\nmflops=541.062801932\nchecksum=16760.4743222\nnum_procs=4\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "128",
+          "nits": "1000",
+          "error": "1.99649979172e-16",
+          "time_sec": "0.01656",
+          "mflops": "541.062801932",
+          "checksum": "16760.4743222",
+          "num_procs": "4"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "4",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "128",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=128\nnits=1000\nerror=1.99649979172e-16\ntime_sec=0.01781\nmflops=503.088152723\nchecksum=16760.4743222\nnum_procs=4\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "128",
+          "nits": "1000",
+          "error": "1.99649979172e-16",
+          "time_sec": "0.01781",
+          "mflops": "503.088152723",
+          "checksum": "16760.4743222",
+          "num_procs": "4"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "4",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "128",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=128\nnits=1000\nerror=1.99649979172e-16\ntime_sec=0.018626\nmflops=481.047997423\nchecksum=16760.4743222\nnum_procs=4\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "128",
+          "nits": "1000",
+          "error": "1.99649979172e-16",
+          "time_sec": "0.018626",
+          "mflops": "481.047997423",
+          "checksum": "16760.4743222",
+          "num_procs": "4"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "fft",
+    "backend": "mpi",
+    "n": 128,
+    "num_procs": 8,
+    "status": "ok",
+    "avg_time_sec": 0.062822,
+    "avg_error": 1.9964997917200004e-16,
+    "avg_mflops": 142.67396946833333,
+    "checksum": 16760.4743222,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "8",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "128",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=128\nnits=1000\nerror=1.99649979172e-16\ntime_sec=0.062688\nmflops=142.93006636\nchecksum=16760.4743222\nnum_procs=8\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "128",
+          "nits": "1000",
+          "error": "1.99649979172e-16",
+          "time_sec": "0.062688",
+          "mflops": "142.93006636",
+          "checksum": "16760.4743222",
+          "num_procs": "8"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "8",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "128",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=128\nnits=1000\nerror=1.99649979172e-16\ntime_sec=0.064309\nmflops=139.32731033\nchecksum=16760.4743222\nnum_procs=8\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "128",
+          "nits": "1000",
+          "error": "1.99649979172e-16",
+          "time_sec": "0.064309",
+          "mflops": "139.32731033",
+          "checksum": "16760.4743222",
+          "num_procs": "8"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "8",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "128",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=128\nnits=1000\nerror=1.99649979172e-16\ntime_sec=0.061469\nmflops=145.764531715\nchecksum=16760.4743222\nnum_procs=8\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "128",
+          "nits": "1000",
+          "error": "1.99649979172e-16",
+          "time_sec": "0.061469",
+          "mflops": "145.764531715",
+          "checksum": "16760.4743222",
+          "num_procs": "8"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "fft",
+    "backend": "mpi",
+    "n": 256,
+    "num_procs": 2,
+    "status": "ok",
+    "avg_time_sec": 0.0014536666666666667,
+    "avg_error": 1.7131815780599999e-16,
+    "avg_mflops": 1410.4289572366667,
+    "checksum": 63836.4966278,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "2",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "256",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=256\nnits=100\nerror=1.71318157806e-16\ntime_sec=0.001499\nmflops=1366.24416278\nchecksum=63836.4966278\nnum_procs=2\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "256",
+          "nits": "100",
+          "error": "1.71318157806e-16",
+          "time_sec": "0.001499",
+          "mflops": "1366.24416278",
+          "checksum": "63836.4966278",
+          "num_procs": "2"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "2",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "256",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=256\nnits=100\nerror=1.71318157806e-16\ntime_sec=0.001475\nmflops=1388.47457627\nchecksum=63836.4966278\nnum_procs=2\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "256",
+          "nits": "100",
+          "error": "1.71318157806e-16",
+          "time_sec": "0.001475",
+          "mflops": "1388.47457627",
+          "checksum": "63836.4966278",
+          "num_procs": "2"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "2",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "256",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=256\nnits=100\nerror=1.71318157806e-16\ntime_sec=0.001387\nmflops=1476.56813266\nchecksum=63836.4966278\nnum_procs=2\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "256",
+          "nits": "100",
+          "error": "1.71318157806e-16",
+          "time_sec": "0.001387",
+          "mflops": "1476.56813266",
+          "checksum": "63836.4966278",
+          "num_procs": "2"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "fft",
+    "backend": "mpi",
+    "n": 256,
+    "num_procs": 4,
+    "status": "ok",
+    "avg_time_sec": 0.003786333333333334,
+    "avg_error": 1.7131815780599999e-16,
+    "avg_mflops": 544.5075552606667,
+    "checksum": 63836.4966278,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "4",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "256",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=256\nnits=100\nerror=1.71318157806e-16\ntime_sec=0.003738\nmflops=547.886570358\nchecksum=63836.4966278\nnum_procs=4\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "256",
+          "nits": "100",
+          "error": "1.71318157806e-16",
+          "time_sec": "0.003738",
+          "mflops": "547.886570358",
+          "checksum": "63836.4966278",
+          "num_procs": "4"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "4",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "256",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=256\nnits=100\nerror=1.71318157806e-16\ntime_sec=0.004189\nmflops=488.899498687\nchecksum=63836.4966278\nnum_procs=4\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "256",
+          "nits": "100",
+          "error": "1.71318157806e-16",
+          "time_sec": "0.004189",
+          "mflops": "488.899498687",
+          "checksum": "63836.4966278",
+          "num_procs": "4"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "4",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "256",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=256\nnits=100\nerror=1.71318157806e-16\ntime_sec=0.003432\nmflops=596.736596737\nchecksum=63836.4966278\nnum_procs=4\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "256",
+          "nits": "100",
+          "error": "1.71318157806e-16",
+          "time_sec": "0.003432",
+          "mflops": "596.736596737",
+          "checksum": "63836.4966278",
+          "num_procs": "4"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "fft",
+    "backend": "mpi",
+    "n": 256,
+    "num_procs": 8,
+    "status": "ok",
+    "avg_time_sec": 0.013534333333333334,
+    "avg_error": 1.7131815780599999e-16,
+    "avg_mflops": 152.79630411066668,
+    "checksum": 63836.4966278,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "8",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "256",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=256\nnits=100\nerror=1.71318157806e-16\ntime_sec=0.012388\nmflops=165.321278657\nchecksum=63836.4966278\nnum_procs=8\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "256",
+          "nits": "100",
+          "error": "1.71318157806e-16",
+          "time_sec": "0.012388",
+          "mflops": "165.321278657",
+          "checksum": "63836.4966278",
+          "num_procs": "8"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "8",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "256",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=256\nnits=100\nerror=1.71318157806e-16\ntime_sec=0.012747\nmflops=160.66525457\nchecksum=63836.4966278\nnum_procs=8\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "256",
+          "nits": "100",
+          "error": "1.71318157806e-16",
+          "time_sec": "0.012747",
+          "mflops": "160.66525457",
+          "checksum": "63836.4966278",
+          "num_procs": "8"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "8",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "256",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=256\nnits=100\nerror=1.71318157806e-16\ntime_sec=0.015468\nmflops=132.402379105\nchecksum=63836.4966278\nnum_procs=8\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "256",
+          "nits": "100",
+          "error": "1.71318157806e-16",
+          "time_sec": "0.015468",
+          "mflops": "132.402379105",
+          "checksum": "63836.4966278",
+          "num_procs": "8"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "fft",
+    "backend": "mpi",
+    "n": 512,
+    "num_procs": 2,
+    "status": "ok",
+    "avg_time_sec": 0.00263,
+    "avg_error": 2.0751428221999997e-16,
+    "avg_mflops": 1754.2768420066666,
+    "checksum": 262229.538686,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "2",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "512",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=512\nnits=100\nerror=2.0751428222e-16\ntime_sec=0.002761\nmflops=1668.96052155\nchecksum=262229.538686\nnum_procs=2\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "512",
+          "nits": "100",
+          "error": "2.0751428222e-16",
+          "time_sec": "0.002761",
+          "mflops": "1668.96052155",
+          "checksum": "262229.538686",
+          "num_procs": "2"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "2",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "512",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=512\nnits=100\nerror=2.0751428222e-16\ntime_sec=0.002583\nmflops=1783.97212544\nchecksum=262229.538686\nnum_procs=2\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "512",
+          "nits": "100",
+          "error": "2.0751428222e-16",
+          "time_sec": "0.002583",
+          "mflops": "1783.97212544",
+          "checksum": "262229.538686",
+          "num_procs": "2"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "2",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "512",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=512\nnits=100\nerror=2.0751428222e-16\ntime_sec=0.002546\nmflops=1809.89787903\nchecksum=262229.538686\nnum_procs=2\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "512",
+          "nits": "100",
+          "error": "2.0751428222e-16",
+          "time_sec": "0.002546",
+          "mflops": "1809.89787903",
+          "checksum": "262229.538686",
+          "num_procs": "2"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "fft",
+    "backend": "mpi",
+    "n": 512,
+    "num_procs": 4,
+    "status": "ok",
+    "avg_time_sec": 0.006018,
+    "avg_error": 2.0751428221999997e-16,
+    "avg_mflops": 766.8883260716667,
+    "checksum": 262229.538686,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "4",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "512",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=512\nnits=100\nerror=2.0751428222e-16\ntime_sec=0.00586\nmflops=786.348122867\nchecksum=262229.538686\nnum_procs=4\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "512",
+          "nits": "100",
+          "error": "2.0751428222e-16",
+          "time_sec": "0.00586",
+          "mflops": "786.348122867",
+          "checksum": "262229.538686",
+          "num_procs": "4"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "4",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "512",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=512\nnits=100\nerror=2.0751428222e-16\ntime_sec=0.005837\nmflops=789.446633545\nchecksum=262229.538686\nnum_procs=4\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "512",
+          "nits": "100",
+          "error": "2.0751428222e-16",
+          "time_sec": "0.005837",
+          "mflops": "789.446633545",
+          "checksum": "262229.538686",
+          "num_procs": "4"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "4",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "512",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=512\nnits=100\nerror=2.0751428222e-16\ntime_sec=0.006357\nmflops=724.870221803\nchecksum=262229.538686\nnum_procs=4\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "512",
+          "nits": "100",
+          "error": "2.0751428222e-16",
+          "time_sec": "0.006357",
+          "mflops": "724.870221803",
+          "checksum": "262229.538686",
+          "num_procs": "4"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "fft",
+    "backend": "mpi",
+    "n": 512,
+    "num_procs": 8,
+    "status": "ok",
+    "avg_time_sec": 0.019429333333333337,
+    "avg_error": 2.0751428221999997e-16,
+    "avg_mflops": 237.2404068013333,
+    "checksum": 262229.538686,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "8",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "512",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=512\nnits=100\nerror=2.0751428222e-16\ntime_sec=0.019265\nmflops=239.19024137\nchecksum=262229.538686\nnum_procs=8\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "512",
+          "nits": "100",
+          "error": "2.0751428222e-16",
+          "time_sec": "0.019265",
+          "mflops": "239.19024137",
+          "checksum": "262229.538686",
+          "num_procs": "8"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "8",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "512",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=512\nnits=100\nerror=2.0751428222e-16\ntime_sec=0.019907\nmflops=231.476365098\nchecksum=262229.538686\nnum_procs=8\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "512",
+          "nits": "100",
+          "error": "2.0751428222e-16",
+          "time_sec": "0.019907",
+          "mflops": "231.476365098",
+          "checksum": "262229.538686",
+          "num_procs": "8"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "8",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "512",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=512\nnits=100\nerror=2.0751428222e-16\ntime_sec=0.019116\nmflops=241.054613936\nchecksum=262229.538686\nnum_procs=8\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "512",
+          "nits": "100",
+          "error": "2.0751428222e-16",
+          "time_sec": "0.019116",
+          "mflops": "241.054613936",
+          "checksum": "262229.538686",
+          "num_procs": "8"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "fft",
+    "backend": "mpi",
+    "n": 1024,
+    "num_procs": 2,
+    "status": "ok",
+    "avg_time_sec": 0.005399333333333333,
+    "avg_error": 2.31362443169e-16,
+    "avg_mflops": 1897.3723110466665,
+    "checksum": 1047275.769,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "2",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "1024",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=1024\nnits=100\nerror=2.31362443169e-16\ntime_sec=0.005444\nmflops=1880.96987509\nchecksum=1047275.769\nnum_procs=2\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "1024",
+          "nits": "100",
+          "error": "2.31362443169e-16",
+          "time_sec": "0.005444",
+          "mflops": "1880.96987509",
+          "checksum": "1047275.769",
+          "num_procs": "2"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "2",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "1024",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=1024\nnits=100\nerror=2.31362443169e-16\ntime_sec=0.005244\nmflops=1952.7078566\nchecksum=1047275.769\nnum_procs=2\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "1024",
+          "nits": "100",
+          "error": "2.31362443169e-16",
+          "time_sec": "0.005244",
+          "mflops": "1952.7078566",
+          "checksum": "1047275.769",
+          "num_procs": "2"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "2",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "1024",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=1024\nnits=100\nerror=2.31362443169e-16\ntime_sec=0.00551\nmflops=1858.43920145\nchecksum=1047275.769\nnum_procs=2\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "1024",
+          "nits": "100",
+          "error": "2.31362443169e-16",
+          "time_sec": "0.00551",
+          "mflops": "1858.43920145",
+          "checksum": "1047275.769",
+          "num_procs": "2"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "fft",
+    "backend": "mpi",
+    "n": 1024,
+    "num_procs": 4,
+    "status": "ok",
+    "avg_time_sec": 0.015155333333333333,
+    "avg_error": 2.31362443169e-16,
+    "avg_mflops": 727.2291356476667,
+    "checksum": 1047275.769,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "4",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "1024",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=1024\nnits=100\nerror=2.31362443169e-16\ntime_sec=0.01089\nmflops=940.312213039\nchecksum=1047275.769\nnum_procs=4\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "1024",
+          "nits": "100",
+          "error": "2.31362443169e-16",
+          "time_sec": "0.01089",
+          "mflops": "940.312213039",
+          "checksum": "1047275.769",
+          "num_procs": "4"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "4",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "1024",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=1024\nnits=100\nerror=2.31362443169e-16\ntime_sec=0.020984\nmflops=487.990850172\nchecksum=1047275.769\nnum_procs=4\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "1024",
+          "nits": "100",
+          "error": "2.31362443169e-16",
+          "time_sec": "0.020984",
+          "mflops": "487.990850172",
+          "checksum": "1047275.769",
+          "num_procs": "4"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "4",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "1024",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=1024\nnits=100\nerror=2.31362443169e-16\ntime_sec=0.013592\nmflops=753.384343732\nchecksum=1047275.769\nnum_procs=4\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "1024",
+          "nits": "100",
+          "error": "2.31362443169e-16",
+          "time_sec": "0.013592",
+          "mflops": "753.384343732",
+          "checksum": "1047275.769",
+          "num_procs": "4"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "fft",
+    "backend": "mpi",
+    "n": 1024,
+    "num_procs": 8,
+    "status": "ok",
+    "avg_time_sec": 0.033021333333333326,
+    "avg_error": 2.31362443169e-16,
+    "avg_mflops": 310.3204487593334,
+    "checksum": 1047275.769,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "8",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "1024",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=1024\nnits=100\nerror=2.31362443169e-16\ntime_sec=0.034225\nmflops=299.196493791\nchecksum=1047275.769\nnum_procs=8\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "1024",
+          "nits": "100",
+          "error": "2.31362443169e-16",
+          "time_sec": "0.034225",
+          "mflops": "299.196493791",
+          "checksum": "1047275.769",
+          "num_procs": "8"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "8",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "1024",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=1024\nnits=100\nerror=2.31362443169e-16\ntime_sec=0.032697\nmflops=313.178579075\nchecksum=1047275.769\nnum_procs=8\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "1024",
+          "nits": "100",
+          "error": "2.31362443169e-16",
+          "time_sec": "0.032697",
+          "mflops": "313.178579075",
+          "checksum": "1047275.769",
+          "num_procs": "8"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "8",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "1024",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=1024\nnits=100\nerror=2.31362443169e-16\ntime_sec=0.032142\nmflops=318.586273412\nchecksum=1047275.769\nnum_procs=8\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "1024",
+          "nits": "100",
+          "error": "2.31362443169e-16",
+          "time_sec": "0.032142",
+          "mflops": "318.586273412",
+          "checksum": "1047275.769",
+          "num_procs": "8"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "fft",
+    "backend": "mpi",
+    "n": 2048,
+    "num_procs": 2,
+    "status": "ok",
+    "avg_time_sec": 0.009745,
+    "avg_error": 2.4309539486e-16,
+    "avg_mflops": 2312.2470664133334,
+    "checksum": 4223727.27312,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "2",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "2048",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=2048\nnits=100\nerror=2.4309539486e-16\ntime_sec=0.00984\nmflops=2289.43089431\nchecksum=4223727.27312\nnum_procs=2\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "2048",
+          "nits": "100",
+          "error": "2.4309539486e-16",
+          "time_sec": "0.00984",
+          "mflops": "2289.43089431",
+          "checksum": "4223727.27312",
+          "num_procs": "2"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "2",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "2048",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=2048\nnits=100\nerror=2.4309539486e-16\ntime_sec=0.009544\nmflops=2360.43587594\nchecksum=4223727.27312\nnum_procs=2\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "2048",
+          "nits": "100",
+          "error": "2.4309539486e-16",
+          "time_sec": "0.009544",
+          "mflops": "2360.43587594",
+          "checksum": "4223727.27312",
+          "num_procs": "2"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "2",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "2048",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=2048\nnits=100\nerror=2.4309539486e-16\ntime_sec=0.009851\nmflops=2286.87442899\nchecksum=4223727.27312\nnum_procs=2\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "2048",
+          "nits": "100",
+          "error": "2.4309539486e-16",
+          "time_sec": "0.009851",
+          "mflops": "2286.87442899",
+          "checksum": "4223727.27312",
+          "num_procs": "2"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "fft",
+    "backend": "mpi",
+    "n": 2048,
+    "num_procs": 4,
+    "status": "ok",
+    "avg_time_sec": 0.02108233333333333,
+    "avg_error": 2.4309539486e-16,
+    "avg_mflops": 1068.68355495,
+    "checksum": 4223727.27312,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "4",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "2048",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=2048\nnits=100\nerror=2.4309539486e-16\ntime_sec=0.021386\nmflops=1053.39942018\nchecksum=4223727.27312\nnum_procs=4\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "2048",
+          "nits": "100",
+          "error": "2.4309539486e-16",
+          "time_sec": "0.021386",
+          "mflops": "1053.39942018",
+          "checksum": "4223727.27312",
+          "num_procs": "4"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "4",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "2048",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=2048\nnits=100\nerror=2.4309539486e-16\ntime_sec=0.020905\nmflops=1077.63692896\nchecksum=4223727.27312\nnum_procs=4\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "2048",
+          "nits": "100",
+          "error": "2.4309539486e-16",
+          "time_sec": "0.020905",
+          "mflops": "1077.63692896",
+          "checksum": "4223727.27312",
+          "num_procs": "4"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "4",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "2048",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=2048\nnits=100\nerror=2.4309539486e-16\ntime_sec=0.020956\nmflops=1075.01431571\nchecksum=4223727.27312\nnum_procs=4\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "2048",
+          "nits": "100",
+          "error": "2.4309539486e-16",
+          "time_sec": "0.020956",
+          "mflops": "1075.01431571",
+          "checksum": "4223727.27312",
+          "num_procs": "4"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "fft",
+    "backend": "mpi",
+    "n": 2048,
+    "num_procs": 8,
+    "status": "ok",
+    "avg_time_sec": 0.06133133333333333,
+    "avg_error": 2.4309539486e-16,
+    "avg_mflops": 368.25967914200004,
+    "checksum": 4223727.27312,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "8",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "2048",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=2048\nnits=100\nerror=2.4309539486e-16\ntime_sec=0.057578\nmflops=391.260550905\nchecksum=4223727.27312\nnum_procs=8\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "2048",
+          "nits": "100",
+          "error": "2.4309539486e-16",
+          "time_sec": "0.057578",
+          "mflops": "391.260550905",
+          "checksum": "4223727.27312",
+          "num_procs": "8"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "8",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "2048",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=2048\nnits=100\nerror=2.4309539486e-16\ntime_sec=0.061232\nmflops=367.91220277\nchecksum=4223727.27312\nnum_procs=8\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "2048",
+          "nits": "100",
+          "error": "2.4309539486e-16",
+          "time_sec": "0.061232",
+          "mflops": "367.91220277",
+          "checksum": "4223727.27312",
+          "num_procs": "8"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "8",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "2048",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=2048\nnits=100\nerror=2.4309539486e-16\ntime_sec=0.065184\nmflops=345.606283751\nchecksum=4223727.27312\nnum_procs=8\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "2048",
+          "nits": "100",
+          "error": "2.4309539486e-16",
+          "time_sec": "0.065184",
+          "mflops": "345.606283751",
+          "checksum": "4223727.27312",
+          "num_procs": "8"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "fft",
+    "backend": "mpi",
+    "n": 4096,
+    "num_procs": 2,
+    "status": "ok",
+    "avg_time_sec": 0.0019796666666666665,
+    "avg_error": 2.58253689437e-16,
+    "avg_mflops": 2493.7604506633334,
+    "checksum": 16929186.2773,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "2",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "4096",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=4096\nnits=10\nerror=2.58253689437e-16\ntime_sec=0.001863\nmflops=2638.3252818\nchecksum=16929186.2773\nnum_procs=2\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "4096",
+          "nits": "10",
+          "error": "2.58253689437e-16",
+          "time_sec": "0.001863",
+          "mflops": "2638.3252818",
+          "checksum": "16929186.2773",
+          "num_procs": "2"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "2",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "4096",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=4096\nnits=10\nerror=2.58253689437e-16\ntime_sec=0.001909\nmflops=2574.75117863\nchecksum=16929186.2773\nnum_procs=2\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "4096",
+          "nits": "10",
+          "error": "2.58253689437e-16",
+          "time_sec": "0.001909",
+          "mflops": "2574.75117863",
+          "checksum": "16929186.2773",
+          "num_procs": "2"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "2",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "4096",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=4096\nnits=10\nerror=2.58253689437e-16\ntime_sec=0.002167\nmflops=2268.20489156\nchecksum=16929186.2773\nnum_procs=2\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "4096",
+          "nits": "10",
+          "error": "2.58253689437e-16",
+          "time_sec": "0.002167",
+          "mflops": "2268.20489156",
+          "checksum": "16929186.2773",
+          "num_procs": "2"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "fft",
+    "backend": "mpi",
+    "n": 4096,
+    "num_procs": 4,
+    "status": "ok",
+    "avg_time_sec": 0.004221333333333333,
+    "avg_error": 2.58253689437e-16,
+    "avg_mflops": 1189.9954890376666,
+    "checksum": 16929186.2773,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "4",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "4096",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=4096\nnits=10\nerror=2.58253689437e-16\ntime_sec=0.005131\nmflops=957.941921653\nchecksum=16929186.2773\nnum_procs=4\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "4096",
+          "nits": "10",
+          "error": "2.58253689437e-16",
+          "time_sec": "0.005131",
+          "mflops": "957.941921653",
+          "checksum": "16929186.2773",
+          "num_procs": "4"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "4",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "4096",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=4096\nnits=10\nerror=2.58253689437e-16\ntime_sec=0.003873\nmflops=1269.09372579\nchecksum=16929186.2773\nnum_procs=4\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "4096",
+          "nits": "10",
+          "error": "2.58253689437e-16",
+          "time_sec": "0.003873",
+          "mflops": "1269.09372579",
+          "checksum": "16929186.2773",
+          "num_procs": "4"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "4",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "4096",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=4096\nnits=10\nerror=2.58253689437e-16\ntime_sec=0.00366\nmflops=1342.95081967\nchecksum=16929186.2773\nnum_procs=4\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "4096",
+          "nits": "10",
+          "error": "2.58253689437e-16",
+          "time_sec": "0.00366",
+          "mflops": "1342.95081967",
+          "checksum": "16929186.2773",
+          "num_procs": "4"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "fft",
+    "backend": "mpi",
+    "n": 4096,
+    "num_procs": 8,
+    "status": "ok",
+    "avg_time_sec": 0.010712666666666667,
+    "avg_error": 2.58253689437e-16,
+    "avg_mflops": 458.9285355756667,
+    "checksum": 16929186.2773,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "8",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "4096",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=4096\nnits=10\nerror=2.58253689437e-16\ntime_sec=0.010945\nmflops=449.081772499\nchecksum=16929186.2773\nnum_procs=8\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "4096",
+          "nits": "10",
+          "error": "2.58253689437e-16",
+          "time_sec": "0.010945",
+          "mflops": "449.081772499",
+          "checksum": "16929186.2773",
+          "num_procs": "8"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "8",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "4096",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=4096\nnits=10\nerror=2.58253689437e-16\ntime_sec=0.010609\nmflops=463.304741257\nchecksum=16929186.2773\nnum_procs=8\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "4096",
+          "nits": "10",
+          "error": "2.58253689437e-16",
+          "time_sec": "0.010609",
+          "mflops": "463.304741257",
+          "checksum": "16929186.2773",
+          "num_procs": "8"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "8",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "4096",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=4096\nnits=10\nerror=2.58253689437e-16\ntime_sec=0.010584\nmflops=464.399092971\nchecksum=16929186.2773\nnum_procs=8\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "4096",
+          "nits": "10",
+          "error": "2.58253689437e-16",
+          "time_sec": "0.010584",
+          "mflops": "464.399092971",
+          "checksum": "16929186.2773",
+          "num_procs": "8"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "fft",
+    "backend": "mpi",
+    "n": 8192,
+    "num_procs": 2,
+    "status": "ok",
+    "avg_time_sec": 0.003992,
+    "avg_error": 2.87142300783e-16,
+    "avg_mflops": 2669.5290384433333,
+    "checksum": 67578548.5601,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "2",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "8192",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=8192\nnits=10\nerror=2.87142300783e-16\ntime_sec=0.004032\nmflops=2641.26984127\nchecksum=67578548.5601\nnum_procs=2\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "8192",
+          "nits": "10",
+          "error": "2.87142300783e-16",
+          "time_sec": "0.004032",
+          "mflops": "2641.26984127",
+          "checksum": "67578548.5601",
+          "num_procs": "2"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "2",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "8192",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=8192\nnits=10\nerror=2.87142300783e-16\ntime_sec=0.004093\nmflops=2601.90569265\nchecksum=67578548.5601\nnum_procs=2\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "8192",
+          "nits": "10",
+          "error": "2.87142300783e-16",
+          "time_sec": "0.004093",
+          "mflops": "2601.90569265",
+          "checksum": "67578548.5601",
+          "num_procs": "2"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "2",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "8192",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=8192\nnits=10\nerror=2.87142300783e-16\ntime_sec=0.003851\nmflops=2765.41158141\nchecksum=67578548.5601\nnum_procs=2\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "8192",
+          "nits": "10",
+          "error": "2.87142300783e-16",
+          "time_sec": "0.003851",
+          "mflops": "2765.41158141",
+          "checksum": "67578548.5601",
+          "num_procs": "2"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "fft",
+    "backend": "mpi",
+    "n": 8192,
+    "num_procs": 4,
+    "status": "ok",
+    "avg_time_sec": 0.009329333333333334,
+    "avg_error": 2.87142300783e-16,
+    "avg_mflops": 1141.8738061366666,
+    "checksum": 67578548.5601,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "4",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "8192",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=8192\nnits=10\nerror=2.87142300783e-16\ntime_sec=0.00937\nmflops=1136.56350053\nchecksum=67578548.5601\nnum_procs=4\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "8192",
+          "nits": "10",
+          "error": "2.87142300783e-16",
+          "time_sec": "0.00937",
+          "mflops": "1136.56350053",
+          "checksum": "67578548.5601",
+          "num_procs": "4"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "4",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "8192",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=8192\nnits=10\nerror=2.87142300783e-16\ntime_sec=0.009507\nmflops=1120.18512675\nchecksum=67578548.5601\nnum_procs=4\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "8192",
+          "nits": "10",
+          "error": "2.87142300783e-16",
+          "time_sec": "0.009507",
+          "mflops": "1120.18512675",
+          "checksum": "67578548.5601",
+          "num_procs": "4"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "4",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "8192",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=8192\nnits=10\nerror=2.87142300783e-16\ntime_sec=0.009111\nmflops=1168.87279113\nchecksum=67578548.5601\nnum_procs=4\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "8192",
+          "nits": "10",
+          "error": "2.87142300783e-16",
+          "time_sec": "0.009111",
+          "mflops": "1168.87279113",
+          "checksum": "67578548.5601",
+          "num_procs": "4"
+        },
+        "error": ""
+      }
+    ]
+  },
+  {
+    "experiment": "fft",
+    "backend": "mpi",
+    "n": 8192,
+    "num_procs": 8,
+    "status": "ok",
+    "avg_time_sec": 0.021317,
+    "avg_error": 2.87142300783e-16,
+    "avg_mflops": 501.705287513,
+    "checksum": 67578548.5601,
+    "requested_runs": 3,
+    "successful_runs": 3,
+    "failed_runs": 0,
+    "runs": [
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "8",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "8192",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=8192\nnits=10\nerror=2.87142300783e-16\ntime_sec=0.02021\nmflops=526.947055913\nchecksum=67578548.5601\nnum_procs=8\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "8192",
+          "nits": "10",
+          "error": "2.87142300783e-16",
+          "time_sec": "0.02021",
+          "mflops": "526.947055913",
+          "checksum": "67578548.5601",
+          "num_procs": "8"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "8",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "8192",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=8192\nnits=10\nerror=2.87142300783e-16\ntime_sec=0.020422\nmflops=521.476838703\nchecksum=67578548.5601\nnum_procs=8\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "8192",
+          "nits": "10",
+          "error": "2.87142300783e-16",
+          "time_sec": "0.020422",
+          "mflops": "521.476838703",
+          "checksum": "67578548.5601",
+          "num_procs": "8"
+        },
+        "error": ""
+      },
+      {
+        "success": true,
+        "command": [
+          "mpirun",
+          "-np",
+          "8",
+          "--oversubscribe",
+          "./bin/fft_mpi",
+          "8192",
+          "331.0"
+        ],
+        "returncode": 0,
+        "stdout": "\nexperiment=fft\nbackend=mpi\nn=8192\nnits=10\nerror=2.87142300783e-16\ntime_sec=0.023319\nmflops=456.691967923\nchecksum=67578548.5601\nnum_procs=8\n\n",
+        "stderr": "",
+        "parsed": {
+          "experiment": "fft",
+          "backend": "mpi",
+          "n": "8192",
+          "nits": "10",
+          "error": "2.87142300783e-16",
+          "time_sec": "0.023319",
+          "mflops": "456.691967923",
+          "checksum": "67578548.5601",
+          "num_procs": "8"
+        },
+        "error": ""
+      }
+    ]
+  }
+]
