@@ -22,19 +22,9 @@ if ! command -v "$NVCC" &>/dev/null; then
     exit 1
 fi
 
-# Auto-detect GPU architecture, fallback to sm_80 (A100) or sm_86 (RTX 3090)
-GPU_ARCH="sm_80"
-if nvidia-smi --query-gpu=name --format=csv,noheader 2>/dev/null | grep -qi "3090\|3080\|3070\|3060"; then
-    GPU_ARCH="sm_86"
-elif nvidia-smi --query-gpu=name --format=csv,noheader 2>/dev/null | grep -qi "A100"; then
-    GPU_ARCH="sm_80"
-elif nvidia-smi --query-gpu=name --format=csv,noheader 2>/dev/null | grep -qi "H100\|H800"; then
-    GPU_ARCH="sm_90"
-fi
-
-# Use C++14 for broader CUDA toolkit compatibility (works with CUDA 10.x+)
-# Use C++17 only if available (CUDA 11.x+)
-NVCC_FLAGS="-std=c++14 -O3 -arch=${GPU_ARCH} --ptxas-options=-v -lineinfo"
+# GPU architecture: sm_80 for NVIDIA A100 (Ampere)
+# Use C++14 for broader CUDA toolkit compatibility
+NVCC_FLAGS="-std=c++14 -O3 -arch=sm_80 --ptxas-options=-v -lineinfo"
 NVCC_FLAGS="${NVCC_FLAGS} -D_FORTIFY_SOURCE=2"
 
 echo "CUDA Compiler: $NVCC"
