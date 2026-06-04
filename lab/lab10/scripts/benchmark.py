@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Benchmark lab10 CUDA GEMM across sizes, kernels, and block dimensions."""
+from __future__ import annotations
 import csv
 import os
 import re

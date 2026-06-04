@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Generate performance plots for lab10 CUDA GEMM benchmark results."""
+from __future__ import annotations
 import csv
 import os
 import sys
