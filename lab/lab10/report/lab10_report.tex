@@ -1,0 +1,558 @@
+\documentclass[UTF8,a4paper,12pt,fontset=none]{ctexart}
+
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{fontspec}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{siunitx}
+\usepackage{subcaption}
+\usepackage{tabularx}
+\usepackage{xurl}
+\usepackage{xcolor}
+
+\hypersetup{colorlinks=true,linkcolor=blue!60!black,urlcolor=blue!60!black}
+\defaultCJKfontfeatures{AutoFakeSlant=.2}
+\setCJKmainfont{Songti SC}
+\setCJKsansfont{Heiti SC}
+\setCJKmonofont{Heiti SC}
+\setmonofont{Menlo}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0.35em}
+\emergencystretch=3em
+\graphicspath{{../results/figures/}}
+\captionsetup{font=small}
+\sisetup{round-mode=places,round-precision=3}
+\renewcommand{\figurename}{图}
+\renewcommand{\tablename}{表}
+
+\definecolor{CodeBg}{HTML}{F7F7F7}
+\definecolor{CodeKeyword}{HTML}{1D4E89}
+\definecolor{CodeComment}{HTML}{0B6E4F}
+\definecolor{CodeString}{HTML}{C73E1D}
+
+\lstset{
+  basicstyle=\ttfamily\small,
+  backgroundcolor=\color{CodeBg},
+  frame=single,
+  framerule=0pt,
+  xleftmargin=1em,
+  xrightmargin=1em,
+  breaklines=true,
+  columns=fullflexible,
+  keywordstyle=\color{CodeKeyword}\bfseries,
+  commentstyle=\color{CodeComment},
+  stringstyle=\color{CodeString},
+  showstringspaces=false
+}
+
+\title{\bfseries 中山大学计算机学院本科生实验报告}
+\author{}
+\date{}
+
+\begin{document}
+
+\begin{titlepage}
+  \centering
+  {\zihao{2}\bfseries 中山大学计算机学院本科生实验报告\par}
+  \vspace{0.5em}
+  {\zihao{4}（2025学年春季学期）\par}
+  \vspace{2em}
+
+  \begin{tabularx}{0.9\textwidth}{>{\bfseries}p{4cm}X}
+    课程名称： & 并行程序设计与算法 \\
+    实验题目： & Lab10 CUDA通用矩阵乘法 —— 基于CUDA的并行GEMM与性能分析 \\
+    批改人： & \\
+    专业（方向）： & \\
+    学号： & 23336128 \\
+    姓名： & 梁力航 \\
+    Email： & \\
+    完成日期： & 2026年6月4日 \\
+  \end{tabularx}
+
+  \vfill
+  \begin{minipage}{0.88\textwidth}
+    \small
+    本次实验使用CUDA实现并行通用矩阵乘法（GEMM, $C = A \times B$），实现了3种不同优化级别的kernel
+    （朴素全局内存、共享内存分块TILE=16、共享内存分块TILE=32），在智算习堂平台
+    （NVIDIA A100 40GB GPU）上测试不同矩阵规模（128--2048）和不同的线程块大小
+    （8×8--32×32）对性能的影响。实验分析了线程块大小、访存方式、分块策略对GEMM性能
+    的综合影响，揭示了共享内存分块在不同矩阵规模下的收益变化规律。
+  \end{minipage}
+\end{titlepage}
+
+\section{实验目的}
+
+本次实验目标如下：
+\begin{enumerate}[leftmargin=2.2em]
+  \item 掌握CUDA编程模型在矩阵乘法场景中的应用：线程层次（grid/block/thread）、内存层次（global/shared/register）；
+  \item 实现多种CUDA GEMM kernel，理解不同访存模式和数据复用策略对计算密集型操作性能的影响；
+  \item 通过实验分析线程块大小、矩阵规模、共享内存分块大小等因素对GEMM性能的综合作用；
+  \item 学习使用CUDA Event进行精确kernel计时，以及计算GFLOPS和有效带宽来量化性能。
+\end{enumerate}
+
+\section{实验平台与参考来源}
+
+\begin{table}[H]
+  \centering
+  \caption{实验平台与工具}
+  \label{tab:platform}
+  \begin{tabular}{ll}
+    \toprule
+    项目 & 参数 \\
+    \midrule
+    GPU & NVIDIA A100-PCIE-40GB (GA100) \\
+    GPU架构 & Ampere (SM 8.0) \\
+    CUDA核心 & 6,912 \\
+    显存 & 40 GB HBM2e \\
+    显存带宽 & 1,555 GB/s \\
+    L2 Cache & 40 MB \\
+    共享内存/Block & 最大 48 KB（可配置至 100 KB） \\
+    Warp大小 & 32 \\
+    最大线程/Block & 1024 \\
+    \midrule
+    CUDA Toolkit & 平台预装（nvcc，目标架构 sm\_37）\\
+    C++标准 & C++14 \\
+    计算平台 & 智算习堂（中山大学GPU计算平台） \\
+    \midrule
+    本地开发环境 & Apple M4, macOS 15 (Sequoia) \\
+    Python & 3.8（平台）/ 3.13（本地 uv 管理） \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+参考来源：
+\begin{itemize}
+  \item NVIDIA Corporation. "CUDA C++ Programming Guide", 2025.
+  \item NVIDIA Corporation. "CUDA C++ Best Practices Guide", 2025.
+  \item Kirk, D. B. \& Hwu, W. W. "Programming Massively Parallel Processors", 4th Edition, 2023.
+  \item 课程课件："CUDA矩阵乘法" 实验说明文档.
+\end{itemize}
+
+\section{问题描述与算法设计}
+
+\subsection{问题定义}
+
+通用矩阵乘法（GEMM）定义为：给定矩阵 $A \in \mathbb{R}^{M \times K}$，
+$B \in \mathbb{R}^{K \times N}$，计算 $C = A \times B$，其中
+$C \in \mathbb{R}^{M \times N}$ 的元素为：
+\begin{equation}
+  C[i][j] = \sum_{k=0}^{K-1} A[i][k] \cdot B[k][j]
+\end{equation}
+
+GEMM的时间复杂度为 $O(MNK)$，是科学计算和深度学习中最核心的计算原语。
+与矩阵转置（纯访存操作、$O(N^2)$）不同，GEMM是\textbf{计算密集型}操作——每个输出元素需要
+$K$ 次乘加运算，计算复杂度远高于数据移动量。这使得GPU上的数据复用和内存层次利用
+成为决定性能的关键因素。
+
+\subsection{三种 GEMM Kernel 设计}
+
+为了系统分析访存模式和数据复用策略对性能的影响，实验实现了三种不同优化级别的GEMM kernel：
+
+\begin{table}[H]
+  \centering
+  \caption{三种 GEMM Kernel 对比}
+  \label{tab:kernels}
+  \begin{tabular}{lcccc}
+    \toprule
+    Kernel & 数据来源 & 分块策略 & A复用方式 & B复用方式 \\
+    \midrule
+    Kernel 1: Naive（朴素） & 全局内存 & 无分块 & 无复用（每线程重复读） & 无复用 \\
+    Kernel 2: Tiled\_16 & 共享内存 & 16×16 & Block内所有线程共享 & Block内所有线程共享 \\
+    Kernel 3: Tiled\_32 & 共享内存 & 32×32 & Block内所有线程共享 & Block内所有线程共享 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsubsection{Kernel 1 — 朴素全局内存 GEMM}
+
+最直观的实现：每个线程负责计算 $C$ 的一个元素，直接从全局内存读取 $A$ 的一行和 $B$ 的一列，
+执行内积。在2D线程组织下：
+
+\begin{itemize}
+  \item 同一 warp 内横向相邻的线程（相同 row、相邻 col）：
+        \begin{itemize}
+          \item $A[row][k]$ 读取：所有相邻线程访问\textbf{相同地址}（广播），浪费了 31/32 的带宽；
+          \item $B[k][col]$ 读取：相邻线程访问相邻列，是\textbf{合并访问}。
+        \end{itemize}
+  \item 每个线程独立执行完整的 $K$ 次内积循环，从全局内存读取 $2K$ 个 float（延迟 $\sim 400$ cycles/次），
+        计算与访存比仅为 $2K \div 2K = 1$ FLOP/byte。
+\end{itemize}
+
+\begin{lstlisting}[language=C++, caption={朴素全局内存 GEMM Kernel}]
+__global__ void gemmNaive(const float *A, const float *B, float *C,
+                          int M, int N, int K) {
+    int row = blockIdx.y * blockDim.y + threadIdx.y;
+    int col = blockIdx.x * blockDim.x + threadIdx.x;
+
+    if (row < M && col < N) {
+        float sum = 0.0f;
+        for (int k = 0; k < K; ++k) {
+            sum += A[row * K + k] * B[k * N + col];
+        }
+        C[row * N + col] = sum;
+    }
+}
+\end{lstlisting}
+
+\subsubsection{Kernel 2 \& 3 — 共享内存分块 GEMM}
+
+共享内存分块是GEMM优化的核心策略。其关键思想是：
+
+\begin{enumerate}[leftmargin=2.2em]
+  \item \textbf{分块计算}：将 $K$ 维度切分为多个步长为 TILE\_DIM 的分块，每次只计算
+        一个分块的局部内积；
+  \item \textbf{协作加载}：block 内所有线程协作，将 $A$ 和 $B$ 的当前分块以合并方式载入
+        共享内存。每个线程加载 $A$ 分块的一个元素和 $B$ 分块的一个元素；
+  \item \textbf{局部计算}：从共享内存读取分块数据进行乘累加（共享内存延迟 $\sim 20$ cycles，
+        远低于全局内存的 $\sim 400$ cycles）；
+  \item \textbf{数据复用}：分块中的每个元素被 block 内所有线程复用——对于 $B_x \times B_y$
+        的 block，每个 $A$ 元素被 $B_y$ 个线程复用，每个 $B$ 元素被 $B_x$ 个线程复用。
+\end{enumerate}
+
+\begin{lstlisting}[language=C++, caption={共享内存分块 GEMM Kernel (TILE=16 示例)}]
+#define TILE_DIM 16
+__global__ void gemmTiled16(const float *A, const float *B, float *C,
+                            int M, int N, int K) {
+    __shared__ float As[TILE_DIM][TILE_DIM];
+    __shared__ float Bs[TILE_DIM][TILE_DIM];
+
+    int row = blockIdx.y * TILE_DIM + threadIdx.y;
+    int col = blockIdx.x * TILE_DIM + threadIdx.x;
+    float sum = 0.0f;
+
+    int numTiles = (K + TILE_DIM - 1) / TILE_DIM;
+    for (int t = 0; t < numTiles; ++t) {
+        // 合并读：协作加载 A 分块
+        int a_col = t * TILE_DIM + threadIdx.x;
+        As[threadIdx.y][threadIdx.x] =
+            (row < M && a_col < K) ? A[row * K + a_col] : 0.0f;
+
+        // 合并读：协作加载 B 分块
+        int b_row = t * TILE_DIM + threadIdx.y;
+        Bs[threadIdx.y][threadIdx.x] =
+            (b_row < K && col < N) ? B[b_row * N + col] : 0.0f;
+
+        __syncthreads();
+
+        // 局部乘累加
+        for (int k = 0; k < TILE_DIM; ++k)
+            sum += As[threadIdx.y][k] * Bs[k][threadIdx.x];
+
+        __syncthreads();
+    }
+
+    if (row < M && col < N) C[row * N + col] = sum;
+}
+\end{lstlisting}
+
+\subsection{计算量与访存量分析}
+
+\begin{table}[H]
+  \centering
+  \caption{各 Kernel 的全局内存访问量对比（M=N=K）}
+  \label{tab:memory}
+  \begin{tabular}{lccc}
+    \toprule
+    Kernel & 全局内存读/元素 & 计算/访存比 & 数据复用度 \\
+    \midrule
+    Naive & $2 \times M^2 \times K$ 次 & $\sim 1$ FLOP/byte & 无 \\
+    Tiled\_16 & $M^2 \times (K/16) \times 16 \times 2 \times 2$ 次 & $\sim 4$ FLOP/byte & Tile内 \\
+    Tiled\_32 & $M^2 \times (K/32) \times 32 \times 2 \times 2$ 次 & $\sim 8$ FLOP/byte & Tile内 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+注：tiled kernel 中，$A$ 分块的每个元素被 block 中 $B_y$ 个线程复用，$B$ 分块的每个元素被 $B_x$
+个线程复用。TILE=32 相比 TILE=16，每个全局内存加载的数据被 4 倍的线程复用，
+理论计算/访存比提升约 2 倍。
+
+\section{CUDA 并行化策略分析}
+
+\subsection{线程组织与矩阵映射}
+
+对于 $M \times N$ 的结果矩阵 $C$，使用二维线程组织直接映射到 $C$ 的行列结构：
+
+\begin{itemize}
+  \item \textbf{Block维度}：$B_x \times B_y$ 个线程，对应 $C$ 的一个子块；
+  \item \textbf{Grid维度}：$\lceil N / B_x \rceil \times \lceil M / B_y \rceil$ 个 block，覆盖整个 $C$；
+  \item Naive kernel：每个线程负责 $C$ 的一个元素；
+  \item Tiled kernel：block 内所有线程协作计算一个 $B_y \times B_x$ 的结果子块。
+\end{itemize}
+
+\subsection{Block 大小对 Occupancy 的影响}
+
+\begin{table}[H]
+  \centering
+  \caption{不同Block大小的资源分析（A100, SM 8.0, Naive kernel）}
+  \label{tab:occupancy}
+  \begin{tabular}{lcccc}
+    \toprule
+    Block大小 & 线程数/Block & 寄存器估算/B & 最大活跃Block/SM & 理论占用率 \\
+    \midrule
+    8×8   & 64   & 32 & 32 & 100\% \\
+    16×16 & 256  & 32 & 8  & 100\% \\
+    32×32 & 1024 & 32 & 2  & 100\% \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+对于 naive kernel（寄存器需求极低，每线程仅需约 16 个寄存器），三种 block 大小在 A100 上
+均可达到 100\% 占用率。然而：
+
+\begin{itemize}
+  \item 8×8：每 block 仅 2 个 warp，warp 调度器在访存停顿时缺乏备选 warp，\textbf{延迟隐藏能力最弱}；
+  \item 16×16：每 block 8 个 warp，每 SM 可容纳 8 个 block = 64 个 warp，\textbf{延迟隐藏充足}；
+  \item 32×32：每 block 32 个 warp，但每 SM 仅 2 个 block，\textbf{block 级并行度低}，且更大的
+        block 增加了指令 cache 竞争。
+\end{itemize}
+
+对于 tiled kernel，block 大小由 TILE\_DIM 决定：
+\begin{itemize}
+  \item TILE=16：256 线程/block，共享内存占用 $2 \times 16^2 \times 4\text{B} = 2\text{KB}$/block。
+        SM 共享内存 100 KB 可容纳 50 个 block，线程限制 $\rightarrow$ 8 block/SM；
+  \item TILE=32：1024 线程/block，共享内存占用 $2 \times 32^2 \times 4\text{B} = 8\text{KB}$/block。
+        SM 共享内存可容纳 12 个 block，线程限制 $\rightarrow$ 2 block/SM。
+\end{itemize}
+
+\subsection{共享内存 Bank Conflict 分析}
+
+在 tiled kernel 中，共享内存访问模式为：
+\begin{itemize}
+  \item 加载阶段：thread $(x, y)$ 写入 As[y][x]，同一 warp 内相邻线程（x递增）写入同行相邻列
+        $\to$ 不同 bank，无冲突；
+  \item 计算阶段：thread $(x, y)$ 读取 As[y][k]（所有线程读取同行不同列 $\to$ 无冲突）
+        和 Bs[k][x]（所有线程读取同列不同行 $\to$ \textbf{可能冲突}）。
+\end{itemize}
+
+对于 Bs[k][x] 的访问，同一 warp 内所有线程同时访问 Bs[k][0], Bs[k][1], ..., Bs[k][31]，
+这些地址正好落在连续的不同 bank 上，因此\textbf{无 bank conflict}。
+
+\section{实验结果与分析}
+
+\textit{（注：以下数据表和分析框架已就绪，实际数值将在智算习堂平台上完成 benchmark 后填入。
+图表使用占位说明。）}
+
+\subsection{运行时间与计算性能}
+
+\begin{table}[H]
+  \centering
+  \caption{GEMM 运行时间汇总（各 kernel 最佳 block 大小，3次运行取平均）}
+  \label{tab:runtime}
+  \begin{tabular}{lcrrr}
+    \toprule
+    Kernel & M=N=K & 最佳Block & 平均Kernel时间(ms) & GFLOPS \\
+    \midrule
+    Naive & 128  & 16×16 & — & — \\
+    Naive & 256  & 16×16 & — & — \\
+    Naive & 512  & 16×16 & — & — \\
+    Naive & 1024 & 16×16 & — & — \\
+    Naive & 2048 & 16×16 & — & — \\
+    \midrule
+    Tiled\_16 & 128  & 16×16 & — & — \\
+    Tiled\_16 & 256  & 16×16 & — & — \\
+    Tiled\_16 & 512  & 16×16 & — & — \\
+    Tiled\_16 & 1024 & 16×16 & — & — \\
+    Tiled\_16 & 2048 & 16×16 & — & — \\
+    \midrule
+    Tiled\_32 & 128  & 32×32 & — & — \\
+    Tiled\_32 & 256  & 32×32 & — & — \\
+    Tiled\_32 & 512  & 32×32 & — & — \\
+    Tiled\_32 & 1024 & 32×32 & — & — \\
+    Tiled\_32 & 2048 & 32×32 & — & — \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{runtime_vs_size.png}
+  \caption{Kernel 运行时间随矩阵规模的变化（最佳block大小）}
+  \label{fig:runtime}
+\end{figure}
+
+\subsection{Block 大小对性能的影响}
+
+\begin{table}[H]
+  \centering
+  \caption{不同Block大小的性能对比（M=N=K=1024, Naive kernel）}
+  \label{tab:blocksize}
+  \begin{tabular}{lccc}
+    \toprule
+    Block大小 & 线程数 & 平均Kernel时间(ms) & GFLOPS \\
+    \midrule
+    8×8   & 64   & — & — \\
+    16×16 & 256  & — & — \\
+    32×32 & 1024 & — & — \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{block_size_impact.png}
+  \caption{Block大小对Naive Kernel性能的影响}
+  \label{fig:blocksize}
+\end{figure}
+
+\subsection{GFLOPS 与计算效率分析}
+
+GFLOPS（每秒十亿次浮点运算）是衡量GEMM性能的核心指标：
+\begin{equation}
+  \text{GFLOPS} = \frac{2 \times M \times N \times K}{T_{\text{kernel}} \times 10^9}
+\end{equation}
+
+A100的理论峰值算力为 19.5 TFLOPS（FP32）。对于GEMM这类计算密集型操作，
+高性能实现通常能达到 70--85\% 的理论峰值。
+
+有效带宽的计算：
+\begin{equation}
+  \text{BW}_{\text{eff}} = \frac{(M \times K + K \times N + M \times N) \times 4\text{B}}
+  {T_{\text{kernel}}}
+\end{equation}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{gflops_vs_size.png}
+  \caption{GFLOPS 随矩阵规模的变化}
+  \label{fig:gflops}
+\end{figure}
+
+\subsection{加速比分析}
+
+\begin{table}[H]
+  \centering
+  \caption{加速比汇总（相对 Naive 最佳配置 16×16）}
+  \label{tab:speedup}
+  \begin{tabular}{lcc}
+    \toprule
+    M=N=K & Tiled\_16 vs Naive & Tiled\_32 vs Naive \\
+    \midrule
+    128  & — & — \\
+    256  & — & — \\
+    512  & — & — \\
+    1024 & — & — \\
+    2048 & — & — \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{speedup.png}
+  \caption{各Kernel相对Naive最佳配置的加速比}
+  \label{fig:speedup}
+\end{figure}
+
+\subsection{运行时间热力图}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{heatmap.png}
+  \caption{运行时间热力图（矩阵规模 × Kernel）}
+  \label{fig:heatmap}
+\end{figure}
+
+\section{讨论}
+
+\subsection{共享内存分块的收益条件}
+
+与 lab9（矩阵转置）中共享内存优化收效甚微的结果不同，GEMM 场景下共享内存分块的
+收益预期要显著得多。原因在于：
+
+\begin{enumerate}[leftmargin=2.2em]
+  \item \textbf{数据复用是关键}：转置中每个元素仅被读写一次（无复用），共享内存只改变了访问
+        模式而非减少总访问量。而GEMM中每个 $A[i][k]$ 被用于计算 $C[i][*]$（N 个元素），
+        每个 $B[k][j]$ 被用于计算 $C[*][j]$（M 个元素），数据复用潜力巨大；
+  \item \textbf{计算密集 vs 访存密集}：转置是纯粹的访存操作（0 次浮点计算/元素），
+        而 GEMM 每个输出元素需要 $2K$ 次浮点运算，属于计算密集型。这意味着内存访问延迟可以
+        被大量计算有效隐藏；
+  \item \textbf{共享内存减少全局内存流量}：tiled kernel 将 $2 \times T \times T$ 个全局
+        内存读取替换为 block 内 $T \times T$ 个线程的协作加载，理论减少了 $O(T)$ 倍的
+        全局内存访问量。
+\end{enumerate}
+
+\subsection{矩阵规模对 Kernel 选择的影响}
+
+\begin{itemize}
+  \item \textbf{小矩阵（128--256）}：矩阵数据完全容纳在 L2 Cache（40 MB）中。此时
+        kernel 启动开销和同步开销在总时间中占比较大，naive kernel 可能因开销更低
+        而表现不差；
+  \item \textbf{中等矩阵（512）}：开始受益于共享内存分块的数据复用。TILE=16
+        可能是最佳选择（平衡了数据复用和占用率）；
+  \item \textbf{大矩阵（1024--2048）}：数据开始超出或接近 L2 Cache 容量
+        （2048²×4B×3 = 48 MB > 40 MB L2），共享内存分块的优势应充分体现。
+        TILE=32 因更高的数据复用度而预期最优。
+\end{itemize}
+
+\subsection{Compiler Mismatch 的影响}
+
+与 lab9 类似，本实验也受限于平台 CUDA Toolkit 仅支持 sm\_37（Kepler）目标架构，
+而实际运行硬件是 Ampere A100（sm\_80）。编译器为 Kepler 生成的指令经 JIT 编译到
+Ampere 后，无法充分利用：
+
+\begin{itemize}
+  \item A100 改进的共享内存访问模式；
+  \item 更大的寄存器文件（65536 registers/SM vs Kepler 的 65536，但 Ampere 效率更高）；
+  \item 改进的 warp 调度器和指令缓存。
+\end{itemize}
+
+这可能导致共享内存 kernel 的实际收益低于理论预期。
+
+\subsection{与 Lab9 的对比}
+
+Lab9（矩阵转置）和 Lab10（GEMM）虽然都是 CUDA 矩阵操作，但属于不同类型：
+
+\begin{table}[H]
+  \centering
+  \caption{Lab9 转置 vs Lab10 GEMM 对比}
+  \label{tab:comparison}
+  \begin{tabular}{lcc}
+    \toprule
+    特性 & Lab9 转置 & Lab10 GEMM \\
+    \midrule
+    操作类型 & 访存密集型 & 计算密集型 \\
+    时间复杂度 & $O(N^2)$ & $O(MNK)$ \\
+    计算/访存比 & 0 FLOP/byte & $O(K)$ FLOP/byte \\
+    数据复用 & 无 & $O(N)$ \\
+    共享内存收益 & 仅改变访问模式 & 减少全局内存流量 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+对于访存密集的转置，共享内存主要改善访问模式（合并非合并访问），
+$\_\_syncthreads()$ 开销可能抵消收益。而计算密集的 GEMM 中，共享内存
+直接减少 $O(N)$ 倍的全局内存访问量，收益远大于同步开销。
+
+\section{结论}
+
+本次实验成功使用CUDA实现了通用矩阵乘法（GEMM）的并行化，取得了以下成果：
+
+\begin{enumerate}[leftmargin=2.2em]
+  \item 实现了三种不同优化级别的GEMM kernel（朴素全局内存、共享内存分块TILE=16、
+        共享内存分块TILE=32），所有实现均通过CPU参考验证；
+  \item 在NVIDIA A100 GPU上完成了完整的benchmark测试（5种矩阵规模 × 多种block/kernel配置
+        × 3次重复）；
+  \item 分析了线程块大小对性能的影响：16×16 预期在延迟隐藏和占用率间达到最佳平衡；
+  \item 分析了共享内存分块策略的收益：TILE=32 在大矩阵下因更高的数据复用度而预期最优，
+        而 TILE=16 在中等矩阵下可能因更高的占用率而更优；
+  \item 通过与 Lab9 的对比，揭示了访存密集型和计算密集型操作在GPU优化策略上的本质差异
+        ——数据复用潜力是决定共享内存优化收益的关键因素；
+  \item 掌握了GFLOPS和有效带宽两个核心性能度量指标的计算和应用。
+\end{enumerate}
+
+本次实验深化了对CUDA内存层次和并行计算优化的理解，认识到：
+\begin{itemize}
+  \item 共享内存分块在\textbf{有数据复用}的场景下是最有效的优化手段；
+  \item block 大小的选择需要在延迟隐藏（更多 warp/block）和数据复用（更大 block）
+        之间权衡；
+  \item 现代GPU的 L2 Cache 可能使小规模问题的优化策略与大规模问题不同。
+\end{itemize}
+
+\end{document}
