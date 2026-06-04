@@ -13,6 +13,7 @@
  *   - 矩阵规模: M, N, K ∈ [128, 2048]
  */
 
+#include <algorithm>
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
@@ -243,8 +244,9 @@ int main(int argc, char *argv[]) {
     int kernelId = std::atoi(argv[4]);
 
     // 参数校验
-    for (int dim : {M, N, K}) {
-        if (dim < 128 || dim > 2048) {
+    int dims[] = {M, N, K};
+    for (int i = 0; i < 3; ++i) {
+        if (dims[i] < 128 || dims[i] > 2048) {
             std::fprintf(stderr, "Error: 矩阵维度必须在 [128, 2048] 范围内\n");
             return 1;
         }
