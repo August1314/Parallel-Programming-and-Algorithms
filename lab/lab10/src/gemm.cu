@@ -20,6 +20,8 @@
 #include <cmath>
 #include <cuda_runtime.h>
 
+#include "common.hpp"
+
 // ============================================================
 // Kernel 1: Naive GEMM（朴素全局内存实现）
 //
@@ -167,59 +169,6 @@ struct KernelInfo {
 };
 
 // ============================================================
-// CPU GEMM for verification
-// ============================================================
-void cpuGemm(const float *A, const float *B, float *C, int M, int N, int K) {
-    for (int i = 0; i < M; ++i) {
-        for (int j = 0; j < N; ++j) {
-            double sum = 0.0;
-            for (int k = 0; k < K; ++k) {
-                sum += static_cast<double>(A[i * K + k]) *
-                       static_cast<double>(B[k * N + j]);
-            }
-            C[i * N + j] = static_cast<float>(sum);
-        }
-    }
-}
-
-// ============================================================
-// Verify GPU result against CPU reference
-// ============================================================
-bool verify(const float *C_gpu, const float *A, const float *B,
-            int M, int N, int K, float tol = 1e-4f) {
-    float *C_cpu = new float[M * N];
-    cpuGemm(A, B, C_cpu, M, N, K);
-
-    bool correct = true;
-    int errors = 0;
-    for (int i = 0; i < M * N && errors < 5; ++i) {
-        float absDiff = std::fabs(C_gpu[i] - C_cpu[i]);
-        float relDiff = absDiff / std::max(1.0f, std::fabs(C_cpu[i]));
-        if (relDiff > tol && absDiff > tol) {
-            correct = false;
-            errors++;
-            std::fprintf(stderr, "Mismatch[%d]: cpu=%.6f gpu=%.6f "
-                         "abs=%.6f rel=%.6f\n",
-                         i, C_cpu[i], C_gpu[i], absDiff, relDiff);
-        }
-    }
-    if (errors > 0)
-        std::fprintf(stderr, "Total errors: %d / %d\n", errors, M * N);
-
-    delete[] C_cpu;
-    return correct;
-}
-
-// ============================================================
-// Compute checksum
-// ============================================================
-float checksum(const float *mat, int rows, int cols) {
-    double s = 0.0;
-    for (int i = 0; i < rows * cols; ++i) s += mat[i];
-    return static_cast<float>(s);
-}
-
-// ============================================================
 // Main
 // ============================================================
 int main(int argc, char *argv[]) {
@@ -365,7 +314,7 @@ int main(int argc, char *argv[]) {
     cudaMemcpy(h_C, d_C, sizeC, cudaMemcpyDeviceToHost);
 
     // 验证正确性
-    bool correct = verify(h_C, h_A, h_B, M, N, K);
+    bool correct = verifyGemm(h_C, h_A, h_B, M, N, K);
 
     // 计算 GFLOPS: 2 * M * N * K 次浮点运算
     double flops = 2.0 * M * N * K;
@@ -387,7 +336,7 @@ int main(int argc, char *argv[]) {
     std::printf("kernel_time_ms=%.6f\n", kernelTimeMs);
     std::printf("gflops=%.4f\n", gflops);
     std::printf("bandwidth_gb_s=%.4f\n", bwGBs);
-    std::printf("checksum=%.4f\n", checksum(h_C, M, N));
+    std::printf("checksum=%.4f\n", computeChecksum(h_C, M, N));
     std::printf("correct=%s\n", correct ? "true" : "false");
 
     // 清理
