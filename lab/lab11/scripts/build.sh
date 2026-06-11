@@ -60,17 +60,7 @@ build_cudnn() {
     fi
     echo "  Found cuDNN at: $CUDNN_ROOT"
 
-    # Detect GPU compute capability, fallback to sm_75
-    GPU_ARCH="${GPU_ARCH:-}"
-    if [ -z "$GPU_ARCH" ]; then
-        GPU_ARCH=$(nvidia-smi --query-gpu=compute_cap --format=csv,noheader 2>/dev/null \
-            | head -1 | tr -d '.')
-        GPU_ARCH="${GPU_ARCH:-75}"
-        GPU_ARCH="sm_${GPU_ARCH}"
-    fi
-    echo "  Target arch: $GPU_ARCH"
-
-    $NVCC $NVCC_BASE_FLAGS -arch="$GPU_ARCH" \
+    $NVCC $NVCC_BASE_FLAGS -arch=sm_37 \
         -I"${CUDNN_INCLUDE}" -L"${CUDNN_LIB}" -lcudnn \
         -DUSE_CUDNN \
         -o "$BIN_DIR/conv_cudnn" "$SRC_DIR/convolution.cu"
