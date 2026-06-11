@@ -298,11 +298,9 @@ void runCudnnConv(
         padding, padding, stride, stride, 1, 1,
         CUDNN_CROSS_CORRELATION, CUDNN_DATA_FLOAT));
 
-    // Algorithm selection
-    cudnnConvolutionFwdAlgo_t algo;
-    CHECK_CUDNN(cudnnGetConvolutionForwardAlgorithm(
-        g_cudnnHandle, inputDesc, filterDesc, convDesc, outputDesc,
-        CUDNN_CONVOLUTION_FWD_PREFER_FASTEST, 0, &algo));
+    // Algorithm: use IMPLICIT_GEMM directly, avoid auto-selection hang
+    cudnnConvolutionFwdAlgo_t algo = CUDNN_CONVOLUTION_FWD_ALGO_IMPLICIT_GEMM;
+    std::fprintf(stderr, "cuDNN algo=IMPLICIT_GEMM (fixed)\n");
 
     // Workspace
     size_t wsSize = 0;
@@ -341,8 +339,6 @@ void runCudnnConv(
     CHECK_CUDNN(cudnnDestroyTensorDescriptor(outputDesc));
     CHECK_CUDNN(cudnnDestroyFilterDescriptor(filterDesc));
     CHECK_CUDNN(cudnnDestroyConvolutionDescriptor(convDesc));
-
-    std::fprintf(stderr, "cuDNN algo=%d\n", (int)algo);
 }
 #endif // USE_CUDNN
 
