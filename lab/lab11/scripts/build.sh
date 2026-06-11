@@ -24,16 +24,16 @@ if ! command -v "$NVCC" &>/dev/null; then
     exit 1
 fi
 
-# GPU architecture: sm_37 for platform CUDA toolkit compatibility
-NVCC_FLAGS="-std=c++14 -O3 -arch=sm_37 --ptxas-options=-v -lineinfo"
-NVCC_FLAGS="${NVCC_FLAGS} -D_FORTIFY_SOURCE=2"
+# Base flags (arch is set per target)
+NVCC_BASE_FLAGS="-std=c++14 -O3 --ptxas-options=-v -lineinfo"
+NVCC_BASE_FLAGS="${NVCC_BASE_FLAGS} -D_FORTIFY_SOURCE=2"
 
 echo "CUDA Compiler: $NVCC"
 echo ""
 
 build_conv() {
     echo "=== Building convolution (kernels 1-3) ==="
-    $NVCC $NVCC_FLAGS -o "$BIN_DIR/conv" "$SRC_DIR/convolution.cu"
+    $NVCC $NVCC_BASE_FLAGS -arch=sm_37 -o "$BIN_DIR/conv" "$SRC_DIR/convolution.cu"
     echo "  -> $BIN_DIR/conv"
 }
 
@@ -70,7 +70,7 @@ build_cudnn() {
     fi
     echo "  Target arch: $GPU_ARCH"
 
-    $NVCC $NVCC_FLAGS -arch="$GPU_ARCH" \
+    $NVCC $NVCC_BASE_FLAGS -arch="$GPU_ARCH" \
         -I"${CUDNN_INCLUDE}" -L"${CUDNN_LIB}" -lcudnn \
         -DUSE_CUDNN \
         -o "$BIN_DIR/conv_cudnn" "$SRC_DIR/convolution.cu"
