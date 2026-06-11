@@ -262,7 +262,9 @@ __global__ void convGemmTiled32(
 cudnnHandle_t g_cudnnHandle;
 
 void initCudnn() {
+    std::fprintf(stderr, "[cuDNN] creating handle...\n");
     CHECK_CUDNN(cudnnCreate(&g_cudnnHandle));
+    std::fprintf(stderr, "[cuDNN] handle created\n");
 }
 
 void runCudnnConv(
@@ -271,6 +273,8 @@ void runCudnnConv(
     int stride, int padding,
     int H_out, int W_out,
     cudaEvent_t start, cudaEvent_t stop) {
+
+    std::fprintf(stderr, "[cuDNN] setting up descriptors...\n");
 
     cudnnTensorDescriptor_t inputDesc, outputDesc;
     cudnnFilterDescriptor_t filterDesc;
@@ -297,32 +301,36 @@ void runCudnnConv(
     CHECK_CUDNN(cudnnSetConvolution2dDescriptor(convDesc,
         padding, padding, stride, stride, 1, 1,
         CUDNN_CROSS_CORRELATION, CUDNN_DATA_FLOAT));
+    std::fprintf(stderr, "[cuDNN] descriptors ready\n");
 
     // Algorithm: use IMPLICIT_GEMM directly, avoid auto-selection hang
     cudnnConvolutionFwdAlgo_t algo = CUDNN_CONVOLUTION_FWD_ALGO_IMPLICIT_GEMM;
-    std::fprintf(stderr, "cuDNN algo=IMPLICIT_GEMM (fixed)\n");
 
     // Workspace
     size_t wsSize = 0;
     CHECK_CUDNN(cudnnGetConvolutionForwardWorkspaceSize(
         g_cudnnHandle, inputDesc, filterDesc, convDesc, outputDesc,
         algo, &wsSize));
+    std::fprintf(stderr, "[cuDNN] workspace=%zu bytes\n", wsSize);
 
     void *d_ws = nullptr;
-    if (wsSize > 0) cudaMalloc(&d_ws, wsSize);
+    if (wsSize > 0) { CHECK_CUDA(cudaMalloc(&d_ws, wsSize)); }
 
     float alpha = 1.0f, beta = 0.0f;
 
     // Warm-up
+    std::fprintf(stderr, "[cuDNN] warmup...\n");
     CHECK_CUDNN(cudnnConvolutionForward(
         g_cudnnHandle, &alpha,
         inputDesc, d_input,
         filterDesc, d_weight,
         convDesc, algo, d_ws, wsSize,
         &beta, outputDesc, d_output));
-    cudaDeviceSynchronize();
+    CHECK_CUDA(cudaDeviceSynchronize());
+    std::fprintf(stderr, "[cuDNN] warmup done\n");
 
     // Timed run
+    std::fprintf(stderr, "[cuDNN] timed run...\n");
     cudaEventRecord(start);
     CHECK_CUDNN(cudnnConvolutionForward(
         g_cudnnHandle, &alpha,
@@ -331,7 +339,8 @@ void runCudnnConv(
         convDesc, algo, d_ws, wsSize,
         &beta, outputDesc, d_output));
     cudaEventRecord(stop);
-    cudaEventSynchronize(stop);
+    CHECK_CUDA(cudaEventSynchronize(stop));
+    std::fprintf(stderr, "[cuDNN] timed run done\n");
 
     // Cleanup
     if (d_ws) cudaFree(d_ws);
