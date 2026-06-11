@@ -1,0 +1,318 @@
+\documentclass[UTF8,a4paper,12pt,fontset=none]{ctexart}
+
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{fontspec}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{siunitx}
+\usepackage{subcaption}
+\usepackage{tabularx}
+\usepackage{xurl}
+\usepackage{xcolor}
+
+\hypersetup{colorlinks=true,linkcolor=blue!60!black,urlcolor=blue!60!black}
+\defaultCJKfontfeatures{AutoFakeSlant=.2}
+\setCJKmainfont{Songti SC}
+\setCJKsansfont{Heiti SC}
+\setCJKmonofont{Heiti SC}
+\setmonofont{Menlo}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0.35em}
+\emergencystretch=3em
+\graphicspath{{../results/figures/}}
+\captionsetup{font=small}
+\sisetup{round-mode=places,round-precision=3}
+\renewcommand{\figurename}{图}
+\renewcommand{\tablename}{表}
+
+\definecolor{CodeBg}{HTML}{F7F7F7}
+\definecolor{CodeKeyword}{HTML}{1D4E89}
+\definecolor{CodeComment}{HTML}{0B6E4F}
+\definecolor{CodeString}{HTML}{C73E1D}
+
+\lstset{
+  basicstyle=\ttfamily\small,
+  backgroundcolor=\color{CodeBg},
+  frame=single,
+  framerule=0pt,
+  xleftmargin=1em,
+  xrightmargin=1em,
+  breaklines=true,
+  columns=fullflexible,
+  keywordstyle=\color{CodeKeyword}\bfseries,
+  commentstyle=\color{CodeComment},
+  stringstyle=\color{CodeString},
+  showstringspaces=false
+}
+
+\title{\bfseries 中山大学计算机学院本科生实验报告}
+\author{}
+\date{}
+
+\begin{document}
+
+\begin{titlepage}
+  \centering
+  {\zihao{2}\bfseries 中山大学计算机学院本科生实验报告\par}
+  \vspace{0.5em}
+  {\zihao{4}（2025学年春季学期）\par}
+  \vspace{2em}
+
+  \begin{tabularx}{0.9\textwidth}{>{\bfseries}p{4cm}X}
+    课程名称： & 并行程序设计与算法 \\
+    实验题目： & Lab11 CUDA卷积计算 —— 直接卷积、im2col+GEMM与cuDNN性能对比 \\
+    批改人： & \\
+    专业（方向）： & \\
+    学号： & 23336128 \\
+    姓名： & 梁力航 \\
+    Email： & \\
+    完成日期： & 2026年6月11日 \\
+  \end{tabularx}
+
+  \vfill
+\end{titlepage}
+
+% ============================================================
+\section{实验目的}
+% ============================================================
+
+\begin{enumerate}[left=2em]
+  \item 理解 CNN 卷积操作的数学原理与 CUDA 并行化实现方法
+  \item 掌握直接卷积（滑窗法）的 GPU kernel 设计，包括全局内存与共享内存两种优化策略
+  \item 理解 im2col 算法变换的原理，实现 im2col + GEMM 的卷积方案
+  \item 学习 cuDNN 库的使用，对比手写 kernel 与库函数的性能差距
+\end{enumerate}
+
+% ============================================================
+\section{实验平台}
+% ============================================================
+
+表~\ref{tab:platform}~列出了实验所使用的硬件和软件环境。
+
+\begin{table}[H]
+\centering
+\caption{实验平台配置}
+\label{tab:platform}
+\begin{tabular}{@{}ll@{}}
+  \toprule
+  项目 & 配置 \\
+  \midrule
+  GPU & NVIDIA RTX 3090 (GA102, Ampere) \\
+  CUDA & 智算习堂平台（兼容层 sm\_37） \\
+  cuDNN & 8.x \\
+  编译器 & nvcc, C++14 \\
+  宿主机 & Apple M4（仅用于代码编辑） \\
+  \bottomrule
+\end{tabular}
+\end{table}
+
+% ============================================================
+\section{问题描述}
+% ============================================================
+
+在信号处理、图像处理和深度学习领域，卷积是一种广泛使用的技术。
+本实验在 GPU 上实现 2D CNN 风格卷积操作（无 filter 翻转，无 bias）：
+
+\begin{itemize}
+  \item 输入张量尺寸：$H \times W \times C_{\text{in}}$，其中 $C_{\text{in}} = 3$
+  \item 卷积核尺寸：$K_H \times K_W = 3 \times 3$，输出通道 $C_{\text{out}} = 3$
+  \item 步长 stride $\in \{1, 2, 3\}$
+  \item 填充 padding $= 1$（\text{same} 模式，stride=1 时输出尺寸等于输入尺寸）
+  \item 无偏置项 bias（bias=0）
+  \item 输入规模范围：$H = W \in [32, 4096]$
+\end{itemize}
+
+输出尺寸使用标准 floor 公式计算：
+\begin{equation}
+  H_{\text{out}} = \left\lfloor\frac{H + 2 \cdot \text{padding} - K_H}{\text{stride}}\right\rfloor + 1
+\end{equation}
+\begin{equation}
+  W_{\text{out}} = \left\lfloor\frac{W + 2 \cdot \text{padding} - K_W}{\text{stride}}\right\rfloor + 1
+\end{equation}
+
+% ============================================================
+\section{算法设计}
+% ============================================================
+
+\subsection{方法1：Naive 直接卷积（naive\_conv）}
+
+最朴素的滑窗实现，每个 CUDA 线程负责计算输出张量的一个元素 $(c_{\text{out}}, y, x)$。
+Grid 采用三维布局：X/Y 覆盖空间维度输出，Z 覆盖输出通道。
+所有数据直接从全局内存读取，无任何数据复用策略。
+
+时间复杂度：$O(C_{\text{out}} \cdot C_{\text{in}} \cdot K_H \cdot K_W \cdot H_{\text{out}} \cdot W_{\text{out}})$。
+
+\subsection{方法2：Tiled 共享内存直接卷积（tiled\_conv）}
+
+在 Naive 基础上引入共享内存分块优化，核心思想如下：
+
+\begin{itemize}
+  \item 输入矩阵以 TILE\_H $\times$ TILE\_W 分块加载到共享内存
+  \item TILE 尺寸包含 halo 区域：$\text{TILE\_H} = \text{BLOCK\_DIM} + K_H - 1$，$\text{TILE\_W} = \text{BLOCK\_DIM} + K_W - 1$
+  \item 同一 block 内的所有线程协作加载 input tile
+  \item 卷积计算完全从共享内存读取（$\sim$20 cycles vs 全局内存 $\sim$400 cycles）
+  \item 相邻线程的输入窗口高度重叠，共享内存中的数据被大量复用
+  \item 逐通道处理：每个通道需要重新加载 input tile（channels=3，开销可接受）
+\end{itemize}
+
+\subsection{方法3：im2col + GEMM（im2col\_gemm）}
+
+将卷积操作转换为矩阵乘法的经典技巧：
+
+\textbf{Step 1 — im2col 变换}：
+将 3D 输入张量 $[C_{\text{in}}][H][W]$ 展开为 2D 矩阵
+$[C_{\text{in}} \cdot K_H \cdot K_W][H_{\text{out}} \cdot W_{\text{out}}]$，
+每一列对应一个输出位置的完整感受野（$3 \times 3 \times 3 = 27$ 个元素）。
+
+\textbf{Step 2 — GEMM 计算}：
+使用共享内存分块的 tiled GEMM：
+\begin{equation}
+  \text{Output}[C_{\text{out}}, H_{\text{out}} \cdot W_{\text{out}}] =
+  \text{Weight}[C_{\text{out}}, \text{patch\_size}] \times
+  \text{im2col}[\text{patch\_size}, H_{\text{out}} \cdot W_{\text{out}}]
+\end{equation}
+
+根据输出规模自适应选择 TILE 大小：
+\begin{itemize}
+  \item $H_{\text{out}} \cdot W_{\text{out}} < 1024$：TILE=16（小矩阵，避免 shared memory 浪费）
+  \item $H_{\text{out}} \cdot W_{\text{out}} \geq 1024$：TILE=32（大矩阵，更大复用率）
+\end{itemize}
+
+\subsection{方法4：cuDNN 库函数}
+
+使用 NVIDIA cuDNN 库的 cudnnConvolutionForward API。
+cuDNN 内部自动选择最优算法（IMPLICIT\_GEMM / IMPLICIT\_PRECOMP\_GEMM / GEMM / DIRECT / Winograd / FFT），
+并根据 GPU 架构（Ampere SM\_86）选择 Tensor Core 加速。
+
+% ============================================================
+\section{实验分析}
+% ============================================================
+
+\subsection{运行时间 vs 输入规模}
+
+图~\ref{fig:runtime}~展示了四种方法在 stride=1 时运行时间随输入规模的变化。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{runtime_vs_size.png}
+  \caption{卷积运行时间 vs 输入规模 (stride=1)}
+  \label{fig:runtime}
+\end{figure}
+
+\subsection{Stride 对性能的影响}
+
+图~\ref{fig:stride}~展示了不同 stride 下三种手写 kernel 的性能变化。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.95\textwidth]{stride_impact.png}
+  \caption{不同 stride 对各 kernel 性能的影响}
+  \label{fig:stride}
+\end{figure}
+
+\subsection{im2col 时间分解}
+
+图~\ref{fig:breakdown}~将 im2col+GEMM 方法的总时间分解为 im2col 变换时间和 GEMM 计算时间。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{time_breakdown.png}
+  \caption{im2col+GEMM 时间分解 (stride=1)}
+  \label{fig:breakdown}
+\end{figure}
+
+\subsection{显存占用对比}
+
+图~\ref{fig:memory}~对比了四种方法的显存占用。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{memory_usage.png}
+  \caption{各方法显存占用对比 (stride=1)}
+  \label{fig:memory}
+\end{figure}
+
+\subsection{加速比分析}
+
+图~\ref{fig:speedup}~以 naive\_conv 最佳配置为基线，展示各方法的加速比。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{speedup.png}
+  \caption{各方法相对 naive\_conv 最佳配置的加速比 (stride=1)}
+  \label{fig:speedup}
+\end{figure}
+
+\subsection{Block 大小对 Naive 卷积的影响}
+
+图~\ref{fig:block}~展示了不同 block 大小对 naive\_conv 性能的影响。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{block_size_impact.png}
+  \caption{Block 大小对 Naive 卷积性能的影响}
+  \label{fig:block}
+\end{figure}
+
+\subsection{运行时间热力图}
+
+图~\ref{fig:heatmap}~以热力图形式展示了不同 kernel 和不同输入规模下的运行时间分布。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{heatmap.png}
+  \caption{运行时间热力图 (ms, stride=1)}
+  \label{fig:heatmap}
+\end{figure}
+
+% ============================================================
+\section{与 cuDNN 的对比分析}
+% ============================================================
+
+\subsection{性能差距}
+
+cuDNN 作为 NVIDIA 官方深度优化库，在手写 kernel 之上通常有数倍到数十倍的性能优势。
+其优势来源于：
+
+\begin{itemize}
+  \item \textbf{算法自动选择}：cuDNN 根据输入规模、GPU 架构自动选择 Winograd、FFT 或 Implicit GEMM 等最优算法
+  \item \textbf{Tensor Core 利用}：在 Ampere 架构上使用 TF32/FP16 Tensor Core 加速
+  \item \textbf{汇编级优化}：针对每种 GPU 架构的手工 PTX 调优
+  \item \textbf{内存布局优化}：内部使用 NHWC 等更高效的数据布局
+\end{itemize}
+
+\subsection{改进方向}
+
+手写 kernel 可通过以下方向缩小与 cuDNN 的差距：
+
+\begin{itemize}
+  \item 消除共享内存 bank conflict（pad 共享内存维度）
+  \item 寄存器分块（每个线程计算多个输出元素）
+  \item 向量化全局内存访问（float4）
+  \item Warp-level shuffle 指令减少共享内存使用
+  \item 双缓冲技术重叠计算与数据传输
+\end{itemize}
+
+% ============================================================
+\section{结论}
+% ============================================================
+
+本实验在 GPU 上实现了四种 CNN 卷积方法，通过系统性的性能对比分析得出以下结论：
+
+\begin{enumerate}[left=2em]
+  \item 共享内存分块（tiled\_conv）相比全局内存（naive\_conv）有显著的性能提升，验证了 GPU 内存层次优化的重要性
+  \item im2col+GEMM 在中等规模下性能接近 tiled\_conv，但在大规模下受限于 im2col 的显存膨胀（$\sim$9x）
+  \item cuDNN 在所有规模上表现最优，体现了工业级库在算法选择和微架构优化上的巨大优势
+  \item Stride 增大减少计算量但可能降低 GPU 占用率，在 stride=3 时 tiled\_conv 的优势减弱
+  \item Naive 卷积的最佳 block 大小随输入规模变化：小矩阵偏好 8×8（更多 block），大矩阵偏好 32×32（更多线程）
+\end{enumerate}
+
+\end{document}
