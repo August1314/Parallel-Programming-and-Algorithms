@@ -39,20 +39,38 @@ build_conv() {
 
 build_cudnn() {
     echo "=== Building convolution with cuDNN ==="
-    # Try to find cuDNN
-    CUDNN_ROOT="${CUDNN_ROOT:-/usr/local/cuda}"
-    CUDNN_INCLUDE="${CUDNN_ROOT}/include"
-    CUDNN_LIB="${CUDNN_ROOT}/lib64"
+    # Auto-find cuDNN from common paths
+    if [ -z "${CUDNN_ROOT:-}" ]; then
+        for d in /usr/local/cuda /usr/local/cuda-*; do
+            if [ -f "$d/include/cudnn.h" ]; then
+                CUDNN_ROOT="$d"
+                break
+            fi
+        done
+    fi
+    CUDNN_INCLUDE="${CUDNN_ROOT:-}/include"
+    CUDNN_LIB="${CUDNN_ROOT:-}/lib64"
 
     if [ ! -f "${CUDNN_INCLUDE}/cudnn.h" ]; then
-        echo "Warning: cudnn.h not found at ${CUDNN_INCLUDE}/cudnn.h"
-        echo "  Set CUDNN_ROOT environment variable to cuDNN installation path."
+        echo "Warning: cudnn.h not found."
+        echo "  Searched: /usr/local/cuda /usr/local/cuda-*"
+        echo "  Set CUDNN_ROOT environment variable."
         echo "  Skipping cuDNN binary."
         return 0
     fi
+    echo "  Found cuDNN at: $CUDNN_ROOT"
 
-    # cuDNN requires newer arch (sm_50 minimum); use sm_86 for Ampere
-    $NVCC $NVCC_FLAGS -arch=sm_86 \
+    # Detect GPU compute capability, fallback to sm_75
+    GPU_ARCH="${GPU_ARCH:-}"
+    if [ -z "$GPU_ARCH" ]; then
+        GPU_ARCH=$(nvidia-smi --query-gpu=compute_cap --format=csv,noheader 2>/dev/null \
+            | head -1 | tr -d '.')
+        GPU_ARCH="${GPU_ARCH:-75}"
+        GPU_ARCH="sm_${GPU_ARCH}"
+    fi
+    echo "  Target arch: $GPU_ARCH"
+
+    $NVCC $NVCC_FLAGS -arch="$GPU_ARCH" \
         -I"${CUDNN_INCLUDE}" -L"${CUDNN_LIB}" -lcudnn \
         -DUSE_CUDNN \
         -o "$BIN_DIR/conv_cudnn" "$SRC_DIR/convolution.cu"
