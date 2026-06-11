@@ -13,7 +13,7 @@ chmod +x scripts/build.sh scripts/run_conv.sh
 ./scripts/run_conv.sh 64 2 2
 ./scripts/run_conv.sh 32 1 3
 ./scripts/run_conv.sh 64 3 3
-./scripts/run_conv.sh 32 1 4
+test -f bin/conv_cudnn && ./scripts/run_conv.sh 32 1 4
 uv run python3 -c "import matplotlib; import numpy" 2>/dev/null || uv pip install matplotlib numpy
 uv run python scripts/benchmark.py
 uv run python scripts/plot.py
