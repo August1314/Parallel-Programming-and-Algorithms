@@ -87,7 +87,15 @@ build_cudnn() {
         LINK_FLAGS="-L${CUDART_LIB} ${LINK_FLAGS}"
     fi
 
+    # When using pip-installed libs, force shared CUDA runtime
+    # so the newer libcudart.so.12 can replace the system 10.0 one at runtime
+    NVCC_EXTRA_FLAGS=""
+    if [ -n "$PIP_CUDNN" ]; then
+        NVCC_EXTRA_FLAGS="--cudart=shared"
+    fi
+
     $NVCC $NVCC_BASE_FLAGS -arch=sm_37 \
+        ${NVCC_EXTRA_FLAGS} \
         -I"${CUDNN_INCLUDE}" \
         ${LINK_FLAGS} \
         -DUSE_CUDNN \
