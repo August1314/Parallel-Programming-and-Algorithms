@@ -93,9 +93,8 @@ build_cudnn() {
             return 1
         fi
         echo "  Using cuDNN SO:  $CUDNN_SO"
-        # Only link cuDNN directly; nvcc handles CUDA runtime internally.
-        # libcudnn.so.8 uses $ORIGIN RPATH to find its own libcudart.so.12.
-        LINK_FLAGS="${CUDNN_SO}"
+        # Use -Xlinker to pass the raw .so to the host linker (nvcc doesn't handle .so directly)
+        LINK_FLAGS="-Xlinker ${CUDNN_SO}"
         NVCC_EXTRA_FLAGS=""
     else
         LINK_FLAGS="-L${CUDNN_LIB} -lcudnn"
