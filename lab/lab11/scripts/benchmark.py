@@ -40,6 +40,29 @@ def parse_output(output: str) -> dict[str, str]:
     return result
 
 
+def _get_pip_lib_env() -> dict[str, str]:
+    """Build LD_LIBRARY_PATH additions for pip-installed CUDA/cuDNN libraries."""
+    env = os.environ.copy()
+    extra_paths: list[str] = []
+    try:
+        import nvidia.cuda_runtime  # noqa: F401
+        p = nvidia.cuda_runtime.__path__[0]
+        extra_paths.append(os.path.join(p, "lib"))
+    except Exception:
+        pass
+    try:
+        import nvidia.cudnn  # noqa: F401
+        p = nvidia.cudnn.__path__[0]
+        extra_paths.append(os.path.join(p, "lib"))
+    except Exception:
+        pass
+    if extra_paths:
+        existing = env.get("LD_LIBRARY_PATH", "")
+        env["LD_LIBRARY_PATH"] = ":".join(extra_paths +
+                                          ([existing] if existing else []))
+    return env
+
+
 def run_config(hw: int, stride: int, kernel_id: int,
                block_x: int = 16, block_y: int = 16) -> dict:
     """Run a single convolution configuration."""
@@ -55,8 +78,12 @@ def run_config(hw: int, stride: int, kernel_id: int,
     if kernel_id == 1:
         cmd += [str(block_x), str(block_y)]
 
+    # Use pip-installed CUDA/cuDNN libs when available (needed for cuDNN on RTX 3090)
+    run_env = _get_pip_lib_env() if kernel_id == 4 else None
+
     try:
-        proc = subprocess.run(cmd, capture_output=True, text=True, timeout=600)
+        proc = subprocess.run(cmd, capture_output=True, text=True,
+                              timeout=600, env=run_env)
     except subprocess.TimeoutExpired:
         return {"status": "error", "stderr": "timeout (>600s)"}
 

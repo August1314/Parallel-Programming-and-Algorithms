@@ -32,6 +32,12 @@ if [ "$KERNEL_ID" = "4" ]; then
         echo "Run: ./scripts/build.sh cudnn"
         exit 1
     fi
+    # Set LD_LIBRARY_PATH for pip-installed CUDA runtime + cuDNN (RTX 3090 support)
+    PIP_CUDART=$(python3 -c "import nvidia.cuda_runtime; print(nvidia.cuda_runtime.__path__[0])" 2>/dev/null || echo "")
+    PIP_CUDNN_LIB=$(python3 -c "import nvidia.cudnn; print(nvidia.cudnn.__path__[0])" 2>/dev/null || echo "")
+    if [ -n "$PIP_CUDART" ] || [ -n "$PIP_CUDNN_LIB" ]; then
+        export LD_LIBRARY_PATH="${PIP_CUDART:+$PIP_CUDART/lib:}${PIP_CUDNN_LIB:+$PIP_CUDNN_LIB/lib:}${LD_LIBRARY_PATH:-}"
+    fi
 else
     BINARY="$LAB_DIR/bin/conv"
 fi

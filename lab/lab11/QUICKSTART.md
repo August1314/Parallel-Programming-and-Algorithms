@@ -1,4 +1,5 @@
 python3 -m pip install --user --quiet matplotlib numpy 2>/dev/null
+python3 -m pip install --user --quiet nvidia-cuda-runtime-cu12 nvidia-cudnn-cu12==8.9.7.29 2>/dev/null
 which nvcc 2>/dev/null || module load cuda 2>/dev/null || echo "请手动加载CUDA环境"
 test -d ~/repo || git clone https://github.com/August1314/Parallel-Programming-and-Algorithms.git ~/repo
 cd ~/repo && git pull && cd ~/repo/lab/lab11

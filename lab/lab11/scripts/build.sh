@@ -39,29 +39,57 @@ build_conv() {
 
 build_cudnn() {
     echo "=== Building convolution with cuDNN ==="
-    # Auto-find cuDNN from common paths
-    if [ -z "${CUDNN_ROOT:-}" ]; then
-        for d in /usr/local/cuda /usr/local/cuda-*; do
-            if [ -f "$d/include/cudnn.h" ]; then
-                CUDNN_ROOT="$d"
-                break
-            fi
-        done
+
+    CUDNN_INCLUDE=""
+    CUDNN_LIB=""
+    CUDART_LIB=""
+
+    # 1) Prefer pip-installed cuDNN (newer, supports RTX 3090 Ampere)
+    PIP_CUDNN=$(python3 -c "import nvidia.cudnn; print(nvidia.cudnn.__path__[0])" 2>/dev/null || echo "")
+    if [ -n "$PIP_CUDNN" ] && [ -f "$PIP_CUDNN/include/cudnn.h" ]; then
+        echo "  Found pip cuDNN at: $PIP_CUDNN"
+        CUDNN_INCLUDE="$PIP_CUDNN/include"
+        CUDNN_LIB="$PIP_CUDNN/lib"
+        PIP_CUDART=$(python3 -c "import nvidia.cuda_runtime; print(nvidia.cuda_runtime.__path__[0])" 2>/dev/null || echo "")
+        if [ -n "$PIP_CUDART" ]; then
+            echo "  Found pip CUDA runtime at: $PIP_CUDART"
+            CUDART_LIB="$PIP_CUDART/lib"
+        fi
     fi
-    CUDNN_INCLUDE="${CUDNN_ROOT:-}/include"
-    CUDNN_LIB="${CUDNN_ROOT:-}/lib64"
+
+    # 2) Fallback: auto-find system cuDNN from common paths
+    if [ -z "$CUDNN_INCLUDE" ]; then
+        if [ -z "${CUDNN_ROOT:-}" ]; then
+            for d in /usr/local/cuda /usr/local/cuda-*; do
+                if [ -f "$d/include/cudnn.h" ]; then
+                    CUDNN_ROOT="$d"
+                    break
+                fi
+            done
+        fi
+        CUDNN_INCLUDE="${CUDNN_ROOT:-}/include"
+        CUDNN_LIB="${CUDNN_ROOT:-}/lib64"
+    fi
 
     if [ ! -f "${CUDNN_INCLUDE}/cudnn.h" ]; then
         echo "Warning: cudnn.h not found."
-        echo "  Searched: /usr/local/cuda /usr/local/cuda-*"
-        echo "  Set CUDNN_ROOT environment variable."
+        echo "  Install via: python3 -m pip install --user nvidia-cudnn-cu12==8.9.7.29"
+        echo "  Or set CUDNN_ROOT environment variable."
         echo "  Skipping cuDNN binary."
         return 0
     fi
-    echo "  Found cuDNN at: $CUDNN_ROOT"
+    echo "  cuDNN include: $CUDNN_INCLUDE"
+    echo "  cuDNN lib:     $CUDNN_LIB"
+    [ -n "$CUDART_LIB" ] && echo "  CUDA runtime:  $CUDART_LIB"
+
+    LINK_FLAGS="-L${CUDNN_LIB} -lcudnn"
+    if [ -n "$CUDART_LIB" ]; then
+        LINK_FLAGS="-L${CUDART_LIB} ${LINK_FLAGS}"
+    fi
 
     $NVCC $NVCC_BASE_FLAGS -arch=sm_37 \
-        -I"${CUDNN_INCLUDE}" -L"${CUDNN_LIB}" -lcudnn \
+        -I"${CUDNN_INCLUDE}" \
+        ${LINK_FLAGS} \
         -DUSE_CUDNN \
         -o "$BIN_DIR/conv_cudnn" "$SRC_DIR/convolution.cu"
     echo "  -> $BIN_DIR/conv_cudnn"
