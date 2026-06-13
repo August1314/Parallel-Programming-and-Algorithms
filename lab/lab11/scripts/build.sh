@@ -82,16 +82,26 @@ build_cudnn() {
     echo "  cuDNN lib:     $CUDNN_LIB"
     [ -n "$CUDART_LIB" ] && echo "  CUDA runtime:  $CUDART_LIB"
 
-    LINK_FLAGS="-L${CUDNN_LIB} -lcudnn"
-    if [ -n "$CUDART_LIB" ]; then
-        LINK_FLAGS="-L${CUDART_LIB} ${LINK_FLAGS}"
-    fi
+    # When using pip-installed libs, link directly to the .so to
+    # avoid the linker picking up system libcudnn.so.7 instead
+    if [ -n "$PIP_CUDNN" ] && [ -n "${CUDART_LIB:-}" ]; then
+        # Find the actual libcudnn.so file (symlink to .so.8)
+        CUDNN_SO=$(ls "$CUDNN_LIB"/libcudnn.so.[0-9]* 2>/dev/null | head -1)
+        [ -z "$CUDNN_SO" ] && CUDNN_SO=$(ls "$CUDNN_LIB"/libcudnn.so 2>/dev/null | head -1)
+        if [ -z "$CUDNN_SO" ]; then
+            echo "Error: libcudnn.so not found in $CUDNN_LIB"
+            return 1
+        fi
+        echo "  Using cuDNN SO:  $CUDNN_SO"
 
-    # When using pip-installed libs, force shared CUDA runtime
-    # so the newer libcudart.so.12 can replace the system 10.0 one at runtime
-    NVCC_EXTRA_FLAGS=""
-    if [ -n "$PIP_CUDNN" ]; then
+        LINK_FLAGS="${CUDNN_SO}"
+        # Add rpath so runtime finds pip libs (LD_LIBRARY_PATH fallback still works)
+        LINK_FLAGS+=" -Wl,-rpath,${CUDNN_LIB} -Wl,-rpath,${CUDART_LIB}"
+
         NVCC_EXTRA_FLAGS="--cudart=shared"
+    else
+        LINK_FLAGS="-L${CUDNN_LIB} -lcudnn"
+        NVCC_EXTRA_FLAGS=""
     fi
 
     $NVCC $NVCC_BASE_FLAGS -arch=sm_37 \
