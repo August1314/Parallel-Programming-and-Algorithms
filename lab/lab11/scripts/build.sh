@@ -92,15 +92,11 @@ build_cudnn() {
             echo "Error: libcudnn.so not found in $CUDNN_LIB"
             return 1
         fi
-        # Also find pip libcudart.so to match the same CUDA 12.x ABI
-        CUDART_SO=$(ls "$CUDART_LIB"/libcudart.so* 2>/dev/null | grep -v '\.' | head -1)
-        [ -z "$CUDART_SO" ] && CUDART_SO=$(ls "$CUDART_LIB"/libcudart.so.[0-9]* 2>/dev/null | head -1)
-        echo "  Using cuDNN SO:     $CUDNN_SO"
-        echo "  Using cudart SO:    $CUDART_SO"
-
-        LINK_FLAGS="${CUDNN_SO} ${CUDART_SO}"
-        # --cudart=none: don't link system cudart; we provide the pip one
-        NVCC_EXTRA_FLAGS="--cudart=none"
+        echo "  Using cuDNN SO:  $CUDNN_SO"
+        # Only link cuDNN directly; nvcc handles CUDA runtime internally.
+        # libcudnn.so.8 uses $ORIGIN RPATH to find its own libcudart.so.12.
+        LINK_FLAGS="${CUDNN_SO}"
+        NVCC_EXTRA_FLAGS=""
     else
         LINK_FLAGS="-L${CUDNN_LIB} -lcudnn"
         NVCC_EXTRA_FLAGS=""
